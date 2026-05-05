@@ -1,17 +1,18 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>✍️ Editor de Posts | Concurseira PCD</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="icon" href="/favicon/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-  <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png">
-  <link rel="manifest" href="/favicon/site.webmanifest">
-  <meta name="theme-color" content="#0b3d2e">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>✍️ Editor de Posts | Concurseira PCD</title>
+<link href="assets/css/style.css" rel="stylesheet"/>
+
+
+
+
+
+
+<style>
     body { background: var(--cream); }
 
     .admin-header {
@@ -220,64 +221,55 @@
       .preview-panel { position: static; max-height: none; }
     }
   </style>
-</head>
+<link href="favicon/favicon.ico?v=3" rel="icon" sizes="any"/><link href="favicon/favicon-32x32.png?v=3" rel="icon" sizes="32x32" type="image/png"/><link href="favicon/favicon-16x16.png?v=3" rel="icon" sizes="16x16" type="image/png"/><link href="favicon/apple-touch-icon.png?v=3" rel="apple-touch-icon"/><link href="favicon/site.webmanifest" rel="manifest"/><meta content="#0b3d2e" name="theme-color"/></head>
 <body>
-
 <div class="admin-header">
-  <div class="container">
-    <h1>✍️ Editor de Posts</h1>
-    <a href="blog.html">← Ver o Blog</a>
-  </div>
+<div class="container">
+<h1>✍️ Editor de Posts</h1>
+<a href="blog.html">← Ver o Blog</a>
 </div>
-
+</div>
 <div class="container editor-layout">
-
-  <!-- Formulário do post -->
-  <div>
-    <div class="editor-panel">
-      <h2>Novo post</h2>
-
-      <div class="field">
-        <label for="post-title">Título do post *</label>
-        <input id="post-title" type="text" placeholder="Ex: Como revisar sem esquecer tudo" />
-      </div>
-
-      <div class="field">
-        <label for="post-category">Categoria *</label>
-        <select id="post-category">
-          <option value="">Selecione...</option>
-          <option value="Métodos de estudo">Métodos de estudo</option>
-          <option value="Organização">Organização</option>
-          <option value="Dicas práticas">Dicas práticas</option>
-          <option value="Desabafos">Desabafos</option>
-          <option value="Vida real de estudos">Vida real de estudos</option>
-          <option value="Direitos PCD">Direitos PCD</option>
-          <option value="Concursos">Concursos</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <label for="post-intro">Introdução (resumo exibido no card) *</label>
-        <textarea id="post-intro" rows="3" placeholder="Uma frase de impacto que resume o post e aparece no card do blog…"></textarea>
-      </div>
-
-      <div class="field">
-        <label>Conteúdo do post *</label>
-        <div class="toolbar">
-          <button onclick="wrap('**','**')" title="Negrito"><b>N</b></button>
-          <button onclick="wrap('_','_')" title="Itálico"><i>I</i></button>
-          <div class="sep"></div>
-          <button onclick="insertLine('\n## ')">H2</button>
-          <button onclick="insertLine('\n### ')">H3</button>
-          <div class="sep"></div>
-          <button onclick="insertLine('\n- ')">• Lista</button>
-          <button onclick="insertLine('\n> ')">❝ Citação</button>
-          <div class="sep"></div>
-          <button onclick="insertLine('\n---\n')">— Separador</button>
-        </div>
-        <textarea id="content-editor" class="field"
-          rows="18"
-          placeholder="Escreva o conteúdo do post aqui...
+<!-- Formulário do post -->
+<div>
+<div class="editor-panel">
+<h2>Novo post</h2>
+<div class="field">
+<label for="post-title">Título do post *</label>
+<input id="post-title" placeholder="Ex: Como revisar sem esquecer tudo" type="text"/>
+</div>
+<div class="field">
+<label for="post-category">Categoria *</label>
+<select id="post-category">
+<option value="">Selecione...</option>
+<option value="Métodos de estudo">Métodos de estudo</option>
+<option value="Organização">Organização</option>
+<option value="Dicas práticas">Dicas práticas</option>
+<option value="Desabafos">Desabafos</option>
+<option value="Vida real de estudos">Vida real de estudos</option>
+<option value="Direitos PCD">Direitos PCD</option>
+<option value="Concursos">Concursos</option>
+</select>
+</div>
+<div class="field">
+<label for="post-intro">Introdução (resumo exibido no card) *</label>
+<textarea id="post-intro" placeholder="Uma frase de impacto que resume o post e aparece no card do blog…" rows="3"></textarea>
+</div>
+<div class="field">
+<label>Conteúdo do post *</label>
+<div class="toolbar">
+<button onclick="wrap('**','**')" title="Negrito"><b>N</b></button>
+<button onclick="wrap('_','_')" title="Itálico"><i>I</i></button>
+<div class="sep"></div>
+<button onclick="insertLine('\n## ')">H2</button>
+<button onclick="insertLine('\n### ')">H3</button>
+<div class="sep"></div>
+<button onclick="insertLine('\n- ')">• Lista</button>
+<button onclick="insertLine('\n&gt; ')">❝ Citação</button>
+<div class="sep"></div>
+<button onclick="insertLine('\n---\n')">— Separador</button>
+</div>
+<textarea class="field" id="content-editor" placeholder="Escreva o conteúdo do post aqui...
 
 Use ## para títulos, **negrito**, _itálico_, - para listas.
 
@@ -286,62 +278,56 @@ Exemplo:
 
 Quando comecei a estudar para concursos, fiz muitos erros...
 
-**O primeiro erro** foi não revisar..."></textarea>
-      </div>
-
-      <div class="field">
-        <label for="post-date">Data de publicação</label>
-        <input id="post-date" type="date" />
-        <small>Deixe em branco para usar a data de hoje.</small>
-      </div>
-
-      <div style="display:flex; gap:12px; flex-wrap:wrap;">
-        <button class="btn btn-primary" onclick="generateCode()">Gerar código do post →</button>
-        <button class="btn btn-secondary" onclick="clearForm()">Limpar</button>
-      </div>
-    </div>
-
-    <!-- Código gerado -->
-    <div id="code-section" style="display:none; margin-top:20px;">
-      <div class="editor-panel">
-        <h2>Código gerado</h2>
-        <p style="color:var(--muted); font-size:.92rem; margin-bottom:16px;">
+**O primeiro erro** foi não revisar..." rows="18"></textarea>
+</div>
+<div class="field">
+<label for="post-date">Data de publicação</label>
+<input id="post-date" type="date"/>
+<small>Deixe em branco para usar a data de hoje.</small>
+</div>
+<div style="display:flex; gap:12px; flex-wrap:wrap;">
+<button class="btn btn-primary" onclick="generateCode()">Gerar código do post →</button>
+<button class="btn btn-secondary" onclick="clearForm()">Limpar</button>
+</div>
+</div>
+<!-- Código gerado -->
+<div id="code-section" style="display:none; margin-top:20px;">
+<div class="editor-panel">
+<h2>Código gerado</h2>
+<p style="color:var(--muted); font-size:.92rem; margin-bottom:16px;">
           Copie o trecho abaixo e cole dentro da <code style="background:var(--green-soft);padding:2px 6px;border-radius:6px;">.post-grid</code> no arquivo <strong>blog.html</strong>.
         </p>
-        <div class="code-actions">
-          <button class="btn-copy" id="copy-btn" onclick="copyCode()">📋 Copiar código</button>
-        </div>
-        <div class="code-box">
-          <pre id="generated-code"></pre>
-        </div>
-
-        <div class="how-to">
-          <h3>Como adicionar ao blog:</h3>
-          <ol>
-            <li>Abra o arquivo <strong>blog.html</strong></li>
-            <li>Encontre a <code style="background:white;padding:1px 6px;border-radius:4px;">&lt;div class="post-grid"&gt;</code></li>
-            <li>Cole o código copiado <strong>antes</strong> dos outros posts</li>
-            <li>Salve o arquivo — o post aparece no topo do blog!</li>
-          </ol>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Preview ao vivo -->
-  <div class="preview-panel">
-    <div class="preview-inner">
-      <p style="font-size:.75rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); margin-bottom:16px;">Preview ao vivo</p>
-      <div id="preview-tag" class="preview-tag" style="display:none;"></div>
-      <div id="preview-title" class="preview-title" style="color:var(--muted); font-size:1.1rem;">O título do seu post aparece aqui…</div>
-      <div id="preview-meta" class="preview-meta" style="display:none;"></div>
-      <div id="preview-intro" style="color:var(--muted); font-size:.93rem; margin-bottom:16px;"></div>
-      <hr style="border:none; border-top:1px solid rgba(47,95,75,.1); margin:16px 0;" />
-      <div id="preview-body" class="preview-body" style="color:var(--muted); font-size:.88rem;">O conteúdo formatado aparece aqui conforme você escreve…</div>
-    </div>
-  </div>
+<div class="code-actions">
+<button class="btn-copy" id="copy-btn" onclick="copyCode()">📋 Copiar código</button>
 </div>
-
+<div class="code-box">
+<pre id="generated-code"></pre>
+</div>
+<div class="how-to">
+<h3>Como adicionar ao blog:</h3>
+<ol>
+<li>Abra o arquivo <strong>blog.html</strong></li>
+<li>Encontre a <code style="background:white;padding:1px 6px;border-radius:4px;">&lt;div class="post-grid"&gt;</code></li>
+<li>Cole o código copiado <strong>antes</strong> dos outros posts</li>
+<li>Salve o arquivo — o post aparece no topo do blog!</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<!-- Preview ao vivo -->
+<div class="preview-panel">
+<div class="preview-inner">
+<p style="font-size:.75rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); margin-bottom:16px;">Preview ao vivo</p>
+<div class="preview-tag" id="preview-tag" style="display:none;"></div>
+<div class="preview-title" id="preview-title" style="color:var(--muted); font-size:1.1rem;">O título do seu post aparece aqui…</div>
+<div class="preview-meta" id="preview-meta" style="display:none;"></div>
+<div id="preview-intro" style="color:var(--muted); font-size:.93rem; margin-bottom:16px;"></div>
+<hr style="border:none; border-top:1px solid rgba(47,95,75,.1); margin:16px 0;"/>
+<div class="preview-body" id="preview-body" style="color:var(--muted); font-size:.88rem;">O conteúdo formatado aparece aqui conforme você escreve…</div>
+</div>
+</div>
+</div>
 <script>
   // ─── Toolbar helpers ───
   function wrap(before, after) {
@@ -458,11 +444,17 @@ Quando comecei a estudar para concursos, fiz muitos erros...
   <title>${title} | Concurseira PCD</title>
   <meta name="description" content="${intro}">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="favicon/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <meta name="theme-color" content="#0b3d2e">
 </head>
 <body>
 <header class="site-header">
   <div class="container nav-wrapper">
-    <a class="logo" href="index.html"><span class="logo-mark">CP</span><span class="logo-text">Concurseira PCD</span></a>
+    <a class="logo" href="index.html" aria-label="Página inicial Concurseira PCD"><span class="logo-mark"><img src="assets/images/logo-cp.png" alt="" aria-hidden="true"></span><span class="logo-copy"><span class="logo-text">Concurseira PCD</span><span class="logo-author">por Pâmela Dayane</span></span></a>
     <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
     <nav class="main-nav">
       <a href="index.html">Início</a><a href="sobre.html">Sobre Mim</a><a href="direitos-pcd.html">Direitos PCD</a>
@@ -474,11 +466,14 @@ Quando comecei a estudar para concursos, fiz muitos erros...
 </header>
 <main>
   <section class="page-hero">
-    <div class="container">
-      <p class="eyebrow"><a href="blog.html" style="color:var(--green-dark);">Blog</a> · ${category}</p>
-      <h1>${title}</h1>
-      <p class="lead">${intro}</p>
-      <p style="font-size:.85rem; color:var(--muted); margin-top:12px;">📅 ${today} · Pâmela Dayane</p>
+    <div class="container page-title-row">
+      <div class="page-title-copy">
+        <p class="eyebrow"><a href="blog.html" style="color:var(--green-dark);">Blog</a> · ${category}</p>
+        <h1>${title}</h1>
+        <p class="lead">${intro}</p>
+        <p style="font-size:.85rem; color:var(--muted); margin-top:12px;">📅 ${today} · Pâmela Dayane</p>
+      </div>
+      <div class="page-title-illustration"><img src="assets/images/illustrations/05_blog_reflexoes_estudo.png" alt="Ilustração sobre blog, estudos e reflexões"></div>
     </div>
   </section>
   <section class="section">
