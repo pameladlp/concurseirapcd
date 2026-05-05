@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>✍️ Editor de Posts | Concurseira PCD</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    body { background: var(--cream); }
+
+    .admin-header {
+      background: var(--green-dark);
+      color: white;
+      padding: 18px 0;
+      margin-bottom: 0;
+    }
+    .admin-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .admin-header h1 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      margin: 0;
+      color: white;
+    }
+    .admin-header a {
+      color: rgba(255,255,255,.75);
+      font-size: .88rem;
+      font-weight: 600;
+    }
+    .admin-header a:hover { color: white; }
+
+    .editor-layout {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 28px;
+      padding: 32px 0 60px;
+    }
+
+    .editor-panel {
+      background: white;
+      border: 1px solid rgba(47,95,75,.1);
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--shadow-sm);
+    }
+    .editor-panel h2 {
+      font-family: var(--font-display);
+      color: var(--green-dark);
+      font-size: 1.3rem;
+      margin: 0 0 24px;
+    }
+
+    .field { margin-bottom: 20px; }
+    .field label {
+      display: block;
+      font-weight: 700;
+      color: var(--green-dark);
+      font-size: .88rem;
+      margin-bottom: 8px;
+    }
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid rgba(47,95,75,.2);
+      border-radius: 12px;
+      font: inherit;
+      font-size: .95rem;
+      background: var(--cream);
+      color: var(--ink);
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      outline: none;
+      border-color: var(--green-dark);
+      box-shadow: 0 0 0 3px rgba(47,95,75,.1);
+      background: white;
+    }
+    .field textarea { resize: vertical; }
+    .field small { color: var(--muted); font-size: .8rem; margin-top: 6px; display: block; }
+
+    /* Toolbar de formatação */
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding: 10px;
+      background: var(--green-soft);
+      border-radius: 10px 10px 0 0;
+      border: 1.5px solid rgba(47,95,75,.2);
+      border-bottom: none;
+    }
+    .toolbar button {
+      padding: 6px 12px;
+      border: 1px solid rgba(47,95,75,.2);
+      border-radius: 8px;
+      background: white;
+      color: var(--green-dark);
+      font-weight: 700;
+      font-size: .83rem;
+      cursor: pointer;
+      transition: background .15s;
+      font-family: var(--font-body);
+    }
+    .toolbar button:hover { background: var(--green-dark); color: white; }
+    .toolbar .sep { width: 1px; background: rgba(47,95,75,.2); margin: 0 2px; align-self: stretch; }
+
+    #content-editor {
+      border-radius: 0 0 12px 12px;
+      border-top: none;
+      min-height: 300px;
+    }
+
+    /* Preview panel */
+    .preview-panel {
+      position: sticky;
+      top: 24px;
+      max-height: calc(100vh - 48px);
+      overflow-y: auto;
+    }
+    .preview-panel .preview-inner {
+      background: white;
+      border: 1px solid rgba(47,95,75,.1);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+    }
+    .preview-tag {
+      display: inline-block;
+      background: var(--green-soft);
+      color: var(--green-dark);
+      font-weight: 700;
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-size: .76rem;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      margin-bottom: 14px;
+    }
+    .preview-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--ink);
+      margin: 0 0 10px;
+    }
+    .preview-meta {
+      font-size: .82rem;
+      color: var(--muted);
+      margin-bottom: 20px;
+      display: flex;
+      gap: 14px;
+    }
+    .preview-body { color: var(--muted); font-size: .95rem; line-height: 1.75; }
+    .preview-body h2 { font-family: var(--font-display); color: var(--green-dark); font-size: 1.2rem; margin-top: 24px; }
+    .preview-body p { margin-bottom: 14px; }
+    .preview-body strong { color: var(--ink); }
+
+    /* Código gerado */
+    .code-box {
+      background: #1d332b;
+      border-radius: 14px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    .code-box pre {
+      margin: 0;
+      color: #b8e0cc;
+      font-size: .8rem;
+      font-family: 'Courier New', monospace;
+      white-space: pre-wrap;
+      word-break: break-all;
+      max-height: 220px;
+      overflow-y: auto;
+    }
+    .code-actions {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .btn-copy {
+      padding: 8px 18px;
+      background: var(--green);
+      color: var(--green-dark);
+      border: none;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: .85rem;
+      cursor: pointer;
+      transition: background .2s;
+      font-family: var(--font-body);
+    }
+    .btn-copy:hover { background: var(--green-mid); }
+    .btn-copy.copied { background: var(--gold); color: white; }
+
+    .how-to {
+      background: var(--green-soft);
+      border-radius: var(--radius-sm);
+      padding: 20px 22px;
+      margin-top: 20px;
+    }
+    .how-to h3 { color: var(--green-dark); font-size: .95rem; margin: 0 0 10px; }
+    .how-to ol { margin: 0; padding-left: 18px; color: var(--muted); font-size: .88rem; line-height: 1.8; }
+    .how-to ol li strong { color: var(--ink); }
+
+    @media (max-width: 900px) {
+      .editor-layout { grid-template-columns: 1fr; }
+      .preview-panel { position: static; max-height: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="admin-header">
+  <div class="container">
+    <h1>✍️ Editor de Posts</h1>
+    <a href="blog.html">← Ver o Blog</a>
+  </div>
+</div>
+
+<div class="container editor-layout">
+
+  <!-- Formulário do post -->
+  <div>
+    <div class="editor-panel">
+      <h2>Novo post</h2>
+
+      <div class="field">
+        <label for="post-title">Título do post *</label>
+        <input id="post-title" type="text" placeholder="Ex: Como revisar sem esquecer tudo" />
+      </div>
+
+      <div class="field">
+        <label for="post-category">Categoria *</label>
+        <select id="post-category">
+          <option value="">Selecione...</option>
+          <option value="Métodos de estudo">Métodos de estudo</option>
+          <option value="Organização">Organização</option>
+          <option value="Dicas práticas">Dicas práticas</option>
+          <option value="Desabafos">Desabafos</option>
+          <option value="Vida real de estudos">Vida real de estudos</option>
+          <option value="Direitos PCD">Direitos PCD</option>
+          <option value="Concursos">Concursos</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="post-intro">Introdução (resumo exibido no card) *</label>
+        <textarea id="post-intro" rows="3" placeholder="Uma frase de impacto que resume o post e aparece no card do blog…"></textarea>
+      </div>
+
+      <div class="field">
+        <label>Conteúdo do post *</label>
+        <div class="toolbar">
+          <button onclick="wrap('**','**')" title="Negrito"><b>N</b></button>
+          <button onclick="wrap('_','_')" title="Itálico"><i>I</i></button>
+          <div class="sep"></div>
+          <button onclick="insertLine('\n## ')">H2</button>
+          <button onclick="insertLine('\n### ')">H3</button>
+          <div class="sep"></div>
+          <button onclick="insertLine('\n- ')">• Lista</button>
+          <button onclick="insertLine('\n> ')">❝ Citação</button>
+          <div class="sep"></div>
+          <button onclick="insertLine('\n---\n')">— Separador</button>
+        </div>
+        <textarea id="content-editor" class="field"
+          rows="18"
+          placeholder="Escreva o conteúdo do post aqui...
+
+Use ## para títulos, **negrito**, _itálico_, - para listas.
+
+Exemplo:
+## Por onde começar
+
+Quando comecei a estudar para concursos, fiz muitos erros...
+
+**O primeiro erro** foi não revisar..."></textarea>
+      </div>
+
+      <div class="field">
+        <label for="post-date">Data de publicação</label>
+        <input id="post-date" type="date" />
+        <small>Deixe em branco para usar a data de hoje.</small>
+      </div>
+
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <button class="btn btn-primary" onclick="generateCode()">Gerar código do post →</button>
+        <button class="btn btn-secondary" onclick="clearForm()">Limpar</button>
+      </div>
+    </div>
+
+    <!-- Código gerado -->
+    <div id="code-section" style="display:none; margin-top:20px;">
+      <div class="editor-panel">
+        <h2>Código gerado</h2>
+        <p style="color:var(--muted); font-size:.92rem; margin-bottom:16px;">
+          Copie o trecho abaixo e cole dentro da <code style="background:var(--green-soft);padding:2px 6px;border-radius:6px;">.post-grid</code> no arquivo <strong>blog.html</strong>.
+        </p>
+        <div class="code-actions">
+          <button class="btn-copy" id="copy-btn" onclick="copyCode()">📋 Copiar código</button>
+        </div>
+        <div class="code-box">
+          <pre id="generated-code"></pre>
+        </div>
+
+        <div class="how-to">
+          <h3>Como adicionar ao blog:</h3>
+          <ol>
+            <li>Abra o arquivo <strong>blog.html</strong></li>
+            <li>Encontre a <code style="background:white;padding:1px 6px;border-radius:4px;">&lt;div class="post-grid"&gt;</code></li>
+            <li>Cole o código copiado <strong>antes</strong> dos outros posts</li>
+            <li>Salve o arquivo — o post aparece no topo do blog!</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Preview ao vivo -->
+  <div class="preview-panel">
+    <div class="preview-inner">
+      <p style="font-size:.75rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); margin-bottom:16px;">Preview ao vivo</p>
+      <div id="preview-tag" class="preview-tag" style="display:none;"></div>
+      <div id="preview-title" class="preview-title" style="color:var(--muted); font-size:1.1rem;">O título do seu post aparece aqui…</div>
+      <div id="preview-meta" class="preview-meta" style="display:none;"></div>
+      <div id="preview-intro" style="color:var(--muted); font-size:.93rem; margin-bottom:16px;"></div>
+      <hr style="border:none; border-top:1px solid rgba(47,95,75,.1); margin:16px 0;" />
+      <div id="preview-body" class="preview-body" style="color:var(--muted); font-size:.88rem;">O conteúdo formatado aparece aqui conforme você escreve…</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ─── Toolbar helpers ───
+  function wrap(before, after) {
+    const ta = document.getElementById('content-editor');
+    const start = ta.selectionStart, end = ta.selectionEnd;
+    const sel = ta.value.substring(start, end);
+    ta.value = ta.value.substring(0, start) + before + sel + after + ta.value.substring(end);
+    ta.focus();
+    ta.setSelectionRange(start + before.length, end + before.length);
+    updatePreview();
+  }
+  function insertLine(text) {
+    const ta = document.getElementById('content-editor');
+    const pos = ta.selectionStart;
+    ta.value = ta.value.substring(0, pos) + text + ta.value.substring(pos);
+    ta.focus();
+    ta.setSelectionRange(pos + text.length, pos + text.length);
+    updatePreview();
+  }
+
+  // ─── Markdown básico → HTML ───
+  function mdToHtml(md) {
+    return md
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/^---$/gm, '<hr style="border:none;border-top:1px solid rgba(47,95,75,.15);margin:20px 0;">')
+      .replace(/^### (.+)$/gm, '<h3>$1</h3>')
+      .replace(/^## (.+)$/gm, '<h2>$1</h2>')
+      .replace(/^> (.+)$/gm, '<blockquote style="border-left:3px solid var(--green-dark);padding-left:14px;color:var(--green-dark);font-style:italic;">$1</blockquote>')
+      .replace(/^- (.+)$/gm, '<li>$1</li>')
+      .replace(/(<li>.*<\/li>\n?)+/g, s => `<ul style="padding-left:20px;color:var(--muted);">${s}</ul>`)
+      .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+      .replace(/_(.+?)_/g, '<em>$1</em>')
+      .replace(/\n\n+/g, '</p><p>')
+      .replace(/^(?!<[hbul])(.+)$/gm, (m) => m.trim() ? m : '')
+      .replace(/^(?!<)(.+)/gm, '<p>$1</p>')
+      .replace(/<p><\/p>/g, '')
+      .replace(/<p>(<[hbu])/g, '$1')
+      .replace(/(<\/[hbu][^>]*>)<\/p>/g, '$1');
+  }
+
+  // ─── Preview ao vivo ───
+  function updatePreview() {
+    const title    = document.getElementById('post-title').value.trim();
+    const category = document.getElementById('post-category').value;
+    const intro    = document.getElementById('post-intro').value.trim();
+    const content  = document.getElementById('content-editor').value.trim();
+    const dateVal  = document.getElementById('post-date').value;
+
+    const previewTitle = document.getElementById('preview-title');
+    const previewTag   = document.getElementById('preview-tag');
+    const previewMeta  = document.getElementById('preview-meta');
+    const previewIntro = document.getElementById('preview-intro');
+    const previewBody  = document.getElementById('preview-body');
+
+    previewTitle.textContent = title || 'O título do seu post aparece aqui…';
+    previewTitle.style.color = title ? 'var(--ink)' : 'var(--muted)';
+
+    if (category) {
+      previewTag.textContent = category;
+      previewTag.style.display = 'inline-block';
+    } else {
+      previewTag.style.display = 'none';
+    }
+
+    if (dateVal) {
+      const d = new Date(dateVal + 'T12:00:00');
+      const formatted = d.toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
+      previewMeta.innerHTML = `<span>📅 ${formatted}</span>`;
+      previewMeta.style.display = 'flex';
+    } else {
+      previewMeta.style.display = 'none';
+    }
+
+    previewIntro.textContent = intro;
+    previewBody.innerHTML = content ? mdToHtml(content) : '<span style="color:var(--muted);font-size:.88rem;">O conteúdo aparece aqui…</span>';
+  }
+
+  // ─── Gerar código HTML ───
+  function generateCode() {
+    const title    = document.getElementById('post-title').value.trim();
+    const category = document.getElementById('post-category').value;
+    const intro    = document.getElementById('post-intro').value.trim();
+    const content  = document.getElementById('content-editor').value.trim();
+    const dateVal  = document.getElementById('post-date').value;
+
+    if (!title || !category || !intro || !content) {
+      alert('Preencha título, categoria, introdução e conteúdo antes de gerar o código.');
+      return;
+    }
+
+    const today = dateVal
+      ? new Date(dateVal + 'T12:00:00').toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' })
+      : new Date().toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
+
+    // Gera slug simples para ID
+    const slug = title.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+
+    const htmlContent = mdToHtml(content)
+      .replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
+
+    const cardCode = `<!-- Post: ${title} -->
+<article class="post-card" id="${slug}">
+  <p class="tag">${category}</p>
+  <h3>${title}</h3>
+  <p>${intro}</p>
+  <a href="post-${slug}.html">Ler post →</a>
+</article>`;
+
+    const fullPageCode = `<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${title} | Concurseira PCD</title>
+  <meta name="description" content="${intro}">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav-wrapper">
+    <a class="logo" href="index.html"><span class="logo-mark">CP</span><span class="logo-text">Concurseira PCD</span></a>
+    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    <nav class="main-nav">
+      <a href="index.html">Início</a><a href="sobre.html">Sobre Mim</a><a href="direitos-pcd.html">Direitos PCD</a>
+      <a href="noticias.html">Notícias</a><a href="blog.html">Blog</a><a href="materiais-gratuitos.html">Materiais Gratuitos</a>
+      <a href="achadinhos.html">Achadinhos</a><a href="produtos-digitais.html">Produtos Digitais</a>
+      <a href="search.html" class="nav-search" aria-label="Buscar">🔍</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow"><a href="blog.html" style="color:var(--green-dark);">Blog</a> · ${category}</p>
+      <h1>${title}</h1>
+      <p class="lead">${intro}</p>
+      <p style="font-size:.85rem; color:var(--muted); margin-top:12px;">📅 ${today} · Pâmela Dayane</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container narrow content">
+      ${htmlContent}
+      <hr style="border:none; border-top:1px solid rgba(47,95,75,.12); margin:40px 0;">
+      <p style="color:var(--muted); font-size:.92rem;">Gostou? <a href="https://www.instagram.com/concurseirapcd" target="_blank" rel="noopener" style="color:var(--green-dark); font-weight:700;">Siga @concurseirapcd no Instagram</a> para mais conteúdo.</p>
+      <a href="blog.html" class="text-link">← Voltar ao Blog</a>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div><strong>Concurseira PCD</strong><p>Conteúdo, organização e acessibilidade.</p>
+    <a href="https://www.instagram.com/concurseirapcd" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;margin-top:16px;color:#e5eee9;font-weight:700;font-size:.9rem;">📸 @concurseirapcd</a></div>
+    <div><strong>Links úteis</strong><a href="politica.html">Política de Privacidade</a><a href="aviso-afiliados.html">Aviso de Afiliados</a><a href="contato.html">Contato</a></div>
+  </div>
+  <div class="container footer-bottom"><span>© 2025 Concurseira PCD · Pâmela Dayane</span></div>
+</footer>
+<script src="assets/js/script.js"><\/script>
+</body>
+</html>`;
+
+    document.getElementById('generated-code').textContent = `=== COLE ESTE TRECHO NO BLOG (blog.html) ===\n\n${cardCode}\n\n\n=== E CRIE ESTE ARQUIVO NOVO: post-${slug}.html ===\n\n${fullPageCode}`;
+    document.getElementById('code-section').style.display = 'block';
+    document.getElementById('code-section').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function copyCode() {
+    const code = document.getElementById('generated-code').textContent;
+    navigator.clipboard.writeText(code).then(() => {
+      const btn = document.getElementById('copy-btn');
+      btn.textContent = '✓ Copiado!';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = '📋 Copiar código'; btn.classList.remove('copied'); }, 2500);
+    });
+  }
+
+  function clearForm() {
+    ['post-title','post-intro','content-editor','post-date'].forEach(id => document.getElementById(id).value = '');
+    document.getElementById('post-category').value = '';
+    document.getElementById('code-section').style.display = 'none';
+    updatePreview();
+  }
+
+  // Live preview listeners
+  ['post-title','post-category','post-intro','content-editor','post-date'].forEach(id => {
+    document.getElementById(id).addEventListener('input', updatePreview);
+  });
+
+  // Define data padrão
+  document.getElementById('post-date').valueAsDate = new Date();
+  updatePreview();
+</script>
+</body>
+</html>
