@@ -110,7 +110,7 @@ h1, h2 { font-family: var(--font-display); }
   font-style: normal;
   font-weight: 400;
   color: var(--gold);
-  font-size: 0.82rem;
+  font-size: 0.92rem;
   letter-spacing: .02em;
 }
 
@@ -684,6 +684,221 @@ h1, h2 { font-family: var(--font-display); }
 /* ─── PRODUCTS ─── */
 .product .btn { margin-top: 14px; }
 
+/* ─── NEWS CARDS ─── */
+.news-grid { display: flex; flex-direction: column; gap: 32px; }
+.news-card {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 36px 40px;
+  transition: box-shadow .25s var(--ease);
+}
+.news-card:hover { box-shadow: var(--shadow); }
+.news-card--featured { border-left: 5px solid var(--green-dark); }
+.news-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.news-date { font-size: .8rem; color: var(--muted); margin-left: auto; }
+.news-title {
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 12px;
+  line-height: 1.25;
+}
+.news-intro {
+  font-size: 1.02rem;
+  color: var(--muted);
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--green-mid);
+  padding-bottom: 20px;
+}
+.news-body h3 { font-size: 1rem; font-weight: 700; color: var(--green-dark); margin: 22px 0 8px; }
+.news-body ul { padding-left: 1.2em; color: var(--muted); }
+.news-body li { margin-bottom: 5px; font-size: .94rem; }
+.news-body p  { color: var(--muted); font-size: .95rem; }
+.news-highlight {
+  background: var(--green-soft);
+  border: 1.5px solid var(--green-mid);
+  border-radius: var(--radius-sm);
+  padding: 20px 24px;
+  margin: 20px 0;
+}
+.news-highlight.pcd { border-color: var(--gold); background: #fdf8ef; }
+.news-highlight h3 { margin-top: 0; color: var(--ink); }
+.news-footer {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--green-mid);
+}
+.news-tag {
+  font-size: .75rem;
+  font-weight: 700;
+  background: var(--green-soft);
+  color: var(--green-dark);
+  border: 1.5px solid var(--green-mid);
+  border-radius: 20px;
+  padding: 3px 12px;
+  letter-spacing: .02em;
+}
+.pill-alert { background: #fff3e0; color: #b45309; border-color: #fbbf24; }
+@media (max-width: 640px) {
+  .news-card { padding: 24px 20px; }
+  .news-title { font-size: 1.25rem; }
+  .news-date { margin-left: 0; width: 100%; }
+}
+
+/* ─── TIMELINE ─── */
+.timeline {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 8px 0;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 18px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--green-mid);
+}
+.timeline-item {
+  position: relative;
+  padding-left: 56px;
+  margin-bottom: 40px;
+}
+.timeline-item:last-child { margin-bottom: 0; }
+.timeline-dot {
+  position: absolute;
+  left: 10px;
+  top: 4px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--green-dark);
+  border: 3px solid var(--green-mid);
+}
+.timeline-year {
+  display: inline-block;
+  font-size: .78rem;
+  font-weight: 700;
+  color: var(--green-dark);
+  background: var(--green-soft);
+  border: 1.5px solid var(--green-mid);
+  border-radius: 20px;
+  padding: 2px 12px;
+  margin-bottom: 8px;
+  letter-spacing: .03em;
+}
+.timeline-content h3 { font-size: 1.1rem; margin-bottom: 6px; color: var(--ink); }
+.timeline-content p  { color: var(--muted); font-size: .95rem; }
+.timeline-photo {
+  margin-top: 14px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  max-width: 380px;
+}
+.timeline-photo img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+.photo-caption {
+  display: block;
+  font-size: .78rem;
+  color: var(--muted);
+  padding: 6px 10px;
+  background: var(--green-soft);
+  font-style: italic;
+}
+
+/* ─── INSTAGRAM CARD ─── */
+.instagram-card {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  background: #ffffff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 32px 36px;
+  max-width: 720px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.instagram-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  padding: 3px;
+}
+.instagram-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+.instagram-info { flex: 1; min-width: 200px; }
+.instagram-handle {
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--ink);
+  margin: 0 0 2px;
+}
+.instagram-name {
+  color: var(--muted);
+  font-size: .88rem;
+  margin: 0 0 10px;
+}
+.instagram-stats {
+  display: flex;
+  gap: 20px;
+  font-size: .85rem;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.instagram-stats strong { color: var(--ink); }
+.instagram-bio {
+  font-size: .83rem;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.5;
+}
+.btn-instagram {
+  display: inline-block;
+  padding: 11px 26px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: .9rem;
+  text-align: center;
+  white-space: nowrap;
+  transition: opacity .2s var(--ease), transform .2s var(--ease);
+}
+.btn-instagram:hover { opacity: .88; transform: translateY(-2px); }
+@media (max-width: 640px) {
+  .instagram-card { padding: 24px 20px; gap: 18px; }
+  .btn-instagram { width: 100%; }
+  .timeline::before { left: 12px; }
+  .timeline-item { padding-left: 40px; }
+  .timeline-dot { left: 4px; }
+}
+
 /* ─── FOOTER ─── */
 .site-footer {
   background: #1d332b;
@@ -1091,7 +1306,7 @@ h1, h2 { font-family: var(--font-display); }
   }
   .logo-mark { width: 50px; height: 50px; }
   .logo-text { font-size: 1.02rem; }
-  .logo-author { font-size: .78rem; }
+  .logo-author { font-size: .86rem; }
 }
 @media (max-width: 640px) {
   .nav-wrapper { min-height: 72px; }
@@ -1099,7 +1314,7 @@ h1, h2 { font-family: var(--font-display); }
   .logo { gap: 10px; }
   .logo-mark { width: 46px; height: 46px; border-radius: 13px; }
   .logo-text { font-size: .98rem; }
-  .logo-author { font-size: .75rem; }
+  .logo-author { font-size: .82rem; }
   .page-title-illustration { width: min(300px, 82vw); }
   .hero-illustration { max-width: min(340px, 86vw); }
 }
