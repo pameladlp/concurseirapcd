@@ -945,6 +945,26 @@ h1, h2 { font-family: var(--font-display); }
 
 /* ─── CONTACT ─── */
 .contact-form { box-shadow: var(--shadow); }
+.form-success {
+  background: #edf7f2;
+  border: 1.5px solid var(--green-mid);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  color: var(--green-dark);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.form-error {
+  background: #fff3f3;
+  border: 1.5px solid #f5a0a0;
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  color: #b91c1c;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.field-error { font-size: .8rem; color: #b91c1c; margin-top: 4px; display: block; }
+[data-fs-submit-btn]:disabled { opacity: .6; cursor: not-allowed; }
 
 /* ─── BACK TO TOP ─── */
 .back-to-top {

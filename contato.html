@@ -31,7 +31,24 @@
 </header>
 <main>
 <section class="page-hero"><div class="container page-title-row"><div class="page-title-copy"><p class="eyebrow">Contato</p><h1>Fale com o projeto Concurseira PCD.</h1><p class="lead">Use esta página para dúvidas, sugestões de conteúdo, parcerias, relatos ou problemas relacionados aos materiais.</p></div><div class="page-title-illustration"><img alt="Ilustração acolhedora sobre contato e comunidade" src="assets/images/illustrations/02_sobre_mim_acolhimento.png"/></div></div></section>
-<section class="section"><div class="container split"><div><p class="eyebrow">Canais</p><h2>Antes de enviar sua mensagem, escolha o melhor caminho.</h2><p>Para sugestões de conteúdo, parcerias e avisos sobre materiais, você pode usar o formulário abaixo ou acompanhar o perfil no Instagram.</p><div class="cards"><article class="card"><h3>Instagram</h3><p>Acompanhe bastidores, dicas rápidas, avisos de materiais e novos conteúdos.</p><a class="text-link" href="https://www.instagram.com/concurseirapcd" rel="noopener" target="_blank">Acessar @concurseirapcd →</a></article><article class="card"><h3>Sugestões de pauta</h3><p>Envie dúvidas sobre estudos, direitos PCD, organização, concursos e rotina real.</p></article></div></div><form class="contact-form"><label>Nome<input placeholder="Seu nome" type="text"/></label><label>E-mail<input placeholder="seuemail@exemplo.com" type="email"/></label><label>Assunto<select><option>Dúvida sobre materiais</option><option>Sugestão de conteúdo</option><option>Parceria</option><option>Problema com compra</option><option>Relato ou sugestão</option><option>Outro assunto</option></select></label><label>Mensagem<textarea placeholder="Escreva sua mensagem" rows="6"></textarea></label><button class="btn btn-primary" type="button">Preparar mensagem</button><small>Formulário visual. Para envio automático, integre depois com Formspree, e-mail, WhatsApp ou outra ferramenta.</small></form></div></section>
+<section class="section"><div class="container split"><div><p class="eyebrow">Canais</p><h2>Antes de enviar sua mensagem, escolha o melhor caminho.</h2><p>Para sugestões de conteúdo, parcerias e avisos sobre materiais, você pode usar o formulário abaixo ou acompanhar o perfil no Instagram.</p><div class="cards"><article class="card"><h3>Instagram</h3><p>Acompanhe bastidores, dicas rápidas, avisos de materiais e novos conteúdos.</p><a class="text-link" href="https://www.instagram.com/concurseirapcd" rel="noopener" target="_blank">Acessar @concurseirapcd →</a></article><article class="card"><h3>Sugestões de pauta</h3><p>Envie dúvidas sobre estudos, direitos PCD, organização, concursos e rotina real.</p></article></div></div><div data-fs-success class="form-success" style="display:none">
+  <p>✅ Mensagem enviada! Responderei em breve.</p>
+</div>
+<div data-fs-error class="form-error" style="display:none">
+  <p>❌ Ocorreu um erro. Tente novamente ou entre em contato pelo Instagram.</p>
+</div>
+<form class="contact-form" id="contact-form">
+  <label>Nome<input name="nome" placeholder="Seu nome" type="text" required/></label>
+  <label>E-mail<input name="email" placeholder="seuemail@exemplo.com" type="email" data-fs-field required/><span data-fs-error="email" class="field-error"></span></label>
+  <label>Assunto<select name="assunto"><option>Dúvida sobre materiais</option><option>Sugestão de conteúdo</option><option>Parceria</option><option>Problema com compra</option><option>Relato ou sugestão</option><option>Outro assunto</option></select></label>
+  <label>Mensagem<textarea name="mensagem" placeholder="Escreva sua mensagem" rows="6" data-fs-field required></textarea><span data-fs-error="mensagem" class="field-error"></span></label>
+  <button class="btn btn-primary" type="submit" data-fs-submit-btn>Enviar mensagem</button>
+</form>
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#contact-form', formId: 'xkoybjlj' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script></div></section>
 </main>
 <footer class="site-footer">
 <div class="container footer-grid">
