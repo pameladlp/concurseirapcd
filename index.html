@@ -92,7 +92,19 @@
 <section class="section newsletter">
 <div class="container newsletter-box">
 <div><p class="eyebrow">Materiais gratuitos</p><h2>Receba ferramentas para organizar seus estudos.</h2><p>Checklists, planners e guias rápidos para tornar sua preparação mais clara e visual.</p></div>
-<form class="signup-form"><label for="nome">Nome</label><input id="nome" name="nome" placeholder="Seu nome" type="text"/><label for="email">E-mail</label><input id="email" name="email" placeholder="seuemail@exemplo.com" type="email"/><button class="btn btn-primary" type="button">Quero receber</button><small>Após integrar sua ferramenta de e-mail, este formulário poderá enviar os materiais automaticamente.</small></form>
+<div id="error-message" class="sib-form-message-panel brevo-msg brevo-error">
+  <p>Não foi possível confirmar sua assinatura. Tente novamente.</p>
+</div>
+<div id="success-message" class="sib-form-message-panel brevo-msg brevo-success">
+  <p>✅ Assinatura confirmada! Em breve você receberá os materiais.</p>
+</div>
+<form id="sib-form" class="signup-form" method="POST" action="https://31d7dd8d.sibforms.com/serve/MUIFAMyXAlmCX9_XmtDqmVzVZ5vA6ADV_EFuvUxW3KB_63v5ezZ-heBwuO0-XRC1Fb0-BtWF02K__W8xK1RHmIJ4aQwEzLSf0C36C7HPThZyU1Zax3mXT4LClWR-7482I3Xrn7xBBJ7J1P4-__Qg4v_DFOeQu2q9OcZYpasot4uPOv7T9IST-6KBUptG133iMRkCidXC-0XxO0omww==" data-type="subscription">
+  <label for="EMAIL">E-mail</label>
+  <input id="EMAIL" name="EMAIL" type="email" placeholder="seuemail@exemplo.com" required autocomplete="off"/>
+  <input type="text" name="email_address_check" value="" style="display:none" aria-hidden="true"/>
+  <input type="hidden" name="locale" value="pt"/>
+  <button class="btn btn-primary" type="submit">Quero receber</button>
+</form>
 </div>
 </section>
 </main>
@@ -115,5 +127,14 @@
 </div>
 </footer>
 <script src="assets/js/script.js"></script>
+<script>
+  window.REQUIRED_CODE_ERROR_MESSAGE = 'Escolha um código de país';
+  window.LOCALE = 'pt';
+  window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "E-mail inválido. Verifique e tente novamente.";
+  window.REQUIRED_ERROR_MESSAGE = "Este campo é obrigatório.";
+  window.GENERIC_INVALID_MESSAGE = "Informação inválida. Verifique e tente novamente.";
+  var AUTOHIDE = Boolean(0);
+</script>
+<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 </body>
 </html>
