@@ -1,0 +1,143 @@
+<svg viewBox="0 0 420 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustração de mulher estudando com livros, plantas e elementos de conquista">
+  <title>Concurseira PCD — estudando com propósito</title>
+  <defs>
+    <clipPath id="card-clip">
+      <rect width="420" height="480" rx="28"/>
+    </clipPath>
+    <radialGradient id="bg-glow" cx="75%" cy="15%" r="55%">
+      <stop offset="0%" stop-color="#9fc9b5" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#edf7f2" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#2f5f4b" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Card background -->
+  <rect width="420" height="480" rx="28" fill="#edf7f2"/>
+  <rect width="420" height="480" rx="28" fill="url(#bg-glow)"/>
+
+  <!-- Decorative circles background -->
+  <circle cx="360" cy="55" r="90" fill="#9fc9b5" opacity="0.22"/>
+  <circle cx="55"  cy="420" r="65" fill="#c2a86b" opacity="0.12"/>
+  <circle cx="380" cy="420" r="40" fill="#9fc9b5" opacity="0.15"/>
+
+  <!-- ─── DESK ─── -->
+  <rect x="40" y="318" width="340" height="14" rx="7" fill="#2f5f4b" filter="url(#soft-shadow)"/>
+  <rect x="80"  y="332" width="12" height="50" rx="6" fill="#244b3b"/>
+  <rect x="328" y="332" width="12" height="50" rx="6" fill="#244b3b"/>
+
+  <!-- ─── BOOKS STACK (right) ─── -->
+  <rect x="272" y="300" width="72" height="10" rx="5" fill="#1d332b"/>
+  <rect x="278" y="278" width="62" height="24" rx="5" fill="#9fc9b5"/>
+  <rect x="274" y="255" width="68" height="24" rx="5" fill="#c2a86b"/>
+  <rect x="270" y="232" width="76" height="24" rx="5" fill="#2f5f4b"/>
+  <!-- Book spines (lines) -->
+  <rect x="283" y="279" width="2" height="22" rx="1" fill="rgba(255,255,255,0.4)"/>
+  <rect x="279" y="256" width="2" height="22" rx="1" fill="rgba(255,255,255,0.3)"/>
+  <rect x="275" y="233" width="2" height="22" rx="1" fill="rgba(255,255,255,0.3)"/>
+
+  <!-- ─── OPEN BOOK (center) ─── -->
+  <!-- Shadow -->
+  <ellipse cx="168" cy="314" rx="88" ry="10" fill="#2f5f4b" opacity="0.1"/>
+  <!-- Left page -->
+  <path d="M80,240 C80,290 130,308 168,314 L168,180 C120,176 80,206 80,240Z" fill="white" stroke="#dde8e3" stroke-width="1"/>
+  <!-- Right page -->
+  <path d="M256,240 C256,290 206,308 168,314 L168,180 C216,176 256,206 256,240Z" fill="#fbf8f1" stroke="#dde8e3" stroke-width="1"/>
+  <!-- Spine -->
+  <line x1="168" y1="180" x2="168" y2="314" stroke="#9fc9b5" stroke-width="2.5"/>
+  <!-- Left page lines -->
+  <line x1="102" y1="228" x2="158" y2="224" stroke="#c5e4d4" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="100" y1="244" x2="156" y2="241" stroke="#c5e4d4" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="100" y1="260" x2="155" y2="258" stroke="#c5e4d4" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="100" y1="276" x2="154" y2="274" stroke="#c5e4d4" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="101" y1="292" x2="153" y2="291" stroke="#c5e4d4" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Right page lines -->
+  <line x1="178" y1="224" x2="234" y2="228" stroke="#c5e4d4" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="180" y1="241" x2="236" y2="244" stroke="#c5e4d4" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="181" y1="258" x2="236" y2="260" stroke="#c5e4d4" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="182" y1="274" x2="236" y2="276" stroke="#c5e4d4" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- Bookmark -->
+  <path d="M228,180 L228,210 L222,204 L216,210 L216,180 Z" fill="#c2a86b"/>
+
+  <!-- ─── PERSON FIGURE ─── -->
+  <!-- Body / torso -->
+  <path d="M130,172 Q130,158 168,158 Q206,158 206,172 L218,316 L118,316 Z" fill="#2f5f4b"/>
+  <!-- Collar detail -->
+  <path d="M155,162 L168,178 L181,162" fill="white" opacity="0.2"/>
+  <!-- Left arm (resting on book) -->
+  <path d="M130,185 C108,200 100,240 106,278" stroke="#d4956a" stroke-width="22" stroke-linecap="round" fill="none"/>
+  <ellipse cx="108" cy="282" rx="14" ry="9" fill="#d4956a"/>
+  <!-- Right arm -->
+  <path d="M206,185 C228,200 234,238 228,270" stroke="#d4956a" stroke-width="20" stroke-linecap="round" fill="none"/>
+  <ellipse cx="226" cy="274" rx="13" ry="8" fill="#d4956a"/>
+  <!-- Neck -->
+  <rect x="158" y="126" width="20" height="36" rx="10" fill="#d4956a"/>
+  <!-- Head -->
+  <ellipse cx="168" cy="108" rx="42" ry="44" fill="#d4956a"/>
+  <!-- Hair -->
+  <path d="M126,98 C126,60 148,50 168,50 C188,50 210,60 210,98
+           C205,72 190,64 168,64 C146,64 131,72 126,98Z" fill="#25352f"/>
+  <!-- Hair volume sides -->
+  <ellipse cx="128" cy="108" rx="8" ry="18" fill="#25352f"/>
+  <ellipse cx="208" cy="108" rx="8" ry="18" fill="#25352f"/>
+  <!-- Hair back/long -->
+  <path d="M127,105 C120,128 122,152 128,168 L136,168 C132,150 130,128 134,108Z" fill="#25352f"/>
+  <path d="M209,105 C216,128 214,152 208,168 L200,168 C204,150 206,128 202,108Z" fill="#25352f"/>
+  <!-- Glasses -->
+  <rect x="145" y="105" width="20" height="14" rx="6" fill="none" stroke="#2f5f4b" stroke-width="2.5"/>
+  <rect x="170" y="105" width="20" height="14" rx="6" fill="none" stroke="#2f5f4b" stroke-width="2.5"/>
+  <line x1="165" y1="112" x2="170" y2="112" stroke="#2f5f4b" stroke-width="2.5"/>
+  <line x1="126" y1="112" x2="145" y2="112" stroke="#2f5f4b" stroke-width="2" stroke-linecap="round"/>
+  <line x1="190" y1="112" x2="208" y2="112" stroke="#2f5f4b" stroke-width="2" stroke-linecap="round"/>
+  <!-- Eyes (behind glasses) -->
+  <circle cx="155" cy="112" r="3.5" fill="#25352f"/>
+  <circle cx="180" cy="112" r="3.5" fill="#25352f"/>
+  <!-- Smile -->
+  <path d="M158,126 Q168,135 178,126" stroke="#25352f" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <!-- Earrings -->
+  <circle cx="126" cy="118" r="4" fill="#c2a86b"/>
+  <circle cx="210" cy="118" r="4" fill="#c2a86b"/>
+
+  <!-- ─── PLANT (left) ─── -->
+  <rect x="56" y="292" width="10" height="26" rx="5" fill="#244b3b"/>
+  <ellipse cx="61" cy="283" rx="18" ry="14" fill="#9fc9b5"/>
+  <ellipse cx="47" cy="290" rx="13" ry="10" fill="#2f5f4b"/>
+  <ellipse cx="75" cy="288" rx="13" ry="10" fill="#2f5f4b"/>
+  <ellipse cx="61" cy="275" rx="10" ry="8"  fill="#244b3b"/>
+  <!-- Pot -->
+  <path d="M50,318 L52,304 L72,304 L74,318Z" fill="#c2a86b"/>
+  <rect x="48" y="316" width="28" height="5" rx="2.5" fill="#a8904e"/>
+
+  <!-- ─── FLOATING BADGES ─── -->
+  <!-- Achievement badge — top right -->
+  <rect x="316" y="82" width="80" height="44" rx="14" fill="white" filter="url(#soft-shadow)"/>
+  <circle cx="336" cy="104" r="14" fill="#2f5f4b"/>
+  <path d="M329,104 L334,110 L344,96" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <text x="354" y="100" font-family="Arial, sans-serif" font-size="9" font-weight="700" fill="#2f5f4b">TRF1</text>
+  <text x="354" y="113" font-family="Arial, sans-serif" font-size="8" fill="#61726b">Aprovada ✓</text>
+
+  <!-- Star badge — top left -->
+  <rect x="24" y="148" width="54" height="44" rx="14" fill="white" filter="url(#soft-shadow)"/>
+  <text x="51" y="168" text-anchor="middle" font-size="18">⭐</text>
+  <text x="51" y="184" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="700" fill="#61726b">OAB</text>
+
+  <!-- Pencil badge — floating right -->
+  <rect x="342" y="192" width="56" height="42" rx="14" fill="#2f5f4b" filter="url(#soft-shadow)"/>
+  <text x="370" y="210" text-anchor="middle" font-size="16">✏️</text>
+  <text x="370" y="226" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="700" fill="white">Estudo</text>
+
+  <!-- ─── BOTTOM TAG ─── -->
+  <rect x="60" y="376" width="300" height="62" rx="16" fill="white" filter="url(#soft-shadow)"/>
+  <!-- Colored left bar -->
+  <rect x="60" y="376" width="6" height="62" rx="3" fill="#2f5f4b"/>
+  <text x="200" y="402" text-anchor="middle" font-family="Georgia, serif" font-size="14" font-weight="700" fill="#1d332b">Concurseira PCD</text>
+  <text x="200" y="422" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#61726b">Estudo · Organização · Inclusão</text>
+
+  <!-- Decorative dots -->
+  <circle cx="48"  cy="260" r="5" fill="#9fc9b5" opacity="0.7"/>
+  <circle cx="36"  cy="278" r="3" fill="#c2a86b" opacity="0.6"/>
+  <circle cx="370" cy="300" r="4" fill="#9fc9b5" opacity="0.6"/>
+  <circle cx="384" cy="316" r="6" fill="#c2a86b" opacity="0.35"/>
+  <circle cx="358" cy="330" r="3" fill="#2f5f4b" opacity="0.3"/>
+</svg>
