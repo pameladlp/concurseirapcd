@@ -1,5 +1,5 @@
 /* ─── GOOGLE FONTS ─── */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap');
 
 /* ─── TOKENS ─── */
 :root {
@@ -105,13 +105,13 @@ h1, h2 { font-family: var(--font-display); }
   font-family: var(--font-body);
 }
 .logo-author {
-  margin-top: 5px;
-  font-family: var(--font-display);
-  font-style: italic;
-  font-weight: 700;
+  margin-top: 2px;
+  font-family: 'Dancing Script', cursive;
+  font-style: normal;
+  font-weight: 400;
   color: var(--gold);
-  font-size: .94rem;
-  letter-spacing: .01em;
+  font-size: 1.05rem;
+  letter-spacing: .02em;
 }
 
 .main-nav {
@@ -172,7 +172,7 @@ h1, h2 { font-family: var(--font-display); }
 
 /* ─── HERO ─── */
 .hero {
-  padding: 80px 0 72px;
+  padding: 48px 0 52px;
   background:
     radial-gradient(ellipse at 80% 0%,   rgba(159,201,181,.45) 0%, transparent 52%),
     radial-gradient(ellipse at 0%  100%, rgba(194,168,107,.12) 0%, transparent 48%),
@@ -196,7 +196,7 @@ h1, h2 { font-family: var(--font-display); }
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   gap: 48px;
-  align-items: center;
+  align-items: start;
 }
 
 .hero h1, .page-hero h1 {
