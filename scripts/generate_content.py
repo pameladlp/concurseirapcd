@@ -259,16 +259,20 @@ def buscar_pauta_inclusao() -> dict | None:
     return buscar_em_feeds(RSS_INCLUSAO + FONTES_LEGAIS, keywords_pcd)
 
 
-def chamar_gemini(prompt: str) -> str:
-    response = _gemini_client.models.generate_content(
-        model=GEMINI_MODEL,
-        contents=prompt,
-    )
-    texto = response.text.strip()
-    texto = re.sub(r"```html\n?", "", texto)
-    texto = re.sub(r"```\n?", "", texto)
-    texto = remover_travessao(texto)
-    return texto
+def chamar_gemini(prompt: str) -> str | None:
+    try:
+        response = _gemini_client.models.generate_content(
+            model=GEMINI_MODEL,
+            contents=prompt,
+        )
+        texto = response.text.strip()
+        texto = re.sub(r"```html\n?", "", texto)
+        texto = re.sub(r"```\n?", "", texto)
+        texto = remover_travessao(texto)
+        return texto
+    except Exception as e:
+        print(f"  Gemini falhou: {e}")
+        return None
 
 
 def inserir_no_html(arquivo: Path, marcador: str, novo_bloco: str) -> bool:
@@ -405,6 +409,9 @@ Gere este bloco HTML:
 </article>
 """
     html = chamar_gemini(prompt)
+    if not html:
+        print("  Gemini nao retornou conteudo. Pulando noticia.")
+        return
     arquivo = ROOT / "noticias.html"
     wrapper = (
         f'\n<section class="section"><div class="container">'
@@ -466,6 +473,9 @@ Gere este bloco HTML:
 </article>
 """
     html = chamar_gemini(prompt)
+    if not html:
+        print("  Gemini nao retornou conteudo. Pulando Direitos PCD.")
+        return
     inserir_no_html(ROOT / "direitos-pcd.html", "<!-- CONTEUDO_AUTO_DIREITOS -->", html)
     print("  Direitos PCD inserido.")
 
@@ -514,6 +524,9 @@ Gere este bloco HTML completo:
 </article>
 """
     html = chamar_gemini(prompt)
+    if not html:
+        print("  Gemini nao retornou conteudo. Pulando Achadinho.")
+        return
 
     # Insere bloco de produto antes do fechamento do article
     if produto and "</article>" in html:
