@@ -30,9 +30,9 @@ TODAY_STR = TODAY.strftime("%d/%m/%Y")
 TODAY_ISO = TODAY.isoformat()
 
 _gemini_client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
-GEMINI_MODEL = "gemini-2.0-flash"
+GEMINI_MODEL = "gemini-2.0-flash-lite"
 
-SHOPEE_APP_ID = "1867320859"
+SHOPEE_APP_ID = "18367320859"
 URL_PUBLICADAS_FILE = Path(__file__).parent / "published_urls.txt"
 
 REGRAS_GERAIS = """
