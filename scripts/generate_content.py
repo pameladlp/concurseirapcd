@@ -10,7 +10,7 @@ Regras de conteúdo:
 - Proibido: travessão (--), dados inventados, afirmações sem fonte, conteúdo repetido.
 """
 
-import google.generativeai as genai
+from google import genai
 import feedparser
 import hashlib
 import hmac
@@ -29,8 +29,8 @@ TODAY = date.today()
 TODAY_STR = TODAY.strftime("%d/%m/%Y")
 TODAY_ISO = TODAY.isoformat()
 
-genai.configure(api_key=os.environ["GEMINI_API_KEY"])
-model = genai.GenerativeModel("gemini-1.5-flash")
+_gemini_client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
+GEMINI_MODEL = "gemini-2.0-flash"
 
 SHOPEE_APP_ID = "1867320859"
 URL_PUBLICADAS_FILE = Path(__file__).parent / "published_urls.txt"
@@ -260,7 +260,10 @@ def buscar_pauta_inclusao() -> dict | None:
 
 
 def chamar_gemini(prompt: str) -> str:
-    response = model.generate_content(prompt)
+    response = _gemini_client.models.generate_content(
+        model=GEMINI_MODEL,
+        contents=prompt,
+    )
     texto = response.text.strip()
     texto = re.sub(r"```html\n?", "", texto)
     texto = re.sub(r"```\n?", "", texto)

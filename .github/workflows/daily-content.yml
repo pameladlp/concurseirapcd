@@ -24,7 +24,7 @@ jobs:
           python-version: '3.11'
 
       - name: Instalar dependências
-        run: pip install google-generativeai feedparser requests
+        run: pip install google-genai feedparser requests
 
       - name: Gerar e publicar conteúdo
         env:
