@@ -13,12 +13,10 @@ Regras de conteúdo:
 from google import genai
 import feedparser
 import hashlib
-import hmac
 import json
 import os
 import re
 import requests
-import secrets
 import time
 from datetime import date
 from pathlib import Path
@@ -297,7 +295,6 @@ def gerar_link_afiliada_shopee(url_produto: str) -> str:
 
     url_limpa = url_produto.split("?")[0]
     timestamp = str(int(time.time()))
-    nonce = secrets.token_hex(16)  # 32 chars hex aleatório
 
     payload = json.dumps({
         "query": "mutation generateShortLink($input: GenerateShortLinkInput!) { generateShortLink(input: $input) { shortLink } }",
@@ -309,19 +306,14 @@ def gerar_link_afiliada_shopee(url_produto: str) -> str:
         }
     }, separators=(',', ':'))
 
-    # Assinatura: HMAC-SHA256(secret, app_id + nonce + timestamp + payload)
-    base_string = SHOPEE_APP_ID + nonce + timestamp + payload
-    signature = hmac.new(
-        app_secret.encode("utf-8"),
-        base_string.encode("utf-8"),
-        hashlib.sha256
-    ).hexdigest()
+    # Assinatura: SHA256 simples (não HMAC) de app_id + timestamp + payload + secret
+    factor = SHOPEE_APP_ID + timestamp + payload + app_secret
+    signature = hashlib.sha256(factor.encode("utf-8")).hexdigest()
 
     headers = {
         "Content-Type": "application/json",
         "Authorization": (
             f"SHA256 Credential={SHOPEE_APP_ID},"
-            f"NonceStr={nonce},"
             f"Timestamp={timestamp},"
             f"Signature={signature}"
         ),
