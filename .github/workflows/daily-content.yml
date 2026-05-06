@@ -38,6 +38,11 @@ jobs:
           git config user.email "bot@concurseirapcd.com.br"
           git add noticias.html direitos-pcd.html achadinhos.html index.html
           [ -f scripts/published_urls.txt ] && git add scripts/published_urls.txt || true
-          git diff --staged --quiet || git commit -m "📰 Conteúdo automático $(date '+%d/%m/%Y')"
-          git pull --rebase origin main
+          if git diff --staged --quiet; then
+            echo "Nenhum conteúdo novo. Nada a publicar."
+            exit 0
+          fi
+          git commit -m "📰 Conteúdo automático $(date '+%d/%m/%Y')"
+          git fetch origin main
+          git rebase origin/main
           git push
