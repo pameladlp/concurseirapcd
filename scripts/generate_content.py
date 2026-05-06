@@ -97,61 +97,61 @@ TOPICOS_PCD = [
 PRODUTOS_SHOPEE = [
     {
         "nome": "Cadeira de Escritório Diretor Vegas com Apoio",
-        "url": "https://shopee.com.br/Cadeira-de-Escrit%C3%B3rio-Diretor-Oficial-Vegas-com-Apoio-i.682804575.22298161342",
+        "url": "https://s.shopee.com.br/9ALEt4kDw9",
         "descricao": "Cadeira com apoio de braços e encosto regulável, indicada para longas sessões de estudo.",
         "keywords": ["cadeira", "ergonomica", "escritorio", "postura"],
     },
     {
         "nome": "Luminária com Controle Remoto e Base Magnética Recarregável",
-        "url": "https://shopee.com.br/Lumin%C3%A1ria-de-Controle-Remoto-e-Base-Magn%C3%A9tica-Toque-Recarreg%C3%A1vel-com-3-Temperaturas-de-Cor-pr%C3%A1tico-i.1521699574.22099144556",
+        "url": "https://s.shopee.com.br/8fOyI9m7x4",
         "descricao": "Luminária recarregável com 3 temperaturas de cor e controle remoto, sem necessidade de fio.",
         "keywords": ["luminaria", "iluminacao", "luz", "lampada", "mesa"],
     },
     {
         "nome": "Escrivaninha Estilo Industrial 110cm",
-        "url": "https://shopee.com.br/Escrivaninha-Mesa-Office-Estudo-Estilo-Industrial-110cm-KLM-M%C3%B3veis-i.1252074914.26586090555",
+        "url": "https://s.shopee.com.br/8piOUSlUc7",
         "descricao": "Mesa de estudos estilo industrial com 110cm, ideal para organizar monitor, livros e materiais.",
         "keywords": ["mesa", "escrivaninha", "organizador", "organizadores"],
     },
     {
         "nome": "Suporte para Livros, Apostilas e Tablets",
-        "url": "https://shopee.com.br/Suporte-Para-Livros-Apostilas-Tablets-Concurseiros-Leitura-i.293006935.7945195752",
+        "url": "https://s.shopee.com.br/8Km7tXnOd2",
         "descricao": "Suporte ajustável para leitura e estudo, compatível com livros, apostilas e tablets.",
         "keywords": ["suporte", "notebook", "livro", "apostila", "tablet", "leitura", "postura"],
     },
     {
         "nome": "Caderno Inteligente Recarregável A5/B5",
-        "url": "https://shopee.com.br/Caderno-Inteligente-Recarregavel-A5-B5-Grande-Capa-Dura-80-Folhas-soltas-Desenho-e-Estudos-i.1366839880.23694232061",
+        "url": "https://s.shopee.com.br/8V5Y5qmlI5",
         "descricao": "Caderno com folhas soltas removíveis e recarregáveis, capa dura e argolas.",
         "keywords": ["caderno", "digitalizavel", "inteligente", "folhas"],
     },
     {
         "nome": "Marca-Texto Faber-Castell Grifpen 4 Cores",
-        "url": "https://shopee.com.br/Marca-Texto-FABER-CASTELL-Grifpen-4-Cores-Marcador-Destacar-Faber-Castell-i.1676312660.22994847230",
+        "url": "https://s.shopee.com.br/30kbXn3KEu",
         "descricao": "Kit com 4 cores de marca-texto da Faber-Castell, ponta dupla e tinta de baixo odor.",
         "keywords": ["marca", "texto", "grifpen", "faber", "flashcard", "revisao", "anki"],
     },
     {
         "nome": "Marca-Texto Adesivo em Fita",
-        "url": "https://shopee.com.br/Marca-Texto-Adesivo-Fina-Em-Fita-Kit-1-3-5-Cartelas-140x5mm-Cartela-160-Fitas-i.1526010563.23498819670",
+        "url": "https://s.shopee.com.br/3B41k62gtx",
         "descricao": "Marca-texto em fita adesiva removível: não borra, não atravessa o papel e é reutilizável.",
         "keywords": ["fita", "adesivo", "papelaria", "mao", "acessivel"],
     },
     {
         "nome": "Kit Papelaria 40-60 itens Vintage",
-        "url": "https://shopee.com.br/Kit-papelaria-40-60-itens-Vintage-scrapbook-bullet-journal-diversos-i.407866840.22097330042",
+        "url": "https://s.shopee.com.br/2g7l9B4aus",
         "descricao": "Kit variado com washi tapes, adesivos e marcadores para bullet journal e organização de caderno.",
         "keywords": ["papelaria", "kit", "bullet", "scrapbook", "mao", "acessivel"],
     },
     {
         "nome": "Bloco Post-It Notas Adesivas Transparentes 75x75mm",
-        "url": "https://shopee.com.br/Bloco-Post-It-50-Unidades-Notas-Adesivas-Transparentes-75mm-x-75mm-Escola-Escrit%C3%B3rio-Bloquinho-Anota%C3%A7%C3%B5es-i.699088776.22120186028",
+        "url": "https://s.shopee.com.br/2qRBLU3xZv",
         "descricao": "Notas adesivas transparentes para marcar trechos sem cobrir o texto original do livro.",
         "keywords": ["post", "nota", "revisao", "anki", "flashcard"],
     },
     {
         "nome": "Apontador Elétrico Automático de Mesa",
-        "url": "https://shopee.com.br/Apontador-el%C3%A9trico-autom%C3%A1tico-de-mesa-adequado-para-uso-em-escolas-estudantes-e-escrit%C3%B3rios(adequado-para-6-8-mm)-i.1420699091.40652678300",
+        "url": "https://s.shopee.com.br/50VfvSviBM",
         "descricao": "Apontador elétrico automático para canetas 6-8mm, prático para quem tem mobilidade reduzida.",
         "keywords": ["apontador", "eletrico", "acessivel"],
     },
@@ -288,6 +288,11 @@ def inserir_no_html(arquivo: Path, marcador: str, novo_bloco: str) -> bool:
 
 def gerar_link_afiliada_shopee(url_produto: str) -> str:
     """Gera link curto de afiliada Shopee. Retorna URL original se falhar."""
+    # Se já é link curto de afiliada (s.shopee.com.br), usa direto
+    if url_produto.startswith("https://s.shopee.com.br/"):
+        print(f"  Link afiliada ja disponivel: {url_produto}")
+        return url_produto
+
     app_secret = os.environ.get("SHOPEE_SECRET_KEY", "")
     if not app_secret:
         print("  SHOPEE_SECRET_KEY nao definido. Usando URL original.")
