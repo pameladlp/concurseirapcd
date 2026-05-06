@@ -36,7 +36,7 @@ jobs:
         run: |
           git config user.name "Concurseira PCD Bot"
           git config user.email "bot@concurseirapcd.com.br"
-          git add noticias.html direitos-pcd.html achadinhos.html
+          git add noticias.html direitos-pcd.html achadinhos.html index.html
           [ -f scripts/published_urls.txt ] && git add scripts/published_urls.txt || true
           git diff --staged --quiet || git commit -m "📰 Conteúdo automático $(date '+%d/%m/%Y')"
           git push

@@ -78,6 +78,17 @@
 </div>
 </div>
 </section>
+<section class="section section-soft">
+<div class="container">
+<div class="section-heading"><p class="eyebrow">Novas publicações</p><h2>O que saiu por aqui</h2></div>
+<div class="cards three">
+<!-- CONTEUDO_AUTO_HOME -->
+<article class="card"><h3><a href="noticias.html">Notícias de Concursos</a></h3><p>Editais, alertas PCD e atualizações publicados com resumo objetivo e pontos de atenção.</p><a class="text-link" href="noticias.html">Ver notícias →</a></article>
+<article class="card"><h3><a href="direitos-pcd.html">Direitos PCD</a></h3><p>Informação clara sobre legislação, benefícios, concursos e como acessar seus direitos.</p><a class="text-link" href="direitos-pcd.html">Ver direitos →</a></article>
+<article class="card"><h3><a href="achadinhos.html">Achadinhos de Estudo</a></h3><p>Recursos para tornar sua rotina mais confortável, organizada e acessível.</p><a class="text-link" href="achadinhos.html">Ver achadinhos →</a></article>
+</div>
+</div>
+</section>
 <section class="section">
 <div class="container split">
 <div>
@@ -92,19 +103,21 @@
 <section class="section newsletter">
 <div class="container newsletter-box">
 <div><p class="eyebrow">Materiais gratuitos</p><h2>Receba ferramentas para organizar seus estudos.</h2><p>Checklists, planners e guias rápidos para tornar sua preparação mais clara e visual.</p></div>
-<div id="error-message" class="sib-form-message-panel brevo-msg brevo-error">
-  <p>Não foi possível confirmar sua assinatura. Tente novamente.</p>
+<div class="newsletter-form-wrap">
+  <div id="error-message" class="sib-form-message-panel brevo-msg brevo-error" style="display:none">
+    <p>Não foi possível confirmar sua assinatura. Tente novamente.</p>
+  </div>
+  <div id="success-message" class="sib-form-message-panel brevo-msg brevo-success" style="display:none">
+    <p>✅ Assinatura confirmada! Em breve você receberá os materiais.</p>
+  </div>
+  <form id="sib-form" class="signup-form" method="POST" action="https://31d7dd8d.sibforms.com/serve/MUIFAMyXAlmCX9_XmtDqmVzVZ5vA6ADV_EFuvUxW3KB_63v5ezZ-heBwuO0-XRC1Fb0-BtWF02K__W8xK1RHmIJ4aQwEzLSf0C36C7HPThZyU1Zax3mXT4LClWR-7482I3Xrn7xBBJ7J1P4-__Qg4v_DFOeQu2q9OcZYpasot4uPOv7T9IST-6KBUptG133iMRkCidXC-0XxO0omww==" data-type="subscription">
+    <label for="EMAIL">E-mail</label>
+    <input id="EMAIL" name="EMAIL" type="email" placeholder="seuemail@exemplo.com" required autocomplete="off"/>
+    <input type="text" name="email_address_check" value="" style="display:none" aria-hidden="true"/>
+    <input type="hidden" name="locale" value="pt"/>
+    <button class="btn btn-primary" type="submit">Quero receber</button>
+  </form>
 </div>
-<div id="success-message" class="sib-form-message-panel brevo-msg brevo-success">
-  <p>✅ Assinatura confirmada! Em breve você receberá os materiais.</p>
-</div>
-<form id="sib-form" class="signup-form" method="POST" action="https://31d7dd8d.sibforms.com/serve/MUIFAMyXAlmCX9_XmtDqmVzVZ5vA6ADV_EFuvUxW3KB_63v5ezZ-heBwuO0-XRC1Fb0-BtWF02K__W8xK1RHmIJ4aQwEzLSf0C36C7HPThZyU1Zax3mXT4LClWR-7482I3Xrn7xBBJ7J1P4-__Qg4v_DFOeQu2q9OcZYpasot4uPOv7T9IST-6KBUptG133iMRkCidXC-0XxO0omww==" data-type="subscription">
-  <label for="EMAIL">E-mail</label>
-  <input id="EMAIL" name="EMAIL" type="email" placeholder="seuemail@exemplo.com" required autocomplete="off"/>
-  <input type="text" name="email_address_check" value="" style="display:none" aria-hidden="true"/>
-  <input type="hidden" name="locale" value="pt"/>
-  <button class="btn btn-primary" type="submit">Quero receber</button>
-</form>
 </div>
 </section>
 </main>

@@ -18,6 +18,7 @@ import json
 import os
 import re
 import requests
+import secrets
 import time
 from datetime import date
 from pathlib import Path
@@ -30,7 +31,7 @@ TODAY_STR = TODAY.strftime("%d/%m/%Y")
 TODAY_ISO = TODAY.isoformat()
 
 _gemini_client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
-GEMINI_MODEL = "gemini-2.0-flash-lite"
+GEMINI_MODEL = "gemini-2.5-flash"
 
 SHOPEE_APP_ID = "18367320859"
 URL_PUBLICADAS_FILE = Path(__file__).parent / "published_urls.txt"
@@ -295,8 +296,8 @@ def gerar_link_afiliada_shopee(url_produto: str) -> str:
         return url_produto
 
     url_limpa = url_produto.split("?")[0]
-    timestamp = int(time.time())
-    nonce = hashlib.md5(f"{SHOPEE_APP_ID}{timestamp}".encode()).hexdigest()[:8]
+    timestamp = str(int(time.time()))
+    nonce = secrets.token_hex(16)  # 32 chars hex aleatório
 
     payload = json.dumps({
         "query": "mutation generateShortLink($input: GenerateShortLinkInput!) { generateShortLink(input: $input) { shortLink } }",
@@ -308,7 +309,8 @@ def gerar_link_afiliada_shopee(url_produto: str) -> str:
         }
     }, separators=(',', ':'))
 
-    base_string = f"{SHOPEE_APP_ID}{nonce}{timestamp}{payload}"
+    # Assinatura: HMAC-SHA256(secret, app_id + nonce + timestamp + payload)
+    base_string = SHOPEE_APP_ID + nonce + timestamp + payload
     signature = hmac.new(
         app_secret.encode("utf-8"),
         base_string.encode("utf-8"),
@@ -420,6 +422,14 @@ Gere este bloco HTML:
     if inserir_no_html(arquivo, "<!-- CONTEUDO_AUTO_NOTICIAS -->", wrapper):
         registrar_url_publicada(noticia["link"])
         print("  Noticia inserida.")
+        # Atualiza card na home
+        card_home = (
+            f'<article class="card"><span class="status-pill pill-alert">{TODAY_STR}</span>'
+            f'<h3><a href="noticias.html">Nova noticia de concurso</a></h3>'
+            f'<p>{noticia["titulo"][:120]}</p>'
+            f'<a class="text-link" href="noticias.html">Ler noticia &rarr;</a></article>'
+        )
+        inserir_no_html(ROOT / "index.html", "<!-- CONTEUDO_AUTO_HOME -->", card_home + "\n")
 
 
 def gerar_direito_pcd():
