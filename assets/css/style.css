@@ -1106,6 +1106,89 @@ h1, h2 { font-family: var(--font-display); }
 .form-success h3 { color: var(--green-dark); margin: 0 0 8px; font-size: 1.1rem; }
 .form-success p  { color: var(--muted); font-size: .92rem; margin: 0; }
 
+/* ─── PUBLICATION CARDS (Novas Publicações) ─── */
+.pub-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.pub-card {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 10px rgba(38,64,53,.08);
+  border: 1px solid rgba(47,95,75,.08);
+  transition: box-shadow .25s var(--ease), transform .25s var(--ease);
+}
+.pub-card:hover {
+  box-shadow: 0 8px 28px rgba(38,64,53,.14);
+  transform: translateY(-3px);
+}
+.pub-card-banner {
+  padding: 22px 22px 18px;
+}
+.pub-banner-news   { background: linear-gradient(135deg, var(--green-dark), #3d7a5e); }
+.pub-banner-rights { background: linear-gradient(135deg, var(--ink), var(--green-dark)); }
+.pub-banner-finds  { background: linear-gradient(135deg, var(--green-dark), #2a4f3d); }
+.pub-category {
+  display: inline-block;
+  font-size: .7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: rgba(255,255,255,.75);
+  margin-bottom: 10px;
+}
+.pub-card-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #fff;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.pub-card-body {
+  padding: 18px 22px 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.pub-card-excerpt {
+  color: var(--muted);
+  font-size: .87rem;
+  line-height: 1.6;
+  flex: 1;
+  margin: 0 0 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.pub-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid rgba(47,95,75,.1);
+}
+.pub-card-date {
+  font-size: .75rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+@media (max-width: 860px) {
+  .pub-grid { grid-template-columns: 1fr; }
+}
+@media (min-width: 560px) and (max-width: 860px) {
+  .pub-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
 /* ─── SCROLL REVEAL ─── */
 .fade-up {
   opacity: 0;

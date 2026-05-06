@@ -422,12 +422,20 @@ Gere este bloco HTML:
     if inserir_no_html(arquivo, "<!-- CONTEUDO_AUTO_NOTICIAS -->", wrapper):
         registrar_url_publicada(noticia["link"])
         print("  Noticia inserida.")
-        # Atualiza card na home
+        # Atualiza card na home (formato editorial pub-card)
+        resumo_curto = noticia["resumo"][:160].strip().rstrip(".") + "..."
         card_home = (
-            f'<article class="card"><span class="status-pill pill-alert">{TODAY_STR}</span>'
-            f'<h3><a href="noticias.html">Nova noticia de concurso</a></h3>'
-            f'<p>{noticia["titulo"][:120]}</p>'
-            f'<a class="text-link" href="noticias.html">Ler noticia &rarr;</a></article>'
+            f'<article class="pub-card">'
+            f'<div class="pub-card-banner pub-banner-news">'
+            f'<span class="pub-category">Notícias · {TODAY_STR}</span>'
+            f'<h3 class="pub-card-title">{noticia["titulo"][:120]}</h3>'
+            f'</div>'
+            f'<div class="pub-card-body">'
+            f'<p class="pub-card-excerpt">{resumo_curto}</p>'
+            f'<div class="pub-card-footer">'
+            f'<span class="pub-card-date">{TODAY_STR}</span>'
+            f'<a class="text-link" href="noticias.html">Ler notícia &rarr;</a>'
+            f'</div></div></article>'
         )
         inserir_no_html(ROOT / "index.html", "<!-- CONTEUDO_AUTO_HOME -->", card_home + "\n")
 
