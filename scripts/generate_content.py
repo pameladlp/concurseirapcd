@@ -380,7 +380,7 @@ Fonte: {noticia['fonte']}
 Link: {noticia['link']}
 Conteudo: {noticia['resumo']}
 
-Gere este bloco HTML:
+Gere este bloco HTML seguindo EXATAMENTE esta estrutura de 4 secoes + fonte:
 
 <article class="news-card news-card--featured">
   <div class="news-card-meta">
@@ -388,18 +388,25 @@ Gere este bloco HTML:
     <span class="status-pill">Concurso</span>
     <time class="news-date" datetime="{TODAY_ISO}">{TODAY_STR}</time>
   </div>
-  <h2 class="news-title">[titulo baseado na fonte]</h2>
-  <p class="news-intro">[2 frases objetivas com o que a noticia traz, sem inventar dados]</p>
+  <h2 class="news-title">[titulo objetivo baseado na fonte, sem inventar]</h2>
   <div class="news-body">
-    <h3>O que a noticia diz</h3>
-    <p>[resumo fiel ao conteudo da fonte, sem acrescentar informacoes]</p>
-    <h3>Pontos de atencao para candidatos PCD</h3>
+    <h3>Resumo em 5 linhas</h3>
+    <p><strong>Orgao:</strong> [nome do orgao, se disponivel, ou "a confirmar"]<br>
+    <strong>Banca:</strong> [nome da banca, se disponivel, ou "a confirmar"]<br>
+    <strong>Cargo(s):</strong> [cargos mencionados, ou "a confirmar"]<br>
+    <strong>Prazo de inscricao:</strong> [prazo, se disponivel, ou "a confirmar"]<br>
+    <strong>Prova:</strong> [data prevista da prova, se disponivel, ou "a confirmar"]</p>
+    <h3>O que muda para sua preparacao</h3>
+    <p>[materias principais do cargo, tempo disponivel ate a prova e estrategia inicial. Use "a confirmar" se o edital ainda nao foi publicado.]</p>
+    <h3>Atencao candidato PCD</h3>
     <ul>
-      <li>[ponto relevante 1, se aplicavel]</li>
-      <li>[ponto relevante 2, se aplicavel]</li>
+      <li>[ponto sobre reserva de vagas PCD, se mencionado, ou orientacao geral sobre acompanhar o edital]</li>
+      <li>[ponto sobre atendimento especial, laudo, avaliacao biopsicossocial ou prazo especifico, se aplicavel]</li>
     </ul>
+    <h3>Proximo passo</h3>
+    <p>[uma das opcoes conforme o momento: baixar o edital / montar o ciclo de estudos / separar documentos PCD / aguardar nova fase. Maximo 2 frases.]</p>
     <h3>Fonte</h3>
-    <p>Noticia publicada por {noticia['fonte']}. <a href="{noticia['link']}" target="_blank" rel="noopener">Leia o original.</a></p>
+    <p>Publicado por {noticia['fonte']}. <a href="{noticia['link']}" target="_blank" rel="noopener">Leia o original.</a></p>
   </div>
   <div class="news-footer">
     <span class="news-tag">[tag1]</span>
