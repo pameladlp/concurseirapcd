@@ -323,7 +323,7 @@ h1, h2 { font-family: var(--font-display); }
 
 /* ─── QUOTE BOX ─── */
 .quote-box {
-  background: #2E1C19 !important;
+  background: #7A4840 !important;
   border: none !important;
   border-radius: var(--radius);
   padding: 36px;
@@ -497,7 +497,7 @@ h1, h2 { font-family: var(--font-display); }
   display: grid;
   grid-template-columns: 1fr .85fr;
   gap: 44px;
-  background: #2E1C19;
+  background: #7A4840;
   color: white;
   border-radius: 32px;
   padding: 52px;
@@ -916,7 +916,7 @@ h1, h2 { font-family: var(--font-display); }
 
 /* ─── FOOTER ─── */
 .site-footer {
-  background: #2E1C19;
+  background: #5C3530;
   color: #F5EDE9;
   padding: 52px 0 0;
 }
@@ -1456,7 +1456,7 @@ h1, h2 { font-family: var(--font-display); }
 .deep-card p, .deep-card li { color: var(--muted); }
 .deep-card ul, .deep-card ol { padding-left: 20px; margin-bottom: 0; }
 .highlight-box {
-  background: #2E1C19;
+  background: #7A4840;
   color: var(--white);
   border-radius: 30px;
   padding: 36px;
