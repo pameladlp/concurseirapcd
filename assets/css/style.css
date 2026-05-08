@@ -3,10 +3,10 @@
 
 /* ─── TOKENS — Soft Feminine Luxury ─── */
 :root {
-  --green:        #A8C3A2;   /* sage verde suave */
+  --green:        #A8C3A2;   /* sage médio — cor de apoio verde */
   --green-dark:   #C98779;   /* rosé terracota — destaque principal */
-  --green-soft:   #FDF0EC;   /* fundo rosé muito claro */
-  --green-mid:    #E8C4BA;   /* rosé médio */
+  --green-soft:   #EAF2E8;   /* sage clarinho — fundo de seções e badges */
+  --green-mid:    #C4D9C1;   /* sage médio — bordas e detalhes verdes */
   --cream:        #F8F3F0;   /* fundo principal off-white rosado */
   --beige:        #F0E8E3;   /* bege quente */
   --gold:         #D4A896;   /* rose-gold suave */
@@ -175,8 +175,8 @@ h1, h2 { font-family: var(--font-display); }
 .hero {
   padding: 48px 0 52px;
   background:
-    radial-gradient(ellipse at 80% 0%,   rgba(201,135,121,.18) 0%, transparent 52%),
-    radial-gradient(ellipse at 0%  100%, rgba(168,195,162,.15) 0%, transparent 48%),
+    radial-gradient(ellipse at 80% 0%,   rgba(168,195,162,.35) 0%, transparent 52%),
+    radial-gradient(ellipse at 0%  100%, rgba(201,135,121,.14) 0%, transparent 48%),
     var(--cream);
   position: relative;
   overflow: hidden;
@@ -187,7 +187,7 @@ h1, h2 { font-family: var(--font-display); }
   width: 520px;
   height: 520px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(201,135,121,.12), transparent 70%);
+  background: radial-gradient(circle, rgba(168,195,162,.2), transparent 70%);
   right: -120px;
   top: -180px;
   pointer-events: none;
@@ -505,7 +505,7 @@ h1, h2 { font-family: var(--font-display); }
   width: 340px;
   height: 340px;
   border-radius: 50%;
-  background: rgba(201,135,121,.14);
+  background: rgba(168,195,162,.14);
   right: -60px;
   bottom: -100px;
   pointer-events: none;
@@ -516,8 +516,8 @@ h1, h2 { font-family: var(--font-display); }
   font-size: clamp(1.6rem, 2.5vw, 2.2rem);
   margin: 0 0 12px;
 }
-.newsletter-box .eyebrow { color: var(--green-mid); }
-.newsletter-box .eyebrow::before { background: rgba(232,196,186,.6); }
+.newsletter-box .eyebrow { color: var(--green); }
+.newsletter-box .eyebrow::before { background: rgba(168,195,162,.6); }
 .newsletter-box > div:first-child > p { color: rgba(255,255,255,.75); margin-bottom: 0; }
 
 /* ─── FORMS ─── */
