@@ -3,10 +3,10 @@
 
 /* ─── TOKENS — Soft Feminine Luxury ─── */
 :root {
-  --green:        #A8C3A2;   /* sage médio — cor de apoio verde */
+  --green:        #6A9E78;   /* sage saturado — ícones, checkmarks, texto verde */
   --green-dark:   #C98779;   /* rosé terracota — destaque principal */
-  --green-soft:   #EAF2E8;   /* sage clarinho — fundo de seções e badges */
-  --green-mid:    #C4D9C1;   /* sage médio — bordas e detalhes verdes */
+  --green-soft:   #DCE9D8;   /* sage visível — fundo de seções alternadas */
+  --green-mid:    #B8D4B3;   /* sage médio — bordas e detalhes verdes */
   --cream:        #F8F3F0;   /* fundo principal off-white rosado */
   --beige:        #F0E8E3;   /* bege quente */
   --gold:         #D4A896;   /* rose-gold suave */
@@ -149,26 +149,28 @@ h1, h2 { font-family: var(--font-display); }
 }
 .nav-toggle:hover { background: #A86056; }
 
-/* ─── EYEBROW ─── */
+/* ─── EYEBROW — pill badge ─── */
 .eyebrow {
-  text-transform: uppercase;
-  letter-spacing: .16em;
-  color: var(--green-dark);
-  font-weight: 700;
-  font-size: .75rem;
-  margin: 0 0 14px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 7px;
+  background: rgba(201,135,121,.13);
+  color: var(--green-dark);
+  font-weight: 600;
+  font-size: .78rem;
+  letter-spacing: .04em;
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin: 0 0 20px;
+  border: 1px solid rgba(201,135,121,.2);
 }
-.eyebrow::before {
-  content: '';
-  display: inline-block;
-  width: 22px;
-  height: 2px;
-  background: var(--gold);
-  border-radius: 2px;
-  flex-shrink: 0;
+.eyebrow::before { display: none; }
+
+/* eyebrow variante sage (para fundos escuros) */
+.eyebrow-sage {
+  background: rgba(168,195,162,.2);
+  color: var(--green);
+  border-color: rgba(168,195,162,.35);
 }
 
 /* ─── HERO ─── */
@@ -232,14 +234,14 @@ h1, h2 { font-family: var(--font-display); }
   justify-content: center;
   gap: 8px;
   border-radius: 999px;
-  padding: 14px 28px;
-  font-weight: 700;
-  font-size: .95rem;
+  padding: 16px 36px;
+  font-weight: 600;
+  font-size: 1rem;
   border: 1.5px solid transparent;
   cursor: pointer;
   transition: all 0.22s var(--ease);
   font-family: var(--font-body);
-  letter-spacing: .01em;
+  letter-spacing: .02em;
 }
 .btn-primary {
   background: var(--green-dark);
@@ -304,18 +306,19 @@ h1, h2 { font-family: var(--font-display); }
 }
 .hero-card ul li::before {
   content: '✓';
-  width: 22px;
-  height: 22px;
-  min-width: 22px;
-  background: var(--green-soft);
-  color: var(--green-dark);
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  background: rgba(106,158,120,.18);
+  color: var(--green);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: .72rem;
+  font-size: .76rem;
   font-weight: 700;
   margin-top: 2px;
+  border: 1.5px solid rgba(106,158,120,.3);
 }
 
 /* ─── QUOTE BOX ─── */
@@ -428,19 +431,21 @@ h1, h2 { font-family: var(--font-display); }
 }
 .feature-card span {
   display: inline-flex;
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
-  background: var(--green-soft);
-  color: var(--green-dark);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(168,195,162,.25);
+  color: var(--green);
   align-items: center;
   justify-content: center;
-  font-weight: 900;
-  font-size: .84rem;
-  margin-bottom: 16px;
+  font-size: 1.3rem;
+  margin-bottom: 18px;
   transition: background 0.22s;
+  border: 1.5px solid rgba(168,195,162,.4);
 }
-.feature-card:hover span { background: var(--green-mid); }
+.feature-card:hover span {
+  background: rgba(168,195,162,.4);
+}
 .feature-card h3 {
   margin: 0 0 10px;
   color: var(--green-dark);
@@ -1242,6 +1247,113 @@ h1, h2 { font-family: var(--font-display); }
   .pub-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
+/* ─── TIPOGRAFIA DE DESTAQUE — estilo referência ─── */
+
+/* texto colorido em rosé dentro de títulos: <em class="accent">palavra</em> */
+.accent {
+  color: var(--green-dark);
+  font-style: italic;
+  font-weight: inherit;
+}
+
+/* texto colorido em sage dentro de títulos: <em class="accent-sage">palavra</em> */
+.accent-sage {
+  color: var(--green);
+  font-style: italic;
+  font-weight: inherit;
+}
+
+/* pill badge pequeno com ícone (ex: "Garantia de 7 dias") */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(201,135,121,.12);
+  color: var(--green-dark);
+  font-size: .82rem;
+  font-weight: 600;
+  padding: 7px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(201,135,121,.22);
+  margin-bottom: 22px;
+  letter-spacing: .02em;
+}
+.badge-pill-sage {
+  background: rgba(106,158,120,.12);
+  color: var(--green);
+  border-color: rgba(106,158,120,.25);
+}
+
+/* card de destaques com borda esquerda sage */
+.sage-card {
+  background: white;
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  border: 1px solid rgba(168,195,162,.3);
+  border-left: 4px solid var(--green);
+  box-shadow: var(--shadow-sm);
+}
+
+/* lista de checklist estilo referência */
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 16px;
+}
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 1rem;
+  color: var(--ink);
+  line-height: 1.55;
+}
+.checklist li::before {
+  content: '✓';
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(106,158,120,.18);
+  color: var(--green);
+  border: 1.5px solid rgba(106,158,120,.32);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .78rem;
+  font-weight: 700;
+  margin-top: 1px;
+}
+
+/* seção com fundo sage verde visível */
+.section-sage {
+  background: var(--green-soft);
+}
+
+/* título de seção centralizado com espaço generoso (estilo referência) */
+.section-title-center {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 48px;
+}
+.section-title-center h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.1;
+  color: var(--ink);
+  font-weight: 600;
+  letter-spacing: -.01em;
+  margin: 0 0 14px;
+}
+.section-title-center p {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
 /* ─── SCROLL REVEAL ─── */
 .fade-up {
   opacity: 0;
@@ -1356,12 +1468,13 @@ h1, h2 { font-family: var(--font-display); }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--green-soft);
-  color: var(--green-dark);
+  background: rgba(106,158,120,.14);
+  color: var(--green);
+  border: 1px solid rgba(106,158,120,.28);
   border-radius: 999px;
-  padding: 8px 14px;
+  padding: 8px 16px;
   font-size: .84rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 .article-body {
   background: var(--white);
@@ -1379,13 +1492,13 @@ h1, h2 { font-family: var(--font-display); }
   display: inline-flex;
   align-items: center;
   border-radius: 999px;
-  background: var(--green-soft);
+  background: rgba(201,135,121,.13);
   color: var(--green-dark);
-  padding: 5px 12px;
+  border: 1px solid rgba(201,135,121,.22);
+  padding: 5px 14px;
   font-size: .76rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: .05em;
+  font-weight: 600;
+  letter-spacing: .04em;
   margin-bottom: 12px;
 }
 .checklist-list { display: grid; gap: 12px; margin-top: 18px; }
