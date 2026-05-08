@@ -753,6 +753,7 @@ h1, h2 { font-family: var(--font-display); }
   letter-spacing: .02em;
 }
 .pill-alert { background: #fff3e0; color: #b45309; border-color: #fbbf24; }
+.pill-green { background: #e6f4ed; color: #0b6e3a; border-color: #5ebc8a; }
 @media (max-width: 640px) {
   .news-card { padding: 24px 20px; }
   .news-title { font-size: 1.25rem; }
