@@ -914,6 +914,26 @@ h1, h2 { font-family: var(--font-display); }
   .timeline-dot { left: 4px; }
 }
 
+/* ─── HISTORIA + TIMELINE — layout split ─── */
+.historia-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.historia-texto { max-width: 100%; }
+.historia-timeline > .eyebrow { margin-bottom: 24px; }
+.historia-split .timeline {
+  max-width: none;
+  margin: 0;
+}
+@media (max-width: 900px) {
+  .historia-split {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
 /* ─── FOOTER ─── */
 .site-footer {
   background: #5C3530;
