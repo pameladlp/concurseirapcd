@@ -98,6 +98,106 @@ if (signupForm) {
   }
 }
 
+/* ─── BOTÃO DE ACESSIBILIDADE FLUTUANTE ─── */
+(function() {
+  const A11Y_KEY = 'cpcd-a11y';
+  const defaults = { fontSize: 'base', contrast: false, spacing: false };
+  let settings = Object.assign({}, defaults);
+
+  try {
+    const saved = JSON.parse(localStorage.getItem(A11Y_KEY) || '{}');
+    settings = Object.assign({}, defaults, saved);
+  } catch(e) {}
+
+  function applySettings() {
+    document.body.classList.remove('a11y-font-lg', 'a11y-font-xl');
+    if (settings.fontSize === 'lg') document.body.classList.add('a11y-font-lg');
+    if (settings.fontSize === 'xl') document.body.classList.add('a11y-font-xl');
+    document.body.classList.toggle('a11y-contrast', settings.contrast);
+    document.body.classList.toggle('a11y-spacing',  settings.spacing);
+  }
+
+  function save() {
+    try { localStorage.setItem(A11Y_KEY, JSON.stringify(settings)); } catch(e) {}
+    applySettings();
+    renderPanel();
+  }
+
+  // criar botão
+  const btn = document.createElement('button');
+  btn.className = 'a11y-btn';
+  btn.setAttribute('aria-label', 'Opções de acessibilidade');
+  btn.setAttribute('aria-expanded', 'false');
+  btn.innerHTML = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="2" r="1"/><path d="M12 7v5l3 3"/><path d="M4.93 4.93l2.83 2.83M19.07 4.93l-2.83 2.83M4.93 19.07l2.83-2.83M19.07 19.07l-2.83-2.83"/><circle cx="12" cy="16" r="6"/></svg>';
+
+  // criar painel
+  const panel = document.createElement('div');
+  panel.className = 'a11y-panel';
+  panel.setAttribute('role', 'dialog');
+  panel.setAttribute('aria-label', 'Opções de acessibilidade');
+
+  function renderPanel() {
+    const sizes = [
+      { val: 'base', label: 'A' },
+      { val: 'lg',   label: 'A+' },
+      { val: 'xl',   label: 'A++' },
+    ];
+    panel.innerHTML = `
+      <h3>Acessibilidade</h3>
+      <div class="a11y-row">
+        <span>Tamanho do texto</span>
+        <div class="a11y-font-btns">
+          ${sizes.map(s => `<button class="a11y-font-btn${settings.fontSize===s.val?' active':''}" data-size="${s.val}" aria-pressed="${settings.fontSize===s.val}">${s.label}</button>`).join('')}
+        </div>
+      </div>
+      <div class="a11y-row">
+        <label><span>🎨</span> Alto contraste</label>
+        <button class="a11y-toggle${settings.contrast?' on':''}" data-toggle="contrast" aria-pressed="${settings.contrast}" aria-label="Alternar alto contraste"></button>
+      </div>
+      <div class="a11y-row">
+        <label><span>📖</span> Espaçamento de leitura</label>
+        <button class="a11y-toggle${settings.spacing?' on':''}" data-toggle="spacing" aria-pressed="${settings.spacing}" aria-label="Alternar espaçamento de leitura"></button>
+      </div>
+      <button class="a11y-reset">↺ Restaurar padrão</button>
+    `;
+
+    panel.querySelectorAll('.a11y-font-btn').forEach(b => {
+      b.addEventListener('click', () => { settings.fontSize = b.dataset.size; save(); });
+    });
+    panel.querySelectorAll('.a11y-toggle').forEach(b => {
+      b.addEventListener('click', () => {
+        const key = b.dataset.toggle;
+        settings[key] = !settings[key];
+        save();
+      });
+    });
+    panel.querySelector('.a11y-reset').addEventListener('click', () => {
+      settings = Object.assign({}, defaults);
+      save();
+    });
+  }
+
+  let isOpen = false;
+  btn.addEventListener('click', () => {
+    isOpen = !isOpen;
+    panel.classList.toggle('open', isOpen);
+    btn.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  document.addEventListener('click', (e) => {
+    if (isOpen && !panel.contains(e.target) && !btn.contains(e.target)) {
+      isOpen = false;
+      panel.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  document.body.appendChild(panel);
+  document.body.appendChild(btn);
+  applySettings();
+  renderPanel();
+})();
+
 /* ─── SCROLL REVEAL ─── */
 const revealSelectors = [
   '.card', '.feature-card', '.post-card',
