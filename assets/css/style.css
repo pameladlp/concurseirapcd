@@ -918,11 +918,17 @@ h1, h2 { font-family: var(--font-display); }
 .historia-split {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 64px;
+  gap: 52px;
   align-items: start;
 }
 .historia-texto { max-width: 100%; }
-.historia-timeline > .eyebrow { margin-bottom: 24px; }
+.historia-timeline-panel {
+  background: var(--green-soft);
+  border-radius: var(--radius);
+  padding: 36px 32px;
+  border: 1px solid var(--green-mid);
+}
+.historia-timeline-panel > .eyebrow { margin-bottom: 24px; }
 .historia-split .timeline {
   max-width: none;
   margin: 0;
