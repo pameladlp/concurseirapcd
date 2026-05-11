@@ -1725,3 +1725,96 @@ h1, h2, h3, h4, h5 {
   color: var(--primary);
   background: color-mix(in oklab, var(--primary) 7%, transparent);
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   NOTICIAS / BLOG / ACHADINHOS — componentes compartilhados
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── Filtros de página (barra acima do grid) ─── */
+.page-filters {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding: 1.25rem 0 1.75rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1.75rem;
+}
+.page-filters-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--muted-fg);
+  margin-right: 0.25rem;
+}
+
+/* ─── Grid de conteúdo (noticias / blog / achadinhos) ─── */
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.35rem;
+}
+
+/* ─── news-dl dentro de artigo-card ─── */
+.artigo-card .news-dl {
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+  border-top: 1px solid var(--border);
+  padding-top: 0.75rem;
+}
+
+/* ─── Leitura tempo (blog) ─── */
+.leitura-tempo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  color: var(--muted-fg);
+  font-style: italic;
+}
+
+/* ─── Produto CTA (achadinhos) ─── */
+.produto-cta {
+  margin-top: auto;
+  padding: 0.9rem 1rem;
+  background: color-mix(in oklab, var(--primary) 7%, transparent);
+  border: 1px solid color-mix(in oklab, var(--primary) 20%, transparent);
+  border-radius: calc(var(--radius) - 2px);
+}
+.produto-origem {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--muted-fg);
+  margin-bottom: 0.35rem;
+}
+.produto-link {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+  line-height: 1.35;
+}
+.produto-link:hover { text-decoration: underline; }
+.afiliado-badge {
+  display: inline-block;
+  margin-top: 0.35rem;
+  font-size: 0.68rem;
+  color: var(--muted-fg);
+  font-style: italic;
+}
+
+/* ─── WhatsApp banner (SVG) ─── */
+.wg-icon { display: flex; align-items: center; flex-shrink: 0; }
+
+/* ─── Responsivo content-grid ─── */
+@media (max-width: 640px) {
+  .content-grid { grid-template-columns: 1fr; }
+  .page-filters { gap: 0.4rem; }
+}
