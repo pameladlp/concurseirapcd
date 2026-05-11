@@ -1697,3 +1697,31 @@ h1, h2, h3, h4, h5 {
 
 /* ─── Conteúdo principal dpcd ─── */
 .dpcd-content { min-width: 0; }
+
+/* ─── Ver mais (cards ocultos) ─── */
+.card-oculto { display: none !important; }
+
+.ver-mais-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.75rem;
+}
+.ver-mais-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.65rem 1.75rem;
+  border-radius: 100px;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  color: var(--fg);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s;
+}
+.ver-mais-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: color-mix(in oklab, var(--primary) 7%, transparent);
+}

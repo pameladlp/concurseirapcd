@@ -152,6 +152,37 @@
     btns.forEach(b => b.classList.toggle('active', b.dataset.size === size));
   }
 
+  /* ─── VER MAIS (limita cards visíveis) ─── */
+  function setupVerMais(containerSel, itemSel, max) {
+    const container = document.querySelector(containerSel);
+    if (!container) return;
+    const allItems = Array.from(container.querySelectorAll(itemSel));
+    if (allItems.length <= max) return;
+
+    // Esconde os que passam do limite
+    allItems.slice(max).forEach(el => el.classList.add('card-oculto'));
+
+    // Cria wrapper e botão
+    const wrap = document.createElement('div');
+    wrap.className = 'ver-mais-wrap';
+    wrap.innerHTML = `
+      <button class="btn ver-mais-btn">
+        Ver mais
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>`;
+    container.after(wrap);
+
+    wrap.querySelector('button').addEventListener('click', () => {
+      container.querySelectorAll('.card-oculto').forEach(el => el.classList.remove('card-oculto'));
+      wrap.remove();
+    });
+  }
+
+  // Home: notícias (máx 6)
+  setupVerMais('.news-grid', '.news-card-v2', 6);
+  // Artigos de direitos-pcd (máx 6; ignora cards já ocultos pelo filtro)
+  setupVerMais('#artigos-grid', '.artigo-card', 6);
+
   /* ─── BUSCA (search.html) ─── */
   const searchInput = document.getElementById('search-input');
   const searchResults = document.getElementById('search-results');
