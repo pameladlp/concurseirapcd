@@ -1818,3 +1818,216 @@ h1, h2, h3, h4, h5 {
   .content-grid { grid-template-columns: 1fr; }
   .page-filters { gap: 0.4rem; }
 }
+
+.produto-link {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+  line-height: 1.35;
+  transition: gap 0.15s;
+}
+.produto-link:hover { gap: 0.55rem; }
+
+.afiliado-badge {
+  display: block;
+  font-size: 0.67rem;
+  color: var(--muted-fg);
+  margin-top: 0.35rem;
+  font-style: italic;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   NOTÍCIAS — componentes específicos
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── Status badge variants ─── */
+.badge-alerta-pcd {
+  background: color-mix(in oklab, var(--accent) 14%, transparent);
+  color: oklch(0.40 0.12 35);
+  border-color: color-mix(in oklab, var(--accent) 30%, transparent);
+}
+.badge-concurso {
+  background: color-mix(in oklab, var(--primary) 12%, transparent);
+  color: var(--primary);
+  border-color: color-mix(in oklab, var(--primary) 26%, transparent);
+}
+.badge-previsto {
+  background: var(--muted);
+  color: var(--muted-fg);
+  border-color: var(--border);
+}
+
+/* ─── Quick-info row (salário + prazo + vagas PCD) ─── */
+.news-quickinfo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.1rem;
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.qi-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--fg);
+}
+.qi-item svg { flex-shrink: 0; color: var(--muted-fg); }
+.qi-pcd { color: var(--primary); }
+.qi-pcd svg { color: var(--primary); }
+
+/* Countdown chip */
+.news-countdown {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.12rem 0.5rem;
+  border-radius: 100px;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  background: color-mix(in oklab, var(--primary) 11%, transparent);
+  color: var(--primary);
+  border: 1px solid color-mix(in oklab, var(--primary) 24%, transparent);
+  margin-left: 0.3rem;
+}
+.news-countdown.urgente {
+  background: color-mix(in oklab, oklch(0.55 0.16 25) 13%, transparent);
+  color: oklch(0.38 0.14 25);
+  border-color: color-mix(in oklab, oklch(0.55 0.16 25) 26%, transparent);
+}
+.news-countdown.encerrado {
+  background: var(--muted);
+  color: var(--muted-fg);
+  border-color: var(--border);
+  text-decoration: line-through;
+}
+
+/* ─── Filters section ─── */
+.filters-section {
+  margin-bottom: 1.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  background: var(--surface);
+}
+.filters-section .page-filters {
+  padding: 0.5rem 0;
+  border-bottom: none;
+  margin-bottom: 0;
+}
+.filters-section .page-filters + .page-filters {
+  border-top: 1px dashed var(--border);
+}
+.filter-pcd-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 0 0.25rem;
+  border-top: 1px dashed var(--border);
+  flex-wrap: wrap;
+}
+.filter-pcd-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--primary);
+  cursor: pointer;
+  user-select: none;
+}
+.filter-pcd-toggle input[type="checkbox"] {
+  width: 15px; height: 15px;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+.noticias-count {
+  font-size: 0.78rem;
+  color: var(--muted-fg);
+  font-style: italic;
+  margin-left: auto;
+}
+
+/* ─── Inline search ─── */
+.search-inline-wrap {
+  margin-bottom: 1rem;
+}
+.search-inline {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.55rem 0.9rem;
+  max-width: 480px;
+  transition: border-color 0.15s;
+}
+.search-inline:focus-within { border-color: var(--primary); }
+.search-inline input {
+  flex: 1;
+  border: none;
+  background: none;
+  font: inherit;
+  font-size: 0.9rem;
+  color: var(--fg);
+  outline: none;
+}
+.search-inline input::placeholder { color: var(--muted-fg); }
+.search-inline svg { color: var(--muted-fg); flex-shrink: 0; }
+
+/* ─── Date tooltip ─── */
+[data-tooltip] { position: relative; cursor: help; }
+[data-tooltip]:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 5px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--foreground);
+  color: var(--background);
+  padding: 0.3rem 0.65rem;
+  border-radius: 6px;
+  font-size: 0.71rem;
+  font-weight: 500;
+  white-space: nowrap;
+  z-index: 120;
+  pointer-events: none;
+  font-style: normal;
+}
+
+/* ─── Share: Telegram ─── */
+.share-telegram:hover { border-color: #0088cc; color: #0088cc; background: #e8f4fd; }
+.share-whatsapp:hover { border-color: #25d366; color: #1a9c4a; background: #f0fdf4; }
+
+/* ─── Resultado vazio ─── */
+.noticias-vazio {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--muted-fg);
+}
+.noticias-vazio p { font-size: 0.95rem; margin-top: 0.5rem; }
+
+/* ─── Noticia card: artigo-meta com gap ─── */
+.noticia-card .artigo-meta {
+  gap: 0.4rem;
+  row-gap: 0.35rem;
+}
+.noticia-card .artigo-meta .sep {
+  color: var(--border);
+  font-weight: 400;
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+@media (max-width: 640px) {
+  .news-quickinfo { gap: 0.5rem 0.75rem; }
+  .filters-section { padding: 0.75rem 1rem; }
+}

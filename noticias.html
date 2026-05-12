@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Notícias de Concursos para PCD | Concurseira PCD</title>
-<meta name="description" content="Editais, concursos previstos e alertas PCD com análise clara: vagas reservadas, prazos, laudos e impacto prático para candidatos com deficiência."/>
+<meta name="description" content="Editais abertos, concursos previstos e alertas PCD com análise clara: vagas reservadas, prazos, laudos e impacto prático para candidatos com deficiência."/>
 <meta name="author" content="Pâmela Dayane"/>
 <meta name="robots" content="index, follow"/>
 <link rel="canonical" href="https://concurseirapcd.com.br/noticias.html"/>
@@ -33,12 +33,12 @@
         <span class="logo-author">por Pâmela Dayane</span>
       </span>
     </a>
-    <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menu">☰</button>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menu">&#9776;</button>
     <nav class="main-nav" aria-label="Menu principal">
       <a href="index.html">Início</a>
       <a href="sobre.html">Sobre Mim</a>
       <a href="direitos-pcd.html">Direitos PCD</a>
-      <a href="noticias.html">Notícias</a>
+      <a href="noticias.html" aria-current="page">Notícias</a>
       <a href="blog.html">Blog</a>
       <a href="materiais-gratuitos.html">Materiais Gratuitos</a>
       <a href="achadinhos.html">Achadinhos</a>
@@ -67,55 +67,85 @@
         <p class="lead">Cada notícia vem com análise prática: o que muda para sua preparação, o que observar como candidato PCD e qual o próximo passo concreto.</p>
       </div>
       <div class="page-title-illustration">
-        <img src="assets/images/illustrations/04_noticias_atualizacoes.png" alt="Ilustração de notícias e atualizações"/>
+        <img src="assets/images/illustrations/04_noticias_atualizacoes.png" alt="Ilustração de notícias e atualizações" style="max-width:220px;"/>
       </div>
     </div>
   </section>
 
-  <!-- GRID DE NOTÍCIAS -->
-  <section class="section" style="padding-top: 2rem;">
+  <!-- GRID -->
+  <section class="section" style="padding-top:1.5rem;">
     <div class="container">
 
+      <!-- Busca inline -->
+      <div class="search-inline-wrap">
+        <label for="noticias-search" class="sr-only">Buscar notícias por cargo, órgão ou estado</label>
+        <div class="search-inline">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="search" id="noticias-search" placeholder="Buscar por cargo, órgão, estado…" autocomplete="off"/>
+        </div>
+      </div>
+
       <!-- Filtros -->
-      <div class="page-filters" role="group" aria-label="Filtrar por tipo">
-        <span class="page-filters-label">Filtrar:</span>
-        <button class="filter-chip active" data-filter="all">Todos</button>
-        <button class="filter-chip" data-filter="alerta-pcd">
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          Alerta PCD
-        </button>
-        <button class="filter-chip" data-filter="concurso">Concurso aberto</button>
-        <button class="filter-chip" data-filter="previsto">Previsto</button>
+      <div class="filters-section">
+
+        <div class="page-filters" role="group" aria-label="Filtrar por status">
+          <span class="page-filters-label">Status:</span>
+          <button class="filter-chip active" data-group="status" data-filter="all">Todos</button>
+          <button class="filter-chip" data-group="status" data-filter="alerta-pcd">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            Alerta PCD
+          </button>
+          <button class="filter-chip" data-group="status" data-filter="concurso">Edital publicado</button>
+          <button class="filter-chip" data-group="status" data-filter="previsto">Previsto</button>
+        </div>
+
+        <div class="page-filters" role="group" aria-label="Filtrar por estado">
+          <span class="page-filters-label">Estado:</span>
+          <button class="filter-chip active" data-group="uf" data-filter="all">Todas as UFs</button>
+          <button class="filter-chip" data-group="uf" data-filter="federal">Federal</button>
+          <button class="filter-chip" data-group="uf" data-filter="mg">MG</button>
+          <button class="filter-chip" data-group="uf" data-filter="rs">RS</button>
+        </div>
+
+        <div class="filter-pcd-row">
+          <label class="filter-pcd-toggle">
+            <input type="checkbox" id="filtro-pcd" aria-label="Mostrar apenas concursos com vaga reservada para PCD"/>
+            <span>Apenas com vaga PCD reservada</span>
+          </label>
+          <span class="noticias-count" id="noticias-count" aria-live="polite"></span>
+        </div>
+
       </div>
 
       <!-- Cards -->
       <div class="content-grid" id="noticias-grid">
 
-        <!-- 1. FHEMIG -->
-        <article class="artigo-card" data-tema="alerta-pcd">
+        <!-- 1. FHEMIG MG -->
+        <article class="artigo-card noticia-card"
+                 data-status="alerta-pcd" data-uf="mg" data-pcd="false"
+                 data-texto="fhemig fundacao hospitalar minas gerais medicos enfermeiros saude mg alerta pcd seletivo">
           <div class="artigo-meta">
-            <span class="filter-chip-badge">Alerta PCD</span>
-            <span class="nbadge nbadge-sage">MG</span>
-            <time datetime="2026-05-10" class="artigo-date">10 mai 2026</time>
+            <span class="filter-chip-badge badge-alerta-pcd" aria-label="Status: Alerta PCD">Alerta PCD</span>
+            <span class="nbadge nbadge-sage" aria-label="Estado: MG">MG</span>
+            <span class="nbadge nbadge-sage">Saúde</span>
+            <time class="artigo-date" datetime="2026-05-10" data-tooltip="10 de maio de 2026" data-pubdate="2026-05-10">há 2 dias</time>
           </div>
           <h3>FHEMIG (MG) abre 5 seletivos com salários de até R$&nbsp;7.040</h3>
-          <p class="artigo-excerpt">Fundação Hospitalar do Estado de Minas Gerais anuncia processos seletivos para médicos e enfermeiros. Detalhes do edital ainda a confirmar.</p>
-          <dl class="news-dl">
-            <div class="news-dl-item">
-              <dt>
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
-                Salário
-              </dt>
-              <dd>Até R$ 7.040</dd>
-            </div>
-            <div class="news-dl-item">
-              <dt>
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                Prazo
-              </dt>
-              <dd>A confirmar</dd>
-            </div>
-          </dl>
+          <p class="artigo-excerpt">Fundação Hospitalar de Minas Gerais anuncia processos seletivos para médicos e enfermeiros. Edital completo a confirmar — acompanhe para vagas PCD.</p>
+          <div class="news-quickinfo">
+            <span class="qi-item" aria-label="Faixa salarial">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+              Até R$&nbsp;7.040
+            </span>
+            <span class="qi-item" aria-label="Prazo de inscrição">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              A confirmar
+            </span>
+            <span class="qi-item" aria-label="Vagas: a confirmar">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              Vagas a confirmar
+            </span>
+          </div>
           <details class="artigo-expandir">
             <summary>Ver análise completa</summary>
             <div class="artigo-corpo">
@@ -125,7 +155,7 @@
               <strong>Banca:</strong> A confirmar<br>
               <strong>Inscrições:</strong> A confirmar após edital</p>
               <h4>O que muda para sua preparação</h4>
-              <p>O edital completo ainda não foi divulgado. Acompanhe o site oficial da FHEMIG para conhecer o conteúdo programático, cronograma de provas e etapas. Inicie uma revisão geral da área de saúde pública e legislação SUS enquanto aguarda.</p>
+              <p>O edital completo ainda não foi divulgado. Inicie revisão de saúde pública e legislação do SUS enquanto aguarda a publicação.</p>
               <h4>Atenção candidato PCD</h4>
               <ul class="guide-checklist">
                 <li>Acompanhe o edital para verificar o percentual de vagas reservadas a PCD, conforme a Lei 8.112/1990.</li>
@@ -137,38 +167,232 @@
             </div>
           </details>
           <div class="artigo-share">
-            <button class="share-btn share-copy" data-copy="https://concurseirapcd.com.br/noticias.html" aria-label="Copiar link">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            <a class="share-btn share-whatsapp" href="https://api.whatsapp.com/send?text=FHEMIG%20(MG)%20abre%205%20seletivos%20%E2%80%94%20Concurseira%20PCD%20https%3A%2F%2Fconcurseirapcd.com.br%2Fnoticias.html" target="_blank" rel="noopener" aria-label="Compartilhar no WhatsApp">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              WhatsApp
+            </a>
+            <a class="share-btn share-telegram" href="https://t.me/share/url?url=https%3A%2F%2Fconcurseirapcd.com.br%2Fnoticias.html&text=FHEMIG%20MG%205%20seletivos" target="_blank" rel="noopener" aria-label="Compartilhar no Telegram">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 1 0 24 12 12 12 0 0 0 11.944 0zm6.06 8.56l-2.025 9.55c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.48 14.52 4.57 13.6c-.663-.205-.675-.663.138-.98l11.5-4.433c.553-.2 1.036.12.796.373z"/></svg>
+              Telegram
+            </a>
+            <button class="share-btn share-copy" data-copy="https://concurseirapcd.com.br/noticias.html" aria-label="Copiar link da página">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
               Copiar link
             </button>
           </div>
         </article>
 
-        <!-- 5. Concurso previsto: IBGE -->
-        <article class="artigo-card" data-tema="previsto">
+        <!-- 2. Marinha -->
+        <article class="artigo-card noticia-card"
+                 data-status="concurso" data-uf="federal" data-pcd="false"
+                 data-texto="marinha brasil segundo tenente oficial quadros complementares federal concurso aberto militar">
           <div class="artigo-meta">
-            <span class="filter-chip-badge">Previsto</span>
-            <span class="nbadge nbadge-sage">Federal</span>
-            <time datetime="2026-05-07" class="artigo-date">7 mai 2026</time>
+            <span class="filter-chip-badge badge-concurso" aria-label="Status: Edital publicado">Edital publicado</span>
+            <span class="nbadge nbadge-sage" aria-label="Âmbito: Federal">Federal</span>
+            <span class="nbadge nbadge-sage">Militar</span>
+            <time class="artigo-date" datetime="2026-05-09" data-tooltip="9 de maio de 2026" data-pubdate="2026-05-09">há 3 dias</time>
           </div>
-          <h3>IBGE prevê novo concurso com mais de 800 vagas ainda em 2026</h3>
-          <p class="artigo-excerpt">Instituto Brasileiro de Geografia e Estatística planeja edital para cargos de nível médio e superior. Boa oportunidade para candidatos PCD com reserva obrigatória de vagas.</p>
-          <dl class="news-dl">
-            <div class="news-dl-item">
-              <dt>
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
-                Vagas previstas
-              </dt>
-              <dd>Mais de 800</dd>
+          <h3>Marinha abre 26 vagas para Segundo-Tenente com inicial de R$&nbsp;9.900</h3>
+          <p class="artigo-excerpt">Quadros Complementares de Oficiais da Marinha do Brasil. Verifique os requisitos de aptidão específicos antes de se inscrever como candidato PCD.</p>
+          <div class="news-quickinfo">
+            <span class="qi-item" aria-label="Faixa salarial">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+              A partir de R$&nbsp;9.900
+            </span>
+            <span class="qi-item" aria-label="Total de vagas: 26">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              26 vagas totais
+            </span>
+            <span class="qi-item" aria-label="Prazo: a confirmar">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Prazo a confirmar
+            </span>
+          </div>
+          <details class="artigo-expandir">
+            <summary>Ver análise completa</summary>
+            <div class="artigo-corpo">
+              <h4>Resumo</h4>
+              <p><strong>Órgão:</strong> Marinha do Brasil<br>
+              <strong>Cargo:</strong> Segundo-Tenente — Quadros Complementares de Oficiais<br>
+              <strong>Banca:</strong> A confirmar<br>
+              <strong>Provas:</strong> A confirmar após edital completo</p>
+              <h4>O que muda para sua preparação</h4>
+              <p>Aguarde o edital completo para conhecer matérias, etapas e critérios de aptidão física. Carreiras militares têm requisitos de saúde específicos que devem ser verificados com atenção por candidatos PCD.</p>
+              <h4>Atenção candidato PCD</h4>
+              <ul class="guide-checklist">
+                <li>Concursos militares têm requisitos específicos de aptidão física e médica — leia o edital com cuidado antes de se inscrever.</li>
+                <li>Consulte o setor jurídico da Marinha ou advogado especializado se tiver dúvidas sobre elegibilidade com sua deficiência.</li>
+              </ul>
+              <h4>Próximo passo</h4>
+              <p>Acompanhe o Diário Oficial da União e o site oficial da Marinha para a publicação do edital completo.</p>
+              <a href="https://concursosnobrasil.com/concursos/2026/05/08/concurso-marinha-lanca-vagas-para-segundo-tenente-e-inicial-de-r-99-mil/" target="_blank" rel="noopener" class="source-link">Leia a notícia original</a>
             </div>
-            <div class="news-dl-item">
-              <dt>
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                Previsão
-              </dt>
-              <dd>2º semestre 2026</dd>
+          </details>
+          <div class="artigo-share">
+            <a class="share-btn share-whatsapp" href="https://api.whatsapp.com/send?text=Marinha%20abre%2026%20vagas%20%E2%80%94%20Concurseira%20PCD%20https%3A%2F%2Fconcurseirapcd.com.br%2Fnoticias.html" target="_blank" rel="noopener" aria-label="Compartilhar no WhatsApp">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              WhatsApp
+            </a>
+            <a class="share-btn share-telegram" href="https://t.me/share/url?url=https%3A%2F%2Fconcurseirapcd.com.br%2Fnoticias.html&text=Marinha%2026%20vagas" target="_blank" rel="noopener" aria-label="Compartilhar no Telegram">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 1 0 24 12 12 12 0 0 0 11.944 0zm6.06 8.56l-2.025 9.55c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.48 14.52 4.57 13.6c-.663-.205-.675-.663.138-.98l11.5-4.433c.553-.2 1.036.12.796.373z"/></svg>
+              Telegram
+            </a>
+            <button class="share-btn share-copy" data-copy="https://concurseirapcd.com.br/noticias.html" aria-label="Copiar link da página">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              Copiar link
+            </button>
+          </div>
+        </article>
+
+        <!-- 3. Bagé RS -->
+        <article class="artigo-card noticia-card"
+                 data-status="alerta-pcd" data-uf="rs" data-pcd="true" data-prazo="30/05/2026"
+                 data-texto="bage prefeitura rio grande do sul rs saude administracao medio superior vaga pcd alerta">
+          <div class="artigo-meta">
+            <span class="filter-chip-badge badge-alerta-pcd" aria-label="Status: Alerta PCD">Alerta PCD</span>
+            <span class="nbadge nbadge-sage" aria-label="Estado: RS">RS</span>
+            <span class="nbadge nbadge-sage">Médio/Superior</span>
+            <time class="artigo-date" datetime="2026-05-08" data-tooltip="8 de maio de 2026" data-pubdate="2026-05-08">há 4 dias</time>
+          </div>
+          <h3>Prefeitura de Bagé (RS) abre 20 vagas com salário de até R$&nbsp;9.000</h3>
+          <p class="artigo-excerpt">Seletivo com 2 vagas reservadas para PCD na área de saúde e administração. Edital publicado — verifique laudos e atendimento especial.</p>
+          <div class="news-quickinfo">
+            <span class="qi-item" aria-label="Faixa salarial">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+              Até R$&nbsp;9.000
+            </span>
+            <span class="qi-item" aria-label="Prazo de inscrição: 30 de maio de 2026">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              30/05/2026<span class="news-countdown" data-deadline="30/05/2026"></span>
+            </span>
+            <span class="qi-item qi-pcd" aria-label="Vagas PCD reservadas: 2">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2"/><path d="M7 9h10M12 11v7"/><path d="M9 21l3-4 3 4"/></svg>
+              2 vagas PCD
+            </span>
+          </div>
+          <details class="artigo-expandir">
+            <summary>Ver análise completa</summary>
+            <div class="artigo-corpo">
+              <h4>Resumo</h4>
+              <p><strong>Órgão:</strong> Prefeitura Municipal de Bagé (RS)<br>
+              <strong>Cargos:</strong> Saúde e Administração — nível médio e superior<br>
+              <strong>Total de vagas:</strong> 20 (2 reservadas para PCD)<br>
+              <strong>Inscrições até:</strong> 30/05/2026</p>
+              <h4>O que muda para sua preparação</h4>
+              <p>Edital já publicado. Revise o conteúdo programático e prepare os documentos com antecedência, pois o prazo de envio do laudo pode ser diferente do prazo de inscrição.</p>
+              <h4>Atenção candidato PCD</h4>
+              <ul class="guide-checklist">
+                <li>2 vagas reservadas para PCD — verifique as instruções no edital para envio do laudo médico.</li>
+                <li>Solicite atendimento especial na inscrição caso necessite de recursos de acessibilidade nas provas.</li>
+                <li>Confira o prazo de envio do laudo — geralmente é diferente do prazo de inscrição geral.</li>
+              </ul>
+              <h4>Próximo passo</h4>
+              <p>Acesse o site da Prefeitura de Bagé, baixe o edital completo e anote os prazos para inscrição e envio de documentação PCD.</p>
             </div>
-          </dl>
+          </details>
+          <div class="artigo-share">
+            <a class="share-btn share-whatsapp" href="https://api.whatsapp.com/send?text=Bag%C3%A9%20RS%20%E2%80%94%2020%20vagas%2C%202%20para%20PCD!%20https%3A%2F%2Fconcurseirapcd.com.br%2Fnoticias.html" target="_blank" rel="noopener" aria-label="Compartilhar no WhatsApp">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              WhatsApp
+            </a>
+            <a class="share-btn share-telegram" href="https://t.me/share/url?url=https%3A%2F%2Fconcurseirapcd.com.br%2Fnoticias.html&text=Bag%C3%A9%20RS%202%20vagas%20PCD" target="_blank" rel="noopener" aria-label="Compartilhar no Telegram">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 1 0 24 12 12 12 0 0 0 11.944 0zm6.06 8.56l-2.025 9.55c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.48 14.52 4.57 13.6c-.663-.205-.675-.663.138-.98l11.5-4.433c.553-.2 1.036.12.796.373z"/></svg>
+              Telegram
+            </a>
+            <button class="share-btn share-copy" data-copy="https://concurseirapcd.com.br/noticias.html" aria-label="Copiar link da página">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              Copiar link
+            </button>
+          </div>
+        </article>
+
+        <!-- 4. Cerro Branco RS -->
+        <article class="artigo-card noticia-card"
+                 data-status="concurso" data-uf="rs" data-pcd="true" data-prazo="25/05/2026"
+                 data-texto="cerro branco prefeitura rio grande do sul rs saude superior cadastro reserva vaga pcd">
+          <div class="artigo-meta">
+            <span class="filter-chip-badge badge-concurso" aria-label="Status: Edital publicado">Edital publicado</span>
+            <span class="nbadge nbadge-sage" aria-label="Estado: RS">RS</span>
+            <span class="nbadge nbadge-sage">Superior</span>
+            <time class="artigo-date" datetime="2026-05-08" data-tooltip="8 de maio de 2026" data-pubdate="2026-05-08">há 4 dias</time>
+          </div>
+          <h3>Prefeitura de Cerro Branco (RS) abre seletivo na Saúde com 1 vaga PCD</h3>
+          <p class="artigo-excerpt">Cadastro reserva de profissionais de nível superior para atuação na rede municipal de saúde.</p>
+          <div class="news-quickinfo">
+            <span class="qi-item" aria-label="Faixa salarial">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+              R$&nbsp;4.500 — R$&nbsp;7.200
+            </span>
+            <span class="qi-item" aria-label="Prazo de inscrição: 25 de maio de 2026">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              25/05/2026<span class="news-countdown" data-deadline="25/05/2026"></span>
+            </span>
+            <span class="qi-item qi-pcd" aria-label="Vagas PCD reservadas: 1">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2"/><path d="M7 9h10M12 11v7"/><path d="M9 21l3-4 3 4"/></svg>
+              1 vaga PCD
+            </span>
+          </div>
+          <details class="artigo-expandir">
+            <summary>Ver análise completa</summary>
+            <div class="artigo-corpo">
+              <h4>Resumo</h4>
+              <p><strong>Órgão:</strong> Prefeitura Municipal de Cerro Branco (RS)<br>
+              <strong>Cargos:</strong> Profissionais de saúde — nível superior<br>
+              <strong>Modalidade:</strong> Cadastro reserva<br>
+              <strong>Inscrições até:</strong> 25/05/2026</p>
+              <h4>O que muda para sua preparação</h4>
+              <p>Por ser cadastro reserva, não há certeza de convocação imediata. Avalie se vale investir esforço intenso neste processo ou se ele deve compor um plano paralelo de preparação.</p>
+              <h4>Atenção candidato PCD</h4>
+              <ul class="guide-checklist">
+                <li>1 vaga reservada para PCD — confirme no edital as especificidades de laudo e avaliação.</li>
+                <li>O formulário de atendimento especial deve ser preenchido na inscrição, não depois.</li>
+              </ul>
+              <h4>Próximo passo</h4>
+              <p>Acesse o site da Prefeitura de Cerro Branco (RS) e baixe o edital completo. Prazo encerra em 25/05/2026.</p>
+            </div>
+          </details>
+          <div class="artigo-share">
+            <a class="share-btn share-whatsapp" href="https://api.whatsapp.com/send?text=Cerro%20Branco%20RS%20%E2%80%94%201%20vaga%20PCD%20na%20Sa%C3%BAde%20https%3A%2F%2Fconcurseirapcd.com.br%2Fnoticias.html" target="_blank" rel="noopener" aria-label="Compartilhar no WhatsApp">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              WhatsApp
+            </a>
+            <a class="share-btn share-telegram" href="https://t.me/share/url?url=https%3A%2F%2Fconcurseirapcd.com.br%2Fnoticias.html&text=Cerro%20Branco%20RS%20vaga%20PCD" target="_blank" rel="noopener" aria-label="Compartilhar no Telegram">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 1 0 24 12 12 12 0 0 0 11.944 0zm6.06 8.56l-2.025 9.55c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.48 14.52 4.57 13.6c-.663-.205-.675-.663.138-.98l11.5-4.433c.553-.2 1.036.12.796.373z"/></svg>
+              Telegram
+            </a>
+            <button class="share-btn share-copy" data-copy="https://concurseirapcd.com.br/noticias.html" aria-label="Copiar link da página">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              Copiar link
+            </button>
+          </div>
+        </article>
+
+        <!-- 5. IBGE -->
+        <article class="artigo-card noticia-card"
+                 data-status="previsto" data-uf="federal" data-pcd="true"
+                 data-texto="ibge instituto brasileiro geografia estatistica federal medio superior 800 vagas previsto segundo semestre">
+          <div class="artigo-meta">
+            <span class="filter-chip-badge badge-previsto" aria-label="Status: Previsto">Previsto</span>
+            <span class="nbadge nbadge-sage" aria-label="Âmbito: Federal">Federal</span>
+            <span class="nbadge nbadge-sage">Médio/Superior</span>
+            <time class="artigo-date" datetime="2026-05-07" data-tooltip="7 de maio de 2026" data-pubdate="2026-05-07">há 5 dias</time>
+          </div>
+          <h3>IBGE prevê novo concurso com mais de 800 vagas para 2026</h3>
+          <p class="artigo-excerpt">Instituto Brasileiro de Geografia e Estatística planeja edital para cargos de nível médio e superior no segundo semestre. Boa oportunidade com reserva obrigatória de vagas PCD.</p>
+          <div class="news-quickinfo">
+            <span class="qi-item" aria-label="Vagas previstas: mais de 800">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              Mais de 800 vagas
+            </span>
+            <span class="qi-item" aria-label="Previsão de edital: 2º semestre 2026">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Previsão: 2º sem. 2026
+            </span>
+            <span class="qi-item qi-pcd" aria-label="Vagas PCD estimadas: 40 ou mais">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2"/><path d="M7 9h10M12 11v7"/><path d="M9 21l3-4 3 4"/></svg>
+              Aprox. 40+ vagas PCD
+            </span>
+          </div>
           <details class="artigo-expandir">
             <summary>Ver análise completa</summary>
             <div class="artigo-corpo">
@@ -176,12 +400,12 @@
               <p><strong>Órgão:</strong> Instituto Brasileiro de Geografia e Estatística (IBGE)<br>
               <strong>Cargos:</strong> Nível médio e superior (a confirmar)<br>
               <strong>Banca:</strong> A confirmar<br>
-              <strong>Edital:</strong> Previsto para o 2º semestre de 2026</p>
+              <strong>Previsão:</strong> 2º semestre de 2026</p>
               <h4>O que muda para sua preparação</h4>
-              <p>Concursos do IBGE historicamente exigem conhecimentos de estatística, geografia e administração pública. Utilize o período de espera para consolidar o conteúdo de português e raciocínio lógico, que costumam ter peso alto.</p>
+              <p>Concursos do IBGE historicamente exigem conhecimentos de estatística, geografia e administração pública. Utilize o período de espera para consolidar conteúdos de português e raciocínio lógico.</p>
               <h4>Atenção candidato PCD</h4>
               <ul class="guide-checklist">
-                <li>Com mais de 800 vagas, a reserva de 5% para PCD pode significar 40 ou mais vagas específicas — fique atento ao edital.</li>
+                <li>Com 800+ vagas, a reserva de 5% para PCD pode significar 40 ou mais vagas específicas — fique atento ao edital.</li>
                 <li>O IBGE tem histórico de edital bem estruturado com seção específica para candidatos PCD. Separe o laudo com antecedência.</li>
                 <li>Solicite atendimento especial na inscrição conforme seu tipo de deficiência.</li>
               </ul>
@@ -190,21 +414,35 @@
             </div>
           </details>
           <div class="artigo-share">
-            <button class="share-btn share-copy" data-copy="https://concurseirapcd.com.br/noticias.html" aria-label="Copiar link">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            <a class="share-btn share-whatsapp" href="https://api.whatsapp.com/send?text=IBGE%20800%2B%20vagas%20previsto%202026!%20https%3A%2F%2Fconcurseirapcd.com.br%2Fnoticias.html" target="_blank" rel="noopener" aria-label="Compartilhar no WhatsApp">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              WhatsApp
+            </a>
+            <a class="share-btn share-telegram" href="https://t.me/share/url?url=https%3A%2F%2Fconcurseirapcd.com.br%2Fnoticias.html&text=IBGE%20800%2B%20vagas%202026" target="_blank" rel="noopener" aria-label="Compartilhar no Telegram">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 1 0 24 12 12 12 0 0 0 11.944 0zm6.06 8.56l-2.025 9.55c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.48 14.52 4.57 13.6c-.663-.205-.675-.663.138-.98l11.5-4.433c.553-.2 1.036.12.796.373z"/></svg>
+              Telegram
+            </a>
+            <button class="share-btn share-copy" data-copy="https://concurseirapcd.com.br/noticias.html" aria-label="Copiar link da página">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
               Copiar link
             </button>
           </div>
         </article>
 
-      </div><!-- /content-grid -->
+        <!-- Vazio -->
+        <div class="noticias-vazio" id="noticias-vazio" hidden>
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin:0 auto;color:var(--muted-fg)"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <p>Nenhuma notícia encontrada com esses filtros. Tente ajustar os critérios.</p>
+        </div>
 
-    </div><!-- /container -->
+      </div>
+
+    </div>
   </section>
 
 </main>
 
-<button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">↑</button>
+<button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">&#8593;</button>
 
 <footer class="site-footer">
   <div class="container footer-grid">
@@ -224,43 +462,111 @@
     </div>
   </div>
   <div class="container footer-bottom">
-    <span>© 2026 Concurseira PCD · Pâmela Dayane</span>
+    <span>&copy; 2026 Concurseira PCD &middot; Pâmela Dayane</span>
   </div>
 </footer>
 
 <script src="assets/js/script.js"></script>
 <script>
-/* ── Filtros ── */
-document.querySelectorAll('.page-filters .filter-chip').forEach(chip => {
-  chip.addEventListener('click', function () {
-    document.querySelectorAll('.page-filters .filter-chip').forEach(c => c.classList.remove('active'));
-    this.classList.add('active');
-    const filter = this.dataset.filter;
-    document.querySelectorAll('#noticias-grid .artigo-card').forEach(card => {
-      if (filter === 'all') {
-        card.style.display = card.classList.contains('card-oculto') ? 'none' : '';
-      } else {
-        card.style.display = card.dataset.tema === filter ? '' : 'none';
-      }
+(function () {
+  'use strict';
+
+  /* Contagem regressiva */
+  function calcCountdown(str) {
+    var p = str.split('/');
+    var d = new Date(+p[2], +p[1]-1, +p[0]);
+    var t = new Date(); t.setHours(0,0,0,0);
+    var diff = Math.round((d - t) / 86400000);
+    if (diff < 0)  return { text: 'encerrado', cls: 'encerrado' };
+    if (diff === 0) return { text: 'último dia!', cls: 'urgente' };
+    if (diff <= 7)  return { text: 'faltam ' + diff + ' dia' + (diff > 1 ? 's' : ''), cls: 'urgente' };
+    return { text: 'faltam ' + diff + ' dias', cls: '' };
+  }
+  document.querySelectorAll('.news-countdown[data-deadline]').forEach(function (el) {
+    var r = calcCountdown(el.dataset.deadline);
+    el.textContent = ' ' + r.text;
+    if (r.cls) el.classList.add(r.cls);
+  });
+
+  /* Datas relativas */
+  function relDate(iso) {
+    var d = new Date(iso); var t = new Date(); t.setHours(0,0,0,0);
+    var diff = Math.round((t - d) / 86400000);
+    if (diff === 0) return 'hoje';
+    if (diff === 1) return 'ontem';
+    if (diff < 7)   return 'há ' + diff + ' dias';
+    if (diff < 30)  return 'há ' + Math.round(diff/7) + ' semana' + (Math.round(diff/7) > 1 ? 's' : '');
+    return d.toLocaleDateString('pt-BR', { day: 'numeric', month: 'short' });
+  }
+  document.querySelectorAll('time[data-pubdate]').forEach(function (el) {
+    el.textContent = relDate(el.dataset.pubdate);
+  });
+
+  /* Filtros multi-dimensão */
+  var active = { status: 'all', uf: 'all' };
+  var pcdOnly = false;
+  var q = '';
+
+  function applyFilters() {
+    var cards = Array.from(document.querySelectorAll('#noticias-grid .noticia-card'));
+    var n = 0;
+    cards.forEach(function (c) {
+      var ok = (active.status === 'all' || c.dataset.status === active.status)
+            && (active.uf     === 'all' || c.dataset.uf     === active.uf)
+            && (!pcdOnly || c.dataset.pcd === 'true')
+            && (!q || c.dataset.texto.includes(q)
+                   || c.querySelector('h3').textContent.toLowerCase().includes(q)
+                   || c.querySelector('.artigo-excerpt').textContent.toLowerCase().includes(q));
+      c.style.display = ok ? '' : 'none';
+      if (ok) n++;
+    });
+    var vazio = document.getElementById('noticias-vazio');
+    if (vazio) vazio.hidden = n > 0;
+    var ctr = document.getElementById('noticias-count');
+    if (ctr) ctr.textContent = n === cards.length
+      ? n + ' notícia' + (n !== 1 ? 's' : '')
+      : n + ' de ' + cards.length + ' notícia' + (cards.length !== 1 ? 's' : '');
+  }
+
+  document.querySelectorAll('[data-group="status"]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      document.querySelectorAll('[data-group="status"]').forEach(function (x) { x.classList.remove('active'); });
+      b.classList.add('active'); active.status = b.dataset.filter; applyFilters();
     });
   });
-});
-
-/* ── Copiar link ── */
-document.querySelectorAll('.share-copy').forEach(btn => {
-  btn.addEventListener('click', function () {
-    navigator.clipboard.writeText(this.dataset.copy).then(() => {
-      const orig = this.innerHTML;
-      this.textContent = 'Copiado!';
-      setTimeout(() => this.innerHTML = orig, 2000);
+  document.querySelectorAll('[data-group="uf"]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      document.querySelectorAll('[data-group="uf"]').forEach(function (x) { x.classList.remove('active'); });
+      b.classList.add('active'); active.uf = b.dataset.filter; applyFilters();
     });
   });
-});
+  var pcdChk = document.getElementById('filtro-pcd');
+  if (pcdChk) pcdChk.addEventListener('change', function () { pcdOnly = this.checked; applyFilters(); });
 
-/* ── Voltar ao topo ── */
-const btt = document.getElementById('back-to-top');
-window.addEventListener('scroll', () => btt.classList.toggle('visible', window.scrollY > 400));
-btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  var srch = document.getElementById('noticias-search');
+  if (srch) srch.addEventListener('input', function () { q = this.value.trim().toLowerCase(); applyFilters(); });
+
+  applyFilters();
+
+  /* Copiar link */
+  document.querySelectorAll('.share-copy').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var url = btn.dataset.copy || location.href;
+      navigator.clipboard.writeText(url).then(function () {
+        var orig = btn.innerHTML;
+        btn.textContent = 'Copiado!';
+        setTimeout(function () { btn.innerHTML = orig; }, 2200);
+      });
+    });
+  });
+
+  /* Voltar ao topo */
+  var btt = document.getElementById('back-to-top');
+  if (btt) {
+    window.addEventListener('scroll', function () { btt.classList.toggle('visible', window.scrollY > 400); });
+    btt.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  }
+})();
 </script>
 </body>
 </html>
