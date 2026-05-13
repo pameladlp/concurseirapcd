@@ -63,79 +63,75 @@
     observer.observe(el);
   });
 
-  /* ─── PAINEL DE ACESSIBILIDADE ─── */
-  // Cria botão e painel se não existirem no HTML
-  if (!document.querySelector('.a11y-btn')) {
-    const btn = document.createElement('button');
-    btn.className = 'a11y-btn';
-    btn.setAttribute('aria-label', 'Opções de acessibilidade');
-    btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2"/><path d="M7 9h10M12 11v7"/><path d="M9 21l3-4 3 4"/></svg>';
-    document.body.appendChild(btn);
-
-    const panel = document.createElement('div');
-    panel.className = 'a11y-panel';
-    panel.setAttribute('role', 'region');
-    panel.setAttribute('aria-label', 'Configurações de acessibilidade');
-    panel.innerHTML = `
-      <p class="a11y-panel-title">Acessibilidade</p>
-
-      <div class="a11y-row">
-        <span>Alto contraste</span>
-        <label class="a11y-toggle">
-          <input type="checkbox" id="a11y-contrast"/>
-          <span class="a11y-toggle-slider"></span>
-        </label>
+  /* ─── BARRA DE ACESSIBILIDADE (topo fixo) ─── */
+  if (!document.querySelector('.a11y-bar')) {
+    const bar = document.createElement('div');
+    bar.className = 'a11y-bar';
+    bar.setAttribute('role', 'region');
+    bar.setAttribute('aria-label', 'Configurações de acessibilidade');
+    bar.innerHTML = `
+      <span class="a11y-bar-label">Acessibilidade</span>
+      <button class="a11y-bar-btn" id="a11y-contrast-btn" aria-pressed="false" title="Alto contraste">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20z"/></svg>
+        <span>Contraste</span>
+      </button>
+      <button class="a11y-bar-btn" id="a11y-spacing-btn" aria-pressed="false" title="Espaçamento de leitura">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <span>Espaçamento</span>
+      </button>
+      <span class="a11y-bar-sep" aria-hidden="true"></span>
+      <div class="a11y-font-group" role="group" aria-label="Tamanho da fonte">
+        <button class="a11y-font-btn active" data-size="normal" aria-pressed="true" title="Fonte normal">A</button>
+        <button class="a11y-font-btn" data-size="lg" aria-pressed="false" title="Fonte grande">A+</button>
+        <button class="a11y-font-btn" data-size="xl" aria-pressed="false" title="Fonte muito grande">A++</button>
       </div>
-
-      <div class="a11y-row">
-        <span>Espaçamento de leitura</span>
-        <label class="a11y-toggle">
-          <input type="checkbox" id="a11y-spacing"/>
-          <span class="a11y-toggle-slider"></span>
-        </label>
-      </div>
-
-      <div class="a11y-row" style="flex-direction:column;align-items:flex-start;gap:0.5rem">
-        <span>Tamanho da fonte</span>
-        <div class="a11y-font-btns">
-          <button class="a11y-font-btn active" data-size="normal">A</button>
-          <button class="a11y-font-btn" data-size="lg">A+</button>
-          <button class="a11y-font-btn" data-size="xl">A++</button>
-        </div>
-      </div>
+      <button class="a11y-bar-close" aria-label="Fechar barra de acessibilidade" title="Fechar">&#10005;</button>
     `;
-    document.body.appendChild(panel);
+    document.body.insertAdjacentElement('afterbegin', bar);
+    document.documentElement.classList.add('has-a11y-bar');
+    document.body.style.paddingTop = '36px';
 
-    // Toggle painel
-    btn.addEventListener('click', () => panel.classList.toggle('open'));
-    document.addEventListener('click', e => {
-      if (!panel.contains(e.target) && !btn.contains(e.target))
-        panel.classList.remove('open');
+    // Fechar barra
+    bar.querySelector('.a11y-bar-close').addEventListener('click', () => {
+      bar.remove();
+      document.documentElement.classList.remove('has-a11y-bar');
+      document.body.style.paddingTop = '';
     });
 
     // Alto contraste
-    const contrastChk = panel.querySelector('#a11y-contrast');
+    const contrastBtn = bar.querySelector('#a11y-contrast-btn');
     const savedContrast = localStorage.getItem('a11y-contrast') === 'true';
-    if (savedContrast) { document.documentElement.classList.add('high-contrast'); contrastChk.checked = true; }
-    contrastChk.addEventListener('change', () => {
-      document.documentElement.classList.toggle('high-contrast', contrastChk.checked);
-      localStorage.setItem('a11y-contrast', contrastChk.checked);
+    if (savedContrast) {
+      document.documentElement.classList.add('high-contrast');
+      contrastBtn.setAttribute('aria-pressed', 'true');
+      contrastBtn.classList.add('active');
+    }
+    contrastBtn.addEventListener('click', () => {
+      const on = document.documentElement.classList.toggle('high-contrast');
+      contrastBtn.setAttribute('aria-pressed', String(on));
+      contrastBtn.classList.toggle('active', on);
+      localStorage.setItem('a11y-contrast', on);
     });
 
     // Espaçamento de leitura
-    const spacingChk = panel.querySelector('#a11y-spacing');
+    const spacingBtn = bar.querySelector('#a11y-spacing-btn');
     const savedSpacing = localStorage.getItem('a11y-spacing') === 'true';
-    if (savedSpacing) { document.body.classList.add('reading-spacing'); spacingChk.checked = true; }
-    spacingChk.addEventListener('change', () => {
-      document.body.classList.toggle('reading-spacing', spacingChk.checked);
-      localStorage.setItem('a11y-spacing', spacingChk.checked);
+    if (savedSpacing) {
+      document.body.classList.add('reading-spacing');
+      spacingBtn.setAttribute('aria-pressed', 'true');
+      spacingBtn.classList.add('active');
+    }
+    spacingBtn.addEventListener('click', () => {
+      const on = document.body.classList.toggle('reading-spacing');
+      spacingBtn.setAttribute('aria-pressed', String(on));
+      spacingBtn.classList.toggle('active', on);
+      localStorage.setItem('a11y-spacing', on);
     });
 
     // Tamanho de fonte
-    const fontBtns = panel.querySelectorAll('.a11y-font-btn');
+    const fontBtns = bar.querySelectorAll('.a11y-font-btn');
     const savedSize = localStorage.getItem('a11y-font') || 'normal';
     applyFontSize(savedSize, fontBtns);
-
     fontBtns.forEach(b => {
       b.addEventListener('click', () => {
         const size = b.dataset.size;
