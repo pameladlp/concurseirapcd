@@ -426,20 +426,32 @@ Gere este bloco HTML seguindo EXATAMENTE esta estrutura de 4 secoes + fonte:
     if inserir_no_html(arquivo, "<!-- CONTEUDO_AUTO_NOTICIAS -->", wrapper):
         registrar_url_publicada(noticia["link"])
         print("  Noticia inserida.")
-        # Atualiza card na home (formato editorial pub-card)
-        resumo_curto = noticia["resumo"][:160].strip().rstrip(".") + "..."
+        # Atualiza card na home no formato news-card-v2 (consistente com cards manuais)
+        resumo_limpo = re.sub(r"<[^>]+>", " ", noticia["resumo"])  # remove tags HTML
+        resumo_limpo = re.sub(r"\s+", " ", resumo_limpo).strip()    # normaliza espacos
+        # Trunca em palavra inteira, sem cortar no meio
+        if len(resumo_limpo) > 160:
+            corte = resumo_limpo[:160].rsplit(" ", 1)[0].rstrip(".,;:")
+            resumo_curto = corte + "…"
+        else:
+            resumo_curto = resumo_limpo
+        titulo_curto = noticia["titulo"][:120].strip()
         card_home = (
-            f'<article class="pub-card">'
-            f'<div class="pub-card-banner pub-banner-news">'
-            f'<span class="pub-category">Notícias · {TODAY_STR}</span>'
-            f'<h3 class="pub-card-title">{noticia["titulo"][:120]}</h3>'
-            f'</div>'
-            f'<div class="pub-card-body">'
-            f'<p class="pub-card-excerpt">{resumo_curto}</p>'
-            f'<div class="pub-card-footer">'
-            f'<span class="pub-card-date">{TODAY_STR}</span>'
-            f'<a class="text-link" href="noticias.html">Ler notícia &rarr;</a>'
-            f'</div></div></article>'
+            f'<article class="news-card-v2">\n'
+            f'  <div class="news-badges">\n'
+            f'    <span class="nbadge nbadge-sage">Notícia</span>\n'
+            f'    <span class="nbadge nbadge-accent">Atualizado hoje</span>\n'
+            f'  </div>\n'
+            f'  <h3 class="news-title">{titulo_curto}</h3>\n'
+            f'  <p class="news-excerpt">{resumo_curto}</p>\n'
+            f'  <dl class="news-dl">\n'
+            f'    <div class="news-dl-item">\n'
+            f'      <dt>Publicado</dt>\n'
+            f'      <dd>{TODAY_STR}</dd>\n'
+            f'    </div>\n'
+            f'  </dl>\n'
+            f'  <a href="noticias.html" class="news-read-link">Ler notícia &rarr;</a>\n'
+            f'</article>'
         )
         inserir_no_html(ROOT / "index.html", "<!-- CONTEUDO_AUTO_HOME -->", card_home + "\n")
 
