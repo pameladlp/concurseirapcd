@@ -21,6 +21,31 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://concurseirapcd.com.br/blog/revisao.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://concurseirapcd.com.br/blog/rotina.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://concurseirapcd.com.br/blog/comecar.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://concurseirapcd.com.br/blog/descanso.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://concurseirapcd.com.br/blog/pcd.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://concurseirapcd.com.br/materiais-gratuitos.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
