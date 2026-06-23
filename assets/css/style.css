@@ -270,12 +270,12 @@ h1, h2, h3, h4, h5 {
 }
 
 .page-title-illustration {
-  width: 320px; max-width: 38%; flex-shrink: 0;
+  width: 420px; max-width: 42%; flex-shrink: 0;
   border-radius: var(--radius-2xl); overflow: hidden;
   box-shadow: var(--shadow-soft);
 }
 .page-title-illustration img { width: 100%; height: auto; object-fit: cover; }
-.page-title-photo { width: 260px; max-width: 38%; border-radius: var(--radius-2xl); }
+.page-title-photo { width: 320px; max-width: 40%; border-radius: var(--radius-2xl); }
 
 /* ─── BOTOES ─── */
 .btn {
@@ -830,8 +830,8 @@ h1, h2, h3, h4, h5 {
   .split { grid-template-columns: 1fr; }
   .newsletter-box { grid-template-columns: 1fr; }
   .page-title-row { grid-template-columns: 1fr; }
-  .page-title-illustration { width: 220px; max-width: 70%; margin-inline: auto; }
-  .page-title-photo { width: 220px; max-width: 70%; }
+  .page-title-illustration { width: 260px; max-width: 80%; margin-inline: auto; }
+  .page-title-photo { width: 260px; max-width: 80%; }
   .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
   .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
   .instagram-card { flex-direction: column; text-align: center; }
