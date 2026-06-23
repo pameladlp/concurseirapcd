@@ -192,7 +192,6 @@
       { title: 'Notícias de Concursos', url: 'noticias.html', cat: 'Notícias', excerpt: 'Editais abertos, concursos previstos e oportunidades para candidatos PCD.' },
       { title: 'Materiais Gratuitos', url: 'materiais-gratuitos.html', cat: 'Materiais', excerpt: 'Checklists, planners e guias práticos para organizar seus estudos.' },
       { title: 'Produtos Digitais', url: 'produtos-digitais.html', cat: 'Produtos', excerpt: 'Kits, planilhas e ferramentas para uma preparação mais estruturada.' },
-      { title: 'Achadinhos de Estudo', url: 'achadinhos.html', cat: 'Achadinhos', excerpt: 'Recursos e indicações para conforto, organização e tecnologia nos estudos.' },
       { title: 'Sobre Pâmela Dayane', url: 'sobre.html', cat: 'Sobre', excerpt: 'Conheça a trajetória de Pâmela Dayane, servidora pública, PCD e criadora do projeto.' },
       { title: 'Contato', url: 'contato.html', cat: 'Institucional', excerpt: 'Entre em contato com a Concurseira PCD.' },
     ];
