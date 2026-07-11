@@ -84,13 +84,21 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
-  background-color: var(--background);
+  background:
+    radial-gradient(circle at 8% 25%, rgba(110, 143, 125, 0.12) 0 90px, transparent 91px),
+    radial-gradient(circle at 85% 15%, rgba(233, 198, 181, 0.18) 0 120px, transparent 121px),
+    radial-gradient(circle at 95% 60%, rgba(198, 150, 86, 0.08) 0 110px, transparent 111px),
+    radial-gradient(circle at 4% 82%, rgba(233, 198, 181, 0.14) 0 100px, transparent 101px),
+    radial-gradient(circle at 70% 92%, rgba(110, 143, 125, 0.08) 0 130px, transparent 131px),
+    #f7f6f2;
+  background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--font-sans);
   font-size: 1rem;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
+.high-contrast body, body.high-contrast { background: var(--background); }
 img, svg { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
 button { cursor: pointer; font: inherit; border: none; background: none; }
