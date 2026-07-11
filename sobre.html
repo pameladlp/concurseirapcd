@@ -54,7 +54,7 @@ body.sobre .blob{position:absolute;border-radius:45% 55% 55% 45%/55% 45% 55% 45%
 body.sobre .blob.one{width:320px;height:310px;background:#f4e6de;right:16px;top:4px}
 body.sobre .blob.two{width:190px;height:140px;background:#cbdccc;right:-18px;bottom:8px;transform:rotate(-15deg)}
 body.sobre .dots-sb{position:absolute;right:-10px;top:6px;width:72px;height:72px;background-image:radial-gradient(#6E8F7D 1.2px, transparent 1.2px);background-size:10px 10px;opacity:.75}
-body.sobre .portrait{width:315px;height:315px;object-fit:cover;object-position:center top;border-radius:42% 42% 8px 8px/26% 26% 8px 8px;border:2px solid rgba(201,107,86,.28);box-shadow:0 16px 38px rgba(44,57,50,.13);position:relative;z-index:3;background:#ddd}
+body.sobre .portrait{width:min(300px,80%);height:auto;border-radius:16px;border:1px solid #e7ddd5;background:#fff;padding:6px;box-shadow:0 20px 45px rgba(31,92,77,.16);transform:rotate(-2deg);position:relative;z-index:3}
 body.sobre .leaf-line{position:absolute;left:-50px;top:45px;width:100px;height:200px;opacity:.28}
 
 /* CREDENCIAIS */
@@ -144,7 +144,7 @@ body.sobre a:focus-visible, body.sobre button:focus-visible{outline:3px solid va
   body.sobre .cred-box{grid-template-columns:1fr}
   body.sobre .cred::after{display:none!important}
   body.sobre .cred:last-child{grid-column:auto}
-  body.sobre .portrait{width:270px;height:270px}
+  body.sobre .portrait{width:min(260px,80%)}
   body.sobre .blob.one{width:275px;height:265px}
 }
 </style>
@@ -191,7 +191,7 @@ body.sobre a:focus-visible, body.sobre button:focus-visible{outline:3px solid va
       <div class="blob one" aria-hidden="true"></div>
       <div class="blob two" aria-hidden="true"></div>
       <div class="dots-sb" aria-hidden="true"></div>
-      <img class="portrait" src="assets/images/pamela.jpg?v=2" alt="Retrato de Pâmela Dayane, criadora do Concurseira PCD" width="315" height="315"/>
+      <img class="portrait" src="assets/images/insta/selfie-caderno-friends.jpeg" alt="Pâmela Dayane sorrindo, segurando um caderno da série Friends" width="300" height="373"/>
     </div>
   </div>
 </section>
