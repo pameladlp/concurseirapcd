@@ -18,5 +18,4 @@ const SEARCH_DATA = [
   { title: 'Produtos Digitais', url: 'produtos-digitais.html', description: 'Kit do Aluno Organizado, Manual da Concurseira PCD, planner, planilha e flashcards.', keywords: 'produtos digitais kit aluno organizado manual concurseira pcd planner planilha flashcards', category: 'Produtos' },
   { title: 'Contato', url: 'contato.html', description: 'Contato para dúvidas, sugestões, parcerias, materiais e relatos.', keywords: 'contato dúvidas sugestões parcerias instagram mensagem', category: 'Página' },
   { title: 'Política de Privacidade', url: 'politica.html', description: 'Informações sobre coleta de dados, formulários, cookies e ferramentas externas.', keywords: 'privacidade dados cookies formulário lgpd política', category: 'Página' },
-  { title: 'Aviso de Afiliados', url: 'aviso-afiliados.html', description: 'Transparência sobre links de afiliados e recomendações.', keywords: 'afiliados links comissão transparência achadinhos', category: 'Página' },
 ];
