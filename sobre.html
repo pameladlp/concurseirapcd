@@ -1,14 +1,137 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Sobre Mim | Concurseira PCD</title>
-<meta content="Conheça Pâmela Dayane, servidora pública, concurseira PCD e criadora do projeto Concurseira PCD." name="description"/>
+<meta content="Conheça Pâmela Dayane: servidora pública do TRF1, advogada, concurseira e pessoa com deficiência. Uma trajetória real entre concursos, trabalho e acessibilidade." name="description"/>
+<link rel="canonical" href="https://concurseirapcd.com.br/sobre.html"/>
+<meta property="og:type" content="profile"/>
+<meta property="og:title" content="Sobre Mim | Concurseira PCD"/>
+<meta property="og:description" content="Uma trajetória real entre concursos, trabalho e acessibilidade. Por Pâmela Dayane, servidora pública e PCD."/>
+<meta property="og:url" content="https://concurseirapcd.com.br/sobre.html"/>
+<meta property="og:image" content="https://concurseirapcd.com.br/favicon/android-chrome-512x512.png"/>
 <link href="assets/css/style.css?v=8" rel="stylesheet"/>
-<link href="favicon/favicon.ico?v=3" rel="icon" sizes="any"/><link href="favicon/favicon-32x32.png?v=3" rel="icon" sizes="32x32" type="image/png"/><link href="favicon/favicon-16x16.png?v=3" rel="icon" sizes="16x16" type="image/png"/><link href="favicon/apple-touch-icon.png?v=3" rel="apple-touch-icon"/><link href="favicon/site.webmanifest" rel="manifest"/><meta content="#0b3d2e" name="theme-color"/></head>
-<body>
+<link href="favicon/favicon.ico?v=3" rel="icon" sizes="any"/><link href="favicon/favicon-32x32.png?v=3" rel="icon" sizes="32x32" type="image/png"/><link href="favicon/favicon-16x16.png?v=3" rel="icon" sizes="16x16" type="image/png"/><link href="favicon/apple-touch-icon.png?v=3" rel="apple-touch-icon"/><link href="favicon/site.webmanifest" rel="manifest"/><meta content="#1F5C4D" name="theme-color"/>
+
+<style>
+/* ═══ SOBRE — layout dedicado (escopo: body.sobre) ═══ */
+body.sobre { --sage:#6E8F7D; --peach:#E9C6B5; --green:#1F5C4D; }
+
+/* Botão do cabeçalho + aba ativa */
+.header-cta{
+  display:inline-flex; align-items:center; gap:.45rem;
+  background:var(--primary); color:#fff; font-family:var(--font-sans);
+  font-size:.85rem; font-weight:600; padding:.6rem 1rem; border-radius:9px;
+  transition:all .25s ease; white-space:nowrap; min-height:44px;
+}
+.header-cta:hover{ background:#18493c; transform:translateY(-1px); box-shadow:0 8px 20px -8px rgba(31,92,77,.5); }
+.main-nav a[aria-current="page"]{ color:var(--primary); position:relative; }
+.main-nav a[aria-current="page"]::after{
+  content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px;
+  background:var(--accent); border-radius:2px;
+}
+
+/* HERO */
+.about-hero .about-grid{
+  display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(2rem,5vw,4rem); align-items:center;
+}
+.about-eyebrow{ color:var(--accent); font-family:var(--font-sans); font-weight:700;
+  font-size:.75rem; letter-spacing:.14em; text-transform:uppercase; margin-bottom:1rem; }
+.about-hero h1{ color:var(--primary); font-size:clamp(2.4rem,5vw,4rem); line-height:1.08; margin-bottom:1.25rem; }
+.about-hero h1 em{ color:var(--accent); font-style:normal; }
+.about-hero .lead{ color:var(--muted-fg); font-size:1.05rem; line-height:1.7; max-width:60ch; margin-bottom:1.75rem; }
+.about-actions{ display:flex; flex-wrap:wrap; gap:.85rem; }
+
+/* Moldura orgânica com a foto */
+.photo-frame{ position:relative; justify-self:center; width:min(100%,420px); aspect-ratio:4/5; }
+.photo-frame .blob{ position:absolute; z-index:0; filter:blur(1px); }
+.photo-frame .blob-1{ inset:-6% -10% 30% 20%; background:var(--sage); opacity:.28;
+  border-radius:58% 42% 47% 53% / 55% 48% 52% 45%; }
+.photo-frame .blob-2{ inset:35% 18% -8% -12%; background:var(--peach); opacity:.55;
+  border-radius:44% 56% 61% 39% / 52% 40% 60% 48%; }
+.photo-frame .dots{ position:absolute; z-index:0; width:96px; height:96px; top:-4%; right:-4%;
+  background-image:radial-gradient(var(--sage) 1.6px,transparent 1.6px); background-size:13px 13px; opacity:.45; }
+.photo-frame img{ position:relative; z-index:2; width:100%; height:100%; object-fit:cover; object-position:center top;
+  border-radius:210px 210px 22px 22px;
+  box-shadow:0 20px 50px -20px rgba(31,92,77,.35); }
+
+/* Faixa de credenciais */
+.cred-strip{
+  display:flex; flex-wrap:wrap; background:#fff; border:1px solid rgba(31,92,77,.12);
+  border-radius:16px; box-shadow:0 8px 30px rgba(31,92,77,.07); overflow:hidden; margin-top:2.5rem;
+}
+.cred-item{ flex:1 1 0; min-width:150px; display:flex; align-items:center; gap:.7rem;
+  padding:1.1rem 1.25rem; border-left:1px solid rgba(31,92,77,.1); }
+.cred-item:first-child{ border-left:none; }
+.cred-item svg{ color:var(--primary); flex-shrink:0; }
+.cred-item span{ font-family:var(--font-sans); font-size:.85rem; font-weight:500; color:var(--foreground); line-height:1.3; }
+
+/* MINHA HISTÓRIA + TIMELINE */
+.hist-grid{ display:grid; grid-template-columns:minmax(0,520px) 1fr; gap:clamp(2rem,5vw,4rem); align-items:start; }
+.hist-text{ max-width:520px; }
+.hist-text p{ color:var(--muted-fg); line-height:1.75; margin-bottom:1rem; }
+.hist-full[hidden]{ display:none; }
+
+/* Timeline */
+.tl{ position:relative; padding-left:2.4rem; }
+.tl::before{ content:""; position:absolute; left:15px; top:8px; bottom:8px; width:2px;
+  background:linear-gradient(var(--sage),rgba(110,143,125,.25)); }
+.tl-item{ position:relative; padding-bottom:1.75rem; }
+.tl-item:last-child{ padding-bottom:0; }
+.tl-icon{ position:absolute; left:-2.4rem; top:0; width:32px; height:32px; border-radius:50%;
+  background:#fff; border:2px solid var(--accent); color:var(--accent);
+  display:flex; align-items:center; justify-content:center; z-index:1; }
+.tl-year{ font-family:var(--font-sans); font-weight:700; font-size:.72rem; letter-spacing:.06em;
+  text-transform:uppercase; color:var(--primary); }
+.tl-item h3{ font-size:1rem; margin:.15rem 0 .2rem; }
+.tl-item p{ color:var(--muted-fg); font-size:.86rem; line-height:1.5; }
+.tl-photo{ margin-top:.6rem; max-width:200px; border-radius:12px; overflow:hidden; }
+.tl-photo img{ width:100%; height:auto; display:block; }
+
+/* POR QUE — cards */
+.why-cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; margin-top:2.25rem; }
+.why-card{ background:#fff; border:1px solid rgba(31,92,77,.12); border-radius:16px;
+  box-shadow:0 8px 30px rgba(31,92,77,.07); padding:1.75rem 1.5rem; text-align:center;
+  transition:transform .25s ease, box-shadow .25s ease; }
+.why-card:hover{ transform:translateY(-4px); box-shadow:0 16px 40px rgba(31,92,77,.12); }
+.why-icon{ width:52px; height:52px; margin:0 auto 1rem; border-radius:14px; background:var(--surface);
+  display:flex; align-items:center; justify-content:center; color:var(--primary); }
+.why-card h3{ font-size:1.15rem; margin-bottom:.4rem; }
+.why-card p{ color:var(--muted-fg); font-size:.9rem; line-height:1.6; }
+
+/* Botões da faixa CTA com ícone */
+.cta-band .btn{ display:inline-flex; align-items:center; gap:.5rem; padding:.85rem 1.4rem; border-radius:9px; min-height:44px; }
+.cta-band .leaf{ position:absolute; z-index:0; color:#fff; opacity:.14; }
+.cta-band .leaf-l{ left:2%; bottom:-10px; width:130px; transform:rotate(8deg); }
+.cta-band .leaf-r{ right:2%; top:-6px; width:110px; transform:rotate(-160deg); }
+
+/* Botões (refino do brief) */
+body.sobre .btn{ padding:.85rem 1.5rem; border-radius:9px; font-weight:600; min-height:44px; }
+
+/* Acessibilidade */
+body.sobre a:focus-visible, body.sobre button:focus-visible{
+  outline:3px solid var(--accent); outline-offset:2px; border-radius:6px; }
+@media (prefers-reduced-motion: reduce){
+  body.sobre *{ transition:none !important; animation:none !important; scroll-behavior:auto !important; }
+}
+
+/* Responsivo */
+@media (max-width:900px){
+  .about-hero .about-grid{ grid-template-columns:1fr; }
+  .photo-frame{ order:2; margin-top:1.5rem; }
+  .hist-grid{ grid-template-columns:1fr; }
+  .why-cards{ grid-template-columns:1fr; }
+}
+@media (max-width:560px){
+  .cred-strip{ border-radius:16px; }
+  .cred-item{ flex:1 1 45%; border-left:none; border-top:1px solid rgba(31,92,77,.1); }
+  .cred-item:nth-child(-n+1){ border-top:none; }
+}
+</style>
+</head>
+<body class="sobre">
+<a class="skip-link" href="#main-content">Ir para o conteúdo</a>
 <header class="site-header">
 <div class="container nav-wrapper">
 <a aria-label="Página inicial Concurseira PCD" class="logo" href="index.html">
@@ -18,231 +141,181 @@
 <button aria-expanded="false" aria-label="Abrir menu" class="nav-toggle">☰</button>
 <nav aria-label="Menu principal" class="main-nav">
 <a href="index.html">Início</a>
-<a href="sobre.html">Sobre Mim</a>
+<a href="sobre.html" aria-current="page">Sobre</a>
 <a href="direitos-pcd.html">Direitos PCD</a>
 <a href="noticias.html">Notícias</a>
 <a href="blog.html">Blog</a>
-<a href="materiais-gratuitos.html">Materiais Gratuitos</a>
-<a href="produtos-digitais.html">Produtos Digitais</a>
+<a href="produtos-digitais.html">Produtos</a>
 <a aria-label="Buscar" class="nav-search" href="search.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></a>
+<a class="header-cta" href="materiais-gratuitos.html"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg> Materiais gratuitos</a>
 </nav>
 </div>
 </header>
-<main>
 
-<!-- ─── HERO / APRESENTAÇÃO ─── -->
-<section class="page-hero">
-  <div class="container page-title-row">
-    <div class="page-title-copy">
-      <p class="eyebrow">Sobre mim</p>
-      <h1>Uma trajetória real entre concursos, trabalho e <em class="hero-accent">acessibilidade</em>.</h1>
-      <p class="lead">Sou Pâmela Dayane, servidora pública, advogada, concurseira e pessoa com deficiência. Criei este espaço para compartilhar minha jornada e mostrar que é possível conciliar propósito, acessibilidade e qualidade de vida.</p>
-      <div class="badge-row" style="margin-top:1rem;">
-        <span class="info-badge">PCD</span>
-        <span class="info-badge">Servidora do TRF1</span>
-        <span class="info-badge">Advogada</span>
-        <span class="info-badge">Aprovada na OAB aos 20 anos</span>
-        <span class="info-badge">Aprovada em diferentes concursos públicos</span>
+<main id="main-content">
+
+<!-- ═══ HERO ═══ -->
+<section class="page-hero about-hero">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-copy">
+        <p class="about-eyebrow">Sobre mim</p>
+        <h1>Uma trajetória real entre concursos, trabalho e <em>acessibilidade</em>.</h1>
+        <p class="lead">Sou Pâmela Dayane, servidora pública, advogada, concurseira e pessoa com deficiência. Criei este espaço para compartilhar minha jornada e mostrar que é possível conciliar propósito, acessibilidade e qualidade de vida.</p>
+        <div class="about-actions">
+          <a class="btn btn-primary" href="#minha-historia">Conheça minha história</a>
+          <a class="btn btn-secondary" href="materiais-gratuitos.html">Ver materiais gratuitos</a>
+        </div>
       </div>
-      <div class="badge-row" style="margin-top:1.5rem;gap:0.75rem;">
-        <a class="btn btn-primary" href="#minha-historia">Conheça minha história</a>
-        <a class="btn btn-secondary" href="materiais-gratuitos.html">Ver materiais gratuitos</a>
+      <div class="photo-frame">
+        <span class="blob blob-1" aria-hidden="true"></span>
+        <span class="blob blob-2" aria-hidden="true"></span>
+        <span class="dots" aria-hidden="true"></span>
+        <img src="assets/images/pamela.jpg?v=2" alt="Fotografia de Pâmela Dayane, criadora do Concurseira PCD" loading="eager" width="420" height="525"/>
       </div>
     </div>
-    <div class="page-title-illustration page-title-photo">
-      <img alt="Foto de Pâmela Dayane" src="assets/images/pamela.jpg?v=2"/>
+
+    <!-- Faixa de credenciais -->
+    <div class="cred-strip" role="list" aria-label="Credenciais">
+      <div class="cred-item" role="listitem">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="4" r="1"/><path d="m18 19 1-7-6 1"/><path d="m5 8 3-3 5.5 3-2.36 3.5"/><path d="M4.24 14.5a5 5 0 0 0 6.88 6"/><path d="M13.76 17.5a5 5 0 0 0-6.88-6"/></svg>
+        <span>PCD</span>
+      </div>
+      <div class="cred-item" role="listitem">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>
+        <span>Servidora do TRF1</span>
+      </div>
+      <div class="cred-item" role="listitem">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>
+        <span>Advogada</span>
+      </div>
+      <div class="cred-item" role="listitem">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+        <span>Aprovada na OAB aos 20 anos</span>
+      </div>
+      <div class="cred-item" role="listitem">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>
+        <span>Aprovada em diferentes concursos</span>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ─── MINHA HISTÓRIA ─── -->
+<!-- ═══ MINHA HISTÓRIA + LINHA DO TEMPO ═══ -->
 <section class="section" id="minha-historia">
-  <div class="container content narrow">
-    <p class="eyebrow">Minha história</p>
-    <h2>Uma trajetória construída com mérito, coragem e determinação.</h2>
-    <p>Minha trajetória profissional começou ainda durante a graduação em Direito. Fui aprovada na OAB aos 20 anos, antes mesmo de concluir o curso, e comecei a estudar para concursos logo após a formatura.</p>
-    <p>Naquele momento, o concurso público representava para mim a possibilidade de construir uma carreira baseada em critérios objetivos, sem permitir que o preconceito relacionado à minha deficiência determinasse até onde eu poderia chegar.</p>
-    <p>Depois de aproximadamente um ano de estudos, fui nomeada para meu primeiro cargo público, na Universidade de Pernambuco. Eu tinha 21 anos e aquele também foi o meu primeiro vínculo profissional.</p>
-    <p>Alguns anos depois, minha trajetória tomou outros caminhos. Mudei-me para São Paulo e conheci a vida corporativa, primeiro como advogada trabalhista no Banco Santander e, posteriormente, como advogada societária no Banco Safra.</p>
-    <p>Foram experiências que contribuíram muito para minha formação. Aprendi sobre responsabilidade, produtividade, gestão, comunicação e desenvolvimento profissional.</p>
-    <p>Em 2023, recebi uma nova oportunidade: a nomeação para o Tribunal Regional Federal da 1ª Região, em Brasília. Era necessário deixar a vida que eu havia construído em São Paulo e começar novamente em uma cidade onde eu não conhecia ninguém.</p>
-    <p><strong>Decidi assumir o risco.</strong></p>
-    <p>Essa escolha me trouxe estabilidade, qualidade de vida e mais autonomia para planejar o futuro. Também me permitiu voltar aos estudos para alcançar o cargo que pretendo exercer até a aposentadoria.</p>
-    <p>Hoje, continuo sendo concurseira. Compartilho minha caminhada porque sei que muitas pessoas não precisam de mais cobrança. Precisam de orientação, ferramentas práticas e da certeza de que é possível construir um caminho próprio.</p>
+  <div class="container">
+    <div class="hist-grid">
+      <div class="hist-text">
+        <p class="eyebrow">Minha história</p>
+        <h2>Uma trajetória construída com mérito e coragem.</h2>
+        <p>Fui aprovada na OAB aos 20 anos, ainda durante a graduação em Direito, e comecei a estudar para concursos logo após a formatura. O concurso público representava, para mim, a chance de construir uma carreira por critérios objetivos, sem deixar o preconceito decidir até onde eu poderia chegar.</p>
+        <p>Depois de cerca de um ano de estudos, tomei posse no meu primeiro cargo público, na Universidade de Pernambuco. Anos depois, conheci a vida corporativa em São Paulo, como advogada no Banco Santander e, mais tarde, no Banco Safra.</p>
+        <p>Em 2023, assumi a nomeação para o Tribunal Regional Federal da 1ª Região, em Brasília — a escolha que me trouxe estabilidade, qualidade de vida e o retorno aos estudos.</p>
+        <div class="hist-full" id="hist-full" hidden>
+          <p>Foram experiências que contribuíram muito para a minha formação. Aprendi sobre responsabilidade, produtividade, gestão e comunicação — e descobri que amo desafios.</p>
+          <p>Mudar para Brasília significou recomeçar em uma cidade onde eu não conhecia ninguém. Decidi assumir o risco, e daí em diante foi crescimento e leveza.</p>
+          <p>Hoje continuo concurseira, em busca do meu cargo-fim. Compartilho minha caminhada porque sei que muitas pessoas não precisam de mais cobrança — precisam de orientação, ferramentas práticas e da certeza de que é possível construir um caminho próprio.</p>
+        </div>
+        <button class="btn btn-secondary" id="hist-toggle" type="button" aria-expanded="false" aria-controls="hist-full" style="margin-top:.5rem;">Ler história completa</button>
+      </div>
+
+      <div class="hist-timeline">
+        <p class="eyebrow">Linha do tempo</p>
+        <div class="tl">
+          <div class="tl-item">
+            <span class="tl-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></span>
+            <span class="tl-year">2016</span>
+            <h3>Aprovação na OAB</h3>
+            <p>Aprovada no XXI Exame da Ordem ainda na graduação.</p>
+            <div class="tl-photo"><img src="assets/images/oab-2016.jpeg?v=2" alt="Pâmela aprovada na OAB em 2016" loading="lazy" onerror="this.parentElement.style.display='none'"/></div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></span>
+            <span class="tl-year">2018</span>
+            <h3>Primeira posse no serviço público</h3>
+            <p>Assistente Administrativo na Universidade de Pernambuco.</p>
+            <div class="tl-photo"><img src="assets/images/posse-upe.jpg?v=2" alt="Pâmela na posse da UPE em 2018" loading="lazy" onerror="this.parentElement.style.display='none'"/></div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
+            <span class="tl-year">2020</span>
+            <h3>Advocacia no Santander</h3>
+            <p>Mudança para São Paulo e início no setor bancário.</p>
+            <div class="tl-photo"><img src="assets/images/santander-sp-2020.jpeg?v=2" alt="Pâmela em São Paulo, no Santander, em 2020" loading="lazy" onerror="this.parentElement.style.display='none'"/></div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/></svg></span>
+            <span class="tl-year">2022</span>
+            <h3>Banco Safra</h3>
+            <p>Advogada societária em uma equipe que me fez crescer.</p>
+            <div class="tl-photo"><img src="assets/images/safra-2022.jpeg?v=2" alt="Pâmela no Banco Safra em 2022" loading="lazy" onerror="this.parentElement.style.display='none'"/></div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></span>
+            <span class="tl-year">2023</span>
+            <h3>Posse no TRF1</h3>
+            <p>Servidora do Tribunal Regional Federal da 1ª Região, em Brasília.</p>
+            <div class="tl-photo"><img src="assets/images/posse-trf1.jpg?v=2" alt="Pâmela na posse do TRF1 em 2023" loading="lazy" onerror="this.parentElement.style.display='none'"/></div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .962 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.962 0z"/></svg></span>
+            <span class="tl-year">Hoje</span>
+            <h3>Concurseira PCD</h3>
+            <p>De volta aos estudos e compartilhando cada passo da jornada.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ─── LINHA DO TEMPO ─── -->
+<!-- ═══ POR QUE EXISTE ═══ -->
 <section class="section section-soft">
   <div class="container">
     <div class="section-heading">
-      <p class="eyebrow">Linha do tempo</p>
-      <h2>Alguns marcos da minha trajetória</h2>
+      <p class="eyebrow">O propósito</p>
+      <h2>Por que a Concurseira PCD existe</h2>
+      <p>Criei este espaço para transformar informação em prática e apoiar você na sua jornada, com leveza e estratégia.</p>
     </div>
-    <div class="timeline" style="max-width:680px;">
-      <div class="timeline-item timeline-item--photo">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <span class="timeline-year">2016</span>
-          <h3>Aprovação na OAB</h3>
-          <p>Aprovada no XXI Exame da Ordem ainda durante a graduação em Direito.</p>
-          <div class="timeline-photo">
-            <img src="assets/images/oab-2016.jpeg?v=2" alt="Pâmela aprovada no XXI Exame da OAB em 2016" onerror="this.parentElement.style.display='none'"/>
-            <span class="photo-caption">2016 — Aprovada na OAB</span>
-          </div>
-        </div>
-      </div>
-      <div class="timeline-item timeline-item--photo">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <span class="timeline-year">2017</span>
-          <h3>Graduação em Direito</h3>
-          <p>Concluí minha formação pela Universidade Católica de Pernambuco.</p>
-          <div class="timeline-photo">
-            <img src="assets/images/colacao-2017.jpeg?v=2" alt="Pâmela na colação de grau em Direito em 2017" onerror="this.parentElement.style.display='none'"/>
-            <span class="photo-caption">2017 — Colação de grau em Direito</span>
-          </div>
-        </div>
-      </div>
-      <div class="timeline-item timeline-item--photo">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <span class="timeline-year">2018</span>
-          <h3>Primeira posse no serviço público</h3>
-          <p>Assumi o cargo de Assistente Administrativo na Universidade de Pernambuco.</p>
-          <div class="timeline-photo">
-            <img src="assets/images/posse-upe.jpg?v=2" alt="Pâmela na posse da UPE em 2018" onerror="this.parentElement.style.display='none'"/>
-            <span class="photo-caption">2018 — Posse na UPE</span>
-          </div>
-        </div>
-      </div>
-      <div class="timeline-item timeline-item--photo">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <span class="timeline-year">2020</span>
-          <h3>Advocacia trabalhista no Santander</h3>
-          <p>Mudei-me para São Paulo e iniciei minha trajetória no setor bancário.</p>
-          <div class="timeline-photo">
-            <img src="assets/images/santander-sp-2020.jpeg?v=2" alt="Pâmela em São Paulo, advogada no Santander em 2020" onerror="this.parentElement.style.display='none'"/>
-            <span class="photo-caption">2020 — São Paulo · Santander</span>
-          </div>
-        </div>
-      </div>
-      <div class="timeline-item timeline-item--photo">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <span class="timeline-year">2022</span>
-          <h3>Advocacia societária no Banco Safra</h3>
-          <p>Passei a integrar uma equipe formada por profissionais que contribuíram muito para meu crescimento.</p>
-          <div class="timeline-photo">
-            <img src="assets/images/safra-2022.jpeg?v=2" alt="Pâmela advogada societária no Banco Safra em 2022" onerror="this.parentElement.style.display='none'"/>
-            <span class="photo-caption">2022 — Banco Safra</span>
-          </div>
-        </div>
-      </div>
-      <div class="timeline-item timeline-item--photo">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <span class="timeline-year">2023</span>
-          <h3>Posse no TRF1</h3>
-          <p>Mudei-me para Brasília para assumir meu cargo no Tribunal Regional Federal da 1ª Região.</p>
-          <div class="timeline-photo">
-            <img src="assets/images/posse-trf1.jpg?v=2" alt="Pâmela na posse do TRF1 em Brasília em 2023" onerror="this.parentElement.style.display='none'"/>
-            <span class="photo-caption">2023 — Posse no TRF1 · Brasília</span>
-          </div>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <span class="timeline-year">Hoje</span>
-          <h3>Concurseira PCD</h3>
-          <p>Voltei aos estudos em busca do meu cargo-fim e criei este espaço para compartilhar conhecimento, ferramentas e experiências reais.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── POR QUE ESTE PROJETO EXISTE ─── -->
-<section class="section">
-  <div class="container content narrow">
-    <p class="eyebrow">Por que este projeto existe</p>
-    <h2>Por que a Concurseira PCD existe</h2>
-    <p>Minha história com concursos não foi construída em uma rotina ideal.</p>
-    <p>Ela aconteceu em meio ao trabalho, às mudanças de cidade, às responsabilidades familiares, às limitações pessoais, à saúde mental e às escolhas difíceis que fazem parte da vida.</p>
-    <p>Ao longo dessa caminhada, percebi que grande parte do conteúdo sobre concursos parte de uma realidade que muitas pessoas não conseguem reproduzir.</p>
-    <p>Nem todo mundo pode estudar durante oito horas por dia.<br>Nem todo mundo consegue cumprir um cronograma rígido.<br>Nem todo mundo possui os mesmos recursos, o mesmo tempo ou as mesmas condições físicas e emocionais.</p>
-    <p>Por isso, a Concurseira PCD foi criada para oferecer conteúdo acessível, realista e aplicável. Não para romantizar a dificuldade, mas para encontrar caminhos possíveis apesar dela.</p>
-  </div>
-</section>
-
-<!-- ─── O QUE VOCÊ ENCONTRA AQUI ─── -->
-<section class="section section-soft">
-  <div class="container">
-    <div class="section-heading">
-      <p class="eyebrow">O que você encontra aqui</p>
-      <h2>Conteúdo de valor, vivência real e ferramentas práticas.</h2>
-    </div>
-    <div class="cards three">
-      <article class="card">
-        <h3>Conteúdo sobre concursos</h3>
-        <p>Informações sobre editais, planejamento, métodos de estudo, revisão, questões e organização da preparação.</p>
+    <div class="why-cards">
+      <article class="why-card">
+        <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg></div>
+        <h3>Informação clara</h3>
+        <p>Explicações objetivas sobre concursos e direitos PCD.</p>
       </article>
-      <article class="card">
-        <h3>Direitos da pessoa com deficiência</h3>
-        <p>Explicações claras sobre cotas, adaptações, documentação, avaliações biopsicossociais, heteroidentificação e outros procedimentos dos concursos públicos.</p>
-      </article>
-      <article class="card">
+      <article class="why-card">
+        <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/></svg></div>
         <h3>Organização possível</h3>
-        <p>Ferramentas para quem deseja estudar com constância, mesmo sem conseguir seguir uma rotina perfeita.</p>
+        <p>Ferramentas e rotinas para estudar com foco e sem peso extra.</p>
       </article>
-      <article class="card">
-        <h3>Materiais práticos</h3>
-        <p>Planilhas, guias, modelos e produtos digitais desenvolvidos para facilitar a vida de quem estuda.</p>
-      </article>
-      <article class="card">
-        <h3>Vida real de concurseira</h3>
-        <p>Experiências, dificuldades, decisões e aprendizados de quem já foi aprovada, tomou posse e continua estudando para novos objetivos.</p>
+      <article class="why-card">
+        <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></div>
+        <h3>Inclusão sem romantização</h3>
+        <p>Conteúdo realista, acolhedor e baseado em experiência.</p>
       </article>
     </div>
   </div>
 </section>
 
-<!-- ─── CHAMADA FINAL ─── -->
+<!-- ═══ CHAMADA FINAL ═══ -->
 <section class="section">
   <div class="container">
     <div class="cta-band">
+      <svg class="leaf leaf-l" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg>
+      <svg class="leaf leaf-r" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg>
       <h2>Vamos seguir juntas nessa caminhada.</h2>
-      <p>Você não precisa fazer tudo de uma vez. A aprovação é construída em etapas — meu objetivo é ajudar você a organizar os próximos passos e continuar avançando, sem transformar os estudos em mais uma fonte de culpa.</p>
+      <p>Você não precisa fazer tudo de uma vez. A aprovação começa com um passo.</p>
       <div class="btn-band-row">
-        <a class="btn" href="materiais-gratuitos.html">Materiais gratuitos</a>
-        <a class="btn" href="produtos-digitais.html">Produtos digitais</a>
-        <a class="btn" href="https://www.instagram.com/concurseirapcd" target="_blank" rel="noopener">Acompanhar no Instagram</a>
+        <a class="btn" href="materiais-gratuitos.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg> Materiais gratuitos</a>
+        <a class="btn" href="produtos-digitais.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg> Produtos digitais</a>
+        <a class="btn" href="https://www.instagram.com/concurseirapcd" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg> Acompanhar no Instagram</a>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── CARD INSTAGRAM ─── -->
-<section class="section section-soft">
-  <div class="container">
-    <div class="instagram-card">
-      <div class="instagram-avatar">
-        <img src="assets/images/pamela.jpg?v=2" alt="Pâmela Dayane" />
-      </div>
-      <div class="instagram-info">
-        <p class="instagram-handle">@concurseirapcd</p>
-        <p class="instagram-name">Pâmela Dayane · Concurseira PCD</p>
-      </div>
-      <a class="btn-instagram" href="https://www.instagram.com/concurseirapcd" target="_blank" rel="noopener">
-        Acompanhar no Instagram
-      </a>
     </div>
   </div>
 </section>
 
 </main>
+
 <footer class="site-footer">
 <div class="container footer-grid">
 <div>
@@ -262,5 +335,15 @@
 </div>
 </footer>
 <script src="assets/js/script.js"></script>
+<script>
+(function(){
+  var t=document.getElementById('hist-toggle'), f=document.getElementById('hist-full');
+  if(t&&f){ t.addEventListener('click',function(){
+    var open=f.hasAttribute('hidden');
+    if(open){ f.removeAttribute('hidden'); t.setAttribute('aria-expanded','true'); t.textContent='Ocultar história'; }
+    else { f.setAttribute('hidden',''); t.setAttribute('aria-expanded','false'); t.textContent='Ler história completa'; }
+  }); }
+})();
+</script>
 </body>
 </html>
