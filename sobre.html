@@ -102,16 +102,6 @@ body.sobre .card-sb .icon-sb .svg-icon{width:19px;height:19px}
 body.sobre .card-sb h3{font-family:var(--font-sans);font-size:15px;font-weight:700;color:var(--primary);line-height:1.25;margin:0 0 8px;max-width:190px}
 body.sobre .card-sb p{font-size:13px;line-height:1.5;margin:0;max-width:210px;color:#2f2f2f}
 
-/* CTA */
-body.sobre .cta-sb{margin:0 auto 28px;width:min(100% - 24px,1032px);background:linear-gradient(135deg,#c96b56,#d77c61);border-radius:14px;padding:20px 28px;text-align:center;color:#fff;position:relative;overflow:hidden}
-body.sobre .cta-sb::before{content:"";position:absolute;left:30px;bottom:-38px;width:120px;height:160px;border:1px solid rgba(255,255,255,.25);border-radius:60% 40% 70% 30%;transform:rotate(-16deg)}
-body.sobre .cta-sb::after{content:"";position:absolute;right:35px;top:10px;width:90px;height:55px;background-image:radial-gradient(rgba(255,255,255,.58) 1px, transparent 1px);background-size:10px 10px}
-body.sobre .cta-sb h2{color:#fff;font-size:23px;margin-bottom:5px}
-body.sobre .cta-sb p{margin:0 0 13px;font-size:13px;color:rgba(255,255,255,.95)}
-body.sobre .cta-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;position:relative;z-index:2}
-body.sobre .cta-sb .btn{background:#fff;color:#244139;border:none;min-width:170px}
-body.sobre .cta-sb .btn:hover{transform:translateY(-1px);box-shadow:0 10px 20px rgba(0,0,0,.12)}
-
 /* Acessibilidade */
 body.sobre a:focus-visible, body.sobre button:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
 @media (prefers-reduced-motion: reduce){
@@ -139,8 +129,7 @@ body.sobre a:focus-visible, body.sobre button:focus-visible{outline:3px solid va
 @media (max-width:600px){
   body.sobre .container{width:min(100% - 28px,1080px)}
   body.sobre .hero-sb h1{font-size:29px}
-  body.sobre .hero-actions,body.sobre .cta-actions{flex-direction:column}
-  body.sobre .btn,body.sobre .cta-sb .btn{width:100%}
+  body.sobre .btn{width:100%}
   body.sobre .cred-box{grid-template-columns:1fr}
   body.sobre .cred::after{display:none!important}
   body.sobre .cred:last-child{grid-column:auto}
@@ -276,17 +265,6 @@ body.sobre a:focus-visible, body.sobre button:focus-visible{outline:3px solid va
         </article>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ═══ CTA ═══ -->
-<section class="cta-sb" id="materiais">
-  <h2>Vamos seguir juntas nessa caminhada.</h2>
-  <p>Você não precisa fazer tudo de uma vez. A aprovação começa com um passo.</p>
-  <div class="cta-actions">
-    <a class="btn" href="/materiais-gratuitos"><svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 8v13M3 12h18M7.5 8C5.6 8 5 6.9 5 5.8 5 4.3 6.2 3.3 7.6 3.3c2.2 0 4.4 4.7 4.4 4.7M16.5 8c1.9 0 2.5-1.1 2.5-2.2 0-1.5-1.2-2.5-2.6-2.5C14.2 3.3 12 8 12 8"/></svg><span>Materiais gratuitos</span></a>
-    <a class="btn" href="/produtos-digitais"><svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 13H6zM9 8V6a3 3 0 0 1 6 0v2"/></svg><span>Produtos digitais</span></a>
-    <a class="btn" href="https://www.instagram.com/concurseirapcd" target="_blank" rel="noopener"><svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg><span>Acompanhar no Instagram</span></a>
   </div>
 </section>
 
