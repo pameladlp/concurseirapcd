@@ -97,10 +97,7 @@ body.direitos .dp-hero-actions{display:flex;flex-wrap:wrap;gap:12px}
 body.direitos .dp-hero-art{position:relative;min-height:320px;display:grid;place-items:center}
 body.direitos .shape{position:absolute;width:290px;height:290px;border-radius:48% 52% 55% 45%/45% 48% 52% 55%;background:linear-gradient(145deg,rgba(233,198,181,.75),rgba(233,198,181,.25));transform:rotate(-7deg)}
 body.direitos .shape.green{width:180px;height:180px;right:16px;bottom:0;background:rgba(110,143,125,.25);transform:rotate(14deg)}
-body.direitos .symbol-card{position:relative;z-index:2;width:230px;padding:28px;border:1px solid #e7ddd5;border-radius:26px;background:rgba(255,253,250,.94);box-shadow:0 12px 32px rgba(31,92,77,.06);text-align:center}
-body.direitos .symbol-card svg{width:88px;margin:0 auto 16px;color:var(--primary)}
-body.direitos .symbol-card strong{display:block;color:var(--primary);font:400 1.25rem var(--font-display)}
-body.direitos .symbol-card span{display:block;margin-top:5px;color:#666;font-size:.82rem}
+body.direitos .hero-photo{position:relative;z-index:2;width:min(280px,80%);height:auto;border-radius:24px;border:1px solid rgba(201,107,86,.3);box-shadow:0 25px 55px rgba(31,92,77,.16);transform:rotate(-2deg)}
 
 /* SEÇÕES */
 body.direitos main section{padding:54px 0}
@@ -163,7 +160,6 @@ body.direitos a:focus-visible, body.direitos button:focus-visible{outline:3px so
   body.direitos .dp-hero h1{font-size:30px}
   body.direitos .dp-hero-art{min-height:270px}
   body.direitos .shape{width:240px;height:240px}
-  body.direitos .symbol-card{width:210px;padding:24px}
   body.direitos main section{padding:44px 0}
   body.direitos .topics-grid,body.direitos .articles-grid{grid-template-columns:1fr}
   body.direitos .topic-card{min-height:auto}
@@ -218,11 +214,7 @@ body.direitos a:focus-visible, body.direitos button:focus-visible{outline:3px so
     <div class="dp-hero-art" aria-hidden="true">
       <div class="shape"></div>
       <div class="shape green"></div>
-      <div class="symbol-card">
-        <svg viewBox="0 0 120 120" fill="none"><circle cx="60" cy="60" r="43" stroke="currentColor" stroke-width="3"/><circle cx="58" cy="27" r="8" stroke="currentColor" stroke-width="3"/><path d="M58 37v27M58 48h20M58 64l-18 23M58 64l19 22" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M28 73a32 32 0 1 0 53-22" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
-        <strong>Direitos em linguagem clara</strong>
-        <span>Sem excesso de informação.</span>
-      </div>
+      <img class="hero-photo" src="assets/images/insta/embarque-pcd.jpeg" alt="Etiqueta de embarque aéreo com o símbolo internacional de acessibilidade" width="280" height="287"/>
     </div>
   </div>
 </section>
