@@ -63,46 +63,67 @@
     observer.observe(el);
   });
 
-  /* ─── BARRA DE ACESSIBILIDADE (topo fixo) ─── */
-  if (!document.querySelector('.a11y-bar')) {
-    const bar = document.createElement('div');
-    bar.className = 'a11y-bar';
-    bar.setAttribute('role', 'region');
-    bar.setAttribute('aria-label', 'Configurações de acessibilidade');
-    bar.innerHTML = `
-      <span class="a11y-bar-label">Acessibilidade</span>
-      <button class="a11y-bar-btn" id="a11y-contrast-btn" aria-pressed="false" title="Alto contraste">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20z"/></svg>
-        <span>Contraste</span>
-      </button>
-      <button class="a11y-bar-btn" id="a11y-spacing-btn" aria-pressed="false" title="Espaçamento de leitura">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-        <span>Espaçamento</span>
-      </button>
-      <span class="a11y-bar-sep" aria-hidden="true"></span>
-      <div class="a11y-font-group" role="group" aria-label="Tamanho da fonte">
-        <button class="a11y-font-btn active" data-size="normal" aria-pressed="true" title="Fonte normal">A</button>
-        <button class="a11y-font-btn" data-size="lg" aria-pressed="false" title="Fonte grande">A+</button>
-        <button class="a11y-font-btn" data-size="xl" aria-pressed="false" title="Fonte muito grande">A++</button>
-      </div>
-      <button class="a11y-bar-close" aria-label="Fechar barra de acessibilidade" title="Fechar">&#10005;</button>
-    `;
-    document.body.insertAdjacentElement('afterbegin', bar);
-    document.documentElement.classList.add('has-a11y-bar');
-    document.body.style.paddingTop = '36px';
+  /* ─── WIDGET DE ACESSIBILIDADE (fixo à esquerda) ─── */
+  if (!document.querySelector('.a11y-side')) {
+    const savedContrast = localStorage.getItem('a11y-contrast') === 'true';
+    const savedSpacing  = localStorage.getItem('a11y-spacing') === 'true';
+    const savedSize     = localStorage.getItem('a11y-font') || 'normal';
+    if (savedContrast) document.documentElement.classList.add('high-contrast');
+    if (savedSpacing)  document.body.classList.add('reading-spacing');
 
-    // Fechar barra
-    bar.querySelector('.a11y-bar-close').addEventListener('click', () => {
-      bar.remove();
-      document.documentElement.classList.remove('has-a11y-bar');
-      document.body.style.paddingTop = '';
+    const side = document.createElement('div');
+    side.className = 'a11y-side';
+    side.setAttribute('role', 'region');
+    side.setAttribute('aria-label', 'Configurações de acessibilidade');
+    side.innerHTML = `
+      <button class="a11y-side-toggle" aria-expanded="false" aria-controls="a11y-side-panel" title="Acessibilidade">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2"/><path d="M5 9.5l5.5 1v3l-2 6M19 9.5l-5.5 1v3l2 6M12 10.5v3"/></svg>
+        <span class="sr-only">Abrir opções de acessibilidade</span>
+      </button>
+      <div class="a11y-side-panel" id="a11y-side-panel" hidden>
+        <span class="a11y-side-title">Acessibilidade</span>
+        <button class="a11y-side-btn" id="a11y-contrast-btn" aria-pressed="false">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20z"/></svg>
+          <span>Contraste</span>
+        </button>
+        <button class="a11y-side-btn" id="a11y-spacing-btn" aria-pressed="false">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          <span>Espaçamento</span>
+        </button>
+        <div class="a11y-side-fonts" role="group" aria-label="Tamanho da fonte">
+          <button class="a11y-font-btn" data-size="normal" title="Fonte normal">A</button>
+          <button class="a11y-font-btn" data-size="lg" title="Fonte grande">A+</button>
+          <button class="a11y-font-btn" data-size="xl" title="Fonte muito grande">A++</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(side);
+
+    // Abre e fecha o painel
+    const toggleBtn = side.querySelector('.a11y-side-toggle');
+    const panel = side.querySelector('.a11y-side-panel');
+    toggleBtn.addEventListener('click', () => {
+      const open = panel.hasAttribute('hidden');
+      if (open) panel.removeAttribute('hidden'); else panel.setAttribute('hidden', '');
+      toggleBtn.setAttribute('aria-expanded', String(open));
+    });
+    document.addEventListener('click', e => {
+      if (!side.contains(e.target) && !panel.hasAttribute('hidden')) {
+        panel.setAttribute('hidden', '');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && !panel.hasAttribute('hidden')) {
+        panel.setAttribute('hidden', '');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        toggleBtn.focus();
+      }
     });
 
     // Alto contraste
-    const contrastBtn = bar.querySelector('#a11y-contrast-btn');
-    const savedContrast = localStorage.getItem('a11y-contrast') === 'true';
+    const contrastBtn = side.querySelector('#a11y-contrast-btn');
     if (savedContrast) {
-      document.documentElement.classList.add('high-contrast');
       contrastBtn.setAttribute('aria-pressed', 'true');
       contrastBtn.classList.add('active');
     }
@@ -114,10 +135,8 @@
     });
 
     // Espaçamento de leitura
-    const spacingBtn = bar.querySelector('#a11y-spacing-btn');
-    const savedSpacing = localStorage.getItem('a11y-spacing') === 'true';
+    const spacingBtn = side.querySelector('#a11y-spacing-btn');
     if (savedSpacing) {
-      document.body.classList.add('reading-spacing');
       spacingBtn.setAttribute('aria-pressed', 'true');
       spacingBtn.classList.add('active');
     }
@@ -129,8 +148,7 @@
     });
 
     // Tamanho de fonte
-    const fontBtns = bar.querySelectorAll('.a11y-font-btn');
-    const savedSize = localStorage.getItem('a11y-font') || 'normal';
+    const fontBtns = side.querySelectorAll('.a11y-font-btn');
     applyFontSize(savedSize, fontBtns);
     fontBtns.forEach(b => {
       b.addEventListener('click', () => {
