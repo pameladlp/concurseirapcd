@@ -2,38 +2,169 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Blog | Métodos de estudo, organização e vida real PCD | Concurseira PCD</title>
 <meta name="description" content="Textos práticos e honestos sobre métodos de estudo, organização de rotina, desabafos e vida real de quem estuda sendo PCD."/>
-<meta name="author" content="Pâmela Dayane"/>
-<meta name="robots" content="index, follow"/>
 <link rel="canonical" href="https://concurseirapcd.com.br/blog.html"/>
 <meta property="og:type" content="website"/>
-<meta property="og:title" content="Blog | Métodos de estudo e vida real PCD | Concurseira PCD"/>
-<meta property="og:description" content="Textos práticos sobre métodos de estudo, organização de rotina e vida real de quem estuda sendo PCD."/>
+<meta property="og:title" content="Blog da Concurseira | Concurseira PCD"/>
+<meta property="og:description" content="Métodos de estudo, organização, rotina e vida real PCD, sem romantizar a dificuldade."/>
 <meta property="og:url" content="https://concurseirapcd.com.br/blog.html"/>
 <meta property="og:image" content="https://concurseirapcd.com.br/favicon/android-chrome-512x512.png"/>
+<meta name="author" content="Pâmela Dayane"/>
+<meta name="robots" content="index, follow"/>
 <link href="assets/css/style.css?v=14" rel="stylesheet"/>
 <link href="favicon/favicon.ico?v=3" rel="icon" sizes="any"/>
 <link href="favicon/favicon-32x32.png?v=3" rel="icon" sizes="32x32" type="image/png"/>
 <link href="favicon/favicon-16x16.png?v=3" rel="icon" sizes="16x16" type="image/png"/>
 <link href="favicon/apple-touch-icon.png?v=3" rel="apple-touch-icon"/>
 <link href="favicon/site.webmanifest" rel="manifest"/>
-<meta name="theme-color" content="#0b3d2e"/>
+<meta content="#1F5C4D" name="theme-color"/>
+
+<style>
+/* ═══ BLOG — estilo editorial (page-shell) ═══ */
+body.blog{background:#f5f2ec;line-height:1.65}
+body.blog .page-shell{width:min(1180px,calc(100% - 32px));margin:16px auto 44px;background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 18px 45px rgba(31,92,77,.10)}
+body.blog .container{width:min(1080px,calc(100% - 40px));max-width:1080px;margin-inline:auto;padding-inline:0}
+body.blog main section{padding:54px 0}
+body.blog .section-kicker{font-size:13px;text-transform:uppercase;letter-spacing:.09em;font-weight:700;color:var(--accent);margin-bottom:9px}
+body.blog .section-title{font-size:clamp(24px,2.6vw,33px);color:var(--primary)}
+body.blog .section-note{margin:12px 0 0;color:#606060;max-width:650px}
+
+/* HERO */
+body.blog .bl-hero{position:relative;overflow:hidden;padding:48px 0 40px;background:linear-gradient(135deg,#fffaf6 0%,#fff 60%,#f2f7f4 100%)}
+body.blog .bl-hero::before{content:"";position:absolute;width:320px;height:320px;border-radius:50%;background:rgba(233,198,181,.36);right:8%;top:18px}
+body.blog .bl-hero::after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;background:rgba(110,143,125,.12);left:-90px;bottom:10px}
+body.blog .bl-hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.12fr .88fr;gap:48px;align-items:center}
+body.blog .crumb{font-size:13px;color:#707070;margin-bottom:20px}
+body.blog .crumb a{text-decoration:none;color:var(--primary)}
+body.blog .bl-hero h1{font-size:clamp(30px,3.6vw,42px);max-width:720px;margin-top:12px;color:var(--primary);line-height:1.08}
+body.blog .bl-hero h1 .accent{color:var(--accent)}
+body.blog .bl-hero p{font-size:15px;max-width:650px;margin:20px 0 0;color:#4e4e4e}
+body.blog .bl-art{position:relative;min-height:320px;display:grid;place-items:center}
+body.blog .paper{position:relative;width:min(330px,88%);height:265px;background:#fff;border:1px solid #eadfd6;border-radius:26px;box-shadow:0 22px 48px rgba(31,92,77,.13);transform:rotate(2deg);padding:28px;z-index:2}
+body.blog .paper::before{content:"";position:absolute;inset:15px;border:1px solid rgba(201,107,86,.28);border-radius:18px;pointer-events:none}
+body.blog .paper-lines{position:absolute;left:52px;right:38px;top:84px;height:2px;background:#dbe7e1;box-shadow:0 26px 0 #dbe7e1,0 52px 0 #dbe7e1,0 78px 0 #dbe7e1,0 104px 0 #dbe7e1}
+body.blog .paper-title{font-family:var(--font-display);font-size:23px;color:var(--primary);position:relative;z-index:2}
+body.blog .pen{position:absolute;width:17px;height:190px;background:linear-gradient(90deg,#be604c,#db836d);border-radius:999px;right:52px;bottom:12px;transform:rotate(34deg);z-index:3;box-shadow:0 12px 22px rgba(80,40,30,.15)}
+body.blog .pen::before{content:"";position:absolute;top:-16px;left:2px;border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:19px solid #d6b49d}
+body.blog .pen::after{content:"";position:absolute;top:-18px;left:6px;border-left:2px solid transparent;border-right:2px solid transparent;border-bottom:7px solid #333}
+body.blog .blob{position:absolute;border-radius:48% 52% 58% 42%/45% 42% 58% 55%}
+body.blog .blob.a{width:260px;height:260px;background:#efd9ce;transform:rotate(-8deg)}
+body.blog .blob.b{width:225px;height:285px;background:#edf4f0;transform:rotate(12deg)}
+body.blog .leaf{position:absolute;z-index:1;opacity:.45}
+body.blog .leaf.r{right:-5px;bottom:5px;width:150px}
+body.blog .leaf.l{left:-22px;top:58px;width:100px;opacity:.25}
+
+/* FILTROS */
+body.blog .filters-wrap{background:#fff;padding:22px 0;border-top:1px solid #f0ebe5;border-bottom:1px solid #eee8e1}
+body.blog .bl-filters{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+body.blog .filters-label{font-size:13px;font-weight:700;color:var(--primary);margin-right:6px}
+body.blog .bl-filter{border:1px solid #d9d4cd;background:#fff;color:#4c4c4c;padding:9px 13px;border-radius:999px;cursor:pointer;font-size:13px;transition:.2s;font-family:var(--font-sans);min-height:40px}
+body.blog .bl-filter:hover,body.blog .bl-filter.active{background:var(--primary);border-color:var(--primary);color:#fff}
+
+/* POSTS */
+body.blog .posts{position:relative;background:#fff}
+body.blog .posts::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 4% 16%,rgba(110,143,125,.09),transparent 190px),radial-gradient(circle at 96% 72%,rgba(233,198,181,.16),transparent 220px);pointer-events:none}
+body.blog .section-top{position:relative;display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:30px}
+body.blog .bl-search{display:flex;align-items:center;width:min(320px,100%);border:1px solid #dcd6cf;border-radius:12px;background:#fff;padding:5px 6px 5px 14px;box-shadow:0 8px 20px rgba(31,92,77,.05)}
+body.blog .bl-search input{border:0;outline:0;min-width:0;flex:1;padding:8px;background:transparent}
+body.blog .bl-search input:focus-visible{outline:2px solid var(--accent);border-radius:6px}
+body.blog .bl-search button{border:0;background:#e9f1ec;color:var(--primary);border-radius:9px;padding:9px 12px;cursor:pointer;font-weight:600;min-height:40px}
+body.blog .posts-grid{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+body.blog .post-card{position:relative;border:1px solid #e7ddd5;border-radius:20px;padding:24px;min-height:210px;display:flex;flex-direction:column;box-shadow:0 10px 26px rgba(31,92,77,.05);transition:.2s;overflow:hidden;background:linear-gradient(135deg,rgba(201,107,86,.12) 0%,rgba(201,107,86,.06) 24%,#fffdfa 24%)}
+body.blog .post-card::before{content:"";position:absolute;width:130px;height:130px;border-radius:50%;top:-72px;right:-58px;border:1px solid rgba(31,92,77,.10);pointer-events:none}
+body.blog .post-card:hover{transform:translateY(-3px);box-shadow:0 17px 36px rgba(31,92,77,.09)}
+body.blog .post-body{position:relative;z-index:1;display:flex;flex-direction:column;height:100%}
+body.blog .post-meta{display:flex;gap:11px;align-items:center;flex-wrap:wrap;font-size:12px;margin-bottom:14px}
+body.blog .category{font-weight:700;padding:6px 10px;border-radius:999px;color:#9e5848;background:rgba(201,107,86,.15)}
+body.blog .read-time{color:#777}
+body.blog .post-card h3{font-size:18px;line-height:1.2;margin:0 0 10px;color:var(--primary)}
+body.blog .post-card h3 a{text-decoration:none}
+body.blog .post-card h3 a:hover{color:var(--accent)}
+body.blog .post-card p{display:-webkit-box;overflow:hidden;-webkit-line-clamp:3;-webkit-box-orient:vertical;font-size:14px;line-height:1.6;color:#5a5a5a;margin:0 0 18px}
+body.blog .post-actions{margin-top:auto;padding-top:4px}
+body.blog .read-more{font-size:13px;font-weight:700;color:var(--primary);text-decoration:none}
+body.blog .read-more::after{content:" →"}
+body.blog .read-more:hover{color:var(--accent)}
+body.blog .hidden{display:none!important}
+body.blog .no-results{display:none;position:relative;padding:20px;border:1px dashed #d9d4cd;border-radius:14px;color:#666;text-align:center;margin-top:8px}
+
+/* NEWSLETTER */
+body.blog .bl-newsletter{margin:0 0 26px;padding:44px 0;background:linear-gradient(135deg,#1f5c4d,#2a6a59);color:#fff;position:relative;overflow:hidden}
+body.blog .bl-newsletter::before{content:"";position:absolute;width:310px;height:310px;border:1px solid rgba(255,255,255,.13);border-radius:50%;right:-90px;top:-120px}
+body.blog .bl-newsletter-grid{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+body.blog .bl-newsletter h2{color:#fff;font-size:26px}
+body.blog .bl-newsletter p{margin:12px 0 0;color:#dce8e2;max-width:600px}
+body.blog .bl-newsletter-form{display:flex;gap:10px;background:#fff;padding:8px;border-radius:14px}
+body.blog .bl-newsletter-form input{flex:1;min-width:0;border:0;outline:0;padding:0 13px;background:transparent}
+body.blog .bl-newsletter-form input:focus-visible{outline:2px solid var(--accent);border-radius:8px}
+body.blog .bl-newsletter-form button{border:0;background:var(--accent);color:#fff;padding:13px 18px;border-radius:10px;font-weight:700;cursor:pointer;min-height:44px}
+body.blog .bl-form-msg{position:relative;max-width:620px;margin-bottom:14px;padding:12px 16px;border-radius:10px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);font-size:14px}
+
+/* CTA FINAL */
+body.blog .final-cta{margin:0 16px 16px;padding:34px;border-radius:20px;background:var(--accent);color:#fff;text-align:center;position:relative;overflow:hidden}
+body.blog .final-cta::before{content:"";position:absolute;left:30px;bottom:-38px;width:120px;height:160px;border:1px solid rgba(255,255,255,.25);border-radius:60% 40% 70% 30%;transform:rotate(-16deg)}
+body.blog .final-cta::after{content:"";position:absolute;right:35px;top:10px;width:90px;height:55px;background-image:radial-gradient(rgba(255,255,255,.58) 1px, transparent 1px);background-size:10px 10px}
+body.blog .final-cta h2{color:#fff;font-size:27px}
+body.blog .final-cta p{margin:10px 0 22px;color:rgba(255,255,255,.95)}
+body.blog .final-actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;position:relative;z-index:2}
+body.blog .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:10px;background:#fff;color:var(--primary);font-size:14px;font-weight:700;text-decoration:none;min-height:44px;transition:.2s ease}
+body.blog .btn:hover{transform:translateY(-1px);box-shadow:0 10px 20px rgba(0,0,0,.12)}
+
+/* Acessibilidade */
+body.blog a:focus-visible, body.blog button:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
+@media (prefers-reduced-motion: reduce){
+  body.blog *{transition:none !important;animation:none !important;scroll-behavior:auto !important}
+}
+
+/* Responsivo */
+@media(max-width:960px){
+  body.blog .bl-hero-grid,body.blog .bl-newsletter-grid{grid-template-columns:1fr}
+  body.blog .bl-art{min-height:300px}
+  body.blog .posts-grid{grid-template-columns:1fr}
+  body.blog .section-top{align-items:start;flex-direction:column}
+  body.blog .bl-search{width:100%}
+}
+@media(max-width:650px){
+  body.blog .page-shell{width:100%;margin:0;border-radius:0}
+  body.blog .container{width:min(100% - 28px,1080px)}
+  body.blog .bl-hero{padding:40px 0 30px}
+  body.blog .bl-hero h1{font-size:30px}
+  body.blog .bl-art{min-height:260px}
+  body.blog .paper{height:225px;padding:22px}
+  body.blog .paper-title{font-size:20px}
+  body.blog .paper-lines{top:72px;box-shadow:0 22px 0 #dbe7e1,0 44px 0 #dbe7e1,0 66px 0 #dbe7e1,0 88px 0 #dbe7e1}
+  body.blog .pen{height:160px}
+  body.blog .blob.a{width:210px;height:210px}
+  body.blog .blob.b{width:190px;height:240px}
+  body.blog main section{padding:44px 0}
+  body.blog .post-card{padding:20px}
+  body.blog .bl-newsletter-form{flex-direction:column}
+  body.blog .bl-newsletter-form input{padding:13px}
+  body.blog .final-cta{margin:0 14px 20px;padding:30px 18px;border-radius:16px}
+  body.blog .final-cta h2{font-size:24px}
+  body.blog .bl-filters{gap:8px}
+  body.blog .bl-filter{font-size:12px;padding:8px 11px}
+}
+</style>
 </head>
-<body>
-<a class="skip-link" href="#main-content">Ir para o conteúdo</a>
+<body class="blog">
+
+<a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+
+<div class="page-shell">
 
 <header class="site-header">
   <div class="container nav-wrapper">
-    <a class="logo" href="index.html" aria-label="Página inicial Concurseira PCD">
-      <span class="logo-mark"><img src="favicon/android-chrome-192x192.png" alt="Concurseira PCD"/></span>
+    <a aria-label="Página inicial Concurseira PCD" class="logo" href="index.html">
+      <span class="logo-mark"><img alt="Concurseira PCD" src="favicon/android-chrome-192x192.png"/></span>
       <span class="logo-copy">
         <span class="logo-text">Concurseira PCD</span>
         <span class="logo-author">por Pâmela Dayane</span>
       </span>
     </a>
-    <button class="nav-toggle" aria-expanded="false" aria-label="Abrir menu">☰</button>
+    <button aria-expanded="false" aria-label="Abrir menu" class="nav-toggle">☰</button>
     <nav aria-label="Menu principal" class="main-nav">
 <a href="index.html">Início</a>
 <a href="sobre.html">Sobre</a>
@@ -49,221 +180,195 @@
 
 <main id="main-content">
 
-  <!-- HERO -->
-  <section class="page-hero">
-    <div class="container page-title-row">
-      <div class="page-title-copy">
-        <nav aria-label="Breadcrumb">
-          <ol class="breadcrumb">
-            <li><a href="index.html">Início</a></li>
-            <li>Blog</li>
-          </ol>
-        </nav>
-        <p class="eyebrow">Blog da Concurseira</p>
-        <h1>Estudo, rotina e vida real — sem romantizar a dificuldade.</h1>
-        <p class="lead">Textos práticos e honestos sobre métodos, organização e o que ninguém conta sobre estudar para concurso sendo PCD.</p>
-      </div>
-      <div class="page-title-illustration">
-        <img src="assets/images/illustrations/05_blog_reflexoes_estudo.png" alt="Ilustração de blog e reflexões sobre estudos"/>
-      </div>
+<!-- ═══ HERO ═══ -->
+<section class="bl-hero">
+  <div class="container bl-hero-grid">
+    <div>
+      <nav class="crumb" aria-label="Breadcrumb"><a href="index.html">Início</a> / Blog</nav>
+      <div class="section-kicker">Blog da Concurseira</div>
+      <h1>Estudo, rotina e vida real, <span class="accent">sem romantizar a dificuldade.</span></h1>
+      <p>Textos práticos e honestos sobre métodos, organização e o que ninguém conta sobre estudar para concurso sendo PCD.</p>
     </div>
-  </section>
-
-  <!-- POSTS -->
-  <section class="section" style="padding-top: 2rem;">
-    <div class="container">
-
-      <!-- Filtros -->
-      <div class="page-filters" role="group" aria-label="Filtrar por categoria">
-        <span class="page-filters-label">Categoria:</span>
-        <button class="filter-chip active" data-filter="all">Todos</button>
-        <button class="filter-chip" data-filter="metodos">Métodos de estudo</button>
-        <button class="filter-chip" data-filter="organizacao">Organização</button>
-        <button class="filter-chip" data-filter="dicas">Dicas práticas</button>
-        <button class="filter-chip" data-filter="desabafos">Desabafos</button>
-        <button class="filter-chip" data-filter="pcd">Vida real PCD</button>
-      </div>
-
-      <!-- Cards de posts -->
-      <div class="content-grid" id="blog-grid">
-
-        <!-- Post 1: Revisão -->
-        <article class="artigo-card" data-tema="metodos">
-          <div class="artigo-meta">
-            <span class="filter-chip-badge">Métodos de estudo</span>
-            <span class="leitura-tempo">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              4 min de leitura
-            </span>
-          </div>
-          <h3><a href="blog/revisao.html" style="color:inherit;text-decoration:none;">Como revisar para concursos sem esquecer tudo</a></h3>
-          <p class="artigo-excerpt">Revisar não é reler o material inteiro até cansar. É reencontrar a informação no momento certo e corrigir rotas antes que o esquecimento vire desespero.</p>
-          <a href="blog/revisao.html" class="news-read-link">
-            Ler post completo
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-          <div class="artigo-share">
-            <button class="share-btn share-copy" data-copy="https://concurseirapcd.com.br/blog/revisao.html" aria-label="Copiar link">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-              Copiar link
-            </button>
-          </div>
-        </article>
-
-        <!-- Post 2: Rotina -->
-        <article class="artigo-card" data-tema="organizacao">
-          <div class="artigo-meta">
-            <span class="filter-chip-badge">Organização</span>
-            <span class="leitura-tempo">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              5 min de leitura
-            </span>
-          </div>
-          <h3><a href="blog/rotina.html" style="color:inherit;text-decoration:none;">Como montar uma rotina realista para concursos</a></h3>
-          <p class="artigo-excerpt">Uma rotina realista começa pelo que existe, não pelo que você gostaria que existisse. Antes de distribuir matérias, olhe para trabalho, saúde, sono e obrigações.</p>
-          <a href="blog/rotina.html" class="news-read-link">
-            Ler post completo
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-          <div class="artigo-share">
-            <button class="share-btn share-copy" data-copy="https://concurseirapcd.com.br/blog/rotina.html" aria-label="Copiar link">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-              Copiar link
-            </button>
-          </div>
-        </article>
-
-        <!-- Post 3: O que faria diferente -->
-        <article class="artigo-card" data-tema="dicas">
-          <div class="artigo-meta">
-            <span class="filter-chip-badge">Dicas práticas</span>
-            <span class="leitura-tempo">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              3 min de leitura
-            </span>
-          </div>
-          <h3><a href="blog/comecar.html" style="color:inherit;text-decoration:none;">O que eu faria diferente se começasse hoje</a></h3>
-          <p class="artigo-excerpt">Compraria menos materiais, faria mais questões desde o início e levaria a revisão mais a sério. E teria menos vergonha de adaptar o método à minha realidade.</p>
-          <a href="blog/comecar.html" class="news-read-link">
-            Ler post completo
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-          <div class="artigo-share">
-            <button class="share-btn share-copy" data-copy="https://concurseirapcd.com.br/blog/comecar.html" aria-label="Copiar link">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-              Copiar link
-            </button>
-          </div>
-        </article>
-
-        <!-- Post 4: Descanso -->
-        <article class="artigo-card" data-tema="desabafos">
-          <div class="artigo-meta">
-            <span class="filter-chip-badge">Desabafos</span>
-            <span class="leitura-tempo">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              3 min de leitura
-            </span>
-          </div>
-          <h3><a href="blog/descanso.html" style="color:inherit;text-decoration:none;">Quando descansar parece culpa</a></h3>
-          <p class="artigo-excerpt">Quem estuda para concurso muitas vezes sente que descansar é perder tempo. Mas exaustão constante atrapalha memória, concentração e tomada de decisão.</p>
-          <a href="blog/descanso.html" class="news-read-link">
-            Ler post completo
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-          <div class="artigo-share">
-            <button class="share-btn share-copy" data-copy="https://concurseirapcd.com.br/blog/descanso.html" aria-label="Copiar link">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-              Copiar link
-            </button>
-          </div>
-        </article>
-
-        <!-- Post 5: Estudar sendo PCD -->
-        <article class="artigo-card" data-tema="pcd">
-          <div class="artigo-meta">
-            <span class="filter-chip-badge">Vida real PCD</span>
-            <span class="leitura-tempo">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              4 min de leitura
-            </span>
-          </div>
-          <h3><a href="blog/pcd.html" style="color:inherit;text-decoration:none;">Estudar sendo PCD: adaptação também é estratégia</a></h3>
-          <p class="artigo-excerpt">Estudar sendo PCD pode exigir adaptações físicas, tecnológicas, emocionais e logísticas. Isso não torna a preparação menor — torna mais consciente.</p>
-          <a href="blog/pcd.html" class="news-read-link">
-            Ler post completo
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-          <div class="artigo-share">
-            <button class="share-btn share-copy" data-copy="https://concurseirapcd.com.br/blog/pcd.html" aria-label="Copiar link">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-              Copiar link
-            </button>
-          </div>
-        </article>
-
-      </div><!-- /blog-grid -->
+    <div class="bl-art" aria-hidden="true">
+      <div class="blob a"></div><div class="blob b"></div>
+      <svg class="leaf l" viewBox="0 0 120 260"><path d="M55 250C65 170 63 90 82 14M61 185C35 170 20 145 15 116M65 150C91 137 103 114 107 87M70 111C43 94 31 70 29 43M76 77C97 64 105 43 106 20" fill="none" stroke="#c96b56" stroke-width="2"/></svg>
+      <div class="paper"><div class="paper-title">Ideias que cabem na vida real.</div><div class="paper-lines"></div></div><div class="pen"></div>
+      <svg class="leaf r" viewBox="0 0 200 260"><g fill="#6e8f7d"><ellipse cx="92" cy="198" rx="34" ry="82" transform="rotate(-28 92 198)"/><ellipse cx="132" cy="155" rx="31" ry="74" transform="rotate(24 132 155)"/><ellipse cx="69" cy="122" rx="27" ry="64" transform="rotate(-40 69 122)"/></g></svg>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- ═══ FILTROS ═══ -->
+<div class="filters-wrap">
+  <div class="container bl-filters" role="group" aria-label="Filtrar posts por categoria">
+    <span class="filters-label">Categoria:</span>
+    <button class="bl-filter active" data-filter="all">Todos</button>
+    <button class="bl-filter" data-filter="metodos">Métodos de estudo</button>
+    <button class="bl-filter" data-filter="organizacao">Organização</button>
+    <button class="bl-filter" data-filter="dicas">Dicas práticas</button>
+    <button class="bl-filter" data-filter="desabafos">Desabafos</button>
+    <button class="bl-filter" data-filter="pcd">Vida real PCD</button>
+  </div>
+</div>
+
+<!-- ═══ POSTS ═══ -->
+<section class="posts">
+  <div class="container">
+    <div class="section-top">
+      <div>
+        <div class="section-kicker">Publicações</div>
+        <h2 class="section-title">Conteúdo para estudar com mais estratégia e menos culpa</h2>
+        <p class="section-note">Selecione uma categoria ou pesquise pelo tema que deseja encontrar.</p>
+      </div>
+      <label class="bl-search"><input id="searchInput" type="search" placeholder="Buscar no blog" aria-label="Buscar no blog"><button type="button" id="searchButton">Buscar</button></label>
+    </div>
+    <div class="posts-grid" id="postsGrid">
+      <article class="post-card" data-category="metodos" data-search="como revisar para concursos sem esquecer tudo revisão memória método de estudo">
+        <div class="post-body">
+          <div class="post-meta"><span class="category">Métodos de estudo</span><span class="read-time">4 min de leitura</span></div>
+          <h3><a href="blog/revisao.html">Como revisar para concursos sem esquecer tudo</a></h3>
+          <p>Revisar não é reler o material inteiro até cansar. É reencontrar a informação no momento certo e corrigir rotas antes que o esquecimento vire desespero.</p>
+          <div class="post-actions"><a class="read-more" href="blog/revisao.html">Ler post completo</a></div>
+        </div>
+      </article>
+      <article class="post-card" data-category="organizacao" data-search="como montar uma rotina realista para concursos organização planejamento trabalho saúde sono obrigações">
+        <div class="post-body">
+          <div class="post-meta"><span class="category">Organização</span><span class="read-time">5 min de leitura</span></div>
+          <h3><a href="blog/rotina.html">Como montar uma rotina realista para concursos</a></h3>
+          <p>Uma rotina realista começa pelo que existe, não pelo que você gostaria que existisse. Antes de distribuir matérias, olhe para trabalho, saúde, sono e obrigações.</p>
+          <div class="post-actions"><a class="read-more" href="blog/rotina.html">Ler post completo</a></div>
+        </div>
+      </article>
+      <article class="post-card" data-category="dicas" data-search="o que eu faria diferente se começasse hoje questões revisão materiais adaptação estratégia">
+        <div class="post-body">
+          <div class="post-meta"><span class="category">Dicas práticas</span><span class="read-time">3 min de leitura</span></div>
+          <h3><a href="blog/comecar.html">O que eu faria diferente se começasse hoje</a></h3>
+          <p>Compraria menos materiais, faria mais questões desde o início e levaria a revisão mais a sério. E teria menos vergonha de adaptar o método à minha realidade.</p>
+          <div class="post-actions"><a class="read-more" href="blog/comecar.html">Ler post completo</a></div>
+        </div>
+      </article>
+      <article class="post-card" data-category="desabafos" data-search="quando descansar parece culpa descanso exaustão memória concentração produtividade">
+        <div class="post-body">
+          <div class="post-meta"><span class="category">Desabafos</span><span class="read-time">3 min de leitura</span></div>
+          <h3><a href="blog/descanso.html">Quando descansar parece culpa</a></h3>
+          <p>Quem estuda para concurso muitas vezes sente que descansar é perder tempo. Mas exaustão constante atrapalha memória, concentração e tomada de decisão.</p>
+          <div class="post-actions"><a class="read-more" href="blog/descanso.html">Ler post completo</a></div>
+        </div>
+      </article>
+      <article class="post-card" data-category="pcd" data-search="estudar sendo pcd adaptação estratégia deficiência acessibilidade tecnologia rotina">
+        <div class="post-body">
+          <div class="post-meta"><span class="category">Vida real PCD</span><span class="read-time">4 min de leitura</span></div>
+          <h3><a href="blog/pcd.html">Estudar sendo PCD: adaptação também é estratégia</a></h3>
+          <p>Estudar sendo PCD pode exigir adaptações físicas, tecnológicas, emocionais e logísticas. Isso não torna a preparação menor. Torna mais consciente.</p>
+          <div class="post-actions"><a class="read-more" href="blog/pcd.html">Ler post completo</a></div>
+        </div>
+      </article>
+    </div>
+    <p class="no-results" id="noResults">Nenhum post encontrado. Tente outra categoria ou termo de busca.</p>
+  </div>
+</section>
+
+<!-- ═══ NEWSLETTER ═══ -->
+<section class="bl-newsletter">
+  <div class="container bl-newsletter-grid">
+    <div>
+      <div class="section-kicker" style="color:#f2c9b9">Conteúdo por e-mail</div>
+      <h2>Receba novos textos sem precisar acompanhar o site todos os dias.</h2>
+      <p>Uma seleção de conteúdos sobre estudos, organização e vida real PCD, enviada com respeito ao seu tempo.</p>
+    </div>
+    <div>
+      <div class="bl-form-msg" id="error-message-blog" style="display:none"><p>Não foi possível confirmar sua assinatura. Tente novamente.</p></div>
+      <div class="bl-form-msg" id="success-message-blog" style="display:none"><p>Assinatura confirmada! Verifique seu e-mail em instantes.</p></div>
+      <form class="bl-newsletter-form" method="POST"
+        action="https://31d7dd8d.sibforms.com/serve/MUIFAMyXAlmCX9_XmtDqmVzVZ5vA6ADV_EFuvUxW3KB_63v5ezZ-heBwuO0-XRC1Fb0-BtWF02K__W8xK1RHmIJ4aQwEzLSf0C36C7HPThZyU1Zax3mXT4LClWR-7482I3Xrn7xBBJ7J1P4-__Qg4v_DFOeQu2q9OcZYpasot4uPOv7T9IST-6KBUptG133iMRkCidXC-0XxO0omww=="
+        data-type="subscription">
+        <label for="EMAIL" class="sr-only">Seu melhor e-mail</label>
+        <input id="EMAIL" name="EMAIL" type="email" placeholder="Seu melhor e-mail" required autocomplete="email"/>
+        <button type="submit">Quero receber</button>
+        <input type="text" name="email_address_check" value="" style="display:none" aria-hidden="true"/>
+        <input type="hidden" name="locale" value="pt"/>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA FINAL ═══ -->
+<section class="final-cta">
+  <h2>Vamos seguir juntas nessa caminhada.</h2>
+  <p>Você não precisa fazer tudo de uma vez. A aprovação começa com um passo.</p>
+  <div class="final-actions">
+    <a class="btn" href="materiais-gratuitos.html">Materiais gratuitos</a>
+    <a class="btn" href="produtos-digitais.html">Produtos digitais</a>
+    <a class="btn" href="https://www.instagram.com/concurseirapcd" target="_blank" rel="noopener">Acompanhar no Instagram</a>
+  </div>
+</section>
 
 </main>
 
-<button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo">↑</button>
-
-<footer class="site-footer">
-  <div class="container footer-grid">
-    <div>
-      <strong>Concurseira PCD</strong>
-      <p>Conteúdo, organização e acessibilidade para estudar e viver com mais autonomia.</p>
-      <a href="https://www.instagram.com/concurseirapcd" target="_blank" rel="noopener" class="footer-instagram">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        @concurseirapcd
-      </a>
+<footer class="hm-footer">
+  <div class="container">
+    <div class="hm-footer-grid">
+      <div>
+        <div class="hm-footer-brand">Concurseira PCD</div>
+        <p>Conteúdo, organização e acessibilidade para estudar e viver com mais autonomia.</p>
+        <a href="https://www.instagram.com/concurseirapcd" target="_blank" rel="noopener" style="color:#d9e4df;text-decoration:none;font-size:14px;">@concurseirapcd no Instagram</a>
+      </div>
+      <div class="hm-footer-col">
+        <h4>Conteúdo</h4>
+        <a href="direitos-pcd.html">Direitos PCD</a>
+        <a href="noticias.html">Notícias de Concursos</a>
+        <a href="blog.html">Blog da Concurseira</a>
+      </div>
+      <div class="hm-footer-col">
+        <h4>Materiais</h4>
+        <a href="materiais-gratuitos.html">Materiais Gratuitos</a>
+        <a href="produtos-digitais.html">Produtos Digitais</a>
+      </div>
+      <div class="hm-footer-col">
+        <h4>Institucional</h4>
+        <a href="sobre.html">Sobre mim</a>
+        <a href="contato.html">Contato</a>
+        <a href="politica.html">Política de Privacidade</a>
+      </div>
     </div>
-    <div>
-      <strong>Links úteis</strong>
-      <a href="politica.html">Política de Privacidade</a>
-      <a href="contato.html">Contato</a>
-    </div>
-  </div>
-  <div class="container footer-bottom">
-    <span>© 2026 Concurseira PCD · Pâmela Dayane</span>
+    <div class="hm-copyright">© 2026 Concurseira PCD · Pâmela Dayane</div>
   </div>
 </footer>
 
+</div><!-- /page-shell -->
+
 <script src="assets/js/script.js"></script>
 <script>
-/* ── Filtros ── */
-document.querySelectorAll('.page-filters .filter-chip').forEach(chip => {
-  chip.addEventListener('click', function () {
-    document.querySelectorAll('.page-filters .filter-chip').forEach(c => c.classList.remove('active'));
-    this.classList.add('active');
-    const filter = this.dataset.filter;
-    document.querySelectorAll('#blog-grid .artigo-card').forEach(card => {
-      if (filter === 'all') {
-        card.style.display = card.classList.contains('card-oculto') ? 'none' : '';
-      } else {
-        card.style.display = card.dataset.tema === filter ? '' : 'none';
-      }
+(function(){
+  var cards=[].slice.call(document.querySelectorAll('.post-card'));
+  var filters=[].slice.call(document.querySelectorAll('.bl-filter'));
+  var searchInput=document.getElementById('searchInput');
+  var noResults=document.getElementById('noResults');
+  var category='all';
+  function apply(){
+    var term=(searchInput?searchInput.value:'').trim().toLowerCase();
+    var visible=0;
+    cards.forEach(function(card){
+      var catOK=category==='all'||card.dataset.category===category;
+      var text=(card.dataset.search+' '+card.innerText).toLowerCase();
+      var show=catOK&&text.indexOf(term)!==-1;
+      card.classList.toggle('hidden',!show);
+      if(show)visible++;
+    });
+    if(noResults)noResults.style.display=visible?'none':'block';
+  }
+  filters.forEach(function(btn){
+    btn.addEventListener('click',function(){
+      filters.forEach(function(x){x.classList.remove('active')});
+      btn.classList.add('active');
+      category=btn.dataset.filter;
+      apply();
     });
   });
-});
-
-/* ── Copiar link ── */
-document.querySelectorAll('.share-copy').forEach(btn => {
-  btn.addEventListener('click', function () {
-    navigator.clipboard.writeText(this.dataset.copy).then(() => {
-      const orig = this.textContent;
-      this.textContent = 'Copiado!';
-      setTimeout(() => this.textContent = orig, 2000);
-    });
-  });
-});
-
-/* ── Voltar ao topo ── */
-const btt = document.getElementById('back-to-top');
-window.addEventListener('scroll', () => btt.classList.toggle('visible', window.scrollY > 400));
-btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  var sb=document.getElementById('searchButton');
+  if(sb)sb.addEventListener('click',apply);
+  if(searchInput)searchInput.addEventListener('input',apply);
+})();
 </script>
 </body>
 </html>
