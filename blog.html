@@ -38,7 +38,7 @@ body.blog .bl-hero::after{content:"";position:absolute;width:180px;height:180px;
 body.blog .bl-hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.12fr .88fr;gap:48px;align-items:center}
 body.blog .crumb{font-size:13px;color:#707070;margin-bottom:20px}
 body.blog .crumb a{text-decoration:none;color:var(--primary)}
-body.blog .bl-hero h1{font-size:clamp(30px,3.6vw,42px);max-width:720px;margin-top:12px;color:var(--primary);line-height:1.08}
+body.blog .bl-hero h1{font-size:clamp(30px,3.5vw,39px);max-width:720px;margin-top:12px;color:var(--primary);line-height:1.08}
 body.blog .bl-hero h1 .accent{color:var(--accent)}
 body.blog .bl-hero p{font-size:15px;max-width:650px;margin:20px 0 0;color:#4e4e4e}
 body.blog .bl-art{position:relative;min-height:320px;display:grid;place-items:center}
@@ -66,7 +66,8 @@ body.blog .bl-search input{border:0;outline:0;min-width:0;flex:1;padding:12px 14
 body.blog .bl-search input:focus-visible{outline:2px solid var(--accent);border-radius:6px}
 body.blog .bl-search button{border:0;background:#e9f1ec;color:var(--primary);border-radius:12px;padding:12px 18px;cursor:pointer;font-weight:700;min-height:44px}
 body.blog .posts-grid{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
-body.blog .post-card{position:relative;border:1px solid #e7ddd5;border-radius:22px;padding:28px 30px;display:flex;flex-direction:column;box-shadow:0 10px 28px rgba(31,92,77,.05);transition:.2s;background:linear-gradient(135deg,rgba(201,107,86,.07),rgba(201,107,86,.02) 22%,#fffdfa 22%)}
+body.blog .post-card{position:relative;border:1px solid #eed9cd;border-radius:22px;padding:28px 30px;display:flex;flex-direction:column;box-shadow:0 10px 28px rgba(31,92,77,.05);transition:.2s;background:linear-gradient(135deg,#fbeee6 0%,#fdf6f1 100%)}
+body.blog .post-card:nth-child(even){border-color:#d9e6de;background:linear-gradient(135deg,#e9f1ec 0%,#f3f8f4 100%)}
 
 body.blog .post-card:hover{transform:translateY(-3px);box-shadow:0 17px 36px rgba(31,92,77,.09)}
 body.blog .post-body{position:relative;z-index:1;display:flex;flex-direction:column;height:100%}
