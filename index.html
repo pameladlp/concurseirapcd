@@ -151,9 +151,7 @@ body.home .hm-role{font-size:13px;color:#666}
 body.home .hm-instagram{padding:72px 0;background:linear-gradient(135deg,#f1dfd5,#eef5f1)}
 body.home .hm-instagram-grid,body.home .hm-author-grid{display:grid;grid-template-columns:1fr .9fr;gap:58px;align-items:center}
 body.home .hm-insta-box{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-body.home .hm-insta-tile{aspect-ratio:1;border-radius:16px;background:linear-gradient(135deg,#e9c6b5,#6e8f7d);position:relative;overflow:hidden}
-body.home .hm-insta-tile:nth-child(2){background:linear-gradient(135deg,#dce9e2,#fff4ee)}
-body.home .hm-insta-tile:nth-child(3){background:linear-gradient(135deg,#c96b56,#f5d9ca)}
+body.home .hm-insta-tile{aspect-ratio:1;width:100%;display:block;border-radius:16px;object-fit:cover;object-position:center top;box-shadow:0 10px 24px rgba(31,92,77,.14)}
 
 /* AUTORA */
 body.home .hm-author{position:relative}
@@ -414,10 +412,10 @@ body.home a:focus-visible, body.home button:focus-visible{outline:3px solid var(
       <p class="section-intro">No Instagram compartilho rotina real, bastidores de estudo PCD, novidades de editais e respondo dúvidas. Vem com a gente.</p>
       <p style="margin-top:24px"><a class="btn btn-primary" href="https://www.instagram.com/concurseirapcd" target="_blank" rel="noopener">Seguir @concurseirapcd</a></p>
     </div>
-    <div class="hm-insta-box" aria-hidden="true">
-      <div class="hm-insta-tile"></div>
-      <div class="hm-insta-tile"></div>
-      <div class="hm-insta-tile"></div>
+    <div class="hm-insta-box">
+      <img class="hm-insta-tile" src="assets/images/colacao-2017.jpeg?v=2" alt="Pâmela na colação de grau em Direito" loading="lazy"/>
+      <img class="hm-insta-tile" src="assets/images/oab-2016.jpeg?v=2" alt="Pâmela comemorando a aprovação na OAB" loading="lazy"/>
+      <img class="hm-insta-tile" src="assets/images/santander-sp-2020.jpeg?v=2" alt="Pâmela em São Paulo, na época da advocacia bancária" loading="lazy"/>
     </div>
   </div>
 </section>
