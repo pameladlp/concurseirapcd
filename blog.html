@@ -42,13 +42,7 @@ body.blog .bl-hero h1{font-size:clamp(30px,3.6vw,42px);max-width:720px;margin-to
 body.blog .bl-hero h1 .accent{color:var(--accent)}
 body.blog .bl-hero p{font-size:15px;max-width:650px;margin:20px 0 0;color:#4e4e4e}
 body.blog .bl-art{position:relative;min-height:320px;display:grid;place-items:center}
-body.blog .paper{position:relative;width:min(330px,88%);height:265px;background:#fff;border:1px solid #eadfd6;border-radius:26px;box-shadow:0 22px 48px rgba(31,92,77,.13);transform:rotate(2deg);padding:28px;z-index:2}
-body.blog .paper::before{content:"";position:absolute;inset:15px;border:1px solid rgba(201,107,86,.28);border-radius:18px;pointer-events:none}
-body.blog .paper-lines{position:absolute;left:52px;right:38px;top:84px;height:2px;background:#dbe7e1;box-shadow:0 26px 0 #dbe7e1,0 52px 0 #dbe7e1,0 78px 0 #dbe7e1,0 104px 0 #dbe7e1}
-body.blog .paper-title{font-family:var(--font-display);font-size:23px;color:var(--primary);position:relative;z-index:2}
-body.blog .pen{position:absolute;width:17px;height:190px;background:linear-gradient(90deg,#be604c,#db836d);border-radius:999px;right:52px;bottom:12px;transform:rotate(34deg);z-index:3;box-shadow:0 12px 22px rgba(80,40,30,.15)}
-body.blog .pen::before{content:"";position:absolute;top:-16px;left:2px;border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:19px solid #d6b49d}
-body.blog .pen::after{content:"";position:absolute;top:-18px;left:6px;border-left:2px solid transparent;border-right:2px solid transparent;border-bottom:7px solid #333}
+body.blog .bl-photo{position:relative;z-index:2;width:min(360px,92%);height:auto;border-radius:24px;border:1px solid #eadfd6;box-shadow:0 22px 48px rgba(31,92,77,.16);transform:rotate(2deg)}
 body.blog .blob{position:absolute;border-radius:48% 52% 58% 42%/45% 42% 58% 55%}
 body.blog .blob.a{width:260px;height:260px;background:#efd9ce;transform:rotate(-8deg)}
 body.blog .blob.b{width:225px;height:285px;background:#edf4f0;transform:rotate(12deg)}
@@ -134,10 +128,6 @@ body.blog a:focus-visible, body.blog button:focus-visible{outline:3px solid var(
   body.blog .bl-hero{padding:40px 0 30px}
   body.blog .bl-hero h1{font-size:30px}
   body.blog .bl-art{min-height:260px}
-  body.blog .paper{height:225px;padding:22px}
-  body.blog .paper-title{font-size:20px}
-  body.blog .paper-lines{top:72px;box-shadow:0 22px 0 #dbe7e1,0 44px 0 #dbe7e1,0 66px 0 #dbe7e1,0 88px 0 #dbe7e1}
-  body.blog .pen{height:160px}
   body.blog .blob.a{width:210px;height:210px}
   body.blog .blob.b{width:190px;height:240px}
   body.blog main section{padding:44px 0}
@@ -194,7 +184,7 @@ body.blog a:focus-visible, body.blog button:focus-visible{outline:3px solid var(
     <div class="bl-art" aria-hidden="true">
       <div class="blob a"></div><div class="blob b"></div>
       <svg class="leaf l" viewBox="0 0 120 260"><path d="M55 250C65 170 63 90 82 14M61 185C35 170 20 145 15 116M65 150C91 137 103 114 107 87M70 111C43 94 31 70 29 43M76 77C97 64 105 43 106 20" fill="none" stroke="#c96b56" stroke-width="2"/></svg>
-      <div class="paper"><div class="paper-title">Ideias que cabem na vida real.</div><div class="paper-lines"></div></div><div class="pen"></div>
+      <img class="bl-photo" src="assets/images/insta/setup-estudos.jpeg" alt="Cantinho de estudos da Pâmela, com dois monitores e estante de livros" width="340" height="251"/>
       <svg class="leaf r" viewBox="0 0 200 260"><g fill="#6e8f7d"><ellipse cx="92" cy="198" rx="34" ry="82" transform="rotate(-28 92 198)"/><ellipse cx="132" cy="155" rx="31" ry="74" transform="rotate(24 132 155)"/><ellipse cx="69" cy="122" rx="27" ry="64" transform="rotate(-40 69 122)"/></g></svg>
     </div>
   </div>

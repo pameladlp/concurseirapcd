@@ -43,13 +43,7 @@ body.produtos .pd-hero-actions{display:flex;flex-wrap:wrap;gap:10px}
 body.produtos .pd-hero-visual{position:relative;min-height:260px;display:grid;place-items:center}
 body.produtos .blob{position:absolute;width:250px;height:250px;border-radius:48% 52% 58% 42%/46% 44% 56% 54%;background:linear-gradient(145deg,rgba(233,198,181,.78),rgba(244,223,216,.34));transform:rotate(-7deg)}
 body.produtos .blob.green{width:150px;height:150px;right:18px;bottom:0;background:rgba(110,143,125,.24);transform:rotate(14deg)}
-body.produtos .visual-card{position:relative;z-index:2;width:235px;padding:22px;border:1px solid #e7ddd5;border-radius:20px;background:rgba(255,253,250,.95);box-shadow:0 14px 36px rgba(31,92,77,.06)}
-body.produtos .visual-card .screen{border:1px solid #dde5e1;border-radius:16px;padding:16px;background:#fff}
-body.produtos .screen-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
-body.produtos .screen-row:last-child{margin-bottom:0}
-body.produtos .mini{height:55px;padding:10px;border-radius:12px;background:linear-gradient(145deg,#f8f4ef,#eef3f0)}
-body.produtos .mini::before,body.produtos .mini::after{content:"";display:block;height:7px;border-radius:999px;background:#cbd8d2;margin-bottom:7px}
-body.produtos .mini::after{width:65%}
+body.produtos .pd-photo{position:relative;z-index:2;width:min(270px,80%);height:auto;border-radius:20px;border:1px solid #e7ddd5;box-shadow:0 20px 45px rgba(31,92,77,.16);transform:rotate(-2deg)}
 
 /* SEÇÕES */
 body.produtos .section-head{max-width:640px;margin:0 auto 28px;text-align:center}
@@ -191,12 +185,7 @@ body.produtos a:focus-visible, body.produtos button:focus-visible{outline:3px so
     <div class="pd-hero-visual" aria-hidden="true">
       <div class="blob"></div>
       <div class="blob green"></div>
-      <div class="visual-card">
-        <div class="screen">
-          <div class="screen-row"><div class="mini"></div><div class="mini"></div></div>
-          <div class="screen-row"><div class="mini"></div><div class="mini"></div></div>
-        </div>
-      </div>
+      <img class="pd-photo" src="assets/images/insta/agenda-semanal.jpeg" alt="Agenda semanal real da Pâmela, com a rotina de estudos escrita à mão" width="270" height="366"/>
     </div>
   </div>
 </section>
