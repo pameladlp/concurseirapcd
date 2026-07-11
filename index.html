@@ -84,8 +84,8 @@ body.home .hm-art{position:relative;min-height:390px;display:grid;place-items:ce
 body.home .hm-blob{position:absolute;border-radius:46% 54% 58% 42%/48% 42% 58% 52%}
 body.home .hm-blob.a{width:320px;height:320px;background:#f0d7cb;transform:rotate(-9deg)}
 body.home .hm-blob.b{width:295px;height:355px;background:#eef3ef;transform:rotate(8deg)}
-body.home .hm-portrait{position:relative;width:min(330px,82%);height:395px;object-fit:cover;object-position:center top;border-radius:48% 52% 45% 55%/35% 38% 62% 65%;border:2px solid rgba(201,107,86,.35);box-shadow:0 24px 55px rgba(31,92,77,.16)}
-body.home .hm-leaf{position:absolute;opacity:.48}
+body.home .hm-portrait{position:relative;z-index:2;width:min(330px,82%);height:395px;object-fit:cover;object-position:center top;border-radius:48% 52% 45% 55%/35% 38% 62% 65%;border:2px solid rgba(201,107,86,.35);box-shadow:0 24px 55px rgba(31,92,77,.16)}
+body.home .hm-leaf{position:absolute;z-index:1;opacity:.48}
 body.home .hm-leaf-right{right:-12px;bottom:30px;width:190px}
 body.home .hm-leaf-left{left:-28px;top:90px;width:120px;opacity:.25}
 
@@ -101,7 +101,7 @@ body.home .hm-audience{position:relative;background:#fff}
 body.home .hm-audience::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 3% 20%,rgba(110,143,125,.10),transparent 190px),radial-gradient(circle at 96% 80%,rgba(233,198,181,.18),transparent 220px);pointer-events:none}
 body.home .hm-audience > .container{position:relative}
 body.home .hm-cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:38px}
-body.home .hm-card{position:relative;background:#fff;border:1px solid #ddd8d1;border-radius:18px;padding:28px;box-shadow:0 12px 30px rgba(31,92,77,.05)}
+body.home .hm-card{position:relative;background:linear-gradient(135deg,#eef5f1 0%,#fdf7f2 100%);border:1px solid #dfe8e2;border-radius:18px;padding:28px;box-shadow:0 12px 30px rgba(31,92,77,.05)}
 body.home .hm-card h3{font-size:19px;margin:18px 0 10px;color:var(--primary)}
 body.home .hm-card p{margin:0;color:#555}
 
@@ -329,22 +329,22 @@ body.home a:focus-visible, body.home button:focus-visible{outline:3px solid var(
     <div class="hm-news-grid">
       <!-- CONTEUDO_AUTO_HOME -->
       <article class="job-card">
-        <div class="job-meta"><span>RS · Médio/Superior</span><span class="pcd-badge">2 vagas PCD</span></div>
+        <div class="job-meta"><span>MG · Saúde · <time datetime="2026-05-10">10/05/2026</time></span><span class="pcd-badge">Alerta PCD</span></div>
+        <h3><a href="noticias/fhemig-mg-2026.html">FHEMIG abre 5 seletivos com salários de até R$ 7.040</a></h3>
+        <p>Fundação Hospitalar de Minas Gerais anuncia processos seletivos para médicos e enfermeiros.</p>
+        <div class="job-footer"><strong>Até R$ 7.040</strong><span>Prazo: a confirmar</span></div>
+      </article>
+      <article class="job-card">
+        <div class="job-meta"><span>RS · Médio/Superior · <time datetime="2026-05-08">08/05/2026</time></span><span class="pcd-badge">2 vagas PCD</span></div>
         <h3><a href="noticias/bage-rs-2026.html">Prefeitura de Bagé abre 20 vagas com salário de até R$ 9 mil</a></h3>
         <p>Oportunidades para diferentes profissionais de saúde e administração.</p>
         <div class="job-footer"><strong>Até R$ 9.000</strong><span>Prazo: 30/05/2026</span></div>
       </article>
       <article class="job-card">
-        <div class="job-meta"><span>RS · Superior</span><span class="pcd-badge">1 vaga PCD</span></div>
+        <div class="job-meta"><span>RS · Superior · <time datetime="2026-05-08">08/05/2026</time></span><span class="pcd-badge">1 vaga PCD</span></div>
         <h3><a href="noticias/cerro-branco-rs-2026.html">Prefeitura de Cerro Branco anuncia seletivo na Saúde</a></h3>
         <p>Cadastro reserva para atuação na rede municipal de saúde.</p>
         <div class="job-footer"><strong>R$ 4.500 a 7.200</strong><span>Prazo: 25/05/2026</span></div>
-      </article>
-      <article class="job-card">
-        <div class="job-meta"><span>PI · Médio/Superior</span><span class="pcd-badge">5 vagas PCD</span></div>
-        <h3><a href="noticias.html">Seletivo SASC terá edital com 50 vagas</a></h3>
-        <p>Vagas para níveis médio e superior, com reserva para pessoas com deficiência.</p>
-        <div class="job-footer"><strong>R$ 1.800 a 5.300</strong><span>Prazo: 12/06/2026</span></div>
       </article>
     </div>
   </div>
