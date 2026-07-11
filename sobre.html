@@ -15,123 +15,135 @@
 <link href="favicon/favicon.ico?v=3" rel="icon" sizes="any"/><link href="favicon/favicon-32x32.png?v=3" rel="icon" sizes="32x32" type="image/png"/><link href="favicon/favicon-16x16.png?v=3" rel="icon" sizes="16x16" type="image/png"/><link href="favicon/apple-touch-icon.png?v=3" rel="apple-touch-icon"/><link href="favicon/site.webmanifest" rel="manifest"/><meta content="#1F5C4D" name="theme-color"/>
 
 <style>
-/* ═══ SOBRE — layout dedicado (escopo: body.sobre) ═══ */
-body.sobre { --sage:#6E8F7D; --peach:#E9C6B5; --green:#1F5C4D; }
+/* ═══ SOBRE — estilo editorial (page-shell), fiel à referência ═══ */
+body.sobre{
+  background:
+    radial-gradient(circle at 4% 35%, rgba(110,143,125,.10) 0 95px, transparent 96px),
+    radial-gradient(circle at 96% 18%, rgba(233,198,181,.16) 0 150px, transparent 151px),
+    linear-gradient(135deg,#f7f3ed 0%,#f1eee8 100%);
+}
+body.sobre .page-shell{
+  max-width:1080px; margin:14px auto 36px; background:#fff;
+  border-radius:16px; overflow:hidden; box-shadow:0 20px 60px rgba(58,53,45,.12);
+}
+body.sobre .container{ width:min(100% - 48px, 980px); max-width:980px; margin-inline:auto; padding-inline:0; }
 
-/* Botão do cabeçalho + aba ativa */
-.header-cta{
-  display:inline-flex; align-items:center; gap:.45rem;
-  background:var(--primary); color:#fff; font-family:var(--font-sans);
-  font-size:.85rem; font-weight:600; padding:.6rem 1rem; border-radius:9px;
-  transition:all .25s ease; white-space:nowrap; min-height:44px;
-}
-.header-cta:hover{ background:#18493c; transform:translateY(-1px); box-shadow:0 8px 20px -8px rgba(31,92,77,.5); }
-.main-nav a[aria-current="page"]{ color:var(--primary); position:relative; }
-.main-nav a[aria-current="page"]::after{
-  content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px;
-  background:var(--accent); border-radius:2px;
-}
+/* Ícones lineares */
+.svg-icon{width:19px;height:19px;display:block;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+body.sobre .btn .svg-icon{width:17px;height:17px}
+
+/* Botões */
+body.sobre .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:7px;padding:13px 18px;border:1px solid var(--primary);font-weight:600;font-size:14px;transition:.2s ease;min-height:44px}
+body.sobre .btn-primary{background:var(--primary);color:#fff}
+body.sobre .btn-primary:hover{transform:translateY(-1px);box-shadow:0 10px 20px rgba(31,92,77,.18)}
+body.sobre .btn-light{background:#fff;color:var(--primary);border-color:#b7c7c0}
+body.sobre .btn-light:hover{background:#e9f1ec}
 
 /* HERO */
-.about-hero .about-grid{
-  display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(2rem,5vw,4rem); align-items:center;
-}
-.about-eyebrow{ color:var(--accent); font-family:var(--font-sans); font-weight:700;
-  font-size:.75rem; letter-spacing:.14em; text-transform:uppercase; margin-bottom:1rem; }
-.about-hero h1{ color:var(--primary); font-size:clamp(2.4rem,5vw,4rem); line-height:1.08; margin-bottom:1.25rem; }
-.about-hero h1 em{ color:var(--accent); font-style:normal; }
-.about-hero .lead{ color:var(--muted-fg); font-size:1.05rem; line-height:1.7; max-width:60ch; margin-bottom:1.75rem; }
-.about-actions{ display:flex; flex-wrap:wrap; gap:.85rem; }
+body.sobre .hero-sb{position:relative;padding:42px 0 26px;background:linear-gradient(180deg,#fff 0%,#fcfbf8 100%);overflow:hidden}
+body.sobre .hero-sb::before{content:"";position:absolute;width:180px;height:180px;border-radius:50%;background:rgba(233,198,181,.52);right:345px;top:20px}
+body.sobre .hero-sb::after{content:"";position:absolute;width:110px;height:110px;border-radius:50%;background:rgba(110,143,125,.22);right:-55px;bottom:40px}
+body.sobre .hero-grid-sb{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:50px;position:relative;z-index:2}
+body.sobre .eyebrow-sb{color:var(--accent);font-weight:700;letter-spacing:.03em;font-size:13px;margin-bottom:14px;text-transform:uppercase}
+body.sobre .hero-sb h1{font-size:48px;line-height:1.04;max-width:530px;color:var(--primary)}
+body.sobre .hero-sb h1 span{color:var(--accent)}
+body.sobre .lead-sb{font-size:15px;line-height:1.65;max-width:520px;margin:18px 0 24px;color:#4b4b49}
+body.sobre .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+body.sobre .portrait-wrap{position:relative;min-height:340px;display:grid;place-items:center}
+body.sobre .blob{position:absolute;border-radius:45% 55% 55% 45%/55% 45% 55% 45%}
+body.sobre .blob.one{width:320px;height:310px;background:#f4e6de;right:16px;top:4px}
+body.sobre .blob.two{width:190px;height:140px;background:#cbdccc;right:-18px;bottom:8px;transform:rotate(-15deg)}
+body.sobre .dots-sb{position:absolute;right:-10px;top:6px;width:72px;height:72px;background-image:radial-gradient(#6E8F7D 1.2px, transparent 1.2px);background-size:10px 10px;opacity:.75}
+body.sobre .portrait{width:315px;height:315px;object-fit:cover;object-position:center top;border-radius:42% 42% 8px 8px/26% 26% 8px 8px;border:2px solid rgba(201,107,86,.28);box-shadow:0 16px 38px rgba(44,57,50,.13);position:relative;z-index:3;background:#ddd}
+body.sobre .leaf-line{position:absolute;left:-50px;top:45px;width:100px;height:200px;opacity:.28}
 
-/* Moldura orgânica com a foto */
-.photo-frame{ position:relative; justify-self:center; width:min(100%,420px); aspect-ratio:4/5; }
-.photo-frame .blob{ position:absolute; z-index:0; filter:blur(1px); }
-.photo-frame .blob-1{ inset:-10% -14% 26% 16%; background:var(--sage); opacity:.42;
-  border-radius:58% 42% 47% 53% / 55% 48% 52% 45%; }
-.photo-frame .blob-2{ inset:32% 14% -12% -16%; background:var(--peach); opacity:.7;
-  border-radius:44% 56% 61% 39% / 52% 40% 60% 48%; }
-.photo-frame .dots{ position:absolute; z-index:3; width:104px; height:104px; top:-5%; right:-6%;
-  background-image:radial-gradient(var(--sage) 1.7px,transparent 1.7px); background-size:13px 13px; opacity:.65; }
-.photo-frame img{ position:relative; z-index:2; width:100%; height:100%; object-fit:cover; object-position:center top;
-  border-radius:210px 210px 22px 22px;
-  box-shadow:0 20px 50px -20px rgba(31,92,77,.35); }
+/* CREDENCIAIS */
+body.sobre .credentials{padding:0 0 12px;background:#fcfbf8}
+body.sobre .cred-box{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid #ddd9d2;border-radius:12px;background:#fff;overflow:hidden;box-shadow:0 7px 20px rgba(71,64,56,.04)}
+body.sobre .cred{padding:15px 14px;display:flex;align-items:center;gap:12px;min-height:72px;position:relative;font-size:13px;font-weight:600;color:#263a34}
+body.sobre .cred:not(:last-child)::after{content:"";position:absolute;right:0;top:18px;bottom:18px;width:1px;background:#ddd9d2}
+body.sobre .icon-sb{width:33px;height:33px;border:1px solid #c8d6cf;border-radius:50%;display:grid;place-items:center;color:var(--primary);flex:0 0 auto}
 
-/* Faixa de credenciais */
-.cred-strip{
-  display:flex; flex-wrap:wrap; background:#fff; border:1px solid rgba(31,92,77,.12);
-  border-radius:16px; box-shadow:0 8px 30px rgba(31,92,77,.07); overflow:hidden; margin-top:2.5rem;
-}
-.cred-item{ flex:1 1 0; min-width:150px; display:flex; align-items:center; gap:.7rem;
-  padding:1.1rem 1.25rem; border-left:1px solid rgba(31,92,77,.1); }
-.cred-item:first-child{ border-left:none; }
-.cred-item svg{ color:var(--primary); flex-shrink:0; }
-.cred-item span{ font-family:var(--font-sans); font-size:.85rem; font-weight:500; color:var(--foreground); line-height:1.3; }
+/* HISTÓRIA + TIMELINE + PROPÓSITO */
+body.sobre .story{padding:46px 0 26px;background:#fff;position:relative;overflow:hidden}
+body.sobre .story > .container{position:relative;z-index:2}
+body.sobre .botanical{position:absolute;pointer-events:none;z-index:1;fill:none;stroke-linecap:round;stroke-linejoin:round}
+body.sobre .botanical-left{left:-26px;top:52px;width:150px;height:300px;stroke:rgba(201,107,86,.30);stroke-width:1.15}
+body.sobre .botanical-right{right:-18px;bottom:30px;width:190px;height:300px;stroke:rgba(110,143,125,.30);stroke-width:1.1}
+body.sobre .story-grid{display:flex;flex-direction:column;gap:42px;align-items:stretch}
+body.sobre .history-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,1.05fr);gap:46px;align-items:start}
+body.sobre .story h2{font-size:29px;margin-bottom:10px;color:var(--primary)}
+body.sobre .copy{font-size:13px;line-height:1.7;color:#4b4b49;margin-bottom:10px}
+body.sobre .mini-btn{margin-top:12px;padding:9px 12px;font-size:12px;min-height:38px}
+body.sobre .hist-full[hidden]{display:none}
+body.sobre .tl-sb{position:relative;padding-left:30px}
+body.sobre .tl-sb::before{content:"";position:absolute;left:10px;top:4px;bottom:4px;width:1px;background:#e5b7a8}
+body.sobre .time-item{display:grid;grid-template-columns:48px 1fr;gap:10px;align-items:start;position:relative;margin-bottom:16px;font-size:12px}
+body.sobre .time-item::before{content:"";position:absolute;left:-27px;top:0;width:18px;height:18px;border-radius:50%;background:#fff;border:1.5px solid var(--accent);box-shadow:0 0 0 3px #fff}
+body.sobre .time-item strong{color:var(--primary)}
+body.sobre .tl-mini{display:block;width:150px;height:auto;border-radius:10px;margin-top:7px;box-shadow:0 4px 12px rgba(44,57,50,.12)}
+body.sobre .purpose{position:relative;text-align:center;padding:8px 0 18px;max-width:760px;margin:0 auto;width:100%}
+body.sobre .purpose::before{content:"";position:absolute;width:190px;height:190px;border-radius:50%;background:rgba(233,198,181,.18);left:-125px;top:-20px;z-index:-1}
+body.sobre .purpose::after{content:"";position:absolute;width:140px;height:140px;border-radius:48% 52% 60% 40%/55% 45% 55% 45%;background:rgba(110,143,125,.12);right:-100px;bottom:10px;transform:rotate(-18deg);z-index:-1}
+body.sobre .purpose h2{font-size:36px;line-height:1.12;margin-bottom:16px}
+body.sobre .purpose > p{font-size:16px;line-height:1.55;margin:0 auto 22px;max-width:650px;color:#2f2f2f}
+body.sobre .cards-sb{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+body.sobre .card-sb{border:1px solid #ddd7cf;border-radius:13px;padding:18px 18px 20px;background:#fff;min-height:238px;display:flex;flex-direction:column;align-items:center;transition:transform .25s ease, box-shadow .25s ease}
+body.sobre .card-sb:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(31,92,77,.10)}
+body.sobre .card-sb .icon-sb{width:42px;height:42px;margin:0 auto 14px;background:#eef2ef;border:none}
+body.sobre .card-sb .icon-sb .svg-icon{width:22px;height:22px}
+body.sobre .card-sb h3{font-family:var(--font-sans);font-size:18px;font-weight:700;color:var(--primary);line-height:1.25;margin:0 0 12px;max-width:190px}
+body.sobre .card-sb p{font-size:15px;line-height:1.55;margin:0;max-width:200px;color:#2f2f2f}
 
-/* MINHA HISTÓRIA + TIMELINE */
-.hist-grid{ display:grid; grid-template-columns:minmax(0,520px) 1fr; gap:clamp(2rem,5vw,4rem); align-items:start; }
-.hist-text{ max-width:520px; }
-.hist-text p{ color:var(--muted-fg); line-height:1.75; margin-bottom:1rem; }
-.hist-full[hidden]{ display:none; }
-
-/* Timeline */
-.tl{ position:relative; padding-left:2.4rem; }
-.tl::before{ content:""; position:absolute; left:15px; top:8px; bottom:8px; width:2px;
-  background:linear-gradient(var(--sage),rgba(110,143,125,.25)); }
-.tl-item{ position:relative; padding-bottom:1.75rem; }
-.tl-item:last-child{ padding-bottom:0; }
-.tl-icon{ position:absolute; left:-2.4rem; top:0; width:32px; height:32px; border-radius:50%;
-  background:#fff; border:2px solid var(--accent); color:var(--accent);
-  display:flex; align-items:center; justify-content:center; z-index:1; }
-.tl-year{ font-family:var(--font-sans); font-weight:700; font-size:.72rem; letter-spacing:.06em;
-  text-transform:uppercase; color:var(--primary); }
-.tl-item h3{ font-size:1rem; margin:.15rem 0 .2rem; }
-.tl-item p{ color:var(--muted-fg); font-size:.86rem; line-height:1.5; }
-.tl-photo{ margin-top:.6rem; max-width:200px; border-radius:12px; overflow:hidden; }
-.tl-photo img{ width:100%; height:auto; display:block; }
-
-/* POR QUE — cards */
-.why-cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; margin-top:2.25rem; }
-.why-card{ background:#fff; border:1px solid rgba(31,92,77,.12); border-radius:16px;
-  box-shadow:0 8px 30px rgba(31,92,77,.07); padding:1.75rem 1.5rem; text-align:center;
-  transition:transform .25s ease, box-shadow .25s ease; }
-.why-card:hover{ transform:translateY(-4px); box-shadow:0 16px 40px rgba(31,92,77,.12); }
-.why-icon{ width:52px; height:52px; margin:0 auto 1rem; border-radius:14px; background:var(--surface);
-  display:flex; align-items:center; justify-content:center; color:var(--primary); }
-.why-card h3{ font-size:1.15rem; margin-bottom:.4rem; }
-.why-card p{ color:var(--muted-fg); font-size:.9rem; line-height:1.6; }
-
-/* Botões da faixa CTA com ícone */
-.cta-band .btn{ display:inline-flex; align-items:center; gap:.5rem; padding:.85rem 1.4rem; border-radius:9px; min-height:44px; }
-.cta-band .leaf{ position:absolute; z-index:0; color:#fff; opacity:.14; }
-.cta-band .leaf-l{ left:2%; bottom:-10px; width:130px; transform:rotate(8deg); }
-.cta-band .leaf-r{ right:2%; top:-6px; width:110px; transform:rotate(-160deg); }
-
-/* Botões (refino do brief) */
-body.sobre .btn{ padding:.85rem 1.5rem; border-radius:9px; font-weight:600; min-height:44px; }
+/* CTA */
+body.sobre .cta-sb{margin:0 auto 28px;width:min(100% - 24px,1032px);background:linear-gradient(135deg,#c9664d,#d77c61);border-radius:14px;padding:20px 28px;text-align:center;color:#fff;position:relative;overflow:hidden}
+body.sobre .cta-sb::before{content:"";position:absolute;left:30px;bottom:-38px;width:120px;height:160px;border:1px solid rgba(255,255,255,.25);border-radius:60% 40% 70% 30%;transform:rotate(-16deg)}
+body.sobre .cta-sb::after{content:"";position:absolute;right:35px;top:10px;width:90px;height:55px;background-image:radial-gradient(rgba(255,255,255,.58) 1px, transparent 1px);background-size:10px 10px}
+body.sobre .cta-sb h2{color:#fff;font-size:27px;margin-bottom:5px}
+body.sobre .cta-sb p{margin:0 0 13px;font-size:13px;color:rgba(255,255,255,.95)}
+body.sobre .cta-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;position:relative;z-index:2}
+body.sobre .cta-sb .btn{background:#fff;color:#244139;border:none;min-width:170px}
+body.sobre .cta-sb .btn:hover{transform:translateY(-1px);box-shadow:0 10px 20px rgba(0,0,0,.12)}
 
 /* Acessibilidade */
-body.sobre a:focus-visible, body.sobre button:focus-visible{
-  outline:3px solid var(--accent); outline-offset:2px; border-radius:6px; }
+body.sobre a:focus-visible, body.sobre button:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
 @media (prefers-reduced-motion: reduce){
-  body.sobre *{ transition:none !important; animation:none !important; scroll-behavior:auto !important; }
+  body.sobre *{transition:none !important;animation:none !important;scroll-behavior:auto !important}
 }
 
 /* Responsivo */
 @media (max-width:900px){
-  .about-hero .about-grid{ grid-template-columns:1fr; }
-  .photo-frame{ order:2; margin-top:1.5rem; }
-  .hist-grid{ grid-template-columns:1fr; }
-  .why-cards{ grid-template-columns:1fr; }
+  body.sobre .page-shell{margin:0;border-radius:0}
+  body.sobre .hero-grid-sb,body.sobre .history-wrap{grid-template-columns:1fr}
+  body.sobre .hero-sb{padding-top:30px}
+  body.sobre .hero-sb h1{font-size:42px}
+  body.sobre .portrait-wrap{min-height:320px}
+  body.sobre .cred-box{grid-template-columns:1fr 1fr}
+  body.sobre .cred:last-child{grid-column:1/-1}
+  body.sobre .cred:nth-child(2n)::after{display:none}
+  body.sobre .cards-sb{grid-template-columns:1fr}
+  body.sobre .purpose{max-width:560px}
+  body.sobre .purpose h2{font-size:31px}
+  body.sobre .card-sb{min-height:auto}
 }
-@media (max-width:560px){
-  .cred-strip{ border-radius:16px; }
-  .cred-item{ flex:1 1 45%; border-left:none; border-top:1px solid rgba(31,92,77,.1); }
-  .cred-item:nth-child(-n+1){ border-top:none; }
+@media (max-width:600px){
+  body.sobre .container{width:min(100% - 28px,980px)}
+  body.sobre .hero-sb h1{font-size:36px}
+  body.sobre .hero-actions,body.sobre .cta-actions{flex-direction:column}
+  body.sobre .btn,body.sobre .cta-sb .btn{width:100%}
+  body.sobre .cred-box{grid-template-columns:1fr}
+  body.sobre .cred::after{display:none!important}
+  body.sobre .cred:last-child{grid-column:auto}
+  body.sobre .portrait{width:270px;height:270px}
+  body.sobre .blob.one{width:275px;height:265px}
 }
 </style>
 </head>
 <body class="sobre">
 <a class="skip-link" href="#main-content">Ir para o conteúdo</a>
+
+<div class="page-shell">
+
 <header class="site-header">
 <div class="container nav-wrapper">
 <a aria-label="Página inicial Concurseira PCD" class="logo" href="index.html">
@@ -147,7 +159,7 @@ body.sobre a:focus-visible, body.sobre button:focus-visible{
 <a href="blog.html">Blog</a>
 <a href="produtos-digitais.html">Produtos</a>
 <a aria-label="Buscar" class="nav-search" href="search.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></a>
-<a class="header-cta" href="materiais-gratuitos.html"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg> Materiais gratuitos</a>
+<a class="header-cta" href="materiais-gratuitos.html"><svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 8v13M3 12h18M7.5 8C5.6 8 5 6.9 5 5.8 5 4.3 6.2 3.3 7.6 3.3c2.2 0 4.4 4.7 4.4 4.7M16.5 8c1.9 0 2.5-1.1 2.5-2.2 0-1.5-1.2-2.5-2.6-2.5C14.2 3.3 12 8 12 8"/></svg> Materiais gratuitos</a>
 </nav>
 </div>
 </header>
@@ -155,171 +167,117 @@ body.sobre a:focus-visible, body.sobre button:focus-visible{
 <main id="main-content">
 
 <!-- ═══ HERO ═══ -->
-<section class="page-hero about-hero has-decor">
-  <span class="decor decor-branch" style="width:130px;height:360px;left:4px;top:4%;opacity:.7;" aria-hidden="true"></span>
-  <span class="decor decor-circle" style="width:340px;height:340px;background:var(--peach);opacity:.3;top:-130px;right:-90px;" aria-hidden="true"></span>
-  <span class="decor decor-dots" style="width:120px;height:96px;top:5%;right:3%;color:var(--primary);opacity:.35;" aria-hidden="true"></span>
-  <span class="decor decor-circle" style="width:110px;height:110px;background:var(--sage);opacity:.2;bottom:8%;left:9%;" aria-hidden="true"></span>
-  <span class="decor decor-circle" style="width:70px;height:70px;background:var(--accent);opacity:.14;left:38%;bottom:16%;" aria-hidden="true"></span>
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-copy">
-        <p class="about-eyebrow">Sobre mim</p>
-        <h1>Uma trajetória real entre concursos, trabalho e <em>acessibilidade</em>.</h1>
-        <p class="lead">Sou Pâmela Dayane, servidora pública, advogada, concurseira e pessoa com deficiência. Criei este espaço para compartilhar minha jornada e mostrar que é possível conciliar propósito, acessibilidade e qualidade de vida.</p>
-        <div class="about-actions">
-          <a class="btn btn-primary" href="#minha-historia">Conheça minha história</a>
-          <a class="btn btn-secondary" href="materiais-gratuitos.html">Ver materiais gratuitos</a>
-        </div>
-      </div>
-      <div class="photo-frame">
-        <span class="blob blob-1" aria-hidden="true"></span>
-        <span class="blob blob-2" aria-hidden="true"></span>
-        <span class="dots" aria-hidden="true"></span>
-        <span class="decor decor-branch" style="width:86px;height:210px;right:-30px;bottom:-8px;opacity:.55;transform:rotate(158deg);z-index:1;" aria-hidden="true"></span>
-        <img src="assets/images/pamela.jpg?v=2" alt="Fotografia de Pâmela Dayane, criadora do Concurseira PCD" loading="eager" width="420" height="525"/>
+<section class="hero-sb" id="sobre">
+  <svg class="leaf-line" viewBox="0 0 100 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M48 195C41 145 42 94 53 10M50 162C24 145 14 121 13 93M49 136C72 119 82 95 83 67M51 105C28 86 22 63 24 38" stroke="#c96b56" stroke-width="1.2"/>
+  </svg>
+  <div class="container hero-grid-sb">
+    <div>
+      <div class="eyebrow-sb">Sobre mim</div>
+      <h1>Uma trajetória real entre concursos, trabalho e <span>acessibilidade.</span></h1>
+      <p class="lead-sb">Sou Pâmela Dayane, servidora pública, advogada, concurseira e pessoa com deficiência. Criei este espaço para compartilhar minha jornada e mostrar que é possível conciliar propósito, acessibilidade e qualidade de vida.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#historia">Conheça minha história <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+        <a class="btn btn-light" href="materiais-gratuitos.html">Ver materiais gratuitos <svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
       </div>
     </div>
-
-    <!-- Faixa de credenciais -->
-    <div class="cred-strip" role="list" aria-label="Credenciais">
-      <div class="cred-item" role="listitem">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="4" r="1"/><path d="m18 19 1-7-6 1"/><path d="m5 8 3-3 5.5 3-2.36 3.5"/><path d="M4.24 14.5a5 5 0 0 0 6.88 6"/><path d="M13.76 17.5a5 5 0 0 0-6.88-6"/></svg>
-        <span>PCD</span>
-      </div>
-      <div class="cred-item" role="listitem">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>
-        <span>Servidora do TRF1</span>
-      </div>
-      <div class="cred-item" role="listitem">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>
-        <span>Advogada</span>
-      </div>
-      <div class="cred-item" role="listitem">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
-        <span>Aprovada na OAB aos 20 anos</span>
-      </div>
-      <div class="cred-item" role="listitem">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>
-        <span>Aprovada em diferentes concursos</span>
-      </div>
+    <div class="portrait-wrap">
+      <div class="blob one" aria-hidden="true"></div>
+      <div class="blob two" aria-hidden="true"></div>
+      <div class="dots-sb" aria-hidden="true"></div>
+      <img class="portrait" src="assets/images/pamela.jpg?v=2" alt="Retrato de Pâmela Dayane, criadora do Concurseira PCD" width="315" height="315"/>
     </div>
   </div>
 </section>
 
-<!-- ═══ MINHA HISTÓRIA + LINHA DO TEMPO ═══ -->
-<section class="section" id="minha-historia">
-  <div class="container">
-    <div class="hist-grid">
-      <div class="hist-text">
-        <p class="eyebrow">Minha história</p>
-        <h2>Uma trajetória construída com mérito e coragem.</h2>
-        <p>Fui aprovada na OAB aos 20 anos, ainda durante a graduação em Direito, e comecei a estudar para concursos logo após a formatura. O concurso público representava, para mim, a chance de construir uma carreira por critérios objetivos, sem deixar o preconceito decidir até onde eu poderia chegar.</p>
-        <p>Depois de cerca de um ano de estudos, tomei posse no meu primeiro cargo público, na Universidade de Pernambuco. Anos depois, conheci a vida corporativa em São Paulo, como advogada no Banco Santander e, mais tarde, no Banco Safra.</p>
-        <p>Em 2023, assumi a nomeação para o Tribunal Regional Federal da 1ª Região, em Brasília — a escolha que me trouxe estabilidade, qualidade de vida e o retorno aos estudos.</p>
+<!-- ═══ CREDENCIAIS ═══ -->
+<section class="credentials">
+  <div class="container cred-box" role="list" aria-label="Credenciais">
+    <div class="cred" role="listitem"><span class="icon-sb"><svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5" r="2"/><path d="M12 7.5v5.5h4l3 5M12 10H8.5a4.5 4.5 0 1 0 4.2 6.1M12 13l-2 4"/></svg></span><span>PCD</span></div>
+    <div class="cred" role="listitem"><span class="icon-sb"><svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V8l8-5 8 5v13M8 21v-4h8v4M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"/></svg></span><span>Servidora do<br>TRF1</span></div>
+    <div class="cred" role="listitem"><span class="icon-sb"><svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M6 6h12M5 6l-3 6h6L5 6ZM19 6l-3 6h6l-3-6ZM8 21h8"/></svg></span><span>Advogada</span></div>
+    <div class="cred" role="listitem"><span class="icon-sb"><svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="m8.5 12-1 9 4.5-3 4.5 3-1-9M10 8l1.3 1.3L14 6.7"/></svg></span><span>Aprovada na OAB<br>aos 20 anos</span></div>
+    <div class="cred" role="listitem"><span class="icon-sb"><svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6zM14 3v5h5M9 13h6M9 17h4"/><path d="m15.5 15.5 1.5 1.5 3-3"/></svg></span><span>Aprovada em<br>diferentes concursos</span></div>
+  </div>
+</section>
+
+<!-- ═══ HISTÓRIA + TIMELINE + PROPÓSITO ═══ -->
+<section class="story" id="historia">
+  <svg class="botanical botanical-left" viewBox="0 0 150 300" aria-hidden="true">
+    <path d="M76 292C67 235 68 179 79 119C86 82 94 47 101 13"/>
+    <path d="M75 245C44 226 28 201 22 170"/>
+    <path d="M77 215C102 194 119 168 126 137"/>
+    <path d="M79 174C52 154 39 128 36 99"/>
+    <path d="M84 126C106 107 120 84 124 57"/>
+    <path d="M23 170C43 164 60 175 75 192"/>
+    <path d="M126 137C106 135 91 145 78 161"/>
+    <path d="M36 99C54 96 69 106 82 121"/>
+  </svg>
+  <svg class="botanical botanical-right" viewBox="0 0 190 300" aria-hidden="true">
+    <path d="M95 296C102 244 98 194 85 143C75 102 62 61 51 19"/>
+    <path d="M93 248C128 229 149 203 159 169"/>
+    <path d="M89 211C57 191 38 164 31 132"/>
+    <path d="M84 169C116 150 136 125 146 94"/>
+    <path d="M73 120C48 101 32 77 27 49"/>
+    <path d="M159 169C137 164 117 176 94 195"/>
+    <path d="M31 132C54 127 70 137 86 153"/>
+    <path d="M146 94C123 91 105 102 78 124"/>
+  </svg>
+  <div class="container story-grid">
+    <div class="history-wrap">
+      <div>
+        <h2>Minha história</h2>
+        <p class="copy">Minha trajetória profissional começou ainda durante a graduação em Direito. Fui aprovada na OAB aos 20 anos e, desde então, venho construindo passos firmes por onde caminho.</p>
+        <p class="copy">Atuei na advocacia bancária e no setor corporativo, em São Paulo, até assumir meu cargo no TRF1, em Brasília, em 2023. Essa vivência me deu uma visão completa sobre o serviço público e sobre a importância da inclusão e da acessibilidade.</p>
         <div class="hist-full" id="hist-full" hidden>
-          <p>Foram experiências que contribuíram muito para a minha formação. Aprendi sobre responsabilidade, produtividade, gestão e comunicação — e descobri que amo desafios.</p>
-          <p>Mudar para Brasília significou recomeçar em uma cidade onde eu não conhecia ninguém. Decidi assumir o risco, e daí em diante foi crescimento e leveza.</p>
-          <p>Hoje continuo concurseira, em busca do meu cargo-fim. Compartilho minha caminhada porque sei que muitas pessoas não precisam de mais cobrança — precisam de orientação, ferramentas práticas e da certeza de que é possível construir um caminho próprio.</p>
+          <p class="copy">O concurso público representava, para mim, a chance de construir uma carreira por critérios objetivos, sem deixar o preconceito decidir até onde eu poderia chegar. Depois de cerca de um ano de estudos, tomei posse no meu primeiro cargo público, na Universidade de Pernambuco.</p>
+          <p class="copy">No Santander e no Safra aprendi sobre responsabilidade, produtividade, gestão e comunicação — e descobri que amo desafios. Mudar para Brasília significou recomeçar em uma cidade onde eu não conhecia ninguém. Decidi assumir o risco, e essa escolha me trouxe estabilidade, qualidade de vida e o retorno aos estudos.</p>
+          <p class="copy">Hoje continuo concurseira, em busca do meu cargo-fim. Compartilho minha caminhada porque sei que muitas pessoas não precisam de mais cobrança — precisam de orientação, ferramentas práticas e da certeza de que é possível construir um caminho próprio.</p>
         </div>
-        <button class="btn btn-secondary" id="hist-toggle" type="button" aria-expanded="false" aria-controls="hist-full" style="margin-top:.5rem;">Ler história completa</button>
+        <button class="btn btn-light mini-btn" id="hist-toggle" type="button" aria-expanded="false" aria-controls="hist-full"><svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11v16H6.5A2.5 2.5 0 0 0 4 21.5zM20 5.5A2.5 2.5 0 0 0 17.5 3H13v16h4.5A2.5 2.5 0 0 1 20 21.5z"/></svg><span>Ler história completa</span></button>
       </div>
-
-      <div class="hist-timeline">
-        <p class="eyebrow">Linha do tempo</p>
-        <div class="tl">
-          <div class="tl-item">
-            <span class="tl-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></span>
-            <span class="tl-year">2016</span>
-            <h3>Aprovação na OAB</h3>
-            <p>Aprovada no XXI Exame da Ordem ainda na graduação.</p>
-            <div class="tl-photo"><img src="assets/images/oab-2016.jpeg?v=2" alt="Pâmela aprovada na OAB em 2016" loading="lazy" onerror="this.parentElement.style.display='none'"/></div>
-          </div>
-          <div class="tl-item">
-            <span class="tl-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></span>
-            <span class="tl-year">2018</span>
-            <h3>Primeira posse no serviço público</h3>
-            <p>Assistente Administrativo na Universidade de Pernambuco.</p>
-            <div class="tl-photo"><img src="assets/images/posse-upe.jpg?v=2" alt="Pâmela na posse da UPE em 2018" loading="lazy" onerror="this.parentElement.style.display='none'"/></div>
-          </div>
-          <div class="tl-item">
-            <span class="tl-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
-            <span class="tl-year">2020</span>
-            <h3>Advocacia no Santander</h3>
-            <p>Mudança para São Paulo e início no setor bancário.</p>
-            <div class="tl-photo"><img src="assets/images/santander-sp-2020.jpeg?v=2" alt="Pâmela em São Paulo, no Santander, em 2020" loading="lazy" onerror="this.parentElement.style.display='none'"/></div>
-          </div>
-          <div class="tl-item">
-            <span class="tl-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/></svg></span>
-            <span class="tl-year">2022</span>
-            <h3>Banco Safra</h3>
-            <p>Advogada societária em uma equipe que me fez crescer.</p>
-            <div class="tl-photo"><img src="assets/images/safra-2022.jpeg?v=2" alt="Pâmela no Banco Safra em 2022" loading="lazy" onerror="this.parentElement.style.display='none'"/></div>
-          </div>
-          <div class="tl-item">
-            <span class="tl-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></span>
-            <span class="tl-year">2023</span>
-            <h3>Posse no TRF1</h3>
-            <p>Servidora do Tribunal Regional Federal da 1ª Região, em Brasília.</p>
-            <div class="tl-photo"><img src="assets/images/posse-trf1.jpg?v=2" alt="Pâmela na posse do TRF1 em 2023" loading="lazy" onerror="this.parentElement.style.display='none'"/></div>
-          </div>
-          <div class="tl-item">
-            <span class="tl-icon" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .962 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.962 0z"/></svg></span>
-            <span class="tl-year">Hoje</span>
-            <h3>Concurseira PCD</h3>
-            <p>De volta aos estudos e compartilhando cada passo da jornada.</p>
-          </div>
-        </div>
+      <div class="tl-sb" aria-label="Linha do tempo profissional">
+        <div class="time-item"><strong>2016</strong><div><span>Aprovação na OAB</span><img class="tl-mini" src="assets/images/oab-2016.jpeg?v=2" alt="Pâmela aprovada na OAB em 2016" loading="lazy" onerror="this.style.display='none'"/></div></div>
+        <div class="time-item"><strong>2018</strong><div><span>Primeira posse no serviço público</span><img class="tl-mini" src="assets/images/posse-upe.jpg?v=2" alt="Pâmela na posse da UPE em 2018" loading="lazy" onerror="this.style.display='none'"/></div></div>
+        <div class="time-item"><strong>2020</strong><div><span>Advocacia no Santander</span><img class="tl-mini" src="assets/images/santander-sp-2020.jpeg?v=2" alt="Pâmela em São Paulo, no Santander, em 2020" loading="lazy" onerror="this.style.display='none'"/></div></div>
+        <div class="time-item"><strong>2022</strong><div><span>Banco Safra</span><img class="tl-mini" src="assets/images/safra-2022.jpeg?v=2" alt="Pâmela no Banco Safra em 2022" loading="lazy" onerror="this.style.display='none'"/></div></div>
+        <div class="time-item"><strong>2023</strong><div><span>Posse no TRF1</span><img class="tl-mini" src="assets/images/posse-trf1.jpg?v=2" alt="Pâmela na posse do TRF1 em Brasília em 2023" loading="lazy" onerror="this.style.display='none'"/></div></div>
+        <div class="time-item"><strong>Hoje</strong><div><span>Concurseira PCD</span></div></div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ═══ POR QUE EXISTE ═══ -->
-<section class="section section-soft has-decor">
-  <span class="decor decor-circle" style="width:280px;height:280px;background:var(--peach);opacity:.3;top:-110px;right:-90px;" aria-hidden="true"></span>
-  <span class="decor decor-circle" style="width:200px;height:200px;background:var(--sage);opacity:.16;bottom:-80px;left:-60px;" aria-hidden="true"></span>
-  <div class="container">
-    <div class="section-heading">
-      <p class="eyebrow">O propósito</p>
+    <div class="purpose">
       <h2>Por que a Concurseira PCD existe</h2>
-      <p>Criei este espaço para transformar informação em prática e apoiar você na sua jornada, com leveza e estratégia.</p>
-    </div>
-    <div class="why-cards">
-      <article class="why-card">
-        <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg></div>
-        <h3>Informação clara</h3>
-        <p>Explicações objetivas sobre concursos e direitos PCD.</p>
-      </article>
-      <article class="why-card">
-        <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/></svg></div>
-        <h3>Organização possível</h3>
-        <p>Ferramentas e rotinas para estudar com foco e sem peso extra.</p>
-      </article>
-      <article class="why-card">
-        <div class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></div>
-        <h3>Inclusão sem romantização</h3>
-        <p>Conteúdo realista, acolhedor e baseado em experiência.</p>
-      </article>
+      <p>Criei este espaço para transformar informação em prática e apoiar você na sua jornada com leveza e estratégia.</p>
+      <div class="cards-sb">
+        <article class="card-sb">
+          <div class="icon-sb"><svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4h10v16H7zM9 8h6M9 12h6M9 16h4"/><path d="M4 7h3M4 11h3M4 15h3"/></svg></div>
+          <h3>Informação clara</h3>
+          <p>Explicações objetivas sobre concursos e direitos PCD.</p>
+        </article>
+        <article class="card-sb">
+          <div class="icon-sb"><svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg></div>
+          <h3>Organização possível</h3>
+          <p>Ferramentas e rotinas para estudar com foco e sem peso extra.</p>
+        </article>
+        <article class="card-sb">
+          <div class="icon-sb"><svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg></div>
+          <h3>Inclusão sem romantização</h3>
+          <p>Conteúdo realista, acolhedor e baseado em experiência.</p>
+        </article>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ CHAMADA FINAL ═══ -->
-<section class="section">
-  <div class="container">
-    <div class="cta-band">
-      <span class="decor decor-branch-white" style="width:190px;height:380px;left:0.5%;bottom:-70px;opacity:.28;transform:rotate(10deg);" aria-hidden="true"></span>
-      <span class="decor decor-dots" style="width:170px;height:130px;right:2.5%;top:12%;color:#fff;opacity:.3;" aria-hidden="true"></span>
-      <span class="decor decor-circle" style="width:220px;height:220px;background:#fff;opacity:.06;right:-70px;bottom:-90px;" aria-hidden="true"></span>
-      <h2>Vamos seguir juntas nessa caminhada.</h2>
-      <p>Você não precisa fazer tudo de uma vez. A aprovação começa com um passo.</p>
-      <div class="btn-band-row">
-        <a class="btn" href="materiais-gratuitos.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg> Materiais gratuitos</a>
-        <a class="btn" href="produtos-digitais.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg> Produtos digitais</a>
-        <a class="btn" href="https://www.instagram.com/concurseirapcd" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg> Acompanhar no Instagram</a>
-      </div>
-    </div>
+<!-- ═══ CTA ═══ -->
+<section class="cta-sb" id="materiais">
+  <h2>Vamos seguir juntas nessa caminhada.</h2>
+  <p>Você não precisa fazer tudo de uma vez. A aprovação começa com um passo.</p>
+  <div class="cta-actions">
+    <a class="btn" href="materiais-gratuitos.html"><svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 8v13M3 12h18M7.5 8C5.6 8 5 6.9 5 5.8 5 4.3 6.2 3.3 7.6 3.3c2.2 0 4.4 4.7 4.4 4.7M16.5 8c1.9 0 2.5-1.1 2.5-2.2 0-1.5-1.2-2.5-2.6-2.5C14.2 3.3 12 8 12 8"/></svg><span>Materiais gratuitos</span></a>
+    <a class="btn" href="produtos-digitais.html"><svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 13H6zM9 8V6a3 3 0 0 1 6 0v2"/></svg><span>Produtos digitais</span></a>
+    <a class="btn" href="https://www.instagram.com/concurseirapcd" target="_blank" rel="noopener"><svg class="svg-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg><span>Acompanhar no Instagram</span></a>
   </div>
 </section>
 
@@ -343,14 +301,17 @@ body.sobre a:focus-visible, body.sobre button:focus-visible{
 <span>© 2026 Concurseira PCD · Pâmela Dayane</span>
 </div>
 </footer>
+
+</div><!-- /page-shell -->
+
 <script src="assets/js/script.js"></script>
 <script>
 (function(){
   var t=document.getElementById('hist-toggle'), f=document.getElementById('hist-full');
   if(t&&f){ t.addEventListener('click',function(){
     var open=f.hasAttribute('hidden');
-    if(open){ f.removeAttribute('hidden'); t.setAttribute('aria-expanded','true'); t.textContent='Ocultar história'; }
-    else { f.setAttribute('hidden',''); t.setAttribute('aria-expanded','false'); t.textContent='Ler história completa'; }
+    if(open){ f.removeAttribute('hidden'); t.setAttribute('aria-expanded','true'); t.querySelector('span').textContent='Ocultar história'; }
+    else { f.setAttribute('hidden',''); t.setAttribute('aria-expanded','false'); t.querySelector('span').textContent='Ler história completa'; }
   }); }
 })();
 </script>
