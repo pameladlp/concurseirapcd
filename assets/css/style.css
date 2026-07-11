@@ -2188,3 +2188,17 @@ h1, h2, h3, h4, h5 {
 }
 .cta-band::before { left: -70px; bottom: -90px; width: 220px; height: 220px; }
 .cta-band::after  { right: -60px; top: -90px;   width: 160px; height: 160px; }
+
+/* ─── Cabeçalho: botão CTA + aba ativa (global) ─── */
+.header-cta{
+  display:inline-flex; align-items:center; gap:.45rem;
+  background:var(--primary); color:#fff; font-family:var(--font-sans);
+  font-size:.85rem; font-weight:600; padding:.55rem 1rem; border-radius:9px;
+  transition:all .25s ease; white-space:nowrap; min-height:40px;
+}
+.header-cta:hover{ background:#18493c; transform:translateY(-1px); box-shadow:0 8px 20px -8px rgba(31,92,77,.5); }
+.main-nav a[aria-current="page"]{ color:var(--primary); position:relative; }
+.main-nav a[aria-current="page"]::after{
+  content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px;
+  background:var(--accent); border-radius:2px;
+}
