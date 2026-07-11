@@ -5,7 +5,7 @@
  */
 
 /* ─── GOOGLE FONTS ─── */
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Manrope:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap');
 
 /* ─── DESIGN TOKENS ─── */
 :root {
@@ -19,28 +19,28 @@
   --radius-4xl: calc(var(--radius) + 16px);
   --radius-full: 999px;
 
-  --background:    oklch(0.975 0.016 80);
-  --foreground:    oklch(0.20 0.025 50);
-  --fg:            oklch(0.20 0.025 50);
-  --surface:       oklch(0.958 0.020 72);
-  --card:          oklch(1 0 0);
-  --card-fg:       oklch(0.20 0.025 50);
+  --background:    #F7F6F2;
+  --foreground:    #333333;
+  --fg:            #333333;
+  --surface:       #E9F1EC;
+  --card:          #FFFFFF;
+  --card-fg:       #333333;
 
-  --primary:       oklch(0.42 0.10 155);
-  --primary-fg:    oklch(0.99 0.005 90);
-  --primary-soft:  oklch(0.90 0.05 155);
+  --primary:       #1F5C4D;
+  --primary-fg:    #FFFFFF;
+  --primary-soft:  #DCEAE1;
 
-  --accent:        oklch(0.55 0.14 35);
-  --accent-fg:     oklch(0.99 0.005 90);
-  --accent-soft:   oklch(0.91 0.05 35);
+  --accent:        #C96B56;
+  --accent-fg:     #FFFFFF;
+  --accent-soft:   #F0DAD0;
 
-  --muted:         oklch(0.94 0.018 75);
-  --muted-fg:      oklch(0.40 0.022 60);
-  --border:        oklch(0.84 0.022 72);
-  --ring:          oklch(0.55 0.14 35);
+  --muted:         #F0EEE8;
+  --muted-fg:      #5F6360;
+  --border:        #E5E1D8;
+  --ring:          #C96B56;
 
-  --font-display: 'Fraunces', ui-serif, Georgia, serif;
-  --font-sans:    'Manrope', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'DM Serif Display', ui-serif, Georgia, serif;
+  --font-sans:    'Inter', ui-sans-serif, system-ui, sans-serif;
 
   --shadow-soft:  0 8px 30px -12px color-mix(in oklab, var(--accent) 22%, transparent);
   --shadow-card:  0 4px 20px -8px  color-mix(in oklab, var(--foreground) 12%, transparent);
@@ -98,8 +98,8 @@ ul, ol { list-style: none; }
 
 h1, h2, h3, h4, h5 {
   font-family: var(--font-display);
-  font-weight: 500;
-  letter-spacing: -0.02em;
+  font-weight: 400;
+  letter-spacing: -0.01em;
   line-height: 1.15;
   color: var(--foreground);
 }
@@ -2150,3 +2150,41 @@ h1, h2, h3, h4, h5 {
 }
 .logo-author { color: oklch(0.38 0.022 60); }
 .main-nav a { color: oklch(0.22 0.025 50); }
+
+/* ═══════════════════════════════════════════════════════════════
+   ESTILO 2026 — refinamentos visuais (paleta quente + serifada)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Títulos de hero em verde escuro, como no mockup */
+.hero-content h1,
+.page-title-copy h1 { color: var(--primary); }
+
+/* Foto de perfil em arco (topo arredondado) */
+.page-title-photo {
+  overflow: hidden;
+  border-radius: 999px 999px var(--radius-2xl) var(--radius-2xl);
+}
+
+/* Faixa CTA terracota */
+.cta-band {
+  background: var(--accent);
+  color: #fff;
+  border-radius: var(--radius-3xl);
+  padding: clamp(2.25rem, 5vw, 3.5rem) 1.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-band > * { position: relative; z-index: 1; }
+.cta-band h2 { color: #fff; margin-bottom: 0.5rem; }
+.cta-band p  { color: rgba(255,255,255,0.92); max-width: 620px; margin: 0 auto 1.75rem; }
+.cta-band .btn-band-row { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; }
+.cta-band .btn { background: #fff; color: var(--accent); border: none; }
+.cta-band .btn:hover { background: #fff; transform: translateY(-2px); }
+.cta-band::before,
+.cta-band::after {
+  content: ""; position: absolute; border-radius: 50%;
+  background: rgba(255,255,255,0.07); z-index: 0;
+}
+.cta-band::before { left: -70px; bottom: -90px; width: 220px; height: 220px; }
+.cta-band::after  { right: -60px; top: -90px;   width: 160px; height: 160px; }
