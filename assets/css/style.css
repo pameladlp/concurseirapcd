@@ -574,7 +574,7 @@ h1, h2, h3, h4, h5 {
 .timeline-year { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
 .timeline-content h3 { font-size: 0.92rem; font-weight: 600; }
 .timeline-content p { font-size: 0.8rem; color: var(--muted-fg); line-height: 1.5; }
-.timeline-photo { margin-top: 0.75rem; border-radius: var(--radius-lg); overflow: hidden; }
+.timeline-photo { margin-top: 0.75rem; border-radius: var(--radius-lg); overflow: hidden; max-width: 240px; }
 .timeline-photo img { width: 100%; height: auto; display: block; border-radius: var(--radius-lg); }
 .photo-caption { display: block; font-size: 0.68rem; color: var(--muted-fg); margin-top: 0.3rem; font-style: italic; }
 
