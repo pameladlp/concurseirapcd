@@ -32,9 +32,11 @@ body.noticias .eyebrow-nt{margin-bottom:10px;color:var(--accent);font-size:.72re
 body.noticias .nt-hero{padding:44px 0 24px;background:linear-gradient(135deg,#fffaf6 0%,#fffdfa 58%,#f1f7f3 100%)}
 body.noticias .nt-hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:38px;align-items:center}
 body.noticias .nt-hero h1{max-width:720px;margin:0 0 13px;font-size:clamp(30px,3.5vw,39px);line-height:1.05;color:var(--primary)}
+body.noticias .nt-hero h1 .accent{color:var(--accent)}
 body.noticias .nt-hero p{max-width:680px;margin:0;color:#5b5b5b;font-size:.94rem}
 body.noticias .nt-hero-visual{position:relative;display:grid;place-items:center;min-height:230px}
-body.noticias .nt-hero-visual::before{content:"";position:absolute;width:220px;height:220px;border-radius:48% 52% 58% 42%/46% 44% 56% 54%;background:linear-gradient(145deg,rgba(233,198,181,.55),rgba(233,241,236,.6));transform:rotate(-8deg)}
+body.noticias .nt-hero-visual::before{content:"";position:absolute;width:280px;height:280px;border-radius:48% 52% 58% 42%/46% 44% 56% 54%;background:linear-gradient(145deg,rgba(233,198,181,.75),rgba(244,223,216,.4));transform:rotate(-8deg) translate(-28px,16px)}
+body.noticias .nt-hero-visual::after{content:"";position:absolute;width:140px;height:140px;border-radius:50%;background:rgba(110,143,125,.26);right:6%;bottom:-10px}
 body.noticias .nt-photo{position:relative;z-index:2;width:min(250px,80%);height:auto;border-radius:16px;border:1px solid #e7ddd5;background:#fff;padding:6px;box-shadow:0 20px 45px rgba(31,92,77,.16);transform:rotate(2deg)}
 
 /* CONTROLES */
@@ -169,7 +171,7 @@ body.noticias a:focus-visible, body.noticias button:focus-visible{outline:3px so
   <div class="container nt-hero-grid">
     <div>
       <div class="eyebrow-nt">Notícias e editais</div>
-      <h1>O que realmente importa em cada oportunidade.</h1>
+      <h1>O que realmente importa em cada <span class="accent">oportunidade</span>.</h1>
       <p>Notícias organizadas para leitura rápida, com destaque para prazo, remuneração, escolaridade e vagas reservadas para pessoas com deficiência.</p>
     </div>
     <div class="nt-hero-visual" aria-hidden="true">
