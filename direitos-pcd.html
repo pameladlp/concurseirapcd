@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Direitos da Pessoa com Deficiência: guia prático (BPC, cotas, IR, SUS) | Concurseira PCD</title>
-<meta name="description" content="Guia prático sobre direitos PCD: BPC/LOAS, cotas em concursos, isenção de IR, tecnologia assistiva pelo SUS, aposentadoria e documentos. Linguagem simples, fontes oficiais."/>
+<meta name="description" content="Conteúdos claros sobre documentos, benefícios, trabalho, educação e concursos públicos para pessoas com deficiência e suas famílias."/>
 <link rel="canonical" href="https://concurseirapcd.com.br/direitos-pcd.html"/>
 <meta property="og:type" content="article"/>
 <meta property="og:url" content="https://concurseirapcd.com.br/direitos-pcd.html"/>
@@ -77,102 +77,72 @@
 </script>
 
 <style>
-/* ═══ DIREITOS PCD — estilo editorial (page-shell) ═══ */
+/* ═══ DIREITOS PCD — hub editorial (page-shell) ═══ */
 body.direitos{background:#f4f0ea;line-height:1.65}
 body.direitos .page-shell{width:min(1180px,calc(100% - 32px));margin:16px auto 44px;background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 18px 45px rgba(31,92,77,.09)}
 body.direitos .container{width:min(1080px,calc(100% - 40px));max-width:1080px;margin-inline:auto;padding-inline:0}
-body.direitos main section{padding:54px 0}
-body.direitos .section-kicker{font-size:13px;text-transform:uppercase;letter-spacing:.09em;font-weight:700;color:var(--accent);margin-bottom:10px}
-body.direitos .section-title{font-size:clamp(24px,2.6vw,33px);max-width:760px;color:var(--primary)}
-body.direitos .section-intro{font-size:16px;max-width:760px;margin:16px 0 0;color:#555}
-body.direitos .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 17px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px;border:1px solid transparent;min-height:44px;transition:.2s ease}
+body.direitos .eyebrow-dp{margin-bottom:12px;color:var(--accent);font-size:.76rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+body.direitos .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 17px;border-radius:10px;font-size:.88rem;font-weight:700;text-decoration:none;min-height:44px;transition:.2s ease}
 body.direitos .btn-primary{background:var(--primary);color:#fff}
 body.direitos .btn-primary:hover{transform:translateY(-1px);box-shadow:0 10px 20px rgba(31,92,77,.18)}
-body.direitos .btn-secondary{background:#fff;color:var(--primary);border-color:#b9c8c1}
+body.direitos .btn-secondary{border:1px solid #cad7d1;background:rgba(255,255,255,.72);color:var(--primary)}
 body.direitos .btn-secondary:hover{background:#e9f1ec}
 
 /* HERO */
-body.direitos .dp-hero{position:relative;padding:48px 0 34px;overflow:hidden;background:linear-gradient(135deg,#fffaf6 0%,#fff 58%,#f1f7f3 100%)}
-body.direitos .dp-hero::before{content:"";position:absolute;width:360px;height:360px;border-radius:50%;background:rgba(233,198,181,.35);right:4%;top:-80px}
-body.direitos .dp-hero::after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;background:rgba(110,143,125,.11);left:-90px;bottom:-40px}
-body.direitos .dp-hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;gap:46px;align-items:center}
-body.direitos .crumb{font-size:13px;color:#777;margin-bottom:20px}
-body.direitos .crumb a{text-decoration:none}
-body.direitos .crumb a:hover{color:var(--accent)}
-body.direitos .dp-hero h1{font-size:clamp(30px,3.6vw,42px);max-width:690px;margin:14px 0 22px;color:var(--primary);line-height:1.08}
-body.direitos .dp-hero h1 span{color:var(--accent)}
-body.direitos .dp-hero p{font-size:16px;max-width:680px;margin:0 0 18px;color:#4d4d4d}
-body.direitos .note{display:inline-flex;align-items:center;gap:9px;padding:10px 14px;border-radius:999px;background:#fff;border:1px solid #e4ddd6;font-size:13px;color:#655f5a}
+body.direitos .dp-hero{position:relative;overflow:hidden;padding:48px 0 44px;background:linear-gradient(135deg,#fffaf6 0%,#fff 58%,#f1f7f3 100%)}
+body.direitos .dp-hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:48px;align-items:center}
+body.direitos .dp-hero h1{margin:0 0 16px;font-size:clamp(30px,3.6vw,42px);line-height:1.06;color:var(--primary)}
+body.direitos .dp-hero p{max-width:640px;margin:0 0 22px;color:#555;font-size:1rem}
+body.direitos .dp-hero-actions{display:flex;flex-wrap:wrap;gap:12px}
 body.direitos .dp-hero-art{position:relative;min-height:320px;display:grid;place-items:center}
-body.direitos .hero-panel{position:relative;width:min(310px,86%);min-height:270px;border-radius:44% 56% 48% 52%/42% 38% 62% 58%;background:linear-gradient(145deg,#f1ddd2,#edf4f0);border:1px solid rgba(201,107,86,.3);box-shadow:0 25px 55px rgba(31,92,77,.14);display:grid;place-items:center}
-body.direitos .hero-panel svg{width:72%;height:auto}
-body.direitos .botanical{position:absolute;pointer-events:none}
-body.direitos .botanical.left{left:-14px;top:70px;width:120px;opacity:.35}
-body.direitos .botanical.right{right:-18px;bottom:16px;width:170px;opacity:.5}
+body.direitos .shape{position:absolute;width:290px;height:290px;border-radius:48% 52% 55% 45%/45% 48% 52% 55%;background:linear-gradient(145deg,rgba(233,198,181,.75),rgba(233,198,181,.25));transform:rotate(-7deg)}
+body.direitos .shape.green{width:180px;height:180px;right:16px;bottom:0;background:rgba(110,143,125,.25);transform:rotate(14deg)}
+body.direitos .symbol-card{position:relative;z-index:2;width:230px;padding:28px;border:1px solid #e7ddd5;border-radius:26px;background:rgba(255,253,250,.94);box-shadow:0 12px 32px rgba(31,92,77,.06);text-align:center}
+body.direitos .symbol-card svg{width:88px;margin:0 auto 16px;color:var(--primary)}
+body.direitos .symbol-card strong{display:block;color:var(--primary);font:400 1.25rem var(--font-display)}
+body.direitos .symbol-card span{display:block;margin-top:5px;color:#666;font-size:.82rem}
 
-/* MAPA */
-body.direitos .dp-map{position:relative;background:#fff}
-body.direitos .topic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
-body.direitos .topic{display:flex;gap:16px;padding:22px;border:1px solid #dfe8e2;border-radius:17px;background:linear-gradient(135deg,#eef5f1 0%,#fdf7f2 100%);text-decoration:none;transition:.2s}
-body.direitos .topic:hover{transform:translateY(-3px);box-shadow:0 18px 45px rgba(31,92,77,.09);background:linear-gradient(135deg,#e9f1ec 0%,#fdf3ec 100%)}
-body.direitos .topic-num{font-family:var(--font-display);font-size:24px;color:var(--accent)}
-body.direitos .topic h3{font-family:var(--font-sans);font-size:17px;font-weight:700;margin:0 0 6px;color:var(--primary)}
-body.direitos .topic p{font-size:14px;color:#606060;margin:0}
-body.direitos .quick{margin-top:28px;padding:18px 22px;border-radius:15px;background:#f7f6f2;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-body.direitos .quick a{text-decoration:none;font-size:13px;font-weight:700;color:var(--primary);padding:7px 10px;background:#fff;border-radius:999px;border:1px solid #e2ddd7}
-body.direitos .quick a:hover{border-color:var(--accent);color:var(--accent)}
-body.direitos .freebie{margin-top:24px;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 24px;border:1px solid #d9e4de;border-radius:17px;background:linear-gradient(135deg,#eff6f2,#fff8f4)}
+/* SEÇÕES */
+body.direitos main section{padding:54px 0}
+body.direitos .section-head{max-width:720px;margin:0 auto 30px;text-align:center}
+body.direitos .section-head h2{margin:0 0 12px;font-size:clamp(24px,2.8vw,32px);line-height:1.08;color:var(--primary)}
+body.direitos .section-head p{margin:0;color:#5d5d5d;font-size:.95rem}
 
-/* GUIA */
-body.direitos .dp-guide{position:relative;background:#f7f6f2}
-body.direitos .dp-guide::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 1% 15%,rgba(110,143,125,.1),transparent 190px),radial-gradient(circle at 100% 80%,rgba(233,198,181,.22),transparent 250px);pointer-events:none}
-body.direitos .guide-list{position:relative;display:flex;flex-direction:column;gap:24px}
-body.direitos .guide-card{display:grid;grid-template-columns:64px 1fr;gap:18px;background:#fff;border:1px solid #e3ddd6;border-radius:20px;padding:24px;box-shadow:0 12px 30px rgba(31,92,77,.04)}
-body.direitos .guide-index{font-family:var(--font-display);font-size:32px;color:var(--accent);line-height:1}
-body.direitos .guide-card h2{font-size:23px;margin:0 0 12px;color:var(--primary)}
-body.direitos .guide-card p{margin:0 0 14px;color:#505050}
-body.direitos .guide-card ul{margin:0;padding-left:20px;color:#555;list-style:disc}
-body.direitos .guide-card li{margin:7px 0}
-body.direitos .guide-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
-body.direitos .audio{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;color:var(--primary);background:#e9f1ec;padding:6px 10px;border-radius:999px;margin-bottom:12px;border:none;cursor:pointer;font-family:var(--font-sans);min-height:32px}
-body.direitos .audio[aria-pressed="true"]{background:var(--primary);color:#fff}
+/* TEMAS */
+body.direitos .topics-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+body.direitos .topic-card{position:relative;min-height:170px;padding:22px;border:1px solid #e7ddd5;border-radius:20px;background:linear-gradient(135deg,rgba(201,107,86,.08),rgba(201,107,86,.025) 24%,#fffdfa 24%);box-shadow:0 12px 32px rgba(31,92,77,.06);text-decoration:none;transition:.2s ease;display:block}
+body.direitos .topic-card:nth-child(even){background:linear-gradient(135deg,rgba(110,143,125,.10),rgba(110,143,125,.025) 24%,#fffdfa 24%)}
+body.direitos .topic-card:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(31,92,77,.10)}
+body.direitos .topic-number{display:block;margin-bottom:16px;color:var(--accent);font-size:.72rem;font-weight:800;letter-spacing:.1em}
+body.direitos .topic-card:nth-child(even) .topic-number{color:#6e8f7d}
+body.direitos .topic-card h3{margin:0 0 8px;font-size:1.25rem;line-height:1.14;color:var(--primary)}
+body.direitos .topic-card p{margin:0;color:#5d5d5d;font-size:.88rem;line-height:1.55}
 
-/* QUIZ BPC */
-body.direitos .quiz{margin-top:24px;border-radius:18px;padding:26px;background:#f8f4ef;border:1px solid #e1d8cf}
-body.direitos .quiz h3{font-family:var(--font-sans);font-size:20px;font-weight:700;margin:0 0 8px;color:var(--primary)}
-body.direitos .quiz > p{font-size:14px}
-body.direitos .q{margin-top:18px}
-body.direitos .q label{display:block;font-weight:600;margin-bottom:9px}
-body.direitos .options{display:flex;gap:10px;flex-wrap:wrap}
-body.direitos .options button{border:1px solid #bfcfc7;background:#fff;color:var(--primary);padding:9px 13px;border-radius:999px;font:inherit;font-size:13px;font-weight:700;cursor:pointer;min-height:40px}
-body.direitos .options button.selected{background:var(--primary);color:#fff}
-body.direitos .quiz-result{display:none;margin-top:20px;padding:16px;border-radius:13px;background:#fff;border-left:4px solid var(--primary)}
+/* DESTAQUE VERDE */
+body.direitos .highlight{padding:54px 0;background:var(--primary);color:#fff}
+body.direitos .highlight-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+body.direitos .highlight h2{margin:0 0 14px;color:#fff;font-size:clamp(24px,2.9vw,33px);line-height:1.08}
+body.direitos .highlight p{margin:0;color:rgba(255,255,255,.82)}
+body.direitos .checklist{padding:26px;border:1px solid rgba(255,255,255,.16);border-radius:20px;background:rgba(255,255,255,.07)}
+body.direitos .checklist ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+body.direitos .checklist li{position:relative;padding-left:26px;font-size:.9rem}
+body.direitos .checklist li::before{content:"";position:absolute;left:0;top:.42em;width:11px;height:11px;border:2px solid #f1c2b5;border-radius:50%}
 
 /* ARTIGOS */
-body.direitos .dp-articles{background:#fff}
-body.direitos .dp-filters{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
-body.direitos .dp-filter{border:1px solid #d9d3cc;background:#fff;padding:8px 12px;border-radius:999px;font-size:13px;font-weight:700;color:var(--primary);cursor:pointer;font-family:var(--font-sans);min-height:40px}
-body.direitos .dp-filter.active{background:var(--primary);color:#fff;border-color:var(--primary)}
-body.direitos .article-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:30px}
-body.direitos .article{border:1px solid #ddd8d1;border-radius:18px;padding:26px;background:#fff}
-body.direitos .article .meta{font-size:12px;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.06em}
-body.direitos .article h3{font-size:20px;margin:12px 0;color:var(--primary)}
-body.direitos .article h3 a{text-decoration:none}
-body.direitos .article h3 a:hover{color:var(--accent)}
-body.direitos .article p{color:#595959;margin:0 0 18px}
-body.direitos .article .read{font-weight:700;color:var(--primary);text-decoration:none}
-body.direitos .article .read:hover{color:var(--accent)}
-body.direitos .warning{margin-top:34px;padding:24px;border-radius:17px;background:#fff4ee;border:1px solid #edcfc1}
-body.direitos .warning strong{color:var(--accent)}
-
-/* CTA FINAL */
-body.direitos .final-cta{margin:0 16px 16px;padding:34px;border-radius:20px;background:var(--accent);color:#fff;text-align:center;position:relative;overflow:hidden}
-body.direitos .final-cta::before{content:"";position:absolute;left:30px;bottom:-38px;width:120px;height:160px;border:1px solid rgba(255,255,255,.25);border-radius:60% 40% 70% 30%;transform:rotate(-16deg)}
-body.direitos .final-cta::after{content:"";position:absolute;right:35px;top:10px;width:90px;height:55px;background-image:radial-gradient(rgba(255,255,255,.58) 1px, transparent 1px);background-size:10px 10px}
-body.direitos .final-cta h2{color:#fff;font-size:27px}
-body.direitos .final-cta p{margin:10px 0 24px;color:rgba(255,255,255,.95)}
-body.direitos .final-actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;position:relative;z-index:2}
-body.direitos .final-actions .btn{background:#fff;color:var(--primary)}
+body.direitos .articles-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+body.direitos .article-card{display:flex;flex-direction:column;min-height:200px;padding:24px;border:1px solid #e7ddd5;border-radius:20px;background:#fffdfa;box-shadow:0 12px 32px rgba(31,92,77,.06);transition:.2s ease}
+body.direitos .article-card:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(31,92,77,.10)}
+body.direitos .article-meta{display:flex;gap:12px;align-items:center;margin-bottom:14px;color:#777;font-size:.78rem}
+body.direitos .article-category{padding:6px 10px;border-radius:999px;background:#e9f1ec;color:var(--primary);font-weight:800}
+body.direitos .article-card:nth-child(odd) .article-category{background:#f5e2dc;color:#a65341}
+body.direitos .article-card h3{margin:0 0 10px;font-size:1.3rem;line-height:1.16;color:var(--primary)}
+body.direitos .article-card h3 a{text-decoration:none;color:inherit}
+body.direitos .article-card h3 a:hover{color:var(--accent)}
+body.direitos .article-card p{display:-webkit-box;margin:0 0 18px;overflow:hidden;color:#595959;font-size:.9rem;-webkit-line-clamp:3;-webkit-box-orient:vertical}
+body.direitos .article-link{margin-top:auto;color:var(--primary);font-size:.86rem;font-weight:800;text-decoration:none}
+body.direitos .article-link::after{content:" →"}
+body.direitos .article-link:hover{color:var(--accent)}
+body.direitos .notice{margin-top:28px;padding:20px 22px;border:1px solid #ead9d2;border-radius:16px;background:#fff9f6;color:#685952;font-size:.86rem}
 
 /* Acessibilidade */
 body.direitos a:focus-visible, body.direitos button:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
@@ -182,24 +152,23 @@ body.direitos a:focus-visible, body.direitos button:focus-visible{outline:3px so
 
 /* Responsivo */
 @media(max-width:900px){
-  body.direitos .dp-hero-grid{grid-template-columns:1fr}
-  body.direitos .dp-hero-art{min-height:340px}
-  body.direitos .topic-grid{grid-template-columns:repeat(2,1fr)}
-  body.direitos .guide-card{grid-template-columns:1fr}
-  body.direitos .guide-index{font-size:32px}
-  body.direitos .article-grid{grid-template-columns:1fr}
+  body.direitos .dp-hero-grid,body.direitos .highlight-grid{grid-template-columns:1fr}
+  body.direitos .dp-hero-grid{gap:28px}
+  body.direitos .topics-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
-@media(max-width:620px){
+@media(max-width:640px){
   body.direitos .page-shell{width:100%;margin:0;border-radius:0}
   body.direitos .container{width:min(100% - 28px,1080px)}
-  body.direitos .dp-hero{padding:48px 0 30px}
-  body.direitos .dp-hero h1{font-size:29px}
-  body.direitos .topic-grid{grid-template-columns:1fr}
-  body.direitos .freebie{align-items:flex-start;flex-direction:column}
-  body.direitos .guide-card{padding:22px}
-  body.direitos .guide-card h2{font-size:20px}
-  body.direitos .final-cta{margin:0;border-radius:0;padding:38px 20px}
+  body.direitos .dp-hero{padding:40px 0}
+  body.direitos .dp-hero h1{font-size:30px}
+  body.direitos .dp-hero-art{min-height:270px}
+  body.direitos .shape{width:240px;height:240px}
+  body.direitos .symbol-card{width:210px;padding:24px}
   body.direitos main section{padding:44px 0}
+  body.direitos .topics-grid,body.direitos .articles-grid{grid-template-columns:1fr}
+  body.direitos .topic-card{min-height:auto}
+  body.direitos .highlight{padding:44px 0}
+  body.direitos .article-card{min-height:auto}
 }
 </style>
 </head>
@@ -238,220 +207,139 @@ body.direitos a:focus-visible, body.direitos button:focus-visible{outline:3px so
 <section class="dp-hero">
   <div class="container dp-hero-grid">
     <div>
-      <nav class="crumb" aria-label="Breadcrumb"><a href="index.html">Início</a> › Direitos PCD</nav>
-      <div class="section-kicker">Direitos PCD</div>
-      <h1>Informação acessível para uma vida com mais <span>autonomia, inclusão e dignidade.</span></h1>
-      <p>Conteúdos sobre acessibilidade, benefícios, saúde, educação, trabalho e concursos públicos para pessoas com deficiência e suas famílias.</p>
-      <span class="note">Conteúdo informativo: não substitui orientação jurídica individual.</span>
+      <div class="eyebrow-dp">Direitos PCD</div>
+      <h1>Informação acessível para uma vida com mais autonomia.</h1>
+      <p>Conteúdos claros sobre documentos, benefícios, trabalho, educação e concursos públicos para pessoas com deficiência e suas famílias.</p>
+      <div class="dp-hero-actions">
+        <a class="btn btn-primary" href="#temas">Explorar os temas</a>
+        <a class="btn btn-secondary" href="materiais-gratuitos.html">Baixar materiais gratuitos</a>
+      </div>
     </div>
-    <div class="dp-hero-art">
-      <svg class="botanical left" viewBox="0 0 120 260" aria-hidden="true"><path d="M55 250C65 170 63 90 82 14M61 185C35 170 20 145 15 116M65 150C91 137 103 114 107 87M70 111C43 94 31 70 29 43M76 77C97 64 105 43 106 20" fill="none" stroke="#c96b56" stroke-width="2"/></svg>
-      <div class="hero-panel" aria-hidden="true"><svg viewBox="0 0 280 250"><g fill="none" stroke="#1f5c4d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><circle cx="84" cy="62" r="16"/><path d="M80 82l12 48 35 4 8 28H91l-22 46H46l26-60-13-66z"/><path d="M156 70h64v112h-64zM172 94h32M172 116h32M172 138h24"/><path d="M136 44v156M112 57h48M111 57l-24 42h48l-24-42M184 57l-24 42h48l-24-42M108 201h56"/></g></svg></div>
-      <svg class="botanical right" viewBox="0 0 200 260" aria-hidden="true"><g fill="#6e8f7d"><ellipse cx="92" cy="198" rx="34" ry="82" transform="rotate(-28 92 198)"/><ellipse cx="132" cy="155" rx="31" ry="74" transform="rotate(24 132 155)"/><ellipse cx="69" cy="122" rx="27" ry="64" transform="rotate(-40 69 122)"/></g></svg>
+    <div class="dp-hero-art" aria-hidden="true">
+      <div class="shape"></div>
+      <div class="shape green"></div>
+      <div class="symbol-card">
+        <svg viewBox="0 0 120 120" fill="none"><circle cx="60" cy="60" r="43" stroke="currentColor" stroke-width="3"/><circle cx="58" cy="27" r="8" stroke="currentColor" stroke-width="3"/><path d="M58 37v27M58 48h20M58 64l-18 23M58 64l19 22" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M28 73a32 32 0 1 0 53-22" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+        <strong>Direitos em linguagem clara</strong>
+        <span>Sem excesso de informação.</span>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ MAPA DE CONTEÚDO ═══ -->
-<section class="dp-map">
+<!-- ═══ TEMAS ═══ -->
+<section id="temas">
   <div class="container">
-    <div class="section-kicker">Mapa de conteúdo</div>
-    <h2 class="section-title">Comece pelos temas mais importantes</h2>
-    <p class="section-intro">Navegue diretamente pelo assunto que precisa. Cada bloco leva à seção correspondente desta página.</p>
-    <div class="topic-grid">
-      <a class="topic" href="#quem-e-pcd"><span class="topic-num">01</span><div><h3>Quem é PCD</h3><p>Conceito, barreiras, impedimentos e avaliação da deficiência.</p></div></a>
-      <a class="topic" href="#documentos"><span class="topic-num">02</span><div><h3>Documentos e laudos</h3><p>Como organizar relatórios, exames e informações funcionais.</p></div></a>
-      <a class="topic" href="#beneficios"><span class="topic-num">03</span><div><h3>Benefícios</h3><p>BPC/LOAS, CadÚnico, perícias e organização prévia.</p></div></a>
-      <a class="topic" href="#trabalho"><span class="topic-num">04</span><div><h3>Trabalho</h3><p>Cotas, adaptação razoável e acessibilidade profissional.</p></div></a>
-      <a class="topic" href="#educacao"><span class="topic-num">05</span><div><h3>Educação</h3><p>Atendimento educacional, barreiras e recursos de apoio.</p></div></a>
-      <a class="topic" href="#concursos"><span class="topic-num">06</span><div><h3>Concursos</h3><p>Reserva de vagas, atendimento especial e leitura do edital.</p></div></a>
+    <div class="section-head">
+      <div class="eyebrow-dp">Escolha um tema</div>
+      <h2>Encontre rapidamente o conteúdo de que precisa.</h2>
+      <p>Cada cartão leva a um conteúdo específico, sem concentrar tudo em uma única tela.</p>
     </div>
-    <div class="quick"><strong>Nesta página:</strong><a href="#quem-e-pcd">Quem é PCD</a><a href="#documentos">Documentos e laudos</a><a href="#beneficios">BPC</a><a href="#trabalho">Trabalho</a><a href="#educacao">Educação</a><a href="#concursos">Concursos</a><a href="#artigos">Artigos</a></div>
-    <div class="freebie">
-      <div>
-        <strong style="color:var(--primary)">Checklist gratuito de documentos PCD</strong>
-        <div style="font-size:14px;color:#666">Organize laudos, relatórios, exames e comprovantes em um só lugar.</div>
-      </div>
-      <a class="btn btn-primary" href="materiais-gratuitos.html">Baixar grátis</a>
+    <div class="topics-grid">
+      <a class="topic-card" href="direitos-pcd/quem-e-pcd.html">
+        <span class="topic-number">01 · CONCEITO</span>
+        <h3>Quem é considerado PCD</h3>
+        <p>Impedimentos de longo prazo, barreiras e avaliação biopsicossocial.</p>
+      </a>
+      <a class="topic-card" href="direitos-pcd/documentos-laudos.html">
+        <span class="topic-number">02 · DOCUMENTOS</span>
+        <h3>Laudos e relatórios</h3>
+        <p>Como organizar documentos médicos, funcionais e pessoais.</p>
+      </a>
+      <a class="topic-card" href="direitos-pcd/bpc-loas.html">
+        <span class="topic-number">03 · BENEFÍCIOS</span>
+        <h3>BPC e proteção social</h3>
+        <p>CadÚnico, renda, perícia e preparação para o requerimento.</p>
+      </a>
+      <a class="topic-card" href="direitos-pcd/trabalho-cotas-adaptacao.html">
+        <span class="topic-number">04 · TRABALHO</span>
+        <h3>Cotas e adaptação razoável</h3>
+        <p>Inclusão profissional, acessibilidade e registro de solicitações.</p>
+      </a>
+      <a class="topic-card" href="direitos-pcd/educacao-acessivel.html">
+        <span class="topic-number">05 · EDUCAÇÃO</span>
+        <h3>Educação acessível</h3>
+        <p>Recursos de apoio, tempo adicional e tecnologias assistivas.</p>
+      </a>
+      <a class="topic-card" href="direitos-pcd/concursos-publicos.html">
+        <span class="topic-number">06 · CONCURSOS</span>
+        <h3>Concursos públicos</h3>
+        <p>Reserva de vagas, laudo, atendimento especial e recursos.</p>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ═══ GUIA ═══ -->
-<section class="dp-guide">
-  <div class="container guide-list">
-
-    <article class="guide-card" id="quem-e-pcd">
-      <div class="guide-index" aria-hidden="true">01</div>
-      <div>
-        <button class="audio" type="button" aria-pressed="false"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg> Ouvir conteúdo</button>
-        <h2>O que é considerado pessoa com deficiência?</h2>
-        <div class="guide-body">
-          <p>A deficiência não deve ser vista apenas como um diagnóstico. Ela envolve impedimentos de longo prazo e a interação com barreiras que dificultam a participação plena da pessoa na sociedade.</p>
-          <ul>
-            <li>Observe a funcionalidade, não apenas o CID.</li>
-            <li>Descreva barreiras físicas, sociais, comunicacionais ou atitudinais.</li>
-            <li>Guarde documentos que mostrem impactos concretos na rotina.</li>
-            <li>A avaliação da deficiência é biopsicossocial e vai além do laudo isolado.</li>
-          </ul>
-        </div>
-        <div class="guide-actions"><a class="btn btn-secondary" href="materiais-gratuitos.html">Baixar checklist de documentos</a></div>
-      </div>
-    </article>
-
-    <article class="guide-card" id="documentos">
-      <div class="guide-index" aria-hidden="true">02</div>
-      <div>
-        <button class="audio" type="button" aria-pressed="false"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg> Ouvir conteúdo</button>
-        <h2>Como organizar documentos e laudos</h2>
-        <div class="guide-body">
-          <p>Uma pasta organizada evita perda de prazos e facilita requerimentos, perícias, matrículas, concursos e pedidos de atendimento específico.</p>
-          <ul>
-            <li>Laudos atualizados com CID, descrição funcional e data.</li>
-            <li>Relatórios multiprofissionais, quando houver.</li>
-            <li>Exames, receitas e histórico de tratamentos relevantes.</li>
-            <li>RG, CPF, comprovantes de residência e renda.</li>
-            <li>Versão digital em nuvem e cópia local em PDF.</li>
-          </ul>
-        </div>
-        <div class="guide-actions"><a class="btn btn-secondary" href="materiais-gratuitos.html">Baixar checklist de documentos</a></div>
-      </div>
-    </article>
-
-    <article class="guide-card" id="beneficios">
-      <div class="guide-index" aria-hidden="true">03</div>
-      <div>
-        <button class="audio" type="button" aria-pressed="false"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg> Ouvir conteúdo</button>
-        <h2>Benefícios sociais: BPC/LOAS</h2>
-        <div class="guide-body">
-          <p>O BPC corresponde a um salário mínimo e exige atenção à documentação, renda familiar, inscrição no CadÚnico e avaliação biopsicossocial.</p>
-          <ul>
-            <li>Atualize o CadÚnico antes de solicitar.</li>
-            <li>Organize comprovantes de renda e residência de todos os moradores.</li>
-            <li>Prepare relatórios que expliquem limitações e necessidades de apoio.</li>
-            <li>O requerimento pode ser feito pelo Meu INSS ou telefone 135.</li>
-          </ul>
-        </div>
-        <div class="quiz">
-          <h3>Tenho direito ao BPC?</h3>
-          <p>Verificação orientativa. Não substitui a análise do INSS.</p>
-          <div class="q" data-q="def"><label>Você tem deficiência de longo prazo que dificulta sua participação na sociedade?</label><div class="options"><button type="button" data-v="sim">Sim</button><button type="button" data-v="nao">Não</button></div></div>
-          <div class="q" data-q="renda"><label>A renda familiar por pessoa é inferior a 1/4 do salário mínimo?</label><div class="options"><button type="button" data-v="sim">Sim, é menor</button><button type="button" data-v="nao">Não, é maior</button></div></div>
-          <div class="q" data-q="cad"><label>Você está inscrito no CadÚnico ou pode se inscrever?</label><div class="options"><button type="button" data-v="sim">Sim</button><button type="button" data-v="nao">Ainda não</button></div></div>
-          <div class="quiz-result" id="quizResult" aria-live="polite"></div>
-        </div>
-      </div>
-    </article>
-
-    <article class="guide-card" id="trabalho">
-      <div class="guide-index" aria-hidden="true">04</div>
-      <div>
-        <button class="audio" type="button" aria-pressed="false"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg> Ouvir conteúdo</button>
-        <h2>Trabalho e inclusão</h2>
-        <div class="guide-body">
-          <p>No ambiente profissional, acessibilidade não é favor: é condição para participação. A legislação prevê cotas, adaptação razoável e combate a barreiras atitudinais.</p>
-          <ul>
-            <li>Registre pedidos de adaptação por escrito.</li>
-            <li>Explique a necessidade prática, não apenas o diagnóstico.</li>
-            <li>Guarde documentos relacionados à função e eventuais negativas.</li>
-            <li>A dispensa de trabalhador PCD exige atenção às regras específicas.</li>
-          </ul>
-        </div>
-        <div class="guide-actions"><a class="btn btn-secondary" href="direitos-pcd/trabalho-cotas-adaptacao.html">Ler artigo sobre cotas e adaptação</a><a class="btn btn-secondary" href="contato.html">Tirar uma dúvida</a></div>
-      </div>
-    </article>
-
-    <article class="guide-card" id="educacao">
-      <div class="guide-index" aria-hidden="true">05</div>
-      <div>
-        <button class="audio" type="button" aria-pressed="false"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg> Ouvir conteúdo</button>
-        <h2>Educação acessível</h2>
-        <div class="guide-body">
-          <p>A pessoa PCD pode precisar de recursos de acessibilidade, tempo adicional, materiais adaptados, tecnologias assistivas e apoio conforme sua necessidade.</p>
-          <ul>
-            <li>Leia regulamentos e normas da instituição com atenção.</li>
-            <li>Solicite adaptações com antecedência e por escrito.</li>
-            <li>Explique a barreira enfrentada.</li>
-            <li>Registre o recebimento do pedido e acompanhe o prazo.</li>
-          </ul>
-        </div>
-        <div class="guide-actions"><a class="btn btn-secondary" href="materiais-gratuitos.html">Baixar guia de organização</a></div>
-      </div>
-    </article>
-
-    <article class="guide-card" id="concursos">
-      <div class="guide-index" aria-hidden="true">06</div>
-      <div>
-        <button class="audio" type="button" aria-pressed="false"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg> Ouvir conteúdo</button>
-        <h2>Concursos públicos para PCD</h2>
-        <div class="guide-body">
-          <p>Concursos federais reservam percentual mínimo de vagas para pessoas com deficiência. Leia atentamente as regras de laudo, atendimento especial, avaliação biopsicossocial e recursos.</p>
-          <ul>
-            <li>Salve o edital e todos os anexos.</li>
-            <li>Confira o prazo e o formato do laudo.</li>
-            <li>Guarde comprovantes de envio dos documentos.</li>
-            <li>Solicite atendimento especial com antecedência.</li>
-            <li>Reúna relatórios funcionais, e não apenas o CID.</li>
-          </ul>
-        </div>
-        <div class="guide-actions"><a class="btn btn-primary" href="noticias.html">Ver editais com cota PCD</a></div>
-      </div>
-    </article>
-
+<!-- ═══ DESTAQUE ═══ -->
+<section class="highlight">
+  <div class="container highlight-grid">
+    <div>
+      <div class="eyebrow-dp" style="color:#f1c2b5">Comece pela organização</div>
+      <h2>Um bom documento precisa mostrar mais do que o diagnóstico.</h2>
+      <p>Laudos e relatórios devem explicar as limitações funcionais, as barreiras enfrentadas e os apoios necessários em cada contexto.</p>
+    </div>
+    <div class="checklist">
+      <ul>
+        <li>Laudo médico atualizado e legível</li>
+        <li>Descrição da funcionalidade e das barreiras</li>
+        <li>Relatórios multiprofissionais, quando houver</li>
+        <li>Exames e histórico de tratamentos relevantes</li>
+        <li>Cópias digitais organizadas e identificadas</li>
+      </ul>
+      <a class="btn btn-secondary" style="margin-top:22px;background:#fff" href="materiais-gratuitos.html">Baixar checklist gratuito</a>
+    </div>
   </div>
 </section>
 
 <!-- ═══ ARTIGOS ═══ -->
-<section class="dp-articles" id="artigos">
+<section class="articles" id="artigos">
   <div class="container">
-    <div class="section-kicker">Aprofunde o tema</div>
-    <h2 class="section-title">Artigos sobre direitos PCD</h2>
-    <p class="section-intro">Textos detalhados com fontes oficiais, organizados por tema.</p>
-    <div class="dp-filters" role="group" aria-label="Filtrar artigos por tema">
-      <button class="dp-filter active" data-filter="all">Todos</button>
-      <button class="dp-filter" data-filter="trabalho">Trabalho</button>
-      <button class="dp-filter" data-filter="previdencia">Previdência</button>
-      <button class="dp-filter" data-filter="saude">Saúde</button>
-      <button class="dp-filter" data-filter="tributario">Tributário</button>
+    <div class="section-head">
+      <div class="eyebrow-dp">Conteúdos em destaque</div>
+      <h2>Aprofunde apenas o assunto que interessa agora.</h2>
+      <p>Textos separados por tema tornam a leitura mais leve.</p>
     </div>
-    <div class="article-grid">
-      <article class="article" data-tema="trabalho">
-        <div class="meta">Trabalho · 10 de maio de 2026</div>
-        <h3><a href="direitos-pcd/trabalho-cotas-adaptacao.html">Direitos no Trabalho: Cotas e Adaptação Razoável</a></h3>
-        <p>Entenda a reserva de vagas, a adaptação razoável e os cuidados em caso de dispensa.</p>
-        <a class="read" href="direitos-pcd/trabalho-cotas-adaptacao.html">Ler artigo completo</a>
+    <div class="articles-grid">
+      <article class="article-card">
+        <div class="article-meta">
+          <span class="article-category">Trabalho</span>
+          <span>10 de maio de 2026</span>
+        </div>
+        <h3><a href="direitos-pcd/trabalho-cotas-adaptacao.html">Direitos no trabalho: cotas e adaptação razoável</a></h3>
+        <p>Entenda a reserva de vagas, as adaptações no ambiente profissional e como registrar solicitações.</p>
+        <a class="article-link" href="direitos-pcd/trabalho-cotas-adaptacao.html">Ler artigo completo</a>
       </article>
-      <article class="article" data-tema="previdencia">
-        <div class="meta">Previdência · 9 de maio de 2026</div>
-        <h3><a href="direitos-pcd/aposentadoria-pcd-lc142.html">Aposentadoria PCD: Incapacidade Permanente vs. LC 142/2013</a></h3>
-        <p>Conheça as diferenças entre aposentadoria por incapacidade e a aposentadoria específica da pessoa com deficiência.</p>
-        <a class="read" href="direitos-pcd/aposentadoria-pcd-lc142.html">Ler artigo completo</a>
+      <article class="article-card">
+        <div class="article-meta">
+          <span class="article-category">Previdência</span>
+          <span>9 de maio de 2026</span>
+        </div>
+        <h3><a href="direitos-pcd/aposentadoria-pcd-lc142.html">Aposentadoria PCD e incapacidade permanente</a></h3>
+        <p>Veja as diferenças entre as modalidades e os critérios aplicáveis em cada situação.</p>
+        <a class="article-link" href="direitos-pcd/aposentadoria-pcd-lc142.html">Ler artigo completo</a>
       </article>
-      <article class="article" data-tema="saude">
-        <div class="meta">Saúde · 7 de maio de 2026</div>
-        <h3><a href="direitos-pcd/tecnologia-assistiva-sus.html">Tecnologia Assistiva pelo SUS: Como Acessar</a></h3>
-        <p>Saiba como solicitar órteses, próteses e outros recursos assistivos.</p>
-        <a class="read" href="direitos-pcd/tecnologia-assistiva-sus.html">Ler artigo completo</a>
+      <article class="article-card">
+        <div class="article-meta">
+          <span class="article-category">Saúde</span>
+          <span>7 de maio de 2026</span>
+        </div>
+        <h3><a href="direitos-pcd/tecnologia-assistiva-sus.html">Tecnologia assistiva pelo SUS</a></h3>
+        <p>Como solicitar órteses, próteses e outros recursos de acessibilidade na rede pública.</p>
+        <a class="article-link" href="direitos-pcd/tecnologia-assistiva-sus.html">Ler artigo completo</a>
       </article>
-      <article class="article" data-tema="tributario">
-        <div class="meta">Tributário · 6 de maio de 2026</div>
-        <h3><a href="direitos-pcd/isencao-ir-pcd.html">Isenção de IR para PCD: o que a lei garante</a></h3>
-        <p>Veja quando a isenção pode incidir sobre aposentadoria, reforma e pensão.</p>
-        <a class="read" href="direitos-pcd/isencao-ir-pcd.html">Ler artigo completo</a>
+      <article class="article-card">
+        <div class="article-meta">
+          <span class="article-category">Tributário</span>
+          <span>6 de maio de 2026</span>
+        </div>
+        <h3><a href="direitos-pcd/isencao-ir-pcd.html">Isenção de Imposto de Renda</a></h3>
+        <p>Quando a legislação prevê isenção sobre aposentadoria, reforma e pensão.</p>
+        <a class="article-link" href="direitos-pcd/isencao-ir-pcd.html">Ler artigo completo</a>
       </article>
     </div>
-    <div class="warning"><strong>Aviso importante.</strong> O conteúdo desta página é exclusivamente informativo e educacional. Não constitui assessoria ou consultoria jurídica. Cada situação exige análise individual. Em caso de dúvidas, o CRAS e o INSS também oferecem atendimento gratuito.</div>
-  </div>
-</section>
-
-<!-- ═══ CTA FINAL ═══ -->
-<section class="final-cta">
-  <h2>Informação clara também é acessibilidade.</h2>
-  <p>Use os materiais gratuitos para organizar documentos, estudos e próximos passos.</p>
-  <div class="final-actions">
-    <a class="btn" href="materiais-gratuitos.html">Materiais gratuitos</a>
-    <a class="btn" href="blog.html">Ler o blog</a>
-    <a class="btn" href="https://www.instagram.com/concurseirapcd" target="_blank" rel="noopener">Acompanhar no Instagram</a>
+    <div class="notice">
+      <strong>Aviso:</strong> este conteúdo é informativo e não substitui análise jurídica individual. Cada caso depende dos documentos e das circunstâncias concretas. Em caso de dúvidas, o CRAS e o INSS também oferecem atendimento gratuito.
+    </div>
   </div>
 </section>
 
@@ -490,62 +378,5 @@ body.direitos a:focus-visible, body.direitos button:focus-visible{outline:3px so
 </div><!-- /page-shell -->
 
 <script src="assets/js/script.js"></script>
-<script>
-(function(){
-  /* ── Quiz BPC ── */
-  var answers={};
-  document.querySelectorAll('.options button').forEach(function(b){
-    b.addEventListener('click',function(){
-      var q=b.closest('.q');
-      q.querySelectorAll('button').forEach(function(x){x.classList.remove('selected')});
-      b.classList.add('selected');
-      answers[q.dataset.q]=b.dataset.v;
-      if(Object.keys(answers).length===3){
-        var r=document.getElementById('quizResult');
-        r.style.display='block';
-        if(answers.def==='nao'){r.innerHTML='<strong>O BPC para pessoa com deficiência exige impedimento de longo prazo.</strong><br>Consulte o CRAS para orientação adequada ao seu caso.'}
-        else if(answers.renda==='nao'){r.innerHTML='<strong>A renda pode exigir análise mais cuidadosa.</strong><br>Despesas relevantes e a situação concreta da família podem precisar de avaliação individual.'}
-        else if(answers.cad==='nao'){r.innerHTML='<strong>Faça ou atualize o CadÚnico antes do pedido.</strong><br>Procure o CRAS do seu município.'}
-        else{r.innerHTML='<strong>Você pode atender aos critérios básicos do BPC.</strong><br>Organize os documentos e agende a avaliação pelo Meu INSS ou telefone 135.'}
-      }
-    });
-  });
-
-  /* ── Ouvir conteúdo (leitura em voz alta) ── */
-  var speaking=null;
-  function stopSpeech(){
-    if(window.speechSynthesis){window.speechSynthesis.cancel()}
-    if(speaking){speaking.setAttribute('aria-pressed','false');speaking=null}
-  }
-  document.querySelectorAll('.audio').forEach(function(btn){
-    btn.addEventListener('click',function(){
-      if(!('speechSynthesis' in window)){btn.disabled=true;return}
-      if(speaking===btn){stopSpeech();return}
-      stopSpeech();
-      var card=btn.closest('.guide-card');
-      var title=card.querySelector('h2').textContent;
-      var body=card.querySelector('.guide-body').textContent;
-      var u=new SpeechSynthesisUtterance(title+'. '+body);
-      u.lang='pt-BR'; u.rate=0.95;
-      u.onend=stopSpeech; u.onerror=stopSpeech;
-      speaking=btn; btn.setAttribute('aria-pressed','true');
-      window.speechSynthesis.speak(u);
-    });
-  });
-  window.addEventListener('beforeunload',stopSpeech);
-
-  /* ── Filtros de artigos ── */
-  document.querySelectorAll('.dp-filter').forEach(function(chip){
-    chip.addEventListener('click',function(){
-      document.querySelectorAll('.dp-filter').forEach(function(c){c.classList.remove('active')});
-      chip.classList.add('active');
-      var f=chip.dataset.filter;
-      document.querySelectorAll('.article').forEach(function(a){
-        a.style.display=(f==='all'||a.dataset.tema===f)?'':'none';
-      });
-    });
-  });
-})();
-</script>
 </body>
 </html>
