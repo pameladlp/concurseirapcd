@@ -43,7 +43,10 @@ body.produtos .pd-hero-actions{display:flex;flex-wrap:wrap;gap:10px}
 body.produtos .pd-hero-visual{position:relative;min-height:260px;display:grid;place-items:center}
 body.produtos .blob{position:absolute;width:250px;height:250px;border-radius:48% 52% 58% 42%/46% 44% 56% 54%;background:linear-gradient(145deg,rgba(233,198,181,.78),rgba(244,223,216,.34));transform:rotate(-7deg)}
 body.produtos .blob.green{width:150px;height:150px;right:18px;bottom:0;background:rgba(110,143,125,.24);transform:rotate(14deg)}
-body.produtos .pd-photo{position:relative;z-index:2;width:min(270px,80%);height:auto;border-radius:20px;border:1px solid #e7ddd5;box-shadow:0 20px 45px rgba(31,92,77,.16);transform:rotate(-2deg)}
+body.produtos .pd-photos{position:relative;z-index:2;display:flex;align-items:center;justify-content:center}
+body.produtos .pd-photo{width:min(200px,52%);height:auto;border-radius:16px;border:1px solid #e7ddd5;box-shadow:0 20px 45px rgba(31,92,77,.16);background:#fff;padding:6px}
+body.produtos .pd-photo--frente{position:relative;z-index:2;transform:rotate(-4deg) translateY(12px)}
+body.produtos .pd-photo--tras{z-index:1;margin-left:-30px;transform:rotate(5deg) translateY(-14px)}
 
 /* SEÇÕES */
 body.produtos .section-head{max-width:640px;margin:0 auto 28px;text-align:center}
@@ -69,16 +72,15 @@ body.produtos .compact-list li::before{content:"";position:absolute;left:0;top:.
 body.produtos .featured-content .btn{align-self:flex-start}
 
 /* GRID DE PRODUTOS */
-body.produtos .products-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
-body.produtos .product-card{min-height:220px;display:flex;flex-direction:column;padding:26px;border:1px solid #e7ddd5;border-radius:22px;background:linear-gradient(135deg,rgba(201,107,86,.07),rgba(201,107,86,.02) 22%,#fffdfa 22%);box-shadow:0 10px 28px rgba(31,92,77,.05);transition:transform .2s ease, box-shadow .2s ease}
+body.produtos .products-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+body.produtos .product-card{display:flex;flex-direction:column;padding:20px 20px 18px;border:1px solid #e7ddd5;border-radius:18px;background:linear-gradient(135deg,rgba(201,107,86,.07),rgba(201,107,86,.02) 22%,#fffdfa 22%);box-shadow:0 10px 28px rgba(31,92,77,.05);transition:transform .2s ease, box-shadow .2s ease}
 body.produtos .product-card:nth-child(even){background:linear-gradient(135deg,rgba(110,143,125,.09),rgba(110,143,125,.02) 22%,#fffdfa 22%)}
 body.produtos .product-card:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(31,92,77,.08)}
-body.produtos .product-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
-body.produtos .product-icon{width:34px;height:34px;border-radius:10px;background:rgba(255,255,255,.8);border:1px solid rgba(31,92,77,.08)}
-body.produtos .product-type{color:var(--accent);font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+body.produtos .product-top{display:flex;align-items:center;margin-bottom:10px}
+body.produtos .product-type{color:var(--accent);font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
 body.produtos .product-card:nth-child(even) .product-type{color:#6e8f7d}
-body.produtos .product-card h3{margin:0 0 10px;font-size:1.55rem;line-height:1.14;color:var(--primary);font-weight:400}
-body.produtos .product-card p{margin:0 0 22px;color:#5c5c5c;font-size:.9rem;line-height:1.58;max-width:92%}
+body.produtos .product-card h3{margin:0 0 8px;font-size:1.18rem;line-height:1.18;color:var(--primary);font-weight:400}
+body.produtos .product-card p{margin:0 0 14px;color:#5c5c5c;font-size:.85rem;line-height:1.55}
 body.produtos .product-link{margin-top:auto;align-self:flex-start;color:var(--primary);font-size:.86rem;font-weight:800;text-decoration:none}
 body.produtos .product-link::after{content:" →"}
 body.produtos .product-link:hover{color:var(--accent)}
@@ -115,6 +117,7 @@ body.produtos a:focus-visible, body.produtos button:focus-visible{outline:3px so
 @media(max-width:900px){
   body.produtos .pd-hero-grid,body.produtos .featured-card,body.produtos .difference-grid{grid-template-columns:1fr}
   body.produtos .pd-hero-grid{gap:28px}
+  body.produtos .products-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   body.produtos .featured-cover{min-height:300px}
 }
 @media(max-width:640px){
@@ -185,7 +188,10 @@ body.produtos a:focus-visible, body.produtos button:focus-visible{outline:3px so
     <div class="pd-hero-visual" aria-hidden="true">
       <div class="blob"></div>
       <div class="blob green"></div>
-      <img class="pd-photo" src="assets/images/insta/agenda-semanal.jpeg" alt="Agenda semanal real da Pâmela, com a rotina de estudos escrita à mão" width="270" height="366"/>
+      <div class="pd-photos">
+        <img class="pd-photo pd-photo--frente" src="assets/images/insta/agenda-semanal.jpeg" alt="Agenda semanal real da Pâmela, com a rotina de estudos escrita à mão" width="270" height="366"/>
+        <img class="pd-photo pd-photo--tras" src="assets/images/insta/ciclo-estudos-parede.jpeg" alt="Ciclo de estudos impresso e colado na parede, ao lado de uma caneca de Direito" width="270" height="348"/>
+      </div>
     </div>
   </div>
 </section>
@@ -236,37 +242,37 @@ body.produtos a:focus-visible, body.produtos button:focus-visible{outline:3px so
     </div>
     <div class="products-grid">
       <article class="product-card">
-        <div class="product-top"><span class="product-type">Guia</span><div class="product-icon" aria-hidden="true"></div></div>
+        <div class="product-top"><span class="product-type">Guia</span></div>
         <h3>Manual da Concurseira PCD</h3>
         <p>Organização acessível, documentos, rotina adaptada, atendimento especial e ferramentas de apoio.</p>
         <a class="product-link" href="#lista">Entrar na lista</a>
       </article>
       <article class="product-card">
-        <div class="product-top"><span class="product-type">Planner</span><div class="product-icon" aria-hidden="true"></div></div>
+        <div class="product-top"><span class="product-type">Planner</span></div>
         <h3>Planner Digital da Concurseira</h3>
         <p>Planejamento mensal, semanal, metas, revisões, hábitos e acompanhamento de evolução.</p>
         <a class="product-link" href="#lista">Entrar na lista</a>
       </article>
       <article class="product-card">
-        <div class="product-top"><span class="product-type">Planilha</span><div class="product-icon" aria-hidden="true"></div></div>
+        <div class="product-top"><span class="product-type">Planilha</span></div>
         <h3>Planilha de Ciclo de Estudos</h3>
         <p>Matérias, carga horária, revisões, questões, desempenho, simulados e ajustes semanais.</p>
         <a class="product-link" href="#lista">Entrar na lista</a>
       </article>
       <article class="product-card">
-        <div class="product-top"><span class="product-type">Revisão</span><div class="product-icon" aria-hidden="true"></div></div>
+        <div class="product-top"><span class="product-type">Revisão</span></div>
         <h3>Flashcards e Mapas de Revisão</h3>
         <p>Modelos prontos para memorização, revisão ativa, lei seca, erros recorrentes e questões.</p>
         <a class="product-link" href="#lista">Entrar na lista</a>
       </article>
       <article class="product-card">
-        <div class="product-top"><span class="product-type">Tribunais</span><div class="product-icon" aria-hidden="true"></div></div>
+        <div class="product-top"><span class="product-type">Tribunais</span></div>
         <h3>Guia de Estudos para Tribunais</h3>
         <p>Organização de matérias básicas, lei seca, questões, revisão e rotina para concursos jurídicos.</p>
         <a class="product-link" href="#lista">Entrar na lista</a>
       </article>
       <article class="product-card">
-        <div class="product-top"><span class="product-type">Em breve</span><div class="product-icon" aria-hidden="true"></div></div>
+        <div class="product-top"><span class="product-type">Em breve</span></div>
         <h3>Novas ferramentas em desenvolvimento</h3>
         <p>Materiais complementares para planejamento, revisão e acompanhamento de estudos.</p>
         <a class="product-link" href="#lista">Receber novidades</a>
