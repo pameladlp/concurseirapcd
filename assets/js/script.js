@@ -34,10 +34,13 @@
   }
 
   /* ─── MARCA LINK ATIVO ─── */
-  const currentPath = location.pathname.split('/').pop() || 'index.html';
+  const normaliza = p => (p || '').replace(/\.html$/, '').replace(/^\//, '') || 'index';
+  const atual = normaliza(location.pathname.split('/').pop());
   document.querySelectorAll('.main-nav a').forEach(link => {
-    const href = link.getAttribute('href');
-    if (href === currentPath || (currentPath === '' && href === 'index.html')) {
+    const href = link.getAttribute('href') || '';
+    if (href.startsWith('http')) return;
+    const alvo = normaliza(href.split('/').pop());
+    if (alvo === atual) {
       link.setAttribute('aria-current', 'page');
     }
   });
@@ -205,13 +208,13 @@
   if (searchInput && searchResults) {
     // Índice de busca simples baseado nas páginas do site
     const pages = [
-      { title: 'Direitos PCD', url: 'direitos-pcd.html', cat: 'Direitos PCD', excerpt: 'Informações sobre direitos das pessoas com deficiência: benefícios, acessibilidade, trabalho, educação e saúde.' },
-      { title: 'Blog da Concurseira', url: 'blog.html', cat: 'Blog', excerpt: 'Métodos de estudo, organização, dicas de rotina e reflexões para concurseiros.' },
-      { title: 'Notícias de Concursos', url: 'noticias.html', cat: 'Notícias', excerpt: 'Editais abertos, concursos previstos e oportunidades para candidatos PCD.' },
-      { title: 'Materiais Gratuitos', url: 'materiais-gratuitos.html', cat: 'Materiais', excerpt: 'Checklists, planners e guias práticos para organizar seus estudos.' },
-      { title: 'Produtos Digitais', url: 'produtos-digitais.html', cat: 'Produtos', excerpt: 'Kits, planilhas e ferramentas para uma preparação mais estruturada.' },
-      { title: 'Sobre Pâmela Dayane', url: 'sobre.html', cat: 'Sobre', excerpt: 'Conheça a trajetória de Pâmela Dayane, servidora pública, PCD e criadora do projeto.' },
-      { title: 'Contato', url: 'contato.html', cat: 'Institucional', excerpt: 'Entre em contato com a Concurseira PCD.' },
+      { title: 'Direitos PCD', url: '/direitos-pcd', cat: 'Direitos PCD', excerpt: 'Informações sobre direitos das pessoas com deficiência: benefícios, acessibilidade, trabalho, educação e saúde.' },
+      { title: 'Blog da Concurseira', url: '/blog', cat: 'Blog', excerpt: 'Métodos de estudo, organização, dicas de rotina e reflexões para concurseiros.' },
+      { title: 'Notícias de Concursos', url: '/noticias', cat: 'Notícias', excerpt: 'Editais abertos, concursos previstos e oportunidades para candidatos PCD.' },
+      { title: 'Materiais Gratuitos', url: '/materiais-gratuitos', cat: 'Materiais', excerpt: 'Checklists, planners e guias práticos para organizar seus estudos.' },
+      { title: 'Produtos Digitais', url: '/produtos-digitais', cat: 'Produtos', excerpt: 'Kits, planilhas e ferramentas para uma preparação mais estruturada.' },
+      { title: 'Sobre Pâmela Dayane', url: '/sobre', cat: 'Sobre', excerpt: 'Conheça a trajetória de Pâmela Dayane, servidora pública, PCD e criadora do projeto.' },
+      { title: 'Contato', url: '/contato', cat: 'Institucional', excerpt: 'Entre em contato com a Concurseira PCD.' },
     ];
 
     // Pré-popula com todos se vier query na URL

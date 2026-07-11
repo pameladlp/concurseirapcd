@@ -6,67 +6,67 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://concurseirapcd.com.br/direitos-pcd.html</loc>
+    <loc>https://concurseirapcd.com.br/direitos-pcd</loc>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://concurseirapcd.com.br/noticias.html</loc>
+    <loc>https://concurseirapcd.com.br/noticias</loc>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://concurseirapcd.com.br/blog.html</loc>
+    <loc>https://concurseirapcd.com.br/blog</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://concurseirapcd.com.br/blog/revisao.html</loc>
+    <loc>https://concurseirapcd.com.br/blog/revisao</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://concurseirapcd.com.br/blog/rotina.html</loc>
+    <loc>https://concurseirapcd.com.br/blog/rotina</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://concurseirapcd.com.br/blog/comecar.html</loc>
+    <loc>https://concurseirapcd.com.br/blog/comecar</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://concurseirapcd.com.br/blog/descanso.html</loc>
+    <loc>https://concurseirapcd.com.br/blog/descanso</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://concurseirapcd.com.br/blog/pcd.html</loc>
+    <loc>https://concurseirapcd.com.br/blog/pcd</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://concurseirapcd.com.br/materiais-gratuitos.html</loc>
+    <loc>https://concurseirapcd.com.br/materiais-gratuitos</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://concurseirapcd.com.br/produtos-digitais.html</loc>
+    <loc>https://concurseirapcd.com.br/produtos-digitais</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://concurseirapcd.com.br/sobre.html</loc>
+    <loc>https://concurseirapcd.com.br/sobre</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://concurseirapcd.com.br/contato.html</loc>
+    <loc>https://concurseirapcd.com.br/contato</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://concurseirapcd.com.br/politica.html</loc>
+    <loc>https://concurseirapcd.com.br/politica</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

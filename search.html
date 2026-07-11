@@ -1,63 +1,161 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Buscar | Concurseira PCD</title>
-<meta content="Pesquise conteúdo sobre concursos, direitos PCD, organização e materiais no Concurseira PCD." name="description"/>
+<meta name="description" content="Pesquise conteúdo sobre concursos, direitos PCD, organização e materiais no Concurseira PCD."/>
+<link rel="canonical" href="https://concurseirapcd.com.br/search"/>
+<meta name="robots" content="noindex, follow"/>
 <link href="assets/css/style.css?v=17" rel="stylesheet"/>
-<link href="favicon/favicon.ico?v=3" rel="icon" sizes="any"/><link href="favicon/favicon-32x32.png?v=3" rel="icon" sizes="32x32" type="image/png"/><link href="favicon/favicon-16x16.png?v=3" rel="icon" sizes="16x16" type="image/png"/><link href="favicon/apple-touch-icon.png?v=3" rel="apple-touch-icon"/><link href="favicon/site.webmanifest" rel="manifest"/><meta content="#0b3d2e" name="theme-color"/></head>
-<body>
+<link href="favicon/favicon.ico?v=3" rel="icon" sizes="any"/>
+<link href="favicon/favicon-32x32.png?v=3" rel="icon" sizes="32x32" type="image/png"/>
+<link href="favicon/favicon-16x16.png?v=3" rel="icon" sizes="16x16" type="image/png"/>
+<link href="favicon/apple-touch-icon.png?v=3" rel="apple-touch-icon"/>
+<link href="favicon/site.webmanifest" rel="manifest"/>
+<meta content="#1F5C4D" name="theme-color"/>
+
+<style>
+/* ═══ BUSCA — estilo editorial (page-shell) ═══ */
+body.busca{background:#f4f0ea;line-height:1.65}
+body.busca .page-shell{width:min(1180px,calc(100% - 32px));margin:16px auto 44px;background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 18px 45px rgba(31,92,77,.09)}
+body.busca .container{width:min(1080px,calc(100% - 40px));max-width:1080px;margin-inline:auto;padding-inline:0}
+body.busca .eyebrow-bs{margin-bottom:12px;color:var(--accent);font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+
+/* HERO */
+body.busca .bs-hero{position:relative;overflow:hidden;padding:44px 0 38px;background:linear-gradient(135deg,#fffaf6 0%,#fff 58%,#f1f7f3 100%)}
+body.busca .bs-hero::before{content:"";position:absolute;width:230px;height:230px;border-radius:50%;background:rgba(233,198,181,.35);right:-70px;top:-60px}
+body.busca .bs-hero::after{content:"";position:absolute;width:150px;height:150px;border-radius:48% 52% 58% 42%/46% 44% 56% 54%;background:rgba(110,143,125,.14);left:-60px;bottom:-40px}
+body.busca .bs-hero-inner{position:relative;z-index:2;max-width:680px}
+body.busca .bs-hero h1{margin:0 0 14px;font-size:clamp(30px,3.5vw,39px);line-height:1.05;color:var(--primary)}
+body.busca .bs-hero h1 .accent{color:var(--accent)}
+body.busca .bs-hero p{margin:0 0 22px;color:#4e4e4e;font-size:15px}
+body.busca .bs-search{display:flex;align-items:center;gap:10px;border:1px solid #e7ddd5;border-radius:16px;background:#fffdfa;padding:8px}
+body.busca .bs-search svg{flex-shrink:0;margin-left:10px;color:var(--primary)}
+body.busca .bs-search input{border:0;outline:0;min-width:0;flex:1;padding:12px 6px;background:transparent;color:#333;font:inherit}
+body.busca .bs-search input:focus-visible{outline:2px solid var(--accent);border-radius:6px}
+body.busca .search-count{margin-top:12px;color:#6d6d6d;font-size:.86rem}
+
+/* RESULTADOS */
+body.busca .bs-results-section{padding:34px 0 60px}
+body.busca .search-results{display:grid;gap:12px}
+body.busca .search-result-item{display:block;padding:18px 20px;border:1px solid #e7ddd5;border-radius:16px;background:#fffdfa;text-decoration:none;box-shadow:0 8px 22px rgba(31,92,77,.04);transition:.2s ease}
+body.busca .search-result-item:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(31,92,77,.08);border-color:#d9e6de}
+body.busca .result-cat{display:inline-block;margin-bottom:8px;padding:5px 10px;border-radius:999px;background:#e9f1ec;color:var(--primary);font-size:.72rem;font-weight:700}
+body.busca .search-result-item h3{margin:0 0 6px;font-size:1.15rem;line-height:1.2;color:var(--primary);font-weight:400}
+body.busca .search-result-item p{margin:0;color:#5c5c5c;font-size:.86rem;line-height:1.55}
+body.busca .search-result-item mark{background:#e9f1ec;color:var(--primary);border-radius:3px;padding:0 2px}
+body.busca .search-empty{padding:40px 20px;border:1px dashed #d9d4cd;border-radius:16px;color:#666;text-align:center;font-size:.92rem}
+body.busca .bs-group{margin-bottom:28px}
+body.busca .bs-chips{display:flex;flex-wrap:wrap;gap:10px}
+body.busca .bs-chip{border:1px solid #d9d4cd;border-radius:999px;padding:9px 16px;background:#fff;color:#4c4c4c;font:inherit;font-size:.85rem;font-weight:700;cursor:pointer;transition:.2s;min-height:40px}
+body.busca .bs-chip:hover{background:var(--primary);border-color:var(--primary);color:#fff}
+
+/* Acessibilidade */
+body.busca a:focus-visible, body.busca button:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
+@media (prefers-reduced-motion: reduce){
+  body.busca *{transition:none !important;animation:none !important;scroll-behavior:auto !important}
+}
+
+/* Responsivo */
+@media(max-width:640px){
+  body.busca .page-shell{width:100%;margin:0;border-radius:0}
+  body.busca .container{width:min(100% - 28px,1080px)}
+  body.busca .bs-hero{padding:40px 0 32px}
+  body.busca .bs-hero h1{font-size:30px}
+}
+</style>
+</head>
+<body class="busca">
+
+<a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+
+<div class="page-shell">
+
 <header class="site-header">
-<div class="container nav-wrapper">
-<a aria-label="Página inicial Concurseira PCD" class="logo" href="index.html">
-<span class="logo-mark"><img alt="Concurseira PCD" src="favicon/android-chrome-192x192.png"/></span>
-<span class="logo-copy"><span class="logo-text">Concurseira PCD</span><span class="logo-author">por Pâmela Dayane</span></span>
-</a>
-<button aria-expanded="false" aria-label="Abrir menu" class="nav-toggle">☰</button>
-<nav aria-label="Menu principal" class="main-nav">
-<a href="index.html">Início</a>
-<a href="sobre.html">Sobre</a>
-<a href="direitos-pcd.html">Direitos PCD</a>
-<a href="noticias.html">Notícias</a>
-<a href="blog.html">Blog</a>
-<a href="produtos-digitais.html">Produtos</a>
-<a aria-label="Buscar" class="nav-search" href="search.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></a>
-<a class="header-cta" href="materiais-gratuitos.html">Materiais gratuitos</a>
+  <div class="container nav-wrapper">
+    <a aria-label="Página inicial Concurseira PCD" class="logo" href="/">
+      <span class="logo-mark"><img alt="Concurseira PCD" src="favicon/android-chrome-192x192.png"/></span>
+      <span class="logo-copy">
+        <span class="logo-text">Concurseira PCD</span>
+        <span class="logo-author">por Pâmela Dayane</span>
+      </span>
+    </a>
+    <button aria-expanded="false" aria-label="Abrir menu" class="nav-toggle">☰</button>
+    <nav aria-label="Menu principal" class="main-nav">
+<a href="/">Início</a>
+<a href="/sobre">Sobre</a>
+<a href="/direitos-pcd">Direitos PCD</a>
+<a href="/noticias">Notícias</a>
+<a href="/blog">Blog</a>
+<a href="/produtos-digitais">Produtos</a>
+<a aria-label="Buscar" class="nav-search" href="/search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></a>
+<a class="header-cta" href="/materiais-gratuitos">Materiais gratuitos</a>
 </nav>
-</div>
+  </div>
 </header>
-<main>
-<section class="page-hero"><div class="container page-title-row"><div class="page-title-copy"><p class="eyebrow">Busca</p><h1>O que você procura?</h1><p class="lead">Pesquise por concursos, direitos PCD, dicas de estudo, materiais e muito mais.</p><div class="search-bar-wrapper">
-<input aria-label="Buscar no site" autocomplete="off" autofocus="" id="search-input" placeholder="Digite aqui… ex: revisão espaçada, BPC, rotina" type="search"/>
-<span aria-hidden="true" class="search-bar-icon">🔍</span>
-</div><div aria-live="polite" class="search-count" id="search-count"></div></div><div class="page-title-illustration"><img alt="Ilustração sobre pesquisa de conteúdos no site" src="assets/images/illustrations/05_blog_reflexoes_estudo.png"/></div></div></section>
-<section class="section" style="padding-top: 24px;">
-<div class="container">
-<div class="search-results" id="search-results" role="list">
-<!-- Resultados injetados via JS -->
-</div>
-</div>
+
+<main id="main-content">
+
+<!-- ═══ HERO ═══ -->
+<section class="bs-hero">
+  <div class="container">
+    <div class="bs-hero-inner">
+      <div class="eyebrow-bs">Busca</div>
+      <h1>O que você <span class="accent">procura</span>?</h1>
+      <p>Pesquise por concursos, direitos PCD, dicas de estudo, materiais e muito mais.</p>
+      <div class="bs-search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input aria-label="Buscar no site" autocomplete="off" autofocus="" id="search-input" placeholder="Digite aqui… ex: revisão espaçada, BPC, rotina" type="search"/>
+      </div>
+      <div aria-live="polite" class="search-count" id="search-count"></div>
+    </div>
+  </div>
 </section>
+
+<!-- ═══ RESULTADOS ═══ -->
+<section class="bs-results-section">
+  <div class="container">
+    <div class="search-results" id="search-results" role="list">
+      <!-- Resultados injetados via JS -->
+    </div>
+  </div>
+</section>
+
 </main>
-<footer class="site-footer">
-<div class="container footer-grid">
-<div>
-<strong>Concurseira PCD</strong>
-<p>Conteúdo, organização e acessibilidade para estudar e viver com mais autonomia.</p>
-<a href="https://www.instagram.com/concurseirapcd" rel="noopener" class="footer-instagram" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg> @concurseirapcd</a>
-</div>
-<div>
-<strong>Links úteis</strong>
-<a href="politica.html">Política de Privacidade</a>
-<a href="contato.html">Contato</a>
-</div>
-</div>
-<div class="container footer-bottom">
-<span>© 2025 Concurseira PCD · Pâmela Dayane</span>
-</div>
+
+<footer class="hm-footer">
+  <div class="container">
+    <div class="hm-footer-grid">
+      <div>
+        <div class="hm-footer-brand">Concurseira PCD</div>
+        <p>Conteúdo, organização e acessibilidade para estudar e viver com mais autonomia.</p>
+        <a href="https://www.instagram.com/concurseirapcd" target="_blank" rel="noopener" style="color:#d9e4df;text-decoration:none;font-size:14px;">@concurseirapcd no Instagram</a>
+      </div>
+      <div class="hm-footer-col">
+        <h4>Conteúdo</h4>
+        <a href="/direitos-pcd">Direitos PCD</a>
+        <a href="/noticias">Notícias de Concursos</a>
+        <a href="/blog">Blog da Concurseira</a>
+      </div>
+      <div class="hm-footer-col">
+        <h4>Materiais</h4>
+        <a href="/materiais-gratuitos">Materiais Gratuitos</a>
+        <a href="/produtos-digitais">Produtos Digitais</a>
+      </div>
+      <div class="hm-footer-col">
+        <h4>Institucional</h4>
+        <a href="/sobre">Sobre mim</a>
+        <a href="/contato">Contato</a>
+        <a href="/politica">Política de Privacidade</a>
+      </div>
+    </div>
+    <div class="hm-copyright">© 2026 Concurseira PCD · Pâmela Dayane</div>
+  </div>
 </footer>
+
+</div>
+
 <script src="assets/js/search-data.js"></script>
 <script src="assets/js/script.js?v=2"></script>
 <script>
@@ -68,14 +166,14 @@
 
   function normalize(str) {
     return str.toLowerCase()
-      .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // remove acentos
+      .normalize('NFD').replace(/[̀-ͯ]/g, '') // remove acentos
       .replace(/[^a-z0-9\s]/g, '');
   }
 
   function highlight(text, query) {
     if (!query) return text;
     const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    return text.replace(new RegExp(`(${escaped})`, 'gi'), '<mark style="background:var(--green-soft);color:var(--green-dark);border-radius:3px;padding:0 2px;">$1</mark>');
+    return text.replace(new RegExp(`(${escaped})`, 'gi'), '<mark>$1</mark>');
   }
 
   function search(query) {
@@ -105,7 +203,6 @@
       count.textContent = '';
       results.innerHTML = `
         <div class="search-empty">
-          <div class="empty-icon">🔍</div>
           <p>Nenhum resultado para "<strong>${query}</strong>".<br>Tente termos como: <em>revisão, BPC, rotina, laudo, planner</em>.</p>
         </div>`;
       return;
@@ -125,20 +222,19 @@
     count.textContent = '';
     const categories = [...new Set(SEARCH_DATA.map(i => i.category))];
     results.innerHTML = `
-      <div style="margin-bottom:28px;">
-        <p class="eyebrow" style="margin-bottom:18px;">Explore por área</p>
-        <div style="display:flex; flex-wrap:wrap; gap:10px;">
+      <div class="bs-group">
+        <p class="eyebrow-bs">Explore por área</p>
+        <div class="bs-chips">
           ${categories.map(cat => `
-            <button onclick="document.getElementById('search-input').value='${cat}'; document.getElementById('search-input').dispatchEvent(new Event('input'));"
-              style="background:var(--green-soft); color:var(--green-dark); border:none; border-radius:999px; padding:8px 18px; font:inherit; font-weight:700; font-size:.88rem; cursor:pointer; transition:.2s;">
+            <button class="bs-chip" onclick="document.getElementById('search-input').value='${cat}'; document.getElementById('search-input').dispatchEvent(new Event('input'));">
               ${cat}
             </button>
           `).join('')}
         </div>
       </div>
       <div>
-        <p class="eyebrow" style="margin-bottom:18px;">Sugestões populares</p>
-        <div class="search-results" style="margin-top:0;">
+        <p class="eyebrow-bs">Sugestões populares</p>
+        <div class="search-results">
           ${SEARCH_DATA.slice(0, 6).map(item => `
             <a class="search-result-item" href="${item.url}" role="listitem">
               <div class="result-cat">${item.category}</div>
