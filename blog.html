@@ -7,8 +7,8 @@
 <meta name="description" content="Textos práticos e honestos sobre métodos de estudo, organização de rotina, desabafos e vida real de quem estuda sendo PCD."/>
 <link rel="canonical" href="https://concurseirapcd.com.br/blog"/>
 <meta property="og:type" content="website"/>
-<meta property="og:title" content="Blog da Concurseira | Concurseira PCD"/>
-<meta property="og:description" content="Métodos de estudo, organização, rotina e vida real PCD, sem romantizar a dificuldade."/>
+<meta property="og:title" content="Blog da Pâmela | Concurseira PCD"/>
+<meta property="og:description" content="Um espaço para conversar com calma sobre concursos, deficiência, rotina e vida real."/>
 <meta property="og:url" content="https://concurseirapcd.com.br/blog"/>
 <meta property="og:image" content="https://concurseirapcd.com.br/favicon/android-chrome-512x512.png"/>
 <meta name="author" content="Pâmela Dayane"/>
@@ -22,85 +22,96 @@
 <meta content="#174C41" name="theme-color"/>
 
 <style>
-/* ═══ BLOG — estilo editorial (page-shell) ═══ */
-body.blog{background:#f4f0ea;line-height:1.65}
+/* ═══ BLOG — caderno pessoal da Pâmela ═══ */
+body.blog{background:#f4f0ea;line-height:1.7}
 body.blog .page-shell{width:min(1180px,calc(100% - 32px));margin:16px auto 44px;background:#FBF8F3;border-radius:22px;overflow:hidden;box-shadow:0 18px 45px rgba(23,76,65,.09)}
 body.blog .container{width:min(1080px,calc(100% - 40px));max-width:1080px;margin-inline:auto;padding-inline:0}
-body.blog main section{padding:54px 0}
+body.blog .container-leitura{width:min(720px,calc(100% - 40px));max-width:720px;margin-inline:auto;padding-inline:0}
 body.blog .section-kicker{display:inline-block;font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;font-weight:800;color:var(--accent);margin-bottom:12px}
-body.blog .section-title{max-width:700px;margin:0 0 14px;font-size:clamp(24px,2.8vw,32px);line-height:1.08;color:#31413C}
-body.blog .section-note{margin:0;color:#5F625F;max-width:560px;font-size:15px;line-height:1.6}
 
-/* HERO */
-body.blog .bl-hero{position:relative;overflow:hidden;padding:44px 0 40px;background:linear-gradient(135deg,#fffaf6 0%,#fff 60%,#f2f7f4 100%)}
-body.blog .bl-hero::before{content:"";position:absolute;width:320px;height:320px;border-radius:50%;background:rgba(233,198,181,.36);right:8%;top:18px}
-body.blog .bl-hero::after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;background:rgba(110,143,125,.12);left:-90px;bottom:10px}
-body.blog .bl-hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.12fr .88fr;gap:48px;align-items:center}
-body.blog .crumb{font-size:13px;color:#707070;margin-bottom:20px}
-body.blog .crumb a{text-decoration:none;color:var(--primary)}
-body.blog .bl-hero h1{font-size:clamp(30px,3.5vw,39px);max-width:720px;margin-top:12px;color:#31413C;line-height:1.08}
+/* HERO: abertura de diário */
+body.blog .bl-hero{position:relative;overflow:hidden;padding:48px 0 40px;background:#FFFDFA;border-bottom:1px solid #EFEAE2}
+body.blog .bl-hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+body.blog .bl-hero h1{font-size:clamp(30px,3.5vw,39px);max-width:560px;margin:0 0 18px;color:#31413C;line-height:1.1}
 body.blog .bl-hero h1 .accent{color:#A95043}
-body.blog .bl-hero p{font-size:15px;max-width:650px;margin:20px 0 0;color:#5F625F}
-body.blog .bl-art{position:relative;min-height:320px;display:grid;place-items:center}
-body.blog .bl-photo{position:relative;z-index:2;width:min(360px,92%);height:auto;border-radius:16px;border:1px solid #e7ddd5;background:#fff;padding:6px;box-shadow:0 20px 45px rgba(23,76,65,.16);transform:rotate(2deg)}
-body.blog .blob{position:absolute;border-radius:48% 52% 58% 42%/45% 42% 58% 55%}
-body.blog .blob.a{width:260px;height:260px;background:#efd9ce;transform:rotate(-8deg)}
-body.blog .blob.b{width:225px;height:285px;background:#edf4f0;transform:rotate(12deg)}
-body.blog .leaf{position:absolute;z-index:1;opacity:.45}
-body.blog .leaf.r{right:-5px;bottom:5px;width:150px}
-body.blog .leaf.l{left:-22px;top:58px;width:100px;opacity:.25}
+body.blog .bl-hero p.bl-abertura{font-size:15px;max-width:520px;margin:0 0 22px;color:#5F625F}
+body.blog .bl-assinatura{font-family:var(--font-display);font-style:italic;font-size:1.1rem;color:#A95043}
+body.blog .bl-assinatura::before{content:"";display:block;width:52px;height:1px;background:#D8A6A4;margin-bottom:12px}
+body.blog .bl-diario{justify-self:center;max-width:300px;margin:0}
+body.blog .bl-photo{display:block;width:100%;height:auto;border-radius:14px;border:1px solid #E5E1D8;background:#fff;padding:6px;box-shadow:0 10px 26px rgba(43,55,49,.08);transform:rotate(1.5deg)}
+body.blog .bl-diario figcaption{margin-top:12px;font-size:.82rem;font-style:italic;color:#8a857e;text-align:center}
+body.blog .leaf-fina{position:absolute;right:-18px;bottom:-8px;width:110px;opacity:.3;pointer-events:none}
 
-/* FILTROS */
-body.blog .filters-wrap{background:#fff;padding:22px 0;border-top:1px solid #f0ebe5;border-bottom:1px solid #eee8e1}
-body.blog .bl-filters{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-body.blog .filters-label{font-size:13px;font-weight:700;color:var(--primary);margin-right:6px}
-body.blog .bl-filter{border:1px solid #d9d4cd;background:#fff;color:#4c4c4c;padding:9px 13px;border-radius:999px;cursor:pointer;font-size:13px;transition:.2s;font-family:var(--font-sans);min-height:40px}
-body.blog .bl-filter:hover,body.blog .bl-filter.active{background:var(--primary);border-color:var(--primary);color:#fff}
+/* APRESENTAÇÃO DA AUTORA */
+body.blog .bl-autora{padding:44px 0;background:#FBF8F3}
+body.blog .bl-autora-grid{display:grid;grid-template-columns:.65fr 1.35fr;gap:40px;align-items:start}
+body.blog .bl-autora h2{margin:0;font-size:clamp(22px,2.4vw,28px);line-height:1.15;color:#31413C}
+body.blog .bl-autora h2::after{content:"";display:block;width:44px;height:2px;background:#D8A6A4;margin-top:14px}
+body.blog .bl-autora p{margin:0 0 14px;font-size:15px;line-height:1.75;color:#5F625F;max-width:560px}
+body.blog .bl-link-suave{font-size:.9rem;font-weight:700;color:var(--primary);text-decoration:none}
+body.blog .bl-link-suave:hover{color:#A95043}
 
-/* POSTS */
-body.blog .posts{position:relative;background:#fff}
-body.blog .posts::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 4% 16%,rgba(110,143,125,.09),transparent 190px),radial-gradient(circle at 96% 72%,rgba(233,198,181,.16),transparent 220px);pointer-events:none}
-body.blog .section-top{position:relative;display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:end;margin-bottom:36px}
-body.blog .bl-search{display:flex;align-items:center;gap:10px;width:100%;border:1px solid #e7ddd5;border-radius:16px;background:#fffdfa;padding:8px}
-body.blog .bl-search input{border:0;outline:0;min-width:0;flex:1;padding:12px 14px;background:transparent;color:#333}
+/* ETIQUETAS DE ASSUNTO + BUSCA */
+body.blog .bl-nav{padding:20px 0;background:#FBF8F3;border-top:1px solid #EFEAE2;border-bottom:1px solid #EFEAE2}
+body.blog .bl-nav-grid{display:flex;align-items:center;justify-content:space-between;gap:14px 22px;flex-wrap:wrap}
+body.blog .bl-filters{display:flex;align-items:center;gap:4px 6px;flex-wrap:wrap}
+body.blog .bl-filter{border:1px solid transparent;background:transparent;color:var(--primary);padding:8px 13px;border-radius:999px;cursor:pointer;font-size:13.5px;font-weight:600;transition:.2s;font-family:var(--font-sans);min-height:40px}
+body.blog .bl-filter:hover{background:#F1EDE6}
+body.blog .bl-filter.active{background:var(--primary);color:#FBF8F3}
+body.blog .bl-search{display:flex;align-items:center;gap:8px;min-width:min(280px,100%);border-bottom:1px solid #DDD8D1;padding:4px 2px}
+body.blog .bl-search svg{flex-shrink:0;color:#8a857e}
+body.blog .bl-search input{border:0;outline:0;min-width:0;flex:1;padding:8px 2px;background:transparent;color:#31413C;font:inherit;font-size:14px}
+body.blog .bl-search input::placeholder{color:#9b968e}
 body.blog .bl-search input:focus-visible{outline:2px solid var(--accent);border-radius:6px}
-body.blog .bl-search button{border:0;background:#e9f1ec;color:var(--primary);border-radius:12px;padding:12px 18px;cursor:pointer;font-weight:700;min-height:44px}
-body.blog .posts-grid{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
-body.blog .post-card{position:relative;border:1px solid #DDD8D1;border-radius:18px;padding:24px;display:flex;flex-direction:column;box-shadow:0 10px 28px rgba(23,76,65,.05);transition:.2s;background:#FFFCF8}
 
-body.blog .post-card:hover{transform:translateY(-3px);box-shadow:0 17px 36px rgba(23,76,65,.09)}
-body.blog .post-body{position:relative;z-index:1;display:flex;flex-direction:column;height:100%}
-body.blog .post-meta{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:18px}
-body.blog .category{font-weight:700;padding:7px 12px;border-radius:999px;color:#a75542;background:#f4dfd8;font-size:.75rem}
-body.blog .read-time{color:#7a7a7a;font-size:.84rem}
-body.blog .post-date{color:#7a7a7a;font-size:.84rem;display:inline-flex;align-items:center;gap:6px}
-body.blog .post-date::after{content:"•";color:#b9aaa1}
-body.blog .post-card h3{max-width:95%;font-size:1.25rem;line-height:1.2;margin:0 0 10px;color:#31413C;font-weight:400}
+/* DESTAQUE: para ler com calma */
+body.blog .bl-conversas{position:relative;background:#FBF8F3;padding:48px 0 56px}
+body.blog .rotulo-calma{display:inline-block;font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;font-weight:800;color:var(--accent);margin-bottom:16px}
+body.blog .bl-destaque{border:1px solid #E5E1D8;border-radius:18px;background:#F7F3ED;padding:34px 36px;margin-bottom:8px}
+body.blog .bl-destaque .post-meta{margin-bottom:12px}
+body.blog .bl-destaque h3{font-size:clamp(22px,2.6vw,30px);line-height:1.15;margin:0 0 12px;max-width:600px}
+body.blog .bl-destaque p.resumo{font-size:15.5px;-webkit-line-clamp:3;max-width:600px}
+
+/* LISTA EDITORIAL */
+body.blog .post-card{position:relative;padding:30px 4px;border-top:1px solid #E5E1D8;background:transparent;display:block}
+body.blog .post-card:first-of-type{border-top:0}
+body.blog .bl-destaque.post-card{border-top:0;padding:34px 36px}
+body.blog .post-meta{display:flex;gap:8px 14px;align-items:center;flex-wrap:wrap;margin-bottom:10px}
+body.blog .category{font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--primary)}
+body.blog .post-date,body.blog .read-time{color:#8a857e;font-size:.82rem}
+body.blog .post-date::after{content:"·";margin-left:12px;color:#c9bfb4}
+body.blog .post-card h3{font-size:1.4rem;line-height:1.2;margin:0 0 8px;color:#31413C;font-weight:400;max-width:600px}
 body.blog .post-card h3 a{text-decoration:none}
 body.blog .post-card h3 a:hover{color:#A95043}
-body.blog .post-card p{display:-webkit-box;overflow:hidden;-webkit-line-clamp:2;-webkit-box-orient:vertical;font-size:.9rem;line-height:1.55;color:#5F625F;margin:0 0 18px;max-width:92%}
-body.blog .post-actions{margin-top:auto;padding-top:4px}
+body.blog .post-card p.resumo{display:-webkit-box;overflow:hidden;-webkit-line-clamp:3;-webkit-box-orient:vertical;font-size:.9rem;line-height:1.65;color:#5F625F;margin:0 0 12px;max-width:560px}
 body.blog .read-more{font-size:.875rem;font-weight:700;color:var(--primary);text-decoration:none}
 body.blog .read-more::after{content:" →"}
-body.blog .read-more:hover{color:var(--accent)}
+body.blog .read-more:hover{color:#A95043}
+body.blog .post-com-foto{display:grid;grid-template-columns:1fr 130px;gap:26px;align-items:center}
+body.blog .post-foto{width:130px;height:130px;object-fit:cover;object-position:center;border-radius:12px;border:1px solid #E5E1D8;background:#fff;padding:4px}
+body.blog .post-frase{font-family:var(--font-display);font-style:italic;font-size:1.05rem;color:#4c584f;margin:0 0 12px;max-width:560px;line-height:1.55}
 body.blog .hidden{display:none!important}
-body.blog .no-results{display:none;position:relative;padding:20px;border:1px dashed #d9d4cd;border-radius:14px;color:#666;text-align:center;margin-top:8px}
+body.blog .no-results{display:none;padding:20px;border:1px dashed #d9d4cd;border-radius:14px;color:#666;text-align:center;margin-top:20px}
 
-/* NEWSLETTER */
+/* FRASE DA AUTORA ENTRE OS TEXTOS */
+body.blog .bl-frase{position:relative;padding:34px 4px 34px 54px;border-top:1px solid #E5E1D8;margin:0}
+body.blog .bl-frase::before{content:"\201C";position:absolute;left:0;top:18px;font-family:var(--font-display);font-size:56px;line-height:1;color:#D8A6A4}
+body.blog .bl-frase p{margin:0 0 8px;font-family:var(--font-display);font-style:italic;font-size:1.25rem;line-height:1.5;color:#31413C;max-width:540px}
+body.blog .bl-frase cite{font-style:normal;font-size:.85rem;color:#8a857e}
+
+/* UMA CARTA DE VEZ EM QUANDO */
 body.blog .bl-newsletter{margin:0 0 26px;padding:44px 0;background:#F9EFEF;border-top:1px solid #E8D3D1;border-bottom:1px solid #E8D3D1;color:#31413C;position:relative;overflow:hidden}
 body.blog .bl-newsletter::before{content:"";position:absolute;width:310px;height:310px;border:1px solid rgba(169,80,67,.16);border-radius:50%;right:-90px;top:-120px}
 body.blog .bl-newsletter-grid{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
-body.blog .bl-newsletter h2{color:#31413C;font-size:1.5rem;line-height:1.15}
-body.blog .bl-newsletter p{margin:12px 0 0;color:#5F625F;max-width:600px;font-size:15px}
+body.blog .bl-newsletter h2{color:#31413C;font-size:1.5rem;line-height:1.15;margin:0}
+body.blog .bl-newsletter p{margin:12px 0 0;color:#5F625F;max-width:560px;font-size:15px}
 body.blog .bl-newsletter-form{display:flex;gap:10px;background:#fff;border:1px solid #E8D3D1;padding:8px;border-radius:14px}
-body.blog .bl-newsletter-form input{flex:1;min-width:0;border:0;outline:0;padding:0 13px;background:transparent}
+body.blog .bl-newsletter-form input{flex:1;min-width:0;border:0;outline:0;padding:0 13px;background:transparent;font:inherit}
 body.blog .bl-newsletter-form input:focus-visible{outline:2px solid var(--accent);border-radius:8px}
-body.blog .bl-newsletter-form button{border:0;background:var(--accent);color:#fff;padding:13px 18px;border-radius:10px;font-weight:700;cursor:pointer;min-height:44px}
-body.blog .bl-form-msg{position:relative;max-width:620px;margin-bottom:14px;padding:12px 16px;border-radius:10px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);font-size:14px}
-
-/* CTA FINAL */
-body.blog .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:10px;background:#fff;color:var(--primary);font-size:14px;font-weight:700;text-decoration:none;min-height:44px;transition:.2s ease}
-body.blog .btn:hover{transform:translateY(-1px);box-shadow:0 10px 20px rgba(0,0,0,.12)}
+body.blog .bl-newsletter-form button{border:0;background:var(--accent);color:#fff;padding:13px 18px;border-radius:10px;font-weight:700;cursor:pointer;min-height:44px;font-size:14px}
+body.blog .bl-newsletter-form button:hover{background:var(--terracota-hover)}
+body.blog .bl-nota-carta{margin:12px 2px 0;font-size:.8rem;color:#8a857e}
+body.blog .bl-form-msg{position:relative;max-width:620px;margin-bottom:14px;padding:12px 16px;border-radius:10px;background:#fff;border:1px solid #E8D3D1;font-size:14px}
 
 /* Acessibilidade */
 body.blog a:focus-visible, body.blog button:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
@@ -111,25 +122,25 @@ body.blog a:focus-visible, body.blog button:focus-visible{outline:3px solid var(
 /* Responsivo */
 @media(max-width:960px){
   body.blog .bl-hero-grid,body.blog .bl-newsletter-grid{grid-template-columns:1fr}
-  body.blog .bl-art{min-height:300px}
-  body.blog .posts-grid{grid-template-columns:1fr}
-  body.blog .section-top{grid-template-columns:1fr}
-  body.blog .bl-search{width:100%}
+  body.blog .bl-diario{max-width:260px}
+  body.blog .bl-autora-grid{grid-template-columns:1fr;gap:18px}
+  body.blog .bl-nav-grid{flex-direction:column;align-items:stretch}
+  body.blog .bl-search{min-width:100%}
 }
 @media(max-width:650px){
   body.blog .page-shell{width:100%;margin:0;border-radius:0}
   body.blog .container{width:min(100% - 40px,1080px)}
-  body.blog .bl-hero{padding:40px 0 30px}
+  body.blog .container-leitura{width:min(100% - 40px,720px)}
+  body.blog .bl-hero{padding:40px 0 32px}
   body.blog .bl-hero h1{font-size:30px}
-  body.blog .bl-art{min-height:260px}
-  body.blog .blob.a{width:210px;height:210px}
-  body.blog .blob.b{width:190px;height:240px}
-  body.blog main section{padding:44px 0}
-  body.blog .post-card{padding:20px}
+  body.blog .bl-destaque{padding:24px 20px}
+  body.blog .bl-destaque.post-card{padding:24px 20px}
+  body.blog .post-com-foto{grid-template-columns:1fr;gap:14px}
+  body.blog .post-foto{width:110px;height:110px}
+  body.blog .bl-frase{padding-left:44px}
   body.blog .bl-newsletter-form{flex-direction:column}
   body.blog .bl-newsletter-form input{padding:13px}
-  body.blog .bl-filters{gap:8px}
-  body.blog .bl-filter{font-size:12px;padding:8px 11px}
+  body.blog .bl-filter{font-size:12.5px;padding:8px 11px}
 }
 </style>
 </head>
@@ -165,101 +176,115 @@ body.blog a:focus-visible, body.blog button:focus-visible{outline:3px solid var(
 
 <main id="main-content">
 
-<!-- ═══ HERO ═══ -->
+<!-- ═══ HERO: ABERTURA DE DIÁRIO ═══ -->
 <section class="bl-hero">
   <div class="container bl-hero-grid">
     <div>
-      <nav class="crumb" aria-label="Breadcrumb"><a href="/">Início</a> / Blog</nav>
-      <div class="section-kicker">Blog da Concurseira</div>
-      <h1>Estudo, rotina e vida real, <span class="accent">sem romantizar a dificuldade.</span></h1>
-      <p>Textos práticos e honestos sobre métodos, organização, saúde mental, autoconhecimento e vida PCD.</p>
+      <div class="section-kicker">Blog da Pâmela</div>
+      <h1>Um espaço para conversar com <span class="accent">calma</span>.</h1>
+      <p class="bl-abertura">Aqui escrevo sobre concursos, deficiência, rotina, sonhos, cansaço e tudo o que acontece enquanto a vida real continua.</p>
+      <p class="bl-assinatura">Com carinho, Pâmela.</p>
     </div>
-    <div class="bl-art" aria-hidden="true">
-      <div class="blob a"></div><div class="blob b"></div>
-      <svg class="leaf l" viewBox="0 0 120 260"><path d="M55 250C65 170 63 90 82 14M61 185C35 170 20 145 15 116M65 150C91 137 103 114 107 87M70 111C43 94 31 70 29 43M76 77C97 64 105 43 106 20" fill="none" stroke="#a95043" stroke-width="2"/></svg>
-      <img class="bl-photo" src="assets/images/insta/setup-estudos.jpeg" alt="Cantinho de estudos da Pâmela, com dois monitores e estante de livros" width="340" height="251"/>
-      <svg class="leaf r" viewBox="0 0 200 260"><g fill="#6e8f7d"><ellipse cx="92" cy="198" rx="34" ry="82" transform="rotate(-28 92 198)"/><ellipse cx="132" cy="155" rx="31" ry="74" transform="rotate(24 132 155)"/><ellipse cx="69" cy="122" rx="27" ry="64" transform="rotate(-40 69 122)"/></g></svg>
+    <figure class="bl-diario">
+      <img class="bl-photo" src="assets/images/insta/setup-estudos.jpeg" alt="Cantinho de estudos da Pâmela, com dois monitores e estante de livros" width="300" height="221"/>
+      <figcaption>Meu cantinho, onde muitas destas conversas começam.</figcaption>
+    </figure>
+  </div>
+  <svg class="leaf-fina" viewBox="0 0 120 260" aria-hidden="true"><path d="M55 250C65 170 63 90 82 14M61 185C35 170 20 145 15 116M65 150C91 137 103 114 107 87M70 111C43 94 31 70 29 43M76 77C97 64 105 43 106 20" fill="none" stroke="#a95043" stroke-width="1.5"/></svg>
+</section>
+
+<!-- ═══ APRESENTAÇÃO DA AUTORA ═══ -->
+<section class="bl-autora">
+  <div class="container bl-autora-grid">
+    <h2>Oi, eu sou a Pâmela.</h2>
+    <div>
+      <p>Escrevo a partir do que vivo: sou PCD, servidora pública, concurseira de muitos anos e uma pessoa tentando construir uma vida possível, organizada e com significado. Este blog é onde transformo experiências, erros e aprendizados em conversas que talvez também façam sentido para você.</p>
+      <a class="bl-link-suave" href="/sobre">Conheça um pouco mais da minha história →</a>
     </div>
   </div>
 </section>
 
-<!-- ═══ FILTROS ═══ -->
-<div class="filters-wrap">
-  <div class="container bl-filters" role="group" aria-label="Filtrar posts por categoria">
-    <span class="filters-label">Categoria:</span>
-    <button class="bl-filter active" data-filter="all">Todos</button>
-    <button class="bl-filter" data-filter="metodos">Métodos de estudo</button>
-    <button class="bl-filter" data-filter="organizacao">Organização</button>
-    <button class="bl-filter" data-filter="dicas">Dicas práticas</button>
-    <button class="bl-filter" data-filter="desabafos">Desabafos</button>
-    <button class="bl-filter" data-filter="pcd">Vida real PCD</button>
+<!-- ═══ ASSUNTOS + BUSCA ═══ -->
+<div class="bl-nav">
+  <div class="container bl-nav-grid">
+    <div class="bl-filters" role="group" aria-label="Filtrar conversas por assunto">
+      <button class="bl-filter active" data-filter="all">Todos</button>
+      <button class="bl-filter" data-filter="metodos">Estudos possíveis</button>
+      <button class="bl-filter" data-filter="organizacao">Organização da vida</button>
+      <button class="bl-filter" data-filter="desabafos">Conversas sinceras</button>
+      <button class="bl-filter" data-filter="pcd">Ser PCD</button>
+      <button class="bl-filter" data-filter="dicas">Coisas que aprendi</button>
+    </div>
+    <label class="bl-search">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input id="searchInput" type="search" placeholder="Procure uma conversa ou assunto…" aria-label="Procurar uma conversa ou assunto">
+    </label>
   </div>
 </div>
 
-<!-- ═══ POSTS ═══ -->
-<section class="posts">
-  <div class="container">
-    <div class="section-top">
-      <div>
-        <div class="section-kicker">Publicações</div>
-        <h2 class="section-title">Conteúdo para estudar com mais estratégia e menos culpa</h2>
-        <p class="section-note">Selecione uma categoria ou pesquise pelo tema que deseja encontrar.</p>
-      </div>
-      <label class="bl-search"><input id="searchInput" type="search" placeholder="Buscar no blog" aria-label="Buscar no blog"><button type="button" id="searchButton">Buscar</button></label>
-    </div>
-    <div class="posts-grid" id="postsGrid">
-      <article class="post-card" data-category="metodos" data-search="como revisar para concursos sem esquecer tudo revisão memória método de estudo">
-        <div class="post-body">
-          <div class="post-meta"><span class="category">Métodos de estudo</span><time class="post-date" datetime="2026-06-23">23 jun. 2026</time><span class="read-time">4 min de leitura</span></div>
-          <h3><a href="/blog/revisao">Como revisar para concursos sem esquecer tudo</a></h3>
-          <p>Revisar não é reler o material inteiro até cansar. É reencontrar a informação no momento certo e corrigir rotas antes que o esquecimento vire desespero.</p>
-          <div class="post-actions"><a class="read-more" href="/blog/revisao">Ler post completo</a></div>
-        </div>
+<!-- ═══ CONVERSAS ═══ -->
+<section class="bl-conversas">
+  <div class="container-leitura">
+    <span class="rotulo-calma">Para ler com calma</span>
+
+    <div id="postsGrid">
+      <article class="post-card bl-destaque" data-category="metodos" data-search="como revisar para concursos sem esquecer tudo revisão memória método de estudo">
+        <div class="post-meta"><span class="category">Estudos possíveis</span><time class="post-date" datetime="2026-06-23">23 de junho de 2026</time><span class="read-time">4 min de leitura</span></div>
+        <h3><a href="/blog/revisao">Como revisar para concursos sem esquecer tudo</a></h3>
+        <p class="resumo">Revisar não é reler o material inteiro até cansar. É reencontrar a informação no momento certo e corrigir rotas antes que o esquecimento vire desespero.</p>
+        <a class="read-more" href="/blog/revisao">Continuar lendo</a>
       </article>
+
       <article class="post-card" data-category="organizacao" data-search="como montar uma rotina realista para concursos organização planejamento trabalho saúde sono obrigações">
-        <div class="post-body">
-          <div class="post-meta"><span class="category">Organização</span><time class="post-date" datetime="2026-06-23">23 jun. 2026</time><span class="read-time">5 min de leitura</span></div>
-          <h3><a href="/blog/rotina">Como montar uma rotina realista para concursos</a></h3>
-          <p>Uma rotina realista começa pelo que existe, não pelo que você gostaria que existisse. Antes de distribuir matérias, olhe para trabalho, saúde, sono e obrigações.</p>
-          <div class="post-actions"><a class="read-more" href="/blog/rotina">Ler post completo</a></div>
+        <div class="post-com-foto">
+          <div>
+            <div class="post-meta"><span class="category">Organização da vida</span><time class="post-date" datetime="2026-06-23">23 de junho de 2026</time><span class="read-time">5 min de leitura</span></div>
+            <h3><a href="/blog/rotina">Como montar uma rotina realista para concursos</a></h3>
+            <p class="resumo">Uma rotina realista começa pelo que existe, não pelo que você gostaria que existisse. Antes de distribuir matérias, olhe para trabalho, saúde, sono e obrigações.</p>
+            <a class="read-more" href="/blog/rotina">Continuar lendo</a>
+          </div>
+          <img class="post-foto" src="assets/images/insta/agenda-semanal.jpeg" alt="Agenda semanal da Pâmela escrita à mão" width="130" height="130" loading="lazy"/>
         </div>
       </article>
+
       <article class="post-card" data-category="dicas" data-search="o que eu faria diferente se começasse hoje questões revisão materiais adaptação estratégia">
-        <div class="post-body">
-          <div class="post-meta"><span class="category">Dicas práticas</span><time class="post-date" datetime="2026-06-23">23 jun. 2026</time><span class="read-time">3 min de leitura</span></div>
-          <h3><a href="/blog/comecar">O que eu faria diferente se começasse hoje</a></h3>
-          <p>Compraria menos materiais, faria mais questões desde o início e levaria a revisão mais a sério. E teria menos vergonha de adaptar o método à minha realidade.</p>
-          <div class="post-actions"><a class="read-more" href="/blog/comecar">Ler post completo</a></div>
-        </div>
+        <div class="post-meta"><span class="category">Coisas que aprendi</span><time class="post-date" datetime="2026-06-23">23 de junho de 2026</time><span class="read-time">3 min de leitura</span></div>
+        <h3><a href="/blog/comecar">O que eu faria diferente se começasse hoje</a></h3>
+        <p class="resumo">Compraria menos materiais, faria mais questões desde o início e levaria a revisão mais a sério. E teria menos vergonha de adaptar o método à minha realidade.</p>
+        <a class="read-more" href="/blog/comecar">Continuar lendo</a>
       </article>
+
+      <div class="bl-frase" id="fraseAutora">
+        <p>Nem toda fase precisa ser produtiva. Algumas só precisam ser atravessadas com gentileza.</p>
+        <cite>Pâmela</cite>
+      </div>
+
       <article class="post-card" data-category="desabafos" data-search="quando descansar parece culpa descanso exaustão memória concentração produtividade">
-        <div class="post-body">
-          <div class="post-meta"><span class="category">Desabafos</span><time class="post-date" datetime="2026-06-23">23 jun. 2026</time><span class="read-time">3 min de leitura</span></div>
-          <h3><a href="/blog/descanso">Quando descansar parece culpa</a></h3>
-          <p>Quem estuda para concurso muitas vezes sente que descansar é perder tempo. Mas exaustão constante atrapalha memória, concentração e tomada de decisão.</p>
-          <div class="post-actions"><a class="read-more" href="/blog/descanso">Ler post completo</a></div>
-        </div>
+        <div class="post-meta"><span class="category">Conversas sinceras</span><time class="post-date" datetime="2026-06-23">23 de junho de 2026</time><span class="read-time">3 min de leitura</span></div>
+        <h3><a href="/blog/descanso">Quando descansar parece culpa</a></h3>
+        <p class="post-frase">Quem estuda para concurso muitas vezes sente que descansar é perder tempo.</p>
+        <p class="resumo">Mas exaustão constante atrapalha memória, concentração e tomada de decisão. Este texto é sobre pausar sem se punir.</p>
+        <a class="read-more" href="/blog/descanso">Continuar lendo</a>
       </article>
+
       <article class="post-card" data-category="pcd" data-search="estudar sendo pcd adaptação estratégia deficiência acessibilidade tecnologia rotina">
-        <div class="post-body">
-          <div class="post-meta"><span class="category">Vida real PCD</span><time class="post-date" datetime="2026-06-23">23 jun. 2026</time><span class="read-time">4 min de leitura</span></div>
-          <h3><a href="/blog/pcd">Estudar sendo PCD: adaptação também é estratégia</a></h3>
-          <p>Estudar sendo PCD pode exigir adaptações físicas, tecnológicas, emocionais e logísticas. Isso não torna a preparação menor. Torna mais consciente.</p>
-          <div class="post-actions"><a class="read-more" href="/blog/pcd">Ler post completo</a></div>
-        </div>
+        <div class="post-meta"><span class="category">Ser PCD</span><time class="post-date" datetime="2026-06-23">23 de junho de 2026</time><span class="read-time">4 min de leitura</span></div>
+        <h3><a href="/blog/pcd">Estudar sendo PCD: adaptação também é estratégia</a></h3>
+        <p class="resumo">Estudar sendo PCD pode exigir adaptações físicas, tecnológicas, emocionais e logísticas. Isso não torna a preparação menor. Torna mais consciente.</p>
+        <a class="read-more" href="/blog/pcd">Continuar lendo</a>
       </article>
     </div>
-    <p class="no-results" id="noResults">Nenhum post encontrado. Tente outra categoria ou termo de busca.</p>
+
+    <p class="no-results" id="noResults">Nenhuma conversa encontrada. Tente outro assunto ou termo de busca.</p>
   </div>
 </section>
 
-<!-- ═══ NEWSLETTER ═══ -->
+<!-- ═══ UMA CARTA DE VEZ EM QUANDO ═══ -->
 <section class="bl-newsletter">
   <div class="container bl-newsletter-grid">
     <div>
-      <div class="section-kicker">Conteúdo por e-mail</div>
-      <h2>Receba novos textos sem precisar acompanhar o site todos os dias.</h2>
-      <p>Uma seleção de conteúdos sobre estudos, organização e vida real PCD, enviada com respeito ao seu tempo.</p>
+      <h2>Uma carta de vez em quando</h2>
+      <p>Quando eu tiver algo que realmente valha a pena compartilhar, envio por aqui. Sem excesso de mensagens e sem transformar sua caixa de entrada em mais uma obrigação.</p>
     </div>
     <div>
       <div class="bl-form-msg" id="error-message-blog" style="display:none"><p>Não foi possível confirmar sua assinatura. Tente novamente.</p></div>
@@ -269,10 +294,11 @@ body.blog a:focus-visible, body.blog button:focus-visible{outline:3px solid var(
         data-type="subscription">
         <label for="EMAIL" class="sr-only">Seu melhor e-mail</label>
         <input id="EMAIL" name="EMAIL" type="email" placeholder="Seu melhor e-mail" required autocomplete="email"/>
-        <button type="submit">Quero receber</button>
+        <button type="submit">Quero receber as cartas</button>
         <input type="text" name="email_address_check" value="" style="display:none" aria-hidden="true"/>
         <input type="hidden" name="locale" value="pt"/>
       </form>
+      <p class="bl-nota-carta">Você pode sair quando quiser. Seu tempo também merece respeito.</p>
     </div>
   </div>
 </section>
@@ -310,6 +336,7 @@ body.blog a:focus-visible, body.blog button:focus-visible{outline:3px solid var(
   var filters=[].slice.call(document.querySelectorAll('.bl-filter'));
   var searchInput=document.getElementById('searchInput');
   var noResults=document.getElementById('noResults');
+  var frase=document.getElementById('fraseAutora');
   var category='all';
   function apply(){
     var term=(searchInput?searchInput.value:'').trim().toLowerCase();
@@ -321,6 +348,7 @@ body.blog a:focus-visible, body.blog button:focus-visible{outline:3px solid var(
       card.classList.toggle('hidden',!show);
       if(show)visible++;
     });
+    if(frase)frase.classList.toggle('hidden',category!=='all'||term!=='');
     if(noResults)noResults.style.display=visible?'none':'block';
   }
   filters.forEach(function(btn){
@@ -331,8 +359,6 @@ body.blog a:focus-visible, body.blog button:focus-visible{outline:3px solid var(
       apply();
     });
   });
-  var sb=document.getElementById('searchButton');
-  if(sb)sb.addEventListener('click',apply);
   if(searchInput)searchInput.addEventListener('input',apply);
 })();
 </script>
