@@ -66,8 +66,13 @@ body.blog .bl-search input{border:0;outline:0;min-width:0;flex:1;padding:12px 14
 body.blog .bl-search input:focus-visible{outline:2px solid var(--accent);border-radius:6px}
 body.blog .bl-search button{border:0;background:#e9f1ec;color:var(--primary);border-radius:12px;padding:12px 18px;cursor:pointer;font-weight:700;min-height:44px}
 body.blog .posts-grid{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
-body.blog .post-card{position:relative;border:1px solid #eed9cd;border-radius:22px;padding:28px 30px;display:flex;flex-direction:column;box-shadow:0 10px 28px rgba(31,92,77,.05);transition:.2s;background:linear-gradient(135deg,#fbeee6 0%,#fdf6f1 100%)}
-body.blog .post-card:nth-child(even){border-color:#d9e6de;background:linear-gradient(135deg,#e9f1ec 0%,#f3f8f4 100%)}
+body.blog .post-card{position:relative;border:1px solid #e7ddd5;border-radius:22px;padding:28px 30px;display:flex;flex-direction:column;box-shadow:0 10px 28px rgba(31,92,77,.05);transition:.2s;background:#fffdfa}
+body.blog .card-conceito{background:#F9EEE7;border-color:#EBCFC1}
+body.blog .card-documentos{background:#EDF3F7;border-color:#CDDDE6}
+body.blog .card-beneficios{background:#FAF5E6;border-color:#E8DDB9}
+body.blog .card-trabalho{background:#EDF4EF;border-color:#CFE0D5}
+body.blog .card-educacao{background:#F2EFF7;border-color:#DCD4E8}
+body.blog .card-concursos{background:#F7EDEF;border-color:#E5D1D7}
 
 body.blog .post-card:hover{transform:translateY(-3px);box-shadow:0 17px 36px rgba(31,92,77,.09)}
 body.blog .post-body{position:relative;z-index:1;display:flex;flex-direction:column;height:100%}
@@ -208,7 +213,7 @@ body.blog a:focus-visible, body.blog button:focus-visible{outline:3px solid var(
       <label class="bl-search"><input id="searchInput" type="search" placeholder="Buscar no blog" aria-label="Buscar no blog"><button type="button" id="searchButton">Buscar</button></label>
     </div>
     <div class="posts-grid" id="postsGrid">
-      <article class="post-card" data-category="metodos" data-search="como revisar para concursos sem esquecer tudo revisão memória método de estudo">
+      <article class="post-card card-documentos" data-category="metodos" data-search="como revisar para concursos sem esquecer tudo revisão memória método de estudo">
         <div class="post-body">
           <div class="post-meta"><span class="category">Métodos de estudo</span><time class="post-date" datetime="2026-06-23">23 jun. 2026</time><span class="read-time">4 min de leitura</span></div>
           <h3><a href="/blog/revisao">Como revisar para concursos sem esquecer tudo</a></h3>
@@ -216,7 +221,7 @@ body.blog a:focus-visible, body.blog button:focus-visible{outline:3px solid var(
           <div class="post-actions"><a class="read-more" href="/blog/revisao">Ler post completo</a></div>
         </div>
       </article>
-      <article class="post-card" data-category="organizacao" data-search="como montar uma rotina realista para concursos organização planejamento trabalho saúde sono obrigações">
+      <article class="post-card card-trabalho" data-category="organizacao" data-search="como montar uma rotina realista para concursos organização planejamento trabalho saúde sono obrigações">
         <div class="post-body">
           <div class="post-meta"><span class="category">Organização</span><time class="post-date" datetime="2026-06-23">23 jun. 2026</time><span class="read-time">5 min de leitura</span></div>
           <h3><a href="/blog/rotina">Como montar uma rotina realista para concursos</a></h3>
@@ -224,7 +229,7 @@ body.blog a:focus-visible, body.blog button:focus-visible{outline:3px solid var(
           <div class="post-actions"><a class="read-more" href="/blog/rotina">Ler post completo</a></div>
         </div>
       </article>
-      <article class="post-card" data-category="dicas" data-search="o que eu faria diferente se começasse hoje questões revisão materiais adaptação estratégia">
+      <article class="post-card card-conceito" data-category="dicas" data-search="o que eu faria diferente se começasse hoje questões revisão materiais adaptação estratégia">
         <div class="post-body">
           <div class="post-meta"><span class="category">Dicas práticas</span><time class="post-date" datetime="2026-06-23">23 jun. 2026</time><span class="read-time">3 min de leitura</span></div>
           <h3><a href="/blog/comecar">O que eu faria diferente se começasse hoje</a></h3>
@@ -232,7 +237,7 @@ body.blog a:focus-visible, body.blog button:focus-visible{outline:3px solid var(
           <div class="post-actions"><a class="read-more" href="/blog/comecar">Ler post completo</a></div>
         </div>
       </article>
-      <article class="post-card" data-category="desabafos" data-search="quando descansar parece culpa descanso exaustão memória concentração produtividade">
+      <article class="post-card card-educacao" data-category="desabafos" data-search="quando descansar parece culpa descanso exaustão memória concentração produtividade">
         <div class="post-body">
           <div class="post-meta"><span class="category">Desabafos</span><time class="post-date" datetime="2026-06-23">23 jun. 2026</time><span class="read-time">3 min de leitura</span></div>
           <h3><a href="/blog/descanso">Quando descansar parece culpa</a></h3>
@@ -240,7 +245,7 @@ body.blog a:focus-visible, body.blog button:focus-visible{outline:3px solid var(
           <div class="post-actions"><a class="read-more" href="/blog/descanso">Ler post completo</a></div>
         </div>
       </article>
-      <article class="post-card" data-category="pcd" data-search="estudar sendo pcd adaptação estratégia deficiência acessibilidade tecnologia rotina">
+      <article class="post-card card-concursos" data-category="pcd" data-search="estudar sendo pcd adaptação estratégia deficiência acessibilidade tecnologia rotina">
         <div class="post-body">
           <div class="post-meta"><span class="category">Vida real PCD</span><time class="post-date" datetime="2026-06-23">23 jun. 2026</time><span class="read-time">4 min de leitura</span></div>
           <h3><a href="/blog/pcd">Estudar sendo PCD: adaptação também é estratégia</a></h3>

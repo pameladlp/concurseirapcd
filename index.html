@@ -103,8 +103,13 @@ body.home .hm-audience{position:relative;background:#fff}
 body.home .hm-audience::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 3% 20%,rgba(110,143,125,.10),transparent 190px),radial-gradient(circle at 96% 80%,rgba(233,198,181,.18),transparent 220px);pointer-events:none}
 body.home .hm-audience > .container{position:relative}
 body.home .hm-cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:38px}
-body.home .hm-card{position:relative;background:linear-gradient(135deg,#fbeee6 0%,#fdf6f1 100%);border:1px solid #eed9cd;border-radius:18px;padding:28px;box-shadow:0 12px 30px rgba(31,92,77,.05)}
-body.home .hm-card:nth-child(even){border-color:#d9e6de;background:linear-gradient(135deg,#e9f1ec 0%,#f3f8f4 100%)}
+body.home .hm-card{position:relative;background:#fffdfa;border:1px solid #e7ddd5;border-radius:18px;padding:28px;box-shadow:0 12px 30px rgba(31,92,77,.05)}
+body.home .card-conceito{background:#F9EEE7;border-color:#EBCFC1}
+body.home .card-documentos{background:#EDF3F7;border-color:#CDDDE6}
+body.home .card-beneficios{background:#FAF5E6;border-color:#E8DDB9}
+body.home .card-trabalho{background:#EDF4EF;border-color:#CFE0D5}
+body.home .card-educacao{background:#F2EFF7;border-color:#DCD4E8}
+body.home .card-concursos{background:#F7EDEF;border-color:#E5D1D7}
 body.home .hm-card h3{font-size:19px;margin:18px 0 10px;color:var(--primary)}
 body.home .hm-card p{margin:0;color:#555}
 
@@ -272,17 +277,17 @@ body.home a:focus-visible, body.home button:focus-visible{outline:3px solid var(
     <h2 class="section-title">Um lugar sobre direitos, autonomia e qualidade de vida com deficiência.</h2>
     <p class="section-intro">Conteúdo feito com acolhimento, clareza e sem promessas irreais, para quem quer viver e estudar com mais estratégia e menos culpa.</p>
     <div class="hm-cards3">
-      <article class="hm-card">
+      <article class="hm-card card-conceito">
         <span class="hm-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18H6zM9 7h6M9 11h6M9 15h4"/></svg></span>
         <h3>Para pessoas PCD</h3>
         <p>Direitos, acessibilidade, inclusão, trabalho, autoestima e relacionamentos em linguagem simples e acolhedora.</p>
       </article>
-      <article class="hm-card">
+      <article class="hm-card card-documentos">
         <span class="hm-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16M6 16V8h12v8M8 5h8M9 11h6"/></svg></span>
         <h3>Para concurseiros</h3>
         <p>Métodos de estudo, revisão, organização semanal, produtividade realista e reflexões sinceras sobre a preparação.</p>
       </article>
-      <article class="hm-card">
+      <article class="hm-card card-trabalho">
         <span class="hm-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4zM8 10h8M8 14h5"/></svg></span>
         <h3>Para quem precisa de ferramentas</h3>
         <p>Materiais gratuitos, produtos digitais e recursos de apoio para tornar a rotina mais visual e organizada.</p>

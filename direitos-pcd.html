@@ -133,8 +133,13 @@ body.direitos .checklist li::before{content:"";position:absolute;left:0;top:.42e
 
 /* ARTIGOS */
 body.direitos .articles-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
-body.direitos .article-card{display:flex;flex-direction:column;min-height:200px;padding:24px;border:1px solid #eed9cd;border-radius:20px;background:linear-gradient(135deg,#fbeee6 0%,#fdf6f1 100%);box-shadow:0 12px 32px rgba(31,92,77,.06);transition:.2s ease}
-body.direitos .article-card:nth-child(even){border-color:#d9e6de;background:linear-gradient(135deg,#e9f1ec 0%,#f3f8f4 100%)}
+body.direitos .article-card{display:flex;flex-direction:column;min-height:200px;padding:24px;border:1px solid #e7ddd5;border-radius:20px;background:#fffdfa;box-shadow:0 12px 32px rgba(31,92,77,.06);transition:.2s ease}
+body.direitos .articles-grid .card-conceito{background:#F9EEE7;border-color:#EBCFC1}
+body.direitos .articles-grid .card-documentos{background:#EDF3F7;border-color:#CDDDE6}
+body.direitos .articles-grid .card-beneficios{background:#FAF5E6;border-color:#E8DDB9}
+body.direitos .articles-grid .card-trabalho{background:#EDF4EF;border-color:#CFE0D5}
+body.direitos .articles-grid .card-educacao{background:#F2EFF7;border-color:#DCD4E8}
+body.direitos .articles-grid .card-concursos{background:#F7EDEF;border-color:#E5D1D7}
 body.direitos .article-card:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(31,92,77,.10)}
 body.direitos .article-meta{display:flex;gap:12px;align-items:center;margin-bottom:14px;color:#777;font-size:.78rem}
 body.direitos .article-category{padding:7px 12px;border-radius:999px;background:#e9f1ec;color:var(--primary);font-weight:700;font-size:.75rem}
@@ -299,7 +304,7 @@ body.direitos a:focus-visible, body.direitos button:focus-visible{outline:3px so
       <p>Textos separados por tema tornam a leitura mais leve.</p>
     </div>
     <div class="articles-grid">
-      <article class="article-card">
+      <article class="article-card card-trabalho">
         <div class="article-meta">
           <span class="article-category">Trabalho</span>
           <span>10 de maio de 2026</span>
@@ -308,7 +313,7 @@ body.direitos a:focus-visible, body.direitos button:focus-visible{outline:3px so
         <p>Entenda a reserva de vagas, as adaptações no ambiente profissional e como registrar solicitações.</p>
         <a class="article-link" href="/direitos-pcd/trabalho-cotas-adaptacao">Ler artigo completo</a>
       </article>
-      <article class="article-card">
+      <article class="article-card card-beneficios">
         <div class="article-meta">
           <span class="article-category">Previdência</span>
           <span>9 de maio de 2026</span>
@@ -317,7 +322,7 @@ body.direitos a:focus-visible, body.direitos button:focus-visible{outline:3px so
         <p>Veja as diferenças entre as modalidades e os critérios aplicáveis em cada situação.</p>
         <a class="article-link" href="/direitos-pcd/aposentadoria-pcd-lc142">Ler artigo completo</a>
       </article>
-      <article class="article-card">
+      <article class="article-card card-documentos">
         <div class="article-meta">
           <span class="article-category">Saúde</span>
           <span>7 de maio de 2026</span>
@@ -326,7 +331,7 @@ body.direitos a:focus-visible, body.direitos button:focus-visible{outline:3px so
         <p>Como solicitar órteses, próteses e outros recursos de acessibilidade na rede pública.</p>
         <a class="article-link" href="/direitos-pcd/tecnologia-assistiva-sus">Ler artigo completo</a>
       </article>
-      <article class="article-card">
+      <article class="article-card card-concursos">
         <div class="article-meta">
           <span class="article-category">Tributário</span>
           <span>6 de maio de 2026</span>

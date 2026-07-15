@@ -74,8 +74,13 @@ body.produtos .featured-content .btn{align-self:flex-start}
 
 /* GRID DE PRODUTOS */
 body.produtos .products-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-body.produtos .product-card{display:flex;flex-direction:column;padding:20px 20px 18px;border:1px solid #eed9cd;border-radius:18px;background:linear-gradient(135deg,#fbeee6 0%,#fdf6f1 100%);box-shadow:0 10px 28px rgba(31,92,77,.05);transition:transform .2s ease, box-shadow .2s ease}
-body.produtos .product-card:nth-child(even){border-color:#d9e6de;background:linear-gradient(135deg,#e9f1ec 0%,#f3f8f4 100%)}
+body.produtos .product-card{display:flex;flex-direction:column;padding:20px 20px 18px;border:1px solid #e7ddd5;border-radius:18px;background:#fffdfa;box-shadow:0 10px 28px rgba(31,92,77,.05);transition:transform .2s ease, box-shadow .2s ease}
+body.produtos .card-conceito{background:#F9EEE7;border-color:#EBCFC1}
+body.produtos .card-documentos{background:#EDF3F7;border-color:#CDDDE6}
+body.produtos .card-beneficios{background:#FAF5E6;border-color:#E8DDB9}
+body.produtos .card-trabalho{background:#EDF4EF;border-color:#CFE0D5}
+body.produtos .card-educacao{background:#F2EFF7;border-color:#DCD4E8}
+body.produtos .card-concursos{background:#F7EDEF;border-color:#E5D1D7}
 body.produtos .product-card:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(31,92,77,.08)}
 body.produtos .product-top{display:flex;align-items:center;margin-bottom:10px}
 body.produtos .product-type{color:var(--accent);font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
@@ -242,37 +247,37 @@ body.produtos a:focus-visible, body.produtos button:focus-visible{outline:3px so
       <p>Sem excesso visual, sem linguagem complicada e com foco na vida real.</p>
     </div>
     <div class="products-grid">
-      <article class="product-card">
+      <article class="product-card card-conceito">
         <div class="product-top"><span class="product-type">Guia</span></div>
         <h3>Manual da Concurseira PCD</h3>
         <p>Organização acessível, documentos, rotina adaptada, atendimento especial e ferramentas de apoio.</p>
         <a class="product-link" href="#lista">Entrar na lista</a>
       </article>
-      <article class="product-card">
+      <article class="product-card card-documentos">
         <div class="product-top"><span class="product-type">Planner</span></div>
         <h3>Planner Digital da Concurseira</h3>
         <p>Planejamento mensal, semanal, metas, revisões, hábitos e acompanhamento de evolução.</p>
         <a class="product-link" href="#lista">Entrar na lista</a>
       </article>
-      <article class="product-card">
+      <article class="product-card card-beneficios">
         <div class="product-top"><span class="product-type">Planilha</span></div>
         <h3>Planilha de Ciclo de Estudos</h3>
         <p>Matérias, carga horária, revisões, questões, desempenho, simulados e ajustes semanais.</p>
         <a class="product-link" href="#lista">Entrar na lista</a>
       </article>
-      <article class="product-card">
+      <article class="product-card card-trabalho">
         <div class="product-top"><span class="product-type">Revisão</span></div>
         <h3>Flashcards e Mapas de Revisão</h3>
         <p>Modelos prontos para memorização, revisão ativa, lei seca, erros recorrentes e questões.</p>
         <a class="product-link" href="#lista">Entrar na lista</a>
       </article>
-      <article class="product-card">
+      <article class="product-card card-educacao">
         <div class="product-top"><span class="product-type">Tribunais</span></div>
         <h3>Guia de Estudos para Tribunais</h3>
         <p>Organização de matérias básicas, lei seca, questões, revisão e rotina para concursos jurídicos.</p>
         <a class="product-link" href="#lista">Entrar na lista</a>
       </article>
-      <article class="product-card">
+      <article class="product-card card-concursos">
         <div class="product-top"><span class="product-type">Em breve</span></div>
         <h3>Novas ferramentas em desenvolvimento</h3>
         <p>Materiais complementares para planejamento, revisão e acompanhamento de estudos.</p>

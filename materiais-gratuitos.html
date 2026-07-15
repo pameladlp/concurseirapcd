@@ -50,8 +50,13 @@ body.materiais .section-head p{margin:0;color:#5c5c5c;font-size:.9rem}
 
 /* GRID DE MATERIAIS */
 body.materiais .materials-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-body.materiais .material-card{display:flex;flex-direction:column;padding:20px 20px 18px;border:1px solid #eed9cd;border-radius:18px;background:linear-gradient(135deg,#fbeee6 0%,#fdf6f1 100%);box-shadow:0 10px 28px rgba(31,92,77,.05);transition:transform .2s ease, box-shadow .2s ease}
-body.materiais .material-card:nth-child(even){border-color:#d9e6de;background:linear-gradient(135deg,#e9f1ec 0%,#f3f8f4 100%)}
+body.materiais .material-card{display:flex;flex-direction:column;padding:20px 20px 18px;border:1px solid #e7ddd5;border-radius:18px;background:#fffdfa;box-shadow:0 10px 28px rgba(31,92,77,.05);transition:transform .2s ease, box-shadow .2s ease}
+body.materiais .card-conceito{background:#F9EEE7;border-color:#EBCFC1}
+body.materiais .card-documentos{background:#EDF3F7;border-color:#CDDDE6}
+body.materiais .card-beneficios{background:#FAF5E6;border-color:#E8DDB9}
+body.materiais .card-trabalho{background:#EDF4EF;border-color:#CFE0D5}
+body.materiais .card-educacao{background:#F2EFF7;border-color:#DCD4E8}
+body.materiais .card-concursos{background:#F7EDEF;border-color:#E5D1D7}
 body.materiais .material-card:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(31,92,77,.08)}
 body.materiais .status-mg{align-self:flex-start;margin-bottom:10px;padding:7px 12px;border-radius:999px;background:#e9f1ec;color:var(--primary);font-size:.75rem;font-weight:700}
 body.materiais .material-card:nth-child(even) .status-mg{background:#f4dfd8;color:#a75542}
@@ -148,37 +153,37 @@ body.materiais a:focus-visible, body.materiais button:focus-visible{outline:3px 
       <p>Cada material terá um objetivo prático: planejar, revisar, organizar documentos ou destravar o início dos estudos.</p>
     </div>
     <div class="materials-grid">
-      <article class="material-card">
+      <article class="material-card card-conceito">
         <span class="status-mg">Disponível</span>
         <h3>Checklist da Semana Organizada</h3>
         <p>Para planejar estudos, revisões, questões, pausas e pendências pessoais sem se perder.</p>
         <a class="btn btn-primary" href="assets/materiais/checklist_semana_organizada.pdf" download><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span>Baixar PDF</span></a>
       </article>
-      <article class="material-card">
+      <article class="material-card card-documentos">
         <span class="status-mg">Disponível</span>
         <h3>Planner Semanal de Estudos</h3>
         <p>Modelo visual para organizar matérias, metas, horários e blocos de revisão.</p>
         <a class="btn btn-primary" href="assets/materiais/planner_semanal_estudos.pdf" download><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span>Baixar PDF</span></a>
       </article>
-      <article class="material-card">
+      <article class="material-card card-beneficios">
         <span class="status-mg">Disponível</span>
         <h3>Checklist de Documentos PCD</h3>
         <p>Para organizar laudos, relatórios, exames, documentos pessoais e comprovantes.</p>
         <a class="btn btn-primary" href="assets/materiais/checklist_documentos_pcd.pdf" download><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span>Baixar PDF</span></a>
       </article>
-      <article class="material-card">
+      <article class="material-card card-trabalho">
         <span class="status-mg">Disponível</span>
         <h3>Guia para Começar do Zero</h3>
         <p>Primeiros passos para quem quer iniciar nos concursos sem comprar material em excesso.</p>
         <a class="btn btn-primary" href="assets/materiais/guia_comecar_do_zero.pdf" download><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span>Baixar PDF</span></a>
       </article>
-      <article class="material-card">
+      <article class="material-card card-educacao">
         <span class="status-mg">Disponível</span>
         <h3>Modelo de Ciclo de Estudos</h3>
         <p>Organize matérias por prioridade, dificuldade, peso no edital e tempo disponível.</p>
         <a class="btn btn-primary" href="assets/materiais/modelo_ciclo_estudos.pdf" download><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span>Baixar PDF</span></a>
       </article>
-      <article class="material-card">
+      <article class="material-card card-concursos">
         <span class="status-mg">Disponível</span>
         <h3>Checklist de Mesa de Estudos</h3>
         <p>Ambiente, conforto, iluminação, ergonomia, tecnologia e acessibilidade.</p>
