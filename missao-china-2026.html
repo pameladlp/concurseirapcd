@@ -218,6 +218,7 @@ body.missao .form-note{margin:0;font-size:.78rem;color:#6b6e6b}
 body.missao .submit-button{flex:0 0 auto;border:0;border-radius:10px;padding:13px 20px;background:var(--inst);color:#fff;font-weight:700;font-size:.85rem;cursor:pointer;min-height:46px;transition:.2s ease}
 body.missao .submit-button:hover{transform:translateY(-1px);box-shadow:0 10px 20px rgba(27,74,82,.22)}
 body.missao .form-success,body.missao .form-error{margin:0 0 16px;padding:12px 14px;border-radius:10px;font-size:.86rem;font-weight:700}
+body.missao [data-fs-success]:not([data-fs-active]),body.missao [data-fs-error]:not([data-fs-active]){display:none}
 body.missao .form-success{background:#e6f0ec;color:#174C41}
 body.missao .form-error{background:#f9e6df;color:#a75542}
 
@@ -618,10 +619,10 @@ body.missao a:focus-visible,body.missao button:focus-visible{outline:3px solid #
         <h3>Interesse em parceria</h3>
         <p class="mc-form-intro">Preencha os campos abaixo. Retornarei com a proposta institucional adequada ao seu interesse.</p>
 
-        <div data-fs-success class="form-success" style="display:none">
+        <div data-fs-success class="form-success" role="status">
           <p>Obrigada pelo interesse. Retornarei assim que possível.</p>
         </div>
-        <div data-fs-error class="form-error" style="display:none">
+        <div data-fs-error class="form-error" role="alert">
           <p>Ocorreu um erro no envio. Tente novamente ou escreva para pamelaconcurseirapcd@gmail.com.</p>
         </div>
 

@@ -79,6 +79,7 @@ body.contato .submit-button:hover{transform:translateY(-1px);box-shadow:0 10px 2
 body.contato .form-success,body.contato .form-error{margin:0 0 16px;padding:12px 14px;border-radius:10px;font-size:.86rem;font-weight:700}
 body.contato .form-success{background:#e9f1ec;color:var(--primary)}
 body.contato .form-error{background:#f9e6df;color:#a75542}
+body.contato [data-fs-success]:not([data-fs-active]),body.contato [data-fs-error]:not([data-fs-active]){display:none}
 
 /* PRIVACIDADE */
 body.contato .privacy{padding:42px 0 52px}
@@ -193,10 +194,10 @@ body.contato a:focus-visible, body.contato button:focus-visible{outline:3px soli
         <h3>Envie uma mensagem</h3>
         <p class="form-intro">Preencha os campos abaixo. As informações marcadas são necessárias para o envio.</p>
 
-        <div data-fs-success class="form-success" style="display:none">
+        <div data-fs-success class="form-success" role="status">
           <p>Mensagem enviada! Responderei em breve.</p>
         </div>
-        <div data-fs-error class="form-error" style="display:none">
+        <div data-fs-error class="form-error" role="alert">
           <p>Ocorreu um erro. Tente novamente ou entre em contato pelo Instagram.</p>
         </div>
 
