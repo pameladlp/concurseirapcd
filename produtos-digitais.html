@@ -13,25 +13,25 @@
 <meta property="og:image" content="https://concurseirapcd.com.br/favicon/android-chrome-512x512.png"/>
 <meta name="author" content="Pâmela Dayane"/>
 <meta name="robots" content="index, follow"/>
-<link href="assets/css/style.css?v=17" rel="stylesheet"/>
+<link href="assets/css/style.css?v=18" rel="stylesheet"/>
 <link href="favicon/favicon.ico?v=3" rel="icon" sizes="any"/>
 <link href="favicon/favicon-32x32.png?v=3" rel="icon" sizes="32x32" type="image/png"/>
 <link href="favicon/favicon-16x16.png?v=3" rel="icon" sizes="16x16" type="image/png"/>
 <link href="favicon/apple-touch-icon.png?v=3" rel="apple-touch-icon"/>
 <link href="favicon/site.webmanifest" rel="manifest"/>
-<meta content="#1F5C4D" name="theme-color"/>
+<meta content="#174C41" name="theme-color"/>
 
 <style>
 /* ═══ PRODUTOS DIGITAIS — estilo editorial (page-shell) ═══ */
 body.produtos{background:#f4f0ea;line-height:1.65}
-body.produtos .page-shell{width:min(1180px,calc(100% - 32px));margin:16px auto 44px;background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 18px 45px rgba(31,92,77,.09)}
+body.produtos .page-shell{width:min(1180px,calc(100% - 32px));margin:16px auto 44px;background:#FBF8F3;border-radius:22px;overflow:hidden;box-shadow:0 18px 45px rgba(23,76,65,.09)}
 body.produtos .container{width:min(1080px,calc(100% - 40px));max-width:1080px;margin-inline:auto;padding-inline:0}
 body.produtos main section{padding:58px 0}
 body.produtos .eyebrow-pd{margin-bottom:12px;color:var(--accent);font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
 body.produtos .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;min-height:44px;transition:.2s ease}
-body.produtos .btn-primary{background:var(--primary);color:#fff}
-body.produtos .btn-primary:hover{transform:translateY(-1px);box-shadow:0 10px 20px rgba(31,92,77,.18)}
-body.produtos .btn-secondary{border:1px solid #cad7d1;background:rgba(255,255,255,.72);color:var(--primary)}
+body.produtos .btn-primary{background:var(--accent);color:#fff}
+body.produtos .btn-primary:hover{transform:translateY(-1px);box-shadow:0 10px 20px rgba(23,76,65,.18)}
+body.produtos .btn-secondary{border:1px solid var(--primary);background:#FBF8F3;color:var(--primary)}
 body.produtos .btn-secondary:hover{background:#e9f1ec}
 
 /* HERO */
@@ -45,7 +45,7 @@ body.produtos .pd-hero-visual{position:relative;min-height:260px;display:grid;pl
 body.produtos .blob{position:absolute;width:250px;height:250px;border-radius:48% 52% 58% 42%/46% 44% 56% 54%;background:linear-gradient(145deg,rgba(233,198,181,.78),rgba(244,223,216,.34));transform:rotate(-7deg)}
 body.produtos .blob.green{width:150px;height:150px;right:18px;bottom:0;background:rgba(110,143,125,.24);transform:rotate(14deg)}
 body.produtos .pd-photos{position:relative;z-index:2;display:flex;align-items:center;justify-content:center}
-body.produtos .pd-photo{width:min(200px,52%);height:auto;border-radius:16px;border:1px solid #e7ddd5;box-shadow:0 20px 45px rgba(31,92,77,.16);background:#fff;padding:6px}
+body.produtos .pd-photo{width:min(200px,52%);height:auto;border-radius:16px;border:1px solid #e7ddd5;box-shadow:0 20px 45px rgba(23,76,65,.16);background:#fff;padding:6px}
 body.produtos .pd-photo--frente{position:relative;z-index:2;transform:rotate(-4deg) translateY(12px)}
 body.produtos .pd-photo--tras{z-index:1;margin-left:-30px;transform:rotate(5deg) translateY(-14px)}
 
@@ -56,9 +56,9 @@ body.produtos .section-head p{margin:0;color:#5c5c5c;font-size:.9rem}
 
 /* PRODUTO PRINCIPAL */
 body.produtos .featured{background:#fffdfa;border-top:1px solid #e7ddd5;border-bottom:1px solid #e7ddd5}
-body.produtos .featured-card{display:grid;grid-template-columns:.88fr 1.12fr;overflow:hidden;border:1px solid #e7ddd5;border-radius:22px;background:#fff;box-shadow:0 14px 36px rgba(31,92,77,.06)}
+body.produtos .featured-card{display:grid;grid-template-columns:.88fr 1.12fr;overflow:hidden;border:1px solid #e7ddd5;border-radius:22px;background:#fff;box-shadow:0 14px 36px rgba(23,76,65,.06)}
 body.produtos .featured-cover{min-height:315px;display:flex;align-items:center;justify-content:center;padding:22px;background:radial-gradient(circle at 25% 20%,rgba(255,255,255,.68),transparent 120px),linear-gradient(145deg,#efd6cc,#e8efeb)}
-body.produtos .mockup{width:190px;padding:17px;border-radius:18px;background:#fff;border:1px solid rgba(31,92,77,.1);box-shadow:0 24px 38px rgba(31,92,77,.14);transform:rotate(-3deg)}
+body.produtos .mockup{width:190px;padding:17px;border-radius:18px;background:#fff;border:1px solid rgba(23,76,65,.1);box-shadow:0 24px 38px rgba(23,76,65,.14);transform:rotate(-3deg)}
 body.produtos .mockup-cover{min-height:205px;padding:20px 17px;border-radius:12px;background:linear-gradient(160deg,var(--primary),#2f7663);color:#fff}
 body.produtos .mockup-cover small{display:block;margin-bottom:30px;color:#f1c4b7;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
 body.produtos .mockup-cover strong{display:block;font:400 1.55rem/1.08 var(--font-display)}
@@ -74,14 +74,8 @@ body.produtos .featured-content .btn{align-self:flex-start}
 
 /* GRID DE PRODUTOS */
 body.produtos .products-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-body.produtos .product-card{display:flex;flex-direction:column;padding:20px 20px 18px;border:1px solid #e7ddd5;border-radius:18px;background:#fffdfa;box-shadow:0 10px 28px rgba(31,92,77,.05);transition:transform .2s ease, box-shadow .2s ease}
-body.produtos .card-conceito{background:#F9EEE7;border-color:#EBCFC1}
-body.produtos .card-documentos{background:#EDF3F7;border-color:#CDDDE6}
-body.produtos .card-beneficios{background:#FAF5E6;border-color:#E8DDB9}
-body.produtos .card-trabalho{background:#EDF4EF;border-color:#CFE0D5}
-body.produtos .card-educacao{background:#F2EFF7;border-color:#DCD4E8}
-body.produtos .card-concursos{background:#F7EDEF;border-color:#E5D1D7}
-body.produtos .product-card:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(31,92,77,.08)}
+body.produtos .product-card{display:flex;flex-direction:column;padding:20px 20px 18px;border:1px solid #DCD4E8;border-radius:18px;background:#EEEAF3;box-shadow:0 10px 28px rgba(23,76,65,.05);transition:transform .2s ease, box-shadow .2s ease}
+body.produtos .product-card:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(23,76,65,.08)}
 body.produtos .product-top{display:flex;align-items:center;margin-bottom:10px}
 body.produtos .product-type{color:var(--accent);font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
 body.produtos .product-card:nth-child(even) .product-type{color:#6e8f7d}
@@ -103,7 +97,7 @@ body.produtos .principle span{color:rgba(255,255,255,.77);font-size:.82rem}
 
 /* LISTA DE INTERESSE */
 body.produtos .waitlist{padding:50px 0 58px}
-body.produtos .waitlist-box{max-width:920px;margin:0 auto;padding:34px;border-radius:24px;background:linear-gradient(135deg,#c96b56,#d77c61);color:#fff;text-align:center;position:relative;overflow:hidden}
+body.produtos .waitlist-box{max-width:920px;margin:0 auto;padding:34px;border-radius:24px;background:linear-gradient(135deg,#c96752,#d77c61);color:#fff;text-align:center;position:relative;overflow:hidden}
 body.produtos .waitlist-box::after{content:"";position:absolute;right:30px;top:12px;width:90px;height:55px;background-image:radial-gradient(rgba(255,255,255,.5) 1px,transparent 1px);background-size:10px 10px}
 body.produtos .waitlist-box h2{margin:0 0 11px;color:#fff;font-size:clamp(22px,2.6vw,28px);line-height:1.08}
 body.produtos .waitlist-box p{max-width:650px;margin:0 auto 22px;color:rgba(255,255,255,.9);font-size:.9rem}
@@ -247,37 +241,37 @@ body.produtos a:focus-visible, body.produtos button:focus-visible{outline:3px so
       <p>Sem excesso visual, sem linguagem complicada e com foco na vida real.</p>
     </div>
     <div class="products-grid">
-      <article class="product-card card-conceito">
+      <article class="product-card">
         <div class="product-top"><span class="product-type">Guia</span></div>
         <h3>Manual da Concurseira PCD</h3>
         <p>Organização acessível, documentos, rotina adaptada, atendimento especial e ferramentas de apoio.</p>
         <a class="product-link" href="#lista">Entrar na lista</a>
       </article>
-      <article class="product-card card-documentos">
+      <article class="product-card">
         <div class="product-top"><span class="product-type">Planner</span></div>
         <h3>Planner Digital da Concurseira</h3>
         <p>Planejamento mensal, semanal, metas, revisões, hábitos e acompanhamento de evolução.</p>
         <a class="product-link" href="#lista">Entrar na lista</a>
       </article>
-      <article class="product-card card-beneficios">
+      <article class="product-card">
         <div class="product-top"><span class="product-type">Planilha</span></div>
         <h3>Planilha de Ciclo de Estudos</h3>
         <p>Matérias, carga horária, revisões, questões, desempenho, simulados e ajustes semanais.</p>
         <a class="product-link" href="#lista">Entrar na lista</a>
       </article>
-      <article class="product-card card-trabalho">
+      <article class="product-card">
         <div class="product-top"><span class="product-type">Revisão</span></div>
         <h3>Flashcards e Mapas de Revisão</h3>
         <p>Modelos prontos para memorização, revisão ativa, lei seca, erros recorrentes e questões.</p>
         <a class="product-link" href="#lista">Entrar na lista</a>
       </article>
-      <article class="product-card card-educacao">
+      <article class="product-card">
         <div class="product-top"><span class="product-type">Tribunais</span></div>
         <h3>Guia de Estudos para Tribunais</h3>
         <p>Organização de matérias básicas, lei seca, questões, revisão e rotina para concursos jurídicos.</p>
         <a class="product-link" href="#lista">Entrar na lista</a>
       </article>
-      <article class="product-card card-concursos">
+      <article class="product-card">
         <div class="product-top"><span class="product-type">Em breve</span></div>
         <h3>Novas ferramentas em desenvolvimento</h3>
         <p>Materiais complementares para planejamento, revisão e acompanhamento de estudos.</p>
@@ -332,7 +326,7 @@ body.produtos a:focus-visible, body.produtos button:focus-visible{outline:3px so
       <div>
         <div class="hm-footer-brand">Concurseira PCD</div>
         <p>Conteúdo, organização e acessibilidade para estudar e viver com mais autonomia.</p>
-        <a href="https://www.instagram.com/concurseirapcd" target="_blank" rel="noopener" style="color:#d9e4df;text-decoration:none;font-size:14px;">@concurseirapcd no Instagram</a>
+        <a href="https://www.instagram.com/concurseirapcd" target="_blank" rel="noopener" style="color:#174C41;text-decoration:none;font-size:14px;">@concurseirapcd no Instagram</a>
       </div>
       <div class="hm-footer-col">
         <h4>Conteúdo</h4>

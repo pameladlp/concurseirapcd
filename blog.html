@@ -13,18 +13,18 @@
 <meta property="og:image" content="https://concurseirapcd.com.br/favicon/android-chrome-512x512.png"/>
 <meta name="author" content="Pâmela Dayane"/>
 <meta name="robots" content="index, follow"/>
-<link href="assets/css/style.css?v=17" rel="stylesheet"/>
+<link href="assets/css/style.css?v=18" rel="stylesheet"/>
 <link href="favicon/favicon.ico?v=3" rel="icon" sizes="any"/>
 <link href="favicon/favicon-32x32.png?v=3" rel="icon" sizes="32x32" type="image/png"/>
 <link href="favicon/favicon-16x16.png?v=3" rel="icon" sizes="16x16" type="image/png"/>
 <link href="favicon/apple-touch-icon.png?v=3" rel="apple-touch-icon"/>
 <link href="favicon/site.webmanifest" rel="manifest"/>
-<meta content="#1F5C4D" name="theme-color"/>
+<meta content="#174C41" name="theme-color"/>
 
 <style>
 /* ═══ BLOG — estilo editorial (page-shell) ═══ */
 body.blog{background:#f4f0ea;line-height:1.65}
-body.blog .page-shell{width:min(1180px,calc(100% - 32px));margin:16px auto 44px;background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 18px 45px rgba(31,92,77,.09)}
+body.blog .page-shell{width:min(1180px,calc(100% - 32px));margin:16px auto 44px;background:#FBF8F3;border-radius:22px;overflow:hidden;box-shadow:0 18px 45px rgba(23,76,65,.09)}
 body.blog .container{width:min(1080px,calc(100% - 40px));max-width:1080px;margin-inline:auto;padding-inline:0}
 body.blog main section{padding:54px 0}
 body.blog .section-kicker{display:inline-block;font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;font-weight:800;color:var(--accent);margin-bottom:12px}
@@ -42,7 +42,7 @@ body.blog .bl-hero h1{font-size:clamp(30px,3.5vw,39px);max-width:720px;margin-to
 body.blog .bl-hero h1 .accent{color:var(--accent)}
 body.blog .bl-hero p{font-size:15px;max-width:650px;margin:20px 0 0;color:#4e4e4e}
 body.blog .bl-art{position:relative;min-height:320px;display:grid;place-items:center}
-body.blog .bl-photo{position:relative;z-index:2;width:min(360px,92%);height:auto;border-radius:16px;border:1px solid #e7ddd5;background:#fff;padding:6px;box-shadow:0 20px 45px rgba(31,92,77,.16);transform:rotate(2deg)}
+body.blog .bl-photo{position:relative;z-index:2;width:min(360px,92%);height:auto;border-radius:16px;border:1px solid #e7ddd5;background:#fff;padding:6px;box-shadow:0 20px 45px rgba(23,76,65,.16);transform:rotate(2deg)}
 body.blog .blob{position:absolute;border-radius:48% 52% 58% 42%/45% 42% 58% 55%}
 body.blog .blob.a{width:260px;height:260px;background:#efd9ce;transform:rotate(-8deg)}
 body.blog .blob.b{width:225px;height:285px;background:#edf4f0;transform:rotate(12deg)}
@@ -66,15 +66,9 @@ body.blog .bl-search input{border:0;outline:0;min-width:0;flex:1;padding:12px 14
 body.blog .bl-search input:focus-visible{outline:2px solid var(--accent);border-radius:6px}
 body.blog .bl-search button{border:0;background:#e9f1ec;color:var(--primary);border-radius:12px;padding:12px 18px;cursor:pointer;font-weight:700;min-height:44px}
 body.blog .posts-grid{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
-body.blog .post-card{position:relative;border:1px solid #e7ddd5;border-radius:22px;padding:28px 30px;display:flex;flex-direction:column;box-shadow:0 10px 28px rgba(31,92,77,.05);transition:.2s;background:#fffdfa}
-body.blog .card-conceito{background:#F9EEE7;border-color:#EBCFC1}
-body.blog .card-documentos{background:#EDF3F7;border-color:#CDDDE6}
-body.blog .card-beneficios{background:#FAF5E6;border-color:#E8DDB9}
-body.blog .card-trabalho{background:#EDF4EF;border-color:#CFE0D5}
-body.blog .card-educacao{background:#F2EFF7;border-color:#DCD4E8}
-body.blog .card-concursos{background:#F7EDEF;border-color:#E5D1D7}
+body.blog .post-card{position:relative;border:1px solid #E8D3D1;border-radius:22px;padding:28px 30px;display:flex;flex-direction:column;box-shadow:0 10px 28px rgba(23,76,65,.05);transition:.2s;background:#F5E7E6}
 
-body.blog .post-card:hover{transform:translateY(-3px);box-shadow:0 17px 36px rgba(31,92,77,.09)}
+body.blog .post-card:hover{transform:translateY(-3px);box-shadow:0 17px 36px rgba(23,76,65,.09)}
 body.blog .post-body{position:relative;z-index:1;display:flex;flex-direction:column;height:100%}
 body.blog .post-meta{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:18px}
 body.blog .category{font-weight:700;padding:7px 12px;border-radius:999px;color:#a75542;background:#f4dfd8;font-size:.75rem}
@@ -93,7 +87,7 @@ body.blog .hidden{display:none!important}
 body.blog .no-results{display:none;position:relative;padding:20px;border:1px dashed #d9d4cd;border-radius:14px;color:#666;text-align:center;margin-top:8px}
 
 /* NEWSLETTER */
-body.blog .bl-newsletter{margin:0 0 26px;padding:44px 0;background:linear-gradient(135deg,#c96b56,#d77c61);color:#fff;position:relative;overflow:hidden}
+body.blog .bl-newsletter{margin:0 0 26px;padding:44px 0;background:linear-gradient(135deg,#c96752,#d77c61);color:#fff;position:relative;overflow:hidden}
 body.blog .bl-newsletter::before{content:"";position:absolute;width:310px;height:310px;border:1px solid rgba(255,255,255,.13);border-radius:50%;right:-90px;top:-120px}
 body.blog .bl-newsletter-grid{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
 body.blog .bl-newsletter h2{color:#fff;font-size:26px}
@@ -181,7 +175,7 @@ body.blog a:focus-visible, body.blog button:focus-visible{outline:3px solid var(
     </div>
     <div class="bl-art" aria-hidden="true">
       <div class="blob a"></div><div class="blob b"></div>
-      <svg class="leaf l" viewBox="0 0 120 260"><path d="M55 250C65 170 63 90 82 14M61 185C35 170 20 145 15 116M65 150C91 137 103 114 107 87M70 111C43 94 31 70 29 43M76 77C97 64 105 43 106 20" fill="none" stroke="#c96b56" stroke-width="2"/></svg>
+      <svg class="leaf l" viewBox="0 0 120 260"><path d="M55 250C65 170 63 90 82 14M61 185C35 170 20 145 15 116M65 150C91 137 103 114 107 87M70 111C43 94 31 70 29 43M76 77C97 64 105 43 106 20" fill="none" stroke="#c96752" stroke-width="2"/></svg>
       <img class="bl-photo" src="assets/images/insta/setup-estudos.jpeg" alt="Cantinho de estudos da Pâmela, com dois monitores e estante de livros" width="340" height="251"/>
       <svg class="leaf r" viewBox="0 0 200 260"><g fill="#6e8f7d"><ellipse cx="92" cy="198" rx="34" ry="82" transform="rotate(-28 92 198)"/><ellipse cx="132" cy="155" rx="31" ry="74" transform="rotate(24 132 155)"/><ellipse cx="69" cy="122" rx="27" ry="64" transform="rotate(-40 69 122)"/></g></svg>
     </div>
@@ -213,7 +207,7 @@ body.blog a:focus-visible, body.blog button:focus-visible{outline:3px solid var(
       <label class="bl-search"><input id="searchInput" type="search" placeholder="Buscar no blog" aria-label="Buscar no blog"><button type="button" id="searchButton">Buscar</button></label>
     </div>
     <div class="posts-grid" id="postsGrid">
-      <article class="post-card card-documentos" data-category="metodos" data-search="como revisar para concursos sem esquecer tudo revisão memória método de estudo">
+      <article class="post-card" data-category="metodos" data-search="como revisar para concursos sem esquecer tudo revisão memória método de estudo">
         <div class="post-body">
           <div class="post-meta"><span class="category">Métodos de estudo</span><time class="post-date" datetime="2026-06-23">23 jun. 2026</time><span class="read-time">4 min de leitura</span></div>
           <h3><a href="/blog/revisao">Como revisar para concursos sem esquecer tudo</a></h3>
@@ -221,7 +215,7 @@ body.blog a:focus-visible, body.blog button:focus-visible{outline:3px solid var(
           <div class="post-actions"><a class="read-more" href="/blog/revisao">Ler post completo</a></div>
         </div>
       </article>
-      <article class="post-card card-trabalho" data-category="organizacao" data-search="como montar uma rotina realista para concursos organização planejamento trabalho saúde sono obrigações">
+      <article class="post-card" data-category="organizacao" data-search="como montar uma rotina realista para concursos organização planejamento trabalho saúde sono obrigações">
         <div class="post-body">
           <div class="post-meta"><span class="category">Organização</span><time class="post-date" datetime="2026-06-23">23 jun. 2026</time><span class="read-time">5 min de leitura</span></div>
           <h3><a href="/blog/rotina">Como montar uma rotina realista para concursos</a></h3>
@@ -229,7 +223,7 @@ body.blog a:focus-visible, body.blog button:focus-visible{outline:3px solid var(
           <div class="post-actions"><a class="read-more" href="/blog/rotina">Ler post completo</a></div>
         </div>
       </article>
-      <article class="post-card card-conceito" data-category="dicas" data-search="o que eu faria diferente se começasse hoje questões revisão materiais adaptação estratégia">
+      <article class="post-card" data-category="dicas" data-search="o que eu faria diferente se começasse hoje questões revisão materiais adaptação estratégia">
         <div class="post-body">
           <div class="post-meta"><span class="category">Dicas práticas</span><time class="post-date" datetime="2026-06-23">23 jun. 2026</time><span class="read-time">3 min de leitura</span></div>
           <h3><a href="/blog/comecar">O que eu faria diferente se começasse hoje</a></h3>
@@ -237,7 +231,7 @@ body.blog a:focus-visible, body.blog button:focus-visible{outline:3px solid var(
           <div class="post-actions"><a class="read-more" href="/blog/comecar">Ler post completo</a></div>
         </div>
       </article>
-      <article class="post-card card-educacao" data-category="desabafos" data-search="quando descansar parece culpa descanso exaustão memória concentração produtividade">
+      <article class="post-card" data-category="desabafos" data-search="quando descansar parece culpa descanso exaustão memória concentração produtividade">
         <div class="post-body">
           <div class="post-meta"><span class="category">Desabafos</span><time class="post-date" datetime="2026-06-23">23 jun. 2026</time><span class="read-time">3 min de leitura</span></div>
           <h3><a href="/blog/descanso">Quando descansar parece culpa</a></h3>
@@ -245,7 +239,7 @@ body.blog a:focus-visible, body.blog button:focus-visible{outline:3px solid var(
           <div class="post-actions"><a class="read-more" href="/blog/descanso">Ler post completo</a></div>
         </div>
       </article>
-      <article class="post-card card-concursos" data-category="pcd" data-search="estudar sendo pcd adaptação estratégia deficiência acessibilidade tecnologia rotina">
+      <article class="post-card" data-category="pcd" data-search="estudar sendo pcd adaptação estratégia deficiência acessibilidade tecnologia rotina">
         <div class="post-body">
           <div class="post-meta"><span class="category">Vida real PCD</span><time class="post-date" datetime="2026-06-23">23 jun. 2026</time><span class="read-time">4 min de leitura</span></div>
           <h3><a href="/blog/pcd">Estudar sendo PCD: adaptação também é estratégia</a></h3>
@@ -290,7 +284,7 @@ body.blog a:focus-visible, body.blog button:focus-visible{outline:3px solid var(
       <div>
         <div class="hm-footer-brand">Concurseira PCD</div>
         <p>Conteúdo, organização e acessibilidade para estudar e viver com mais autonomia.</p>
-        <a href="https://www.instagram.com/concurseirapcd" target="_blank" rel="noopener" style="color:#d9e4df;text-decoration:none;font-size:14px;">@concurseirapcd no Instagram</a>
+        <a href="https://www.instagram.com/concurseirapcd" target="_blank" rel="noopener" style="color:#174C41;text-decoration:none;font-size:14px;">@concurseirapcd no Instagram</a>
       </div>
       <div class="hm-footer-col">
         <h4>Conteúdo</h4>
