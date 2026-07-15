@@ -17,5 +17,6 @@ const SEARCH_DATA = [
   { title: 'Materiais Gratuitos', url: '/materiais-gratuitos', description: 'Checklists, planners e guias gratuitos para estudos e documentos PCD.', keywords: 'materiais gratuitos checklist planner guia estudos documentos pcd ciclo', category: 'Materiais' },
   { title: 'Produtos Digitais', url: '/produtos-digitais', description: 'Kit do Aluno Organizado, Manual da Concurseira PCD, planner, planilha e flashcards.', keywords: 'produtos digitais kit aluno organizado manual concurseira pcd planner planilha flashcards', category: 'Produtos' },
   { title: 'Contato', url: '/contato', description: 'Contato para dúvidas, sugestões, parcerias, materiais e relatos.', keywords: 'contato dúvidas sugestões parcerias instagram mensagem', category: 'Página' },
+  { title: 'Missão Brasileira de Tecnologia Assistiva — China 2026', url: '/missao-china-2026', description: 'Missão independente à CR Expo China 2026, em Pequim, para documentar tecnologia assistiva em português.', keywords: 'missão china 2026 cr expo tecnologia assistiva prótese pequim beijing parceria', category: 'Página' },
   { title: 'Política de Privacidade', url: '/politica', description: 'Informações sobre coleta de dados, formulários, cookies e ferramentas externas.', keywords: 'privacidade dados cookies formulário lgpd política', category: 'Página' },
 ];
