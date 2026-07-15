@@ -198,7 +198,8 @@ body.missao a:focus-visible,body.missao button:focus-visible{outline:3px solid #
 }
 
 /* SELETOR DE IDIOMA */
-body.missao .mc-lang{display:flex;gap:6px;justify-content:flex-end;margin:0 0 18px;padding:0}
+body.missao .mc-hero::after{pointer-events:none}
+body.missao .mc-lang{position:relative;z-index:3;display:flex;gap:6px;justify-content:flex-end;margin:0 0 18px;padding:0}
 body.missao .mc-lang a{border:1px solid #c9d8da;border-radius:999px;padding:6px 14px;font-size:12.5px;font-weight:700;color:var(--inst);background:#fff;transition:.2s ease}
 body.missao .mc-lang a:hover{background:var(--inst-soft)}
 body.missao .mc-lang a[aria-current="true"]{background:var(--inst);color:#fff;border-color:var(--inst)}
