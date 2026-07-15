@@ -61,6 +61,16 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://concurseirapcd.com.br/missao-china-2026-en</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://concurseirapcd.com.br/missao-china-2026-zh</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://concurseirapcd.com.br/sobre</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
