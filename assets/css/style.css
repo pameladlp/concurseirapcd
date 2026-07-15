@@ -2240,23 +2240,26 @@ h1, h2, h3, h4, h5 {
 .decor-branch{ background:url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%20120%20300'%20fill%3D'none'%20stroke%3D'%236E8F7D'%20stroke-width%3D'1.5'%20stroke-linecap%3D'round'%3E%3Cpath%20d%3D'M62%20298C54%20250%2068%20208%2060%20158C54%20118%2066%2066%2070%2012'%2F%3E%3Cellipse%20cx%3D'42'%20cy%3D'150'%20rx%3D'17'%20ry%3D'7.5'%20transform%3D'rotate(-34%2042%20150)'%2F%3E%3Cellipse%20cx%3D'82'%20cy%3D'132'%20rx%3D'17'%20ry%3D'7.5'%20transform%3D'rotate(34%2082%20132)'%2F%3E%3Cellipse%20cx%3D'44'%20cy%3D'112'%20rx%3D'16'%20ry%3D'7'%20transform%3D'rotate(-31%2044%20112)'%2F%3E%3Cellipse%20cx%3D'84'%20cy%3D'96'%20rx%3D'16'%20ry%3D'7'%20transform%3D'rotate(35%2084%2096)'%2F%3E%3Cellipse%20cx%3D'48'%20cy%3D'76'%20rx%3D'14'%20ry%3D'6.5'%20transform%3D'rotate(-29%2048%2076)'%2F%3E%3Cellipse%20cx%3D'83'%20cy%3D'60'%20rx%3D'13'%20ry%3D'6'%20transform%3D'rotate(37%2083%2060)'%2F%3E%3Cellipse%20cx%3D'56'%20cy%3D'42'%20rx%3D'12'%20ry%3D'6'%20transform%3D'rotate(-27%2056%2042)'%2F%3E%3Cellipse%20cx%3D'72'%20cy%3D'28'%20rx%3D'10'%20ry%3D'5'%20transform%3D'rotate(31%2072%2028)'%2F%3E%3Cellipse%20cx%3D'66'%20cy%3D'14'%20rx%3D'8'%20ry%3D'4'%20transform%3D'rotate(-20%2066%2014)'%2F%3E%3C%2Fsvg%3E") no-repeat center/contain; }
 .decor-branch-white{ background:url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%20120%20300'%20fill%3D'none'%20stroke%3D'%23ffffff'%20stroke-width%3D'1.5'%20stroke-linecap%3D'round'%3E%3Cpath%20d%3D'M62%20298C54%20250%2068%20208%2060%20158C54%20118%2066%2066%2070%2012'%2F%3E%3Cellipse%20cx%3D'42'%20cy%3D'150'%20rx%3D'17'%20ry%3D'7.5'%20transform%3D'rotate(-34%2042%20150)'%2F%3E%3Cellipse%20cx%3D'82'%20cy%3D'132'%20rx%3D'17'%20ry%3D'7.5'%20transform%3D'rotate(34%2082%20132)'%2F%3E%3Cellipse%20cx%3D'44'%20cy%3D'112'%20rx%3D'16'%20ry%3D'7'%20transform%3D'rotate(-31%2044%20112)'%2F%3E%3Cellipse%20cx%3D'84'%20cy%3D'96'%20rx%3D'16'%20ry%3D'7'%20transform%3D'rotate(35%2084%2096)'%2F%3E%3Cellipse%20cx%3D'48'%20cy%3D'76'%20rx%3D'14'%20ry%3D'6.5'%20transform%3D'rotate(-29%2048%2076)'%2F%3E%3Cellipse%20cx%3D'83'%20cy%3D'60'%20rx%3D'13'%20ry%3D'6'%20transform%3D'rotate(37%2083%2060)'%2F%3E%3Cellipse%20cx%3D'56'%20cy%3D'42'%20rx%3D'12'%20ry%3D'6'%20transform%3D'rotate(-27%2056%2042)'%2F%3E%3Cellipse%20cx%3D'72'%20cy%3D'28'%20rx%3D'10'%20ry%3D'5'%20transform%3D'rotate(31%2072%2028)'%2F%3E%3Cellipse%20cx%3D'66'%20cy%3D'14'%20rx%3D'8'%20ry%3D'4'%20transform%3D'rotate(-20%2066%2014)'%2F%3E%3C%2Fsvg%3E") no-repeat center/contain; }
 
-/* ─── Rodapé claro editorial (compartilhado) ─── */
-.hm-footer{background:#F2F4EE;color:#174C41;border-top:1px solid #D6DDD4;padding:44px 0 22px}
-.hm-footer p{color:#5F625F;font-size:14px}
-.hm-footer-grid{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:30px}
-.hm-footer-brand{font-family:var(--font-display);font-size:23px;color:#174C41}
-.hm-footer-col h4{display:inline-block;margin:0 0 8px;padding-bottom:4px;border-bottom:2px solid #C9A8B0;color:#174C41;font-family:var(--font-sans);font-size:14px}
-.hm-footer-col a{display:block;color:#174C41;text-decoration:none;margin:6px 0;font-size:14px}
-.hm-footer-col a:hover{color:#A95043}
+/* ─── Rodapé claro de uma linha (compartilhado) ─── */
+.hm-footer{background:#F2F4EE;color:#174C41;border-top:1px solid #D6DDD4;padding:26px 0 16px}
+.hm-footer-row{display:flex;align-items:center;justify-content:space-between;gap:14px 24px;flex-wrap:wrap}
+.hm-footer-brand-box{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.hm-footer-brand{font-family:var(--font-display);font-size:21px;color:#174C41}
+.hm-footer-links{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:flex-end}
+.hm-footer-links a{color:#174C41;text-decoration:none;font-size:14px;padding:4px 0}
+.hm-footer-links a:hover{color:#A95043}
 .hm-footer-insta{display:inline-flex;align-items:center;gap:7px;color:#174C41;text-decoration:none;font-size:14px}
 .hm-footer-insta:hover{color:#A95043}
 .hm-footer-insta svg{flex-shrink:0}
-.hm-copyright{margin-top:24px;padding-top:16px;border-top:1px solid #D6DDD4;font-size:13px;color:#6c6660}
+.hm-copyright{margin-top:16px;padding-top:12px;border-top:1px solid #D6DDD4;font-size:13px;color:#6c6660}
+@media(max-width:650px){
+  .hm-footer-row{justify-content:center;text-align:center}
+  .hm-footer-brand-box,.hm-footer-links{justify-content:center}
+  .hm-copyright{text-align:center}
+}
 
 /* ─── Foco visível global (WCAG) ─── */
 :focus-visible{outline:3px solid rgba(169,80,67,.55);outline-offset:4px}
-@media(max-width:980px){.hm-footer-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:650px){.hm-footer-grid{grid-template-columns:1fr}}
 
 /* ─── Header fixo ao rolar: overflow do page-shell quebrava o sticky ─── */
 .page-shell{overflow:visible !important}
