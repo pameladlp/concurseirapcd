@@ -30,7 +30,7 @@
   --primary-fg:    #FFFFFF;
   --primary-soft:  #DCEAE1;
 
-  --accent:        #C96752;
+  --accent:        #A95043;
   --accent-fg:     #FFFFFF;
   --accent-soft:   #F0DAD0;
 
@@ -43,7 +43,7 @@
   --amarelo-manteiga: #FAF3DF;
   --rosa-antigo:   #D8A6A4;
   --verde-hover:   #23695B;
-  --terracota-hover: #B8564C;
+  --terracota-hover: #93453A;
   --texto-secundario: #5F625F;
   --border-warm:   #DDD8D1;
   --sombra-suave:  0 12px 30px rgba(43, 55, 49, 0.07);
@@ -51,7 +51,7 @@
   --muted:         #F0EEE8;
   --muted-fg:      #5F6360;
   --border:        #E5E1D8;
-  --ring:          #C96752;
+  --ring:          #A95043;
 
   --font-display: 'DM Serif Display', ui-serif, Georgia, serif;
   --font-sans:    'Inter', ui-sans-serif, system-ui, sans-serif;
@@ -191,7 +191,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .main-nav a:not(.header-cta):hover, .main-nav a:not(.header-cta)[aria-current="page"] {
-  background-color: transparent; color: #C96752;
+  background-color: transparent; color: #A95043;
 }
 
 .nav-search {
@@ -2164,7 +2164,7 @@ h1, h2, h3, h4, h5 {
 .logo-author { color: oklch(0.38 0.022 60); }
 .main-nav a { color: oklch(0.22 0.025 50); }
 .main-nav a:not(.header-cta):hover,
-.main-nav a:not(.header-cta)[aria-current="page"] { color: #C96752; }
+.main-nav a:not(.header-cta)[aria-current="page"] { color: #A95043; }
 
 /* ═══════════════════════════════════════════════════════════════
    ESTILO 2026 — refinamentos visuais (paleta quente + serifada)
@@ -2214,7 +2214,7 @@ h1, h2, h3, h4, h5 {
 }
 .main-nav a:not(.header-cta):hover::after,
 .main-nav a:not(.header-cta)[aria-current="page"]::after{ right:0; }
-.main-nav a:not(.header-cta)[aria-current="page"]{ color:#C96752; }
+.main-nav a:not(.header-cta)[aria-current="page"]{ color:#A95043; }
 .main-nav a.header-cta[aria-current="page"]{ background:var(--primary); color:#fff; }
 
 /* ─── Sistema de decoração botânica / orgânica (global) ─── */
@@ -2243,14 +2243,14 @@ h1, h2, h3, h4, h5 {
 .hm-footer-brand{font-family:var(--font-display);font-size:23px;color:#174C41}
 .hm-footer-col h4{display:inline-block;margin:0 0 8px;padding-bottom:4px;border-bottom:2px solid #C9A8B0;color:#174C41;font-family:var(--font-sans);font-size:14px}
 .hm-footer-col a{display:block;color:#174C41;text-decoration:none;margin:6px 0;font-size:14px}
-.hm-footer-col a:hover{color:#C96752}
+.hm-footer-col a:hover{color:#A95043}
 .hm-footer-insta{display:inline-flex;align-items:center;gap:7px;color:#174C41;text-decoration:none;font-size:14px}
-.hm-footer-insta:hover{color:#C96752}
+.hm-footer-insta:hover{color:#A95043}
 .hm-footer-insta svg{flex-shrink:0}
 .hm-copyright{margin-top:24px;padding-top:16px;border-top:1px solid #D6DDD4;font-size:13px;color:#6c6660}
 
 /* ─── Foco visível global (WCAG) ─── */
-:focus-visible{outline:3px solid rgba(201,103,91,.55);outline-offset:4px}
+:focus-visible{outline:3px solid rgba(169,80,67,.55);outline-offset:4px}
 @media(max-width:980px){.hm-footer-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:650px){.hm-footer-grid{grid-template-columns:1fr}}
 
