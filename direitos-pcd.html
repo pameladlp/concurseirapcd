@@ -96,8 +96,8 @@ body.direitos .dp-hero h1 .accent{color:#A95043}
 body.direitos .dp-hero p{max-width:640px;margin:0 0 22px;color:#5F625F;font-size:15px}
 body.direitos .dp-hero-actions{display:flex;flex-wrap:wrap;gap:12px}
 body.direitos .dp-hero-art{position:relative;min-height:320px;display:grid;place-items:center}
-body.direitos .shape{position:absolute;width:330px;height:330px;border-radius:48% 52% 55% 45%/45% 48% 52% 55%;background:linear-gradient(145deg,rgba(233,198,181,.75),rgba(233,198,181,.25));transform:rotate(-7deg) translate(-30px,14px)}
-body.direitos .shape.green{width:190px;height:190px;right:-10px;bottom:-14px;background:rgba(110,143,125,.28);transform:rotate(14deg)}
+body.direitos .shape{position:absolute;width:330px;height:330px;border-radius:48% 52% 55% 45%/45% 48% 52% 55%;background:rgba(233,198,181,.42);transform:rotate(-7deg) translate(-30px,14px)}
+body.direitos .shape.green{display:none}
 body.direitos .hero-photo{position:relative;z-index:2;width:min(280px,80%);height:auto;border-radius:16px;border:1px solid #e7ddd5;background:#fff;padding:6px;box-shadow:0 20px 45px rgba(23,76,65,.16);transform:rotate(-2deg)}
 
 /* SEÇÕES */
@@ -108,13 +108,7 @@ body.direitos .section-head p{margin:0;color:#5F625F;font-size:15px}
 
 /* TEMAS */
 body.direitos .topics-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-body.direitos .topic-card{position:relative;padding:24px;border:1px solid #e7ddd5;border-radius:18px;background:#fffdfa;box-shadow:0 12px 32px rgba(23,76,65,.06);text-decoration:none;transition:.2s ease;display:block}
-body.direitos .card-conceito{background:#F9EEE7;border-color:#EBCFC1}
-body.direitos .card-documentos{background:#EDF3F7;border-color:#CDDDE6}
-body.direitos .card-beneficios{background:#FAF5E6;border-color:#E8DDB9}
-body.direitos .card-trabalho{background:#EDF4EF;border-color:#CFE0D5}
-body.direitos .card-educacao{background:#F2EFF7;border-color:#DCD4E8}
-body.direitos .card-concursos{background:#F7EDEF;border-color:#E5D1D7}
+body.direitos .topic-card{position:relative;padding:24px;border:1px solid #DDD8D1;border-radius:18px;background:#FFFCF8;box-shadow:0 12px 32px rgba(23,76,65,.06);text-decoration:none;transition:.2s ease;display:block}
 body.direitos .topic-card:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(23,76,65,.10)}
 body.direitos .topic-number{display:block;margin-bottom:16px;color:var(--accent);font-size:.72rem;font-weight:800;letter-spacing:.1em}
 body.direitos .topic-card:nth-child(even) .topic-number{color:#6e8f7d}
@@ -133,7 +127,7 @@ body.direitos .checklist li::before{content:"";position:absolute;left:0;top:.42e
 
 /* ARTIGOS */
 body.direitos .articles-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
-body.direitos .article-card{display:flex;flex-direction:column;padding:24px;border:1px solid #D6E3DA;border-radius:18px;background:#E8F0EA;box-shadow:0 12px 32px rgba(23,76,65,.06);transition:.2s ease}
+body.direitos .article-card{display:flex;flex-direction:column;padding:24px;border:1px solid #DDD8D1;border-radius:18px;background:#FFFCF8;box-shadow:0 12px 32px rgba(23,76,65,.06);transition:.2s ease}
 body.direitos .article-card:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(23,76,65,.10)}
 body.direitos .article-meta{display:flex;gap:12px;align-items:center;margin-bottom:14px;color:#777;font-size:.78rem}
 body.direitos .article-category{padding:7px 12px;border-radius:999px;background:#e9f1ec;color:var(--primary);font-weight:700;font-size:.75rem}
@@ -234,32 +228,32 @@ body.direitos a:focus-visible, body.direitos button:focus-visible{outline:3px so
       <p>Cada cartão leva a um conteúdo específico, sem concentrar tudo em uma única tela.</p>
     </div>
     <div class="topics-grid">
-      <a class="topic-card card-conceito" href="/direitos-pcd/quem-e-pcd">
+      <a class="topic-card" href="/direitos-pcd/quem-e-pcd">
         <span class="topic-number">01 · CONCEITO</span>
         <h3>Quem é considerado PCD</h3>
         <p>Impedimentos de longo prazo, barreiras e avaliação biopsicossocial.</p>
       </a>
-      <a class="topic-card card-documentos" href="/direitos-pcd/documentos-laudos">
+      <a class="topic-card" href="/direitos-pcd/documentos-laudos">
         <span class="topic-number">02 · DOCUMENTOS</span>
         <h3>Laudos e relatórios</h3>
         <p>Como organizar documentos médicos, funcionais e pessoais.</p>
       </a>
-      <a class="topic-card card-beneficios" href="/direitos-pcd/bpc-loas">
+      <a class="topic-card" href="/direitos-pcd/bpc-loas">
         <span class="topic-number">03 · BENEFÍCIOS</span>
         <h3>BPC e proteção social</h3>
         <p>CadÚnico, renda, perícia e preparação para o requerimento.</p>
       </a>
-      <a class="topic-card card-trabalho" href="/direitos-pcd/trabalho-cotas-adaptacao">
+      <a class="topic-card" href="/direitos-pcd/trabalho-cotas-adaptacao">
         <span class="topic-number">04 · TRABALHO</span>
         <h3>Cotas e adaptação razoável</h3>
         <p>Inclusão profissional, acessibilidade e registro de solicitações.</p>
       </a>
-      <a class="topic-card card-educacao" href="/direitos-pcd/educacao-acessivel">
+      <a class="topic-card" href="/direitos-pcd/educacao-acessivel">
         <span class="topic-number">05 · EDUCAÇÃO</span>
         <h3>Educação acessível</h3>
         <p>Recursos de apoio, tempo adicional e tecnologias assistivas.</p>
       </a>
-      <a class="topic-card card-concursos" href="/direitos-pcd/concursos-publicos">
+      <a class="topic-card" href="/direitos-pcd/concursos-publicos">
         <span class="topic-number">06 · CONCURSOS</span>
         <h3>Concursos públicos</h3>
         <p>Reserva de vagas, laudo, atendimento especial e recursos.</p>
