@@ -100,6 +100,20 @@ body.direitos .shape{position:absolute;width:330px;height:330px;border-radius:48
 body.direitos .shape.green{display:none}
 body.direitos .hero-photo{position:relative;z-index:2;width:min(280px,80%);height:auto;border-radius:16px;border:1px solid #e7ddd5;background:#fff;padding:6px;box-shadow:0 20px 45px rgba(23,76,65,.16);transform:rotate(-2deg)}
 
+/* BUSCA POR ASSUNTO */
+body.direitos .dp-busca{padding:26px 0 0}
+body.direitos .dp-busca-box{display:flex;align-items:center;gap:10px;max-width:640px;margin:0 auto;padding:6px 8px 6px 18px;border:1px solid #DDD8D1;border-radius:999px;background:#fff;box-shadow:0 10px 26px rgba(23,76,65,.06)}
+body.direitos .dp-busca-box:focus-within{border-color:var(--primary);box-shadow:0 0 0 3px rgba(23,76,65,.12)}
+body.direitos .dp-busca-box svg{flex:0 0 auto;color:#8a8d8a}
+body.direitos .dp-busca-box input{flex:1;min-width:0;border:0;outline:0;background:transparent;font:inherit;font-size:15px;color:#31413C;padding:9px 0}
+body.direitos .dp-busca-limpar{flex:0 0 auto;border:0;background:#f0eee8;border-radius:999px;padding:9px 16px;font-size:13px;font-weight:700;color:var(--primary);cursor:pointer;transition:.2s ease}
+body.direitos .dp-busca-limpar:hover{background:#e9f1ec}
+body.direitos .dp-busca-limpar[hidden]{display:none}
+body.direitos .dp-busca-status{max-width:640px;margin:10px auto 0;text-align:center;font-size:13px;color:#5F625F}
+body.direitos .dp-busca-vazio{max-width:640px;margin:14px auto 0;padding:16px 20px;border:1px solid #ead9d2;border-radius:14px;background:#fff9f6;text-align:center;font-size:14px;color:#685952}
+body.direitos .card-filtrado{display:none !important}
+body.direitos .secao-filtrada{display:none !important}
+
 /* SEÇÕES */
 body.direitos main section{padding:54px 0}
 body.direitos .section-head{max-width:720px;margin:0 auto 30px;text-align:center}
@@ -215,6 +229,22 @@ body.direitos a:focus-visible, body.direitos button:focus-visible{outline:3px so
       <div class="shape"></div>
       <div class="shape green"></div>
       <img class="hero-photo" src="assets/images/insta/embarque-pcd.jpeg" alt="Etiqueta de embarque aéreo com o símbolo internacional de acessibilidade" width="280" height="287"/>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BUSCA POR ASSUNTO ═══ -->
+<section class="dp-busca" aria-label="Busca por assunto">
+  <div class="container">
+    <div class="dp-busca-box">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <label class="sr-only" for="busca-assunto" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Buscar conteúdos por assunto</label>
+      <input id="busca-assunto" type="search" placeholder="Busque por assunto: BPC, cotas, aposentadoria, laudo..." autocomplete="off"/>
+      <button class="dp-busca-limpar" id="busca-limpar" type="button" hidden>Limpar</button>
+    </div>
+    <p class="dp-busca-status" id="busca-status" role="status" aria-live="polite"></p>
+    <div class="dp-busca-vazio" id="busca-vazio" hidden>
+      Nenhum conteúdo encontrado. Tente outra palavra, como benefício, trabalho, educação ou concurso.
     </div>
   </div>
 </section>
@@ -362,5 +392,64 @@ body.direitos a:focus-visible, body.direitos button:focus-visible{outline:3px so
 </div><!-- /page-shell -->
 
 <script src="assets/js/script.js?v=2"></script>
+<script>
+(function(){
+  var input = document.getElementById('busca-assunto');
+  var limpar = document.getElementById('busca-limpar');
+  var status = document.getElementById('busca-status');
+  var vazio = document.getElementById('busca-vazio');
+  if(!input) return;
+
+  var normaliza = function(t){
+    return (t||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+  };
+
+  var cards = [].slice.call(document.querySelectorAll('.topic-card, .article-card')).map(function(el){
+    return { el: el, texto: normaliza(el.textContent) };
+  });
+  var secoes = [
+    { el: document.getElementById('temas'), sel: '.topic-card' },
+    { el: document.getElementById('artigos'), sel: '.article-card' }
+  ];
+  var destaque = document.querySelector('.highlight');
+
+  function filtra(){
+    var q = normaliza(input.value.trim());
+    limpar.hidden = !q;
+
+    if(!q){
+      cards.forEach(function(c){ c.el.classList.remove('card-filtrado'); });
+      secoes.forEach(function(s){ s.el && s.el.classList.remove('secao-filtrada'); });
+      if(destaque) destaque.classList.remove('secao-filtrada');
+      vazio.hidden = true;
+      status.textContent = '';
+      return;
+    }
+
+    var total = 0;
+    cards.forEach(function(c){
+      var mostra = c.texto.indexOf(q) !== -1;
+      c.el.classList.toggle('card-filtrado', !mostra);
+      if(mostra) total++;
+    });
+
+    secoes.forEach(function(s){
+      if(!s.el) return;
+      var visiveis = s.el.querySelectorAll(s.sel + ':not(.card-filtrado)').length;
+      s.el.classList.toggle('secao-filtrada', visiveis === 0);
+    });
+    if(destaque) destaque.classList.add('secao-filtrada');
+
+    vazio.hidden = total > 0;
+    status.textContent = total > 0
+      ? total + (total === 1 ? ' conteúdo encontrado' : ' conteúdos encontrados')
+      : '';
+  }
+
+  input.addEventListener('input', filtra);
+  input.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ input.value=''; filtra(); } });
+  limpar.addEventListener('click', function(){ input.value=''; filtra(); input.focus(); });
+})();
+</script>
 </body>
 </html>
