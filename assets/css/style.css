@@ -190,8 +190,8 @@ h1, h2, h3, h4, h5 {
   white-space: nowrap;
 }
 
-.main-nav a:hover, .main-nav a[aria-current="page"] {
-  background-color: var(--primary-soft); color: var(--primary);
+.main-nav a:not(.header-cta):hover, .main-nav a:not(.header-cta)[aria-current="page"] {
+  background-color: transparent; color: #C96752;
 }
 
 .nav-search {
@@ -2214,7 +2214,8 @@ h1, h2, h3, h4, h5 {
 }
 .main-nav a:not(.header-cta):hover::after,
 .main-nav a:not(.header-cta)[aria-current="page"]::after{ right:0; }
-.main-nav a[aria-current="page"]{ color:#C96752; }
+.main-nav a:not(.header-cta)[aria-current="page"]{ color:#C96752; }
+.main-nav a.header-cta[aria-current="page"]{ background:var(--primary); color:#fff; }
 
 /* ─── Sistema de decoração botânica / orgânica (global) ─── */
 :root{ --sage:#6E8F7D; --peach:#E9C6B5; }
