@@ -832,7 +832,9 @@ h1, h2, h3, h4, h5 {
   .sidebar { position: static; }
 }
 
-@media (max-width: 768px) {
+/* Menu colapsa em 900px: com 7 itens + busca + CTA, o nav inline só cabe
+   a partir de ~880px de viewport (medido); abaixo disso vira hambúrguer */
+@media (max-width: 900px) {
   .nav-toggle { display: flex; }
   .main-nav {
     display: none; position: absolute;
@@ -844,7 +846,9 @@ h1, h2, h3, h4, h5 {
   }
   .main-nav.open { display: flex; }
   .main-nav a { padding: 0.625rem 0.875rem; font-size: 0.9rem; }
+}
 
+@media (max-width: 768px) {
   .section { padding-block: 48px; }
   .cards.three, .cards.two { grid-template-columns: 1fr; }
   .feature-grid { grid-template-columns: 1fr; }
