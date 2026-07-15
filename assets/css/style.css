@@ -174,7 +174,7 @@ h1, h2, h3, h4, h5 {
 
 .logo-text {
   font-family: var(--font-display); font-size: 1rem;
-  font-weight: 500; color: var(--foreground); letter-spacing: -0.01em;
+  font-weight: 500; color: var(--primary); letter-spacing: -0.01em;
 }
 
 .logo-author { font-size: 0.68rem; color: var(--muted-fg); font-weight: 500; }
@@ -2172,7 +2172,7 @@ h1, h2, h3, h4, h5 {
 
 /* Títulos de hero em verde escuro, como no mockup */
 .hero-content h1,
-.page-title-copy h1 { color: var(--primary); }
+.page-title-copy h1 { color: #31413C; }
 
 /* Foto de perfil em arco (topo arredondado) */
 .page-title-photo {
