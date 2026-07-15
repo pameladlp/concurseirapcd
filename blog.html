@@ -64,40 +64,50 @@ body.blog .bl-search input{border:0;outline:0;min-width:0;flex:1;padding:8px 2px
 body.blog .bl-search input::placeholder{color:#9b968e}
 body.blog .bl-search input:focus-visible{outline:2px solid var(--accent);border-radius:6px}
 
-/* DESTAQUE: para ler com calma */
+/* CONVERSAS: cards de caderno */
 body.blog .bl-conversas{position:relative;background:#FBF8F3;padding:48px 0 56px}
 body.blog .rotulo-calma{display:inline-block;font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;font-weight:800;color:var(--accent);margin-bottom:16px}
-body.blog .bl-destaque{border:1px solid #E5E1D8;border-radius:18px;background:#F7F3ED;padding:34px 36px;margin-bottom:8px}
-body.blog .bl-destaque .post-meta{margin-bottom:12px}
-body.blog .bl-destaque h3{font-size:clamp(22px,2.6vw,30px);line-height:1.15;margin:0 0 12px;max-width:600px}
-body.blog .bl-destaque p.resumo{font-size:15.5px;-webkit-line-clamp:3;max-width:600px}
+body.blog #postsGrid{display:grid;gap:18px}
+body.blog .post-card{position:relative;overflow:hidden;border:1px solid #E9E3DA;border-radius:18px;background:#FFFDFA;padding:30px 32px;box-shadow:0 6px 18px rgba(43,55,49,.04);transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}
+body.blog .post-card:hover{transform:translateY(-2px);border-color:#DCD4C8;box-shadow:0 10px 24px rgba(43,55,49,.06)}
+body.blog .bl-destaque{background:#F7F3ED;border-color:#E5DDCF}
+body.blog .bl-destaque h3{font-size:clamp(22px,2.6vw,30px);line-height:1.15;max-width:600px}
+body.blog .bl-destaque p.resumo{font-size:15.5px;max-width:600px}
 
-/* LISTA EDITORIAL */
-body.blog .post-card{position:relative;padding:30px 4px;border-top:1px solid #E5E1D8;background:transparent;display:block}
-body.blog .post-card:first-of-type{border-top:0}
-body.blog .bl-destaque.post-card{border-top:0;padding:34px 36px}
-body.blog .post-meta{display:flex;gap:8px 14px;align-items:center;flex-wrap:wrap;margin-bottom:10px}
-body.blog .category{font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--primary)}
+/* etiqueta delicada */
+body.blog .post-meta{display:flex;gap:8px 14px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+body.blog .category{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;background:#F4EEE5;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--primary)}
+body.blog .category svg{flex-shrink:0;color:#A95043}
 body.blog .post-date,body.blog .read-time{color:#8a857e;font-size:.82rem}
 body.blog .post-date::after{content:"·";margin-left:12px;color:#c9bfb4}
-body.blog .post-card h3{font-size:1.4rem;line-height:1.2;margin:0 0 8px;color:#31413C;font-weight:400;max-width:600px}
+
+body.blog .post-card h3{font-size:1.45rem;line-height:1.25;margin:0 0 10px;color:#31413C;font-weight:400;max-width:600px}
 body.blog .post-card h3 a{text-decoration:none}
 body.blog .post-card h3 a:hover{color:#A95043}
-body.blog .post-card p.resumo{display:-webkit-box;overflow:hidden;-webkit-line-clamp:3;-webkit-box-orient:vertical;font-size:.9rem;line-height:1.65;color:#5F625F;margin:0 0 12px;max-width:560px}
-body.blog .read-more{font-size:.875rem;font-weight:700;color:var(--primary);text-decoration:none}
-body.blog .read-more::after{content:" →"}
-body.blog .read-more:hover{color:#A95043}
-body.blog .post-com-foto{display:grid;grid-template-columns:1fr 130px;gap:26px;align-items:center}
-body.blog .post-foto{width:130px;height:130px;object-fit:cover;object-position:center;border-radius:12px;border:1px solid #E5E1D8;background:#fff;padding:4px}
-body.blog .post-frase{font-family:var(--font-display);font-style:italic;font-size:1.05rem;color:#4c584f;margin:0 0 12px;max-width:560px;line-height:1.55}
+body.blog .post-card p.resumo{display:-webkit-box;overflow:hidden;-webkit-line-clamp:3;-webkit-box-orient:vertical;font-size:.9rem;line-height:1.7;color:#5F625F;margin:0 0 14px;max-width:560px}
+body.blog .read-more{display:inline-flex;align-items:center;gap:6px;font-size:.875rem;font-weight:700;color:var(--primary);text-decoration:none;border-bottom:1px solid rgba(23,76,65,.25);padding-bottom:2px}
+body.blog .read-more .seta{transition:transform .22s ease}
+body.blog .read-more:hover{color:#A95043;border-bottom-color:#A95043}
+body.blog .read-more:hover .seta{transform:translateX(3px)}
+
+/* detalhes afetivos */
+body.blog .canto-folha{position:absolute;right:14px;bottom:6px;width:74px;opacity:.22;pointer-events:none}
+body.blog .assinatura-card{display:block;margin-top:16px;font-family:var(--font-display);font-style:italic;font-size:1rem;color:#A95043}
+
+/* MODELO B: texto + polaroid de rotina */
+body.blog .post-com-foto{display:grid;grid-template-columns:1fr 160px;gap:28px;align-items:center}
+body.blog .polaroid{justify-self:end;background:#fff;border:1px solid #E5E1D8;padding:8px 8px 10px;box-shadow:0 6px 16px rgba(43,55,49,.08);transform:rotate(2deg)}
+body.blog .polaroid img{display:block;width:140px;height:130px;object-fit:cover;object-position:center}
+body.blog .polaroid figcaption{margin-top:8px;font-family:var(--font-display);font-style:italic;font-size:.78rem;color:#8a857e;text-align:center}
+
+/* MODELO C: texto + bilhete rosado */
+body.blog .post-com-bilhete{display:grid;grid-template-columns:1fr 230px;gap:28px;align-items:center}
+body.blog .bilhete{position:relative;background:#F9EFEF;border:1px solid #EBD9D7;border-radius:3px 16px 16px 16px;padding:26px 20px 16px;transform:rotate(1.4deg)}
+body.blog .bilhete::before{content:"";position:absolute;top:-9px;left:50%;transform:translateX(-50%) rotate(-2deg);width:64px;height:18px;background:rgba(216,166,164,.4);border-radius:2px}
+body.blog .bilhete p{margin:0 0 8px;font-family:var(--font-display);font-style:italic;font-size:1rem;line-height:1.5;color:#31413C}
+body.blog .bilhete cite{font-style:normal;font-size:.8rem;color:#A95043}
 body.blog .hidden{display:none!important}
 body.blog .no-results{display:none;padding:20px;border:1px dashed #d9d4cd;border-radius:14px;color:#666;text-align:center;margin-top:20px}
-
-/* FRASE DA AUTORA ENTRE OS TEXTOS */
-body.blog .bl-frase{position:relative;padding:34px 4px 34px 54px;border-top:1px solid #E5E1D8;margin:0}
-body.blog .bl-frase::before{content:"\201C";position:absolute;left:0;top:18px;font-family:var(--font-display);font-size:56px;line-height:1;color:#D8A6A4}
-body.blog .bl-frase p{margin:0 0 8px;font-family:var(--font-display);font-style:italic;font-size:1.25rem;line-height:1.5;color:#31413C;max-width:540px}
-body.blog .bl-frase cite{font-style:normal;font-size:.85rem;color:#8a857e}
 
 /* UMA CARTA DE VEZ EM QUANDO */
 body.blog .bl-newsletter{margin:0 0 26px;padding:44px 0;background:#F9EFEF;border-top:1px solid #E8D3D1;border-bottom:1px solid #E8D3D1;color:#31413C;position:relative;overflow:hidden}
@@ -133,11 +143,11 @@ body.blog a:focus-visible, body.blog button:focus-visible{outline:3px solid var(
   body.blog .container-leitura{width:min(100% - 40px,720px)}
   body.blog .bl-hero{padding:40px 0 32px}
   body.blog .bl-hero h1{font-size:30px}
-  body.blog .bl-destaque{padding:24px 20px}
-  body.blog .bl-destaque.post-card{padding:24px 20px}
-  body.blog .post-com-foto{grid-template-columns:1fr;gap:14px}
-  body.blog .post-foto{width:110px;height:110px}
-  body.blog .bl-frase{padding-left:44px}
+  body.blog .post-card{padding:22px 20px}
+  body.blog .post-com-foto,body.blog .post-com-bilhete{grid-template-columns:1fr;gap:18px}
+  body.blog .polaroid{justify-self:center;transform:rotate(1deg)}
+  body.blog .bilhete{transform:rotate(0deg);margin-top:4px}
+  body.blog .canto-folha{display:none}
   body.blog .bl-newsletter-form{flex-direction:column}
   body.blog .bl-newsletter-form input{padding:13px}
   body.blog .bl-filter{font-size:12.5px;padding:8px 11px}
@@ -232,7 +242,8 @@ body.blog a:focus-visible, body.blog button:focus-visible{outline:3px solid var(
         <div class="post-meta"><span class="category">Estudos possíveis</span><time class="post-date" datetime="2026-06-23">23 de junho de 2026</time><span class="read-time">4 min de leitura</span></div>
         <h3><a href="/blog/revisao">Como revisar para concursos sem esquecer tudo</a></h3>
         <p class="resumo">Revisar não é reler o material inteiro até cansar. É reencontrar a informação no momento certo e corrigir rotas antes que o esquecimento vire desespero.</p>
-        <a class="read-more" href="/blog/revisao">Continuar lendo</a>
+        <a class="read-more" href="/blog/revisao">Continuar lendo <span class="seta" aria-hidden="true">→</span></a>
+        <svg class="canto-folha" viewBox="0 0 120 260" aria-hidden="true"><path d="M55 250C65 170 63 90 82 14M61 185C35 170 20 145 15 116M65 150C91 137 103 114 107 87M70 111C43 94 31 70 29 43M76 77C97 64 105 43 106 20" fill="none" stroke="#A95043" stroke-width="2"/></svg>
       </article>
 
       <article class="post-card" data-category="organizacao" data-search="como montar uma rotina realista para concursos organização planejamento trabalho saúde sono obrigações">
@@ -241,37 +252,43 @@ body.blog a:focus-visible, body.blog button:focus-visible{outline:3px solid var(
             <div class="post-meta"><span class="category">Organização da vida</span><time class="post-date" datetime="2026-06-23">23 de junho de 2026</time><span class="read-time">5 min de leitura</span></div>
             <h3><a href="/blog/rotina">Como montar uma rotina realista para concursos</a></h3>
             <p class="resumo">Uma rotina realista começa pelo que existe, não pelo que você gostaria que existisse. Antes de distribuir matérias, olhe para trabalho, saúde, sono e obrigações.</p>
-            <a class="read-more" href="/blog/rotina">Continuar lendo</a>
+            <a class="read-more" href="/blog/rotina">Continuar lendo <span class="seta" aria-hidden="true">→</span></a>
           </div>
-          <img class="post-foto" src="assets/images/insta/agenda-semanal.jpeg" alt="Agenda semanal da Pâmela escrita à mão" width="130" height="130" loading="lazy"/>
+          <figure class="polaroid">
+            <img src="assets/images/insta/agenda-semanal.jpeg" alt="Agenda semanal da Pâmela escrita à mão" width="140" height="130" loading="lazy"/>
+            <figcaption>minha agenda real</figcaption>
+          </figure>
         </div>
       </article>
 
       <article class="post-card" data-category="dicas" data-search="o que eu faria diferente se começasse hoje questões revisão materiais adaptação estratégia">
-        <div class="post-meta"><span class="category">Coisas que aprendi</span><time class="post-date" datetime="2026-06-23">23 de junho de 2026</time><span class="read-time">3 min de leitura</span></div>
+        <div class="post-meta"><span class="category"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg>Coisas que aprendi</span><time class="post-date" datetime="2026-06-23">23 de junho de 2026</time><span class="read-time">3 min de leitura</span></div>
         <h3><a href="/blog/comecar">O que eu faria diferente se começasse hoje</a></h3>
         <p class="resumo">Compraria menos materiais, faria mais questões desde o início e levaria a revisão mais a sério. E teria menos vergonha de adaptar o método à minha realidade.</p>
-        <a class="read-more" href="/blog/comecar">Continuar lendo</a>
+        <a class="read-more" href="/blog/comecar">Continuar lendo <span class="seta" aria-hidden="true">→</span></a>
       </article>
 
-      <div class="bl-frase" id="fraseAutora">
-        <p>Nem toda fase precisa ser produtiva. Algumas só precisam ser atravessadas com gentileza.</p>
-        <cite>Pâmela</cite>
-      </div>
-
       <article class="post-card" data-category="desabafos" data-search="quando descansar parece culpa descanso exaustão memória concentração produtividade">
-        <div class="post-meta"><span class="category">Conversas sinceras</span><time class="post-date" datetime="2026-06-23">23 de junho de 2026</time><span class="read-time">3 min de leitura</span></div>
-        <h3><a href="/blog/descanso">Quando descansar parece culpa</a></h3>
-        <p class="post-frase">Quem estuda para concurso muitas vezes sente que descansar é perder tempo.</p>
-        <p class="resumo">Mas exaustão constante atrapalha memória, concentração e tomada de decisão. Este texto é sobre pausar sem se punir.</p>
-        <a class="read-more" href="/blog/descanso">Continuar lendo</a>
+        <div class="post-com-bilhete">
+          <div>
+            <div class="post-meta"><span class="category">Conversas sinceras</span><time class="post-date" datetime="2026-06-23">23 de junho de 2026</time><span class="read-time">3 min de leitura</span></div>
+            <h3><a href="/blog/descanso">Quando descansar parece culpa</a></h3>
+            <p class="resumo">Quem estuda para concurso muitas vezes sente que descansar é perder tempo. Este texto é sobre pausar sem se punir.</p>
+            <a class="read-more" href="/blog/descanso">Continuar lendo <span class="seta" aria-hidden="true">→</span></a>
+          </div>
+          <aside class="bilhete">
+            <p>Nem toda fase precisa ser produtiva. Algumas só precisam ser atravessadas com gentileza.</p>
+            <cite>Pâmela</cite>
+          </aside>
+        </div>
       </article>
 
       <article class="post-card" data-category="pcd" data-search="estudar sendo pcd adaptação estratégia deficiência acessibilidade tecnologia rotina">
         <div class="post-meta"><span class="category">Ser PCD</span><time class="post-date" datetime="2026-06-23">23 de junho de 2026</time><span class="read-time">4 min de leitura</span></div>
         <h3><a href="/blog/pcd">Estudar sendo PCD: adaptação também é estratégia</a></h3>
         <p class="resumo">Estudar sendo PCD pode exigir adaptações físicas, tecnológicas, emocionais e logísticas. Isso não torna a preparação menor. Torna mais consciente.</p>
-        <a class="read-more" href="/blog/pcd">Continuar lendo</a>
+        <a class="read-more" href="/blog/pcd">Continuar lendo <span class="seta" aria-hidden="true">→</span></a>
+        <span class="assinatura-card">Com carinho, Pâmela.</span>
       </article>
     </div>
 
