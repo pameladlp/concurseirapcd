@@ -100,17 +100,7 @@ body.direitos .shape{position:absolute;width:330px;height:330px;border-radius:48
 body.direitos .shape.green{display:none}
 body.direitos .hero-photo{position:relative;z-index:2;width:min(280px,80%);height:auto;border-radius:16px;border:1px solid #e7ddd5;background:#fff;padding:6px;box-shadow:0 20px 45px rgba(23,76,65,.16);transform:rotate(-2deg)}
 
-/* BUSCA POR ASSUNTO */
-body.direitos .dp-busca{padding:26px 0 0}
-body.direitos .dp-busca-box{display:flex;align-items:center;gap:10px;max-width:640px;margin:0 auto;padding:6px 8px 6px 18px;border:1px solid #DDD8D1;border-radius:999px;background:#fff;box-shadow:0 10px 26px rgba(23,76,65,.06)}
-body.direitos .dp-busca-box:focus-within{border-color:var(--primary);box-shadow:0 0 0 3px rgba(23,76,65,.12)}
-body.direitos .dp-busca-box svg{flex:0 0 auto;color:#8a8d8a}
-body.direitos .dp-busca-box input{flex:1;min-width:0;border:0;outline:0;background:transparent;font:inherit;font-size:15px;color:#31413C;padding:9px 0}
-body.direitos .dp-busca-limpar{flex:0 0 auto;border:0;background:#f0eee8;border-radius:999px;padding:9px 16px;font-size:13px;font-weight:700;color:var(--primary);cursor:pointer;transition:.2s ease}
-body.direitos .dp-busca-limpar:hover{background:#e9f1ec}
-body.direitos .dp-busca-limpar[hidden]{display:none}
-body.direitos .dp-busca-status{max-width:640px;margin:10px auto 0;text-align:center;font-size:13px;color:#5F625F}
-body.direitos .dp-busca-vazio{max-width:640px;margin:14px auto 0;padding:16px 20px;border:1px solid #ead9d2;border-radius:14px;background:#fff9f6;text-align:center;font-size:14px;color:#685952}
+/* BUSCA (cards de tema filtrados pela busca dos artigos) */
 body.direitos .card-filtrado{display:none !important}
 body.direitos .secao-filtrada{display:none !important}
 
@@ -139,20 +129,39 @@ body.direitos .checklist ul{list-style:none;margin:0;padding:0;display:grid;gap:
 body.direitos .checklist li{position:relative;padding-left:26px;font-size:.9rem}
 body.direitos .checklist li::before{content:"";position:absolute;left:0;top:.42em;width:11px;height:11px;border:2px solid #f1c2b5;border-radius:50%}
 
-/* ARTIGOS */
-body.direitos .articles-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
-body.direitos .article-card{display:flex;flex-direction:column;padding:24px;border:1px solid #DDD8D1;border-radius:18px;background:#FFFCF8;box-shadow:0 12px 32px rgba(23,76,65,.06);transition:.2s ease}
-body.direitos .article-card:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(23,76,65,.10)}
-body.direitos .article-meta{display:flex;gap:12px;align-items:center;margin-bottom:14px;color:#777;font-size:.78rem}
-body.direitos .article-category{padding:7px 12px;border-radius:999px;background:#e9f1ec;color:var(--primary);font-weight:700;font-size:.75rem}
-body.direitos .article-card:nth-child(odd) .article-category{background:#f4dfd8;color:#a75542}
-body.direitos .article-card h3{margin:0 0 10px;font-size:1.25rem;line-height:1.2;color:#31413C}
-body.direitos .article-card h3 a{text-decoration:none;color:inherit}
-body.direitos .article-card h3 a:hover{color:#A95043}
-body.direitos .article-card p{display:-webkit-box;margin:0 0 18px;overflow:hidden;color:#5F625F;font-size:.9rem;line-height:1.55;-webkit-line-clamp:3;-webkit-box-orient:vertical}
-body.direitos .article-link{margin-top:auto;color:var(--primary);font-size:.875rem;font-weight:700;text-decoration:none}
-body.direitos .article-link::after{content:" →"}
-body.direitos .article-link:hover{color:var(--accent)}
+/* ARTIGOS — organização estilo blog */
+body.direitos .dp-artigos-nav{display:flex;align-items:center;justify-content:space-between;gap:14px 22px;flex-wrap:wrap;margin-bottom:28px;padding:16px 0;border-top:1px solid #EFEAE2;border-bottom:1px solid #EFEAE2}
+body.direitos .dp-filters{display:flex;align-items:center;gap:4px 6px;flex-wrap:wrap}
+body.direitos .dp-filter{border:1px solid transparent;background:transparent;color:var(--primary);padding:8px 13px;border-radius:999px;cursor:pointer;font-size:13.5px;font-weight:600;transition:.2s;font-family:var(--font-sans);min-height:40px}
+body.direitos .dp-filter:hover{background:#F1EDE6}
+body.direitos .dp-filter.active{background:var(--primary);color:#FBF8F3}
+body.direitos .dp-search{display:flex;align-items:center;gap:8px;min-width:min(280px,100%);border-bottom:1px solid #DDD8D1;padding:4px 2px}
+body.direitos .dp-search svg{flex-shrink:0;color:#8a857e}
+body.direitos .dp-search input{border:0;outline:0;min-width:0;flex:1;padding:8px 2px;background:transparent;color:#31413C;font:inherit;font-size:14px}
+body.direitos .dp-search input::placeholder{color:#9b968e}
+body.direitos .dp-search input:focus-visible{outline:2px solid var(--accent);border-radius:6px}
+body.direitos .rotulo-calma{display:inline-block;font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;font-weight:800;color:var(--accent);margin-bottom:16px}
+body.direitos #artigosGrid{display:grid;gap:18px}
+body.direitos .post-card{position:relative;overflow:hidden;border:1px solid #E9E3DA;border-radius:18px;background:#FFFDFA;padding:30px 32px;box-shadow:0 6px 18px rgba(43,55,49,.04);transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}
+body.direitos .post-card:hover{transform:translateY(-2px);border-color:#DCD4C8;box-shadow:0 10px 24px rgba(43,55,49,.06)}
+body.direitos .dp-destaque{background:#F7F3ED;border-color:#E5DDCF}
+body.direitos .dp-destaque h3{font-size:clamp(22px,2.6vw,30px);line-height:1.15;max-width:640px}
+body.direitos .dp-destaque p.resumo{font-size:15.5px;max-width:640px}
+body.direitos .post-meta{display:flex;gap:8px 14px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+body.direitos .category{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;background:#F4EEE5;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--primary)}
+body.direitos .post-date,body.direitos .read-time{color:#8a857e;font-size:.82rem}
+body.direitos .post-date::after{content:"·";margin-left:12px;color:#c9bfb4}
+body.direitos .post-card h3{font-size:1.45rem;line-height:1.25;margin:0 0 10px;color:#31413C;font-weight:400;max-width:640px}
+body.direitos .post-card h3 a{text-decoration:none;color:inherit}
+body.direitos .post-card h3 a:hover{color:#A95043}
+body.direitos .post-card p.resumo{font-size:.9rem;line-height:1.7;color:#5F625F;margin:0 0 14px;max-width:600px}
+body.direitos .read-more{display:inline-flex;align-items:center;gap:6px;font-size:.875rem;font-weight:700;color:var(--primary);text-decoration:none;border-bottom:1px solid rgba(23,76,65,.25);padding-bottom:2px}
+body.direitos .read-more .seta{transition:transform .22s ease}
+body.direitos .read-more:hover{color:#A95043;border-bottom-color:#A95043}
+body.direitos .read-more:hover .seta{transform:translateX(3px)}
+body.direitos .canto-folha{position:absolute;right:14px;bottom:6px;width:74px;opacity:.22;pointer-events:none}
+body.direitos .post-card.hidden{display:none}
+body.direitos .sem-resultado{display:none;margin:14px 0 0;padding:16px 20px;border:1px solid #ead9d2;border-radius:14px;background:#fff9f6;text-align:center;font-size:14px;color:#685952}
 body.direitos .notice{margin-top:28px;padding:20px 22px;border:1px solid #ead9d2;border-radius:16px;background:#fff9f6;color:#685952;font-size:.86rem}
 
 /* Acessibilidade */
@@ -175,10 +184,11 @@ body.direitos a:focus-visible, body.direitos button:focus-visible{outline:3px so
   body.direitos .dp-hero-art{min-height:270px}
   body.direitos .shape{width:240px;height:240px}
   body.direitos main section{padding:44px 0}
-  body.direitos .topics-grid,body.direitos .articles-grid{grid-template-columns:1fr}
+  body.direitos .topics-grid{grid-template-columns:1fr}
   body.direitos .topic-card{min-height:auto}
   body.direitos .highlight{padding:44px 0}
-  body.direitos .article-card{min-height:auto}
+  body.direitos .post-card{padding:22px 20px}
+  body.direitos .dp-filter{font-size:12.5px;padding:8px 11px}
 }
 </style>
 </head>
@@ -230,22 +240,6 @@ body.direitos a:focus-visible, body.direitos button:focus-visible{outline:3px so
       <div class="shape"></div>
       <div class="shape green"></div>
       <img class="hero-photo" src="assets/images/insta/embarque-pcd.jpeg" alt="Etiqueta de embarque aéreo com o símbolo internacional de acessibilidade" width="280" height="287"/>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ BUSCA POR ASSUNTO ═══ -->
-<section class="dp-busca" aria-label="Busca por assunto">
-  <div class="container">
-    <div class="dp-busca-box">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <label class="sr-only" for="busca-assunto" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Buscar conteúdos por assunto</label>
-      <input id="busca-assunto" type="search" placeholder="Busque por assunto: BPC, cotas, aposentadoria, laudo..." autocomplete="off"/>
-      <button class="dp-busca-limpar" id="busca-limpar" type="button" hidden>Limpar</button>
-    </div>
-    <p class="dp-busca-status" id="busca-status" role="status" aria-live="polite"></p>
-    <div class="dp-busca-vazio" id="busca-vazio" hidden>
-      Nenhum conteúdo encontrado. Tente outra palavra, como benefício, trabalho, educação ou concurso.
     </div>
   </div>
 </section>
@@ -320,64 +314,74 @@ body.direitos a:focus-visible, body.direitos button:focus-visible{outline:3px so
     <div class="section-head">
       <div class="eyebrow-dp">Conteúdos em destaque</div>
       <h2>Aprofunde apenas o assunto que interessa agora.</h2>
-      <p>Textos separados por tema tornam a leitura mais leve.</p>
+      <p>Filtre por assunto ou procure um direito específico.</p>
     </div>
-    <div class="articles-grid">
-      <article class="article-card">
-        <div class="article-meta">
-          <span class="article-category">Diabetes Tipo 1</span>
-          <span>15 de julho de 2026</span>
-        </div>
+
+    <div class="dp-artigos-nav">
+      <div class="dp-filters" role="group" aria-label="Filtrar artigos por assunto">
+        <button class="dp-filter active" data-filter="all">Todos</button>
+        <button class="dp-filter" data-filter="tea">TEA</button>
+        <button class="dp-filter" data-filter="diabetes">Diabetes tipo 1</button>
+        <button class="dp-filter" data-filter="trabalho">Trabalho</button>
+        <button class="dp-filter" data-filter="previdencia">Previdência</button>
+        <button class="dp-filter" data-filter="saude">Saúde</button>
+        <button class="dp-filter" data-filter="tributario">Tributário</button>
+      </div>
+      <label class="dp-search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input id="busca-assunto" type="search" placeholder="Procure um direito ou assunto…" aria-label="Procurar um direito ou assunto" autocomplete="off">
+      </label>
+    </div>
+
+    <span class="rotulo-calma">Para conhecer seus direitos</span>
+
+    <div id="artigosGrid">
+      <article class="post-card dp-destaque" data-category="diabetes" data-search="diabetes tipo 1 dm1 insulina sus escola trabalho concursos bpc lei 15.439 bomba de insulina">
+        <div class="post-meta"><span class="category">Diabetes tipo 1</span><time class="post-date" datetime="2026-07-15">15 de julho de 2026</time><span class="read-time">6 min de leitura</span></div>
         <h3><a href="/direitos-pcd/direitos-diabetes-tipo-1">Direitos da pessoa com diabetes tipo 1</a></h3>
-        <p>O que muda com a Lei 15.439/2026: insulina pelo SUS, escola, trabalho, concursos, BPC e a resposta para a pergunta "DM1 é PCD?".</p>
-        <a class="article-link" href="/direitos-pcd/direitos-diabetes-tipo-1">Ler artigo completo</a>
+        <p class="resumo">O que muda com a Lei 15.439/2026: insulina pelo SUS, escola, trabalho, concursos, BPC e a resposta para a pergunta "DM1 é PCD?".</p>
+        <a class="read-more" href="/direitos-pcd/direitos-diabetes-tipo-1">Continuar lendo <span class="seta" aria-hidden="true">→</span></a>
+        <svg class="canto-folha" viewBox="0 0 120 260" aria-hidden="true"><path d="M55 250C65 170 63 90 82 14M61 185C35 170 20 145 15 116M65 150C91 137 103 114 107 87M70 111C43 94 31 70 29 43M76 77C97 64 105 43 106 20" fill="none" stroke="#A95043" stroke-width="2"/></svg>
       </article>
-      <article class="article-card">
-        <div class="article-meta">
-          <span class="article-category">TEA</span>
-          <span>15 de julho de 2026</span>
-        </div>
+
+      <article class="post-card" data-category="tea" data-search="autismo tea cartilha ciptea berenice piana romeo mion bpc plano de saude escola cordao de girassol">
+        <div class="post-meta"><span class="category">TEA</span><time class="post-date" datetime="2026-07-15">15 de julho de 2026</time><span class="read-time">5 min de leitura</span></div>
         <h3><a href="/direitos-pcd/direitos-autismo-tea">Direitos da pessoa com autismo (TEA): o guia essencial</a></h3>
-        <p>Saúde, educação, trabalho, BPC, isenções e viagens: o resumo da cartilha gratuita, com a lei de cada direito.</p>
-        <a class="article-link" href="/direitos-pcd/direitos-autismo-tea">Ler artigo completo</a>
+        <p class="resumo">Saúde, educação, trabalho, BPC, isenções e viagens: o resumo da cartilha gratuita, com a lei de cada direito.</p>
+        <a class="read-more" href="/direitos-pcd/direitos-autismo-tea">Continuar lendo <span class="seta" aria-hidden="true">→</span></a>
       </article>
-      <article class="article-card">
-        <div class="article-meta">
-          <span class="article-category">Trabalho</span>
-          <span>10 de maio de 2026</span>
-        </div>
+
+      <article class="post-card" data-category="trabalho" data-search="trabalho cotas adaptacao razoavel emprego empresa demissao rh vagas pcd">
+        <div class="post-meta"><span class="category">Trabalho</span><time class="post-date" datetime="2026-05-10">10 de maio de 2026</time><span class="read-time">3 min de leitura</span></div>
         <h3><a href="/direitos-pcd/trabalho-cotas-adaptacao">Direitos no trabalho: cotas e adaptação razoável</a></h3>
-        <p>Entenda a reserva de vagas, as adaptações no ambiente profissional e como registrar solicitações.</p>
-        <a class="article-link" href="/direitos-pcd/trabalho-cotas-adaptacao">Ler artigo completo</a>
+        <p class="resumo">Entenda a reserva de vagas, as adaptações no ambiente profissional e como registrar solicitações.</p>
+        <a class="read-more" href="/direitos-pcd/trabalho-cotas-adaptacao">Continuar lendo <span class="seta" aria-hidden="true">→</span></a>
       </article>
-      <article class="article-card">
-        <div class="article-meta">
-          <span class="article-category">Previdência</span>
-          <span>9 de maio de 2026</span>
-        </div>
+
+      <article class="post-card" data-category="previdencia" data-search="aposentadoria pcd lc 142 incapacidade permanente inss previdencia tempo de contribuicao">
+        <div class="post-meta"><span class="category">Previdência</span><time class="post-date" datetime="2026-05-09">9 de maio de 2026</time><span class="read-time">2 min de leitura</span></div>
         <h3><a href="/direitos-pcd/aposentadoria-pcd-lc142">Aposentadoria PCD e incapacidade permanente</a></h3>
-        <p>Veja as diferenças entre as modalidades e os critérios aplicáveis em cada situação.</p>
-        <a class="article-link" href="/direitos-pcd/aposentadoria-pcd-lc142">Ler artigo completo</a>
+        <p class="resumo">Veja as diferenças entre as modalidades e os critérios aplicáveis em cada situação.</p>
+        <a class="read-more" href="/direitos-pcd/aposentadoria-pcd-lc142">Continuar lendo <span class="seta" aria-hidden="true">→</span></a>
       </article>
-      <article class="article-card">
-        <div class="article-meta">
-          <span class="article-category">Saúde</span>
-          <span>7 de maio de 2026</span>
-        </div>
+
+      <article class="post-card" data-category="saude" data-search="tecnologia assistiva sus orteses proteses cadeira de rodas saude reabilitacao">
+        <div class="post-meta"><span class="category">Saúde</span><time class="post-date" datetime="2026-05-07">7 de maio de 2026</time><span class="read-time">1 min de leitura</span></div>
         <h3><a href="/direitos-pcd/tecnologia-assistiva-sus">Tecnologia assistiva pelo SUS</a></h3>
-        <p>Como solicitar órteses, próteses e outros recursos de acessibilidade na rede pública.</p>
-        <a class="article-link" href="/direitos-pcd/tecnologia-assistiva-sus">Ler artigo completo</a>
+        <p class="resumo">Como solicitar órteses, próteses e outros recursos de acessibilidade na rede pública.</p>
+        <a class="read-more" href="/direitos-pcd/tecnologia-assistiva-sus">Continuar lendo <span class="seta" aria-hidden="true">→</span></a>
       </article>
-      <article class="article-card">
-        <div class="article-meta">
-          <span class="article-category">Tributário</span>
-          <span>6 de maio de 2026</span>
-        </div>
+
+      <article class="post-card" data-category="tributario" data-search="isencao imposto de renda ir aposentadoria pensao molestia grave tributario">
+        <div class="post-meta"><span class="category">Tributário</span><time class="post-date" datetime="2026-05-06">6 de maio de 2026</time><span class="read-time">2 min de leitura</span></div>
         <h3><a href="/direitos-pcd/isencao-ir-pcd">Isenção de Imposto de Renda</a></h3>
-        <p>Quando a legislação prevê isenção sobre aposentadoria, reforma e pensão.</p>
-        <a class="article-link" href="/direitos-pcd/isencao-ir-pcd">Ler artigo completo</a>
+        <p class="resumo">Quando a legislação prevê isenção sobre aposentadoria, reforma e pensão.</p>
+        <a class="read-more" href="/direitos-pcd/isencao-ir-pcd">Continuar lendo <span class="seta" aria-hidden="true">→</span></a>
       </article>
     </div>
+
+    <div class="sem-resultado" id="busca-vazio">Nenhum conteúdo encontrado. Tente outra palavra, como benefício, trabalho, educação ou concurso.</div>
+
     <div class="notice">
       <strong>Aviso:</strong> este conteúdo é informativo e não substitui análise jurídica individual. Cada caso depende dos documentos e das circunstâncias concretas. Em caso de dúvidas, o CRAS e o INSS também oferecem atendimento gratuito.
     </div>
@@ -414,60 +418,54 @@ body.direitos a:focus-visible, body.direitos button:focus-visible{outline:3px so
 <script>
 (function(){
   var input = document.getElementById('busca-assunto');
-  var limpar = document.getElementById('busca-limpar');
-  var status = document.getElementById('busca-status');
   var vazio = document.getElementById('busca-vazio');
-  if(!input) return;
+  var posts = [].slice.call(document.querySelectorAll('.post-card'));
+  var topics = [].slice.call(document.querySelectorAll('.topic-card'));
+  var filters = [].slice.call(document.querySelectorAll('.dp-filter'));
+  var temas = document.getElementById('temas');
+  var destaque = document.querySelector('.highlight');
+  var category = 'all';
 
   var normaliza = function(t){
     return (t||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
   };
 
-  var cards = [].slice.call(document.querySelectorAll('.topic-card, .article-card')).map(function(el){
-    return { el: el, texto: normaliza(el.textContent) };
-  });
-  var secoes = [
-    { el: document.getElementById('temas'), sel: '.topic-card' },
-    { el: document.getElementById('artigos'), sel: '.article-card' }
-  ];
-  var destaque = document.querySelector('.highlight');
+  function aplica(){
+    var q = normaliza(input ? input.value.trim() : '');
+    var visiveis = 0;
 
-  function filtra(){
-    var q = normaliza(input.value.trim());
-    limpar.hidden = !q;
-
-    if(!q){
-      cards.forEach(function(c){ c.el.classList.remove('card-filtrado'); });
-      secoes.forEach(function(s){ s.el && s.el.classList.remove('secao-filtrada'); });
-      if(destaque) destaque.classList.remove('secao-filtrada');
-      vazio.hidden = true;
-      status.textContent = '';
-      return;
-    }
-
-    var total = 0;
-    cards.forEach(function(c){
-      var mostra = c.texto.indexOf(q) !== -1;
-      c.el.classList.toggle('card-filtrado', !mostra);
-      if(mostra) total++;
+    posts.forEach(function(card){
+      var catOK = category === 'all' || card.dataset.category === category;
+      var texto = normaliza((card.dataset.search || '') + ' ' + card.textContent);
+      var mostra = catOK && (!q || texto.indexOf(q) !== -1);
+      card.classList.toggle('hidden', !mostra);
+      if(mostra) visiveis++;
     });
 
-    secoes.forEach(function(s){
-      if(!s.el) return;
-      var visiveis = s.el.querySelectorAll(s.sel + ':not(.card-filtrado)').length;
-      s.el.classList.toggle('secao-filtrada', visiveis === 0);
+    var temasVisiveis = 0;
+    topics.forEach(function(card){
+      var mostra = !q || normaliza(card.textContent).indexOf(q) !== -1;
+      card.classList.toggle('card-filtrado', !mostra);
+      if(mostra) temasVisiveis++;
     });
-    if(destaque) destaque.classList.add('secao-filtrada');
+    if(temas) temas.classList.toggle('secao-filtrada', temasVisiveis === 0);
+    if(destaque) destaque.classList.toggle('secao-filtrada', !!q);
 
-    vazio.hidden = total > 0;
-    status.textContent = total > 0
-      ? total + (total === 1 ? ' conteúdo encontrado' : ' conteúdos encontrados')
-      : '';
+    if(vazio) vazio.style.display = visiveis ? 'none' : 'block';
   }
 
-  input.addEventListener('input', filtra);
-  input.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ input.value=''; filtra(); } });
-  limpar.addEventListener('click', function(){ input.value=''; filtra(); input.focus(); });
+  filters.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      filters.forEach(function(x){ x.classList.remove('active'); });
+      btn.classList.add('active');
+      category = btn.dataset.filter;
+      aplica();
+    });
+  });
+  if(input){
+    input.addEventListener('input', aplica);
+    input.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ input.value=''; aplica(); } });
+  }
 })();
 </script>
 </body>
