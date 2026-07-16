@@ -71,6 +71,8 @@ body.post .foto-post{position:relative;margin:22px auto;max-width:100%}
 body.post .foto-post.retrato{max-width:400px}
 body.post .foto-post img{display:block;width:100%;height:auto;border-radius:16px;border:1px solid #e7ded6}
 body.post .foto-post figcaption{margin-top:10px;font-family:var(--font-display);font-style:italic;font-size:.85rem;color:#8a857e;text-align:center}
+body.post .duas-fotos{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:22px 0;align-items:start}
+body.post .duas-fotos .foto-post{margin:0;max-width:none}
 /* SHARE */
 body.post .share{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:34px;padding-top:24px;border-top:1px solid #e7ded6;position:relative}
 body.post .share-label{margin-right:4px;color:#747474;font-size:.86rem}
@@ -98,6 +100,7 @@ body.post a:focus-visible,body.post button:focus-visible{outline:3px solid var(-
   body.post .sidebar{position:static;grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media(max-width:620px){
+  body.post .duas-fotos{grid-template-columns:1fr;gap:18px}
   body.post .page-shell{width:100%;margin:0;border-radius:0}
   body.post .pt-hero{padding-top:40px}
   body.post h1{font-size:2rem}
@@ -164,10 +167,16 @@ body.post a:focus-visible,body.post button:focus-visible{outline:3px solid var(-
 <h2>Uma semente plantada em 2017</h2>
 <p>Foram seis anos entre o sonho e a nomeação. Comecei a estudar em 2017, sem garantia nenhuma de que daria certo. Eram ciclos de estudo, editais, provas, resultados que nem sempre vinham, e a decisão diária de continuar mesmo assim.</p>
 <p>Quem é concurseiro sabe: a caminhada é solitária e cheia de "ainda não". A gente planta sem ver o fruto, confiando que um dia ele vem. E veio.</p>
-<figure class="foto-post retrato">
-  <img src="../assets/images/posse/selfie-justica-federal.jpeg" alt="Pâmela sorrindo em frente ao prédio da Justiça Federal, com o letreiro do Anexo A ao fundo" width="960" height="1280" loading="lazy"/>
-  <figcaption>Em frente ao prédio onde a semente virou colheita.</figcaption>
-</figure>
+<div class="duas-fotos">
+  <figure class="foto-post">
+    <img src="../assets/images/posse/selfie-justica-federal.jpeg" alt="Pâmela sorrindo em frente ao prédio da Justiça Federal, com o letreiro do Anexo A ao fundo" width="960" height="1280" loading="lazy"/>
+    <figcaption>Em frente ao prédio onde a semente virou colheita.</figcaption>
+  </figure>
+  <figure class="foto-post">
+    <img src="../assets/images/posse/biblioteca-brasilia.jpeg" alt="Biblioteca Nacional de Brasília vista do carro, com o céu azul da cidade" width="960" height="1280" loading="lazy"/>
+    <figcaption>Brasília, a cidade que o sonho escolheu.</figcaption>
+  </figure>
+</div>
 <h2>O que esse cargo transformou na minha vida</h2>
 <h3>Um trabalho que impacta pessoas de verdade</h3>
 <p>O que mais me enche de propósito é saber que a atividade que exerço toca diretamente a vida das pessoas. Cada processo que passa pelas minhas mãos é a história real de alguém esperando por uma resposta, por um direito, por justiça. Não é papel: é gente.</p>
@@ -177,20 +186,30 @@ body.post a:focus-visible,body.post button:focus-visible{outline:3px solid var(-
 </figure>
 <h3>Mais conforto e liberdade de escolha</h3>
 <p>Eu já tinha a minha independência financeira antes desse cargo, construída com muito esforço. Mas o que ele me trouxe foi outra coisa: mais conforto, mais liberdade para fazer as minhas próprias escolhas e a tranquilidade de poder mirar sonhos maiores, sem medo. É a diferença entre se sustentar e poder, de fato, projetar o futuro que se deseja.</p>
-<figure class="foto-post retrato">
-  <img src="../assets/images/posse/apartamento-conforto.jpeg" alt="Cantinho do apartamento da Pâmela, com cozinha organizada, lavanderia e uma planta sobre a banqueta" width="720" height="1280" loading="lazy"/>
-  <figcaption>O conforto de um lar construído com as minhas escolhas.</figcaption>
-</figure>
+<div class="duas-fotos">
+  <figure class="foto-post">
+    <img src="../assets/images/posse/apartamento-conforto.jpeg" alt="Cantinho do apartamento da Pâmela, com cozinha organizada, lavanderia e uma planta sobre a banqueta" width="720" height="1280" loading="lazy"/>
+    <figcaption>O conforto de um lar construído com as minhas escolhas.</figcaption>
+  </figure>
+  <figure class="foto-post">
+    <img src="../assets/images/posse/look-trabalho.jpeg" alt="Pâmela de look de trabalho em frente ao espelho, com casaco cinza e calça preta" width="960" height="1280" loading="lazy"/>
+    <figcaption>Pronta pra mais um dia de fórum.</figcaption>
+  </figure>
+</div>
 <h3>E agora, a estabilidade</h3>
 <p>Depois do estágio probatório, chega a estabilidade, esse chão firme que me permite sonhar ainda mais alto. É a base sobre a qual vou continuar construindo, inclusive rumo ao meu próximo objetivo.</p>
 <figure class="foto-post retrato">
-  <img src="../assets/images/posse/cracha-analista.jpeg" alt="Pâmela com o cordão da Justiça Federal e o crachá de Analista Judiciário com o nome Pâmela Dayane Lima de Paula" width="900" height="1600" loading="lazy"/>
+  <img src="../assets/images/posse/espelho-cracha.jpeg" alt="Pâmela em frente ao espelho com o cordão da Justiça Federal e o crachá no peito" width="960" height="1280" loading="lazy"/>
   <figcaption>O crachá que carrega seis anos de história.</figcaption>
 </figure>
 <h2>O maior aprendizado</h2>
 <p>Mais do que um cargo, essa data me fez rememorar uma verdade que a correria do dia a dia às vezes faz a gente esquecer: eu sou capaz.</p>
 <p>Capaz de recomeçar, de insistir, de transformar estudo em realidade. E se eu fui, você também é.</p>
 <p>Se você está agora no meio da caminhada, plantando a sua semente e ainda sem ver o fruto, fica o meu recado: continua. A colheita chega. 🌱</p>
+<figure class="foto-post retrato">
+  <img src="../assets/images/posse/caminho-trabalho.jpeg" alt="Reflexo da Pâmela caminhando na entrada do prédio da Justiça Federal, em um dia de céu azul" width="960" height="1280" loading="lazy"/>
+  <figcaption>Seguindo em frente, um dia de cada vez.</figcaption>
+</figure>
     <div class="share">
       <span class="share-label">Compartilhar:</span>
       <a href="https://api.whatsapp.com/send?text=Tr%C3%AAs%20anos%20de%20Justi%C3%A7a%20Federal%3A%20a%20semente%20que%20plantei%20em%202017%20e%20colhi%20em%202023%20https%3A%2F%2Fconcurseirapcd.com.br%2Fblog%2Fposse" target="_blank" rel="noopener">WhatsApp</a>
