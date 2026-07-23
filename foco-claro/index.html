@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Método Foco Claro — organização para estudantes com TDAH ou dificuldade de foco</title>
+<meta name="description" content="O sistema de organização para estudantes com TDAH ou dificuldade de foco: menos listas, menos decisões, rotina visual e blocos de foco. eBook + 2 bônus por R$ 27.">
+<!-- ============================================================
+     Links de checkout já configurados (Kiwify).
+     Para trocar no futuro, procure por "pay.kiwify.com.br" e substitua
+     pelo novo link (aparece 3 vezes nesta página)
+     ============================================================ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Caveat:wght@600;700&family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#33291f; --red:#c9432a; --red-deep:#a83420; --teal:#1e8578;
+    --amber:#e9a83a; --paper:#f8f1df; --soft:#efe5cd; --muted:#7d7362;
+    --card:#fdf9ef; --line:#d9cdb2;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Nunito Sans','Segoe UI',Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;}
+  .wrap{max-width:840px;margin:0 auto;padding:0 22px;}
+  section{padding:56px 0;}
+  h2{font-family:'Archivo Black',sans-serif;font-weight:400;font-size:clamp(24px,4.5vw,34px);color:var(--red);line-height:1.15;margin-bottom:18px;}
+  h2 .tl{color:var(--teal);}
+  p{margin-bottom:14px;font-size:17px;}
+  .hand{font-family:'Caveat',cursive;font-size:clamp(22px,4vw,28px);color:var(--ink);font-weight:700;}
+  .center{text-align:center;}
+  strong{color:var(--ink);}
+
+  /* topbar */
+  .topbar{background:var(--ink);color:#f3ecdc;text-align:center;padding:9px 14px;font-size:13.5px;font-weight:700;letter-spacing:.04em;}
+  .topbar span{color:var(--amber);}
+
+  /* hero */
+  .hero{background:var(--paper);padding:60px 0 50px 0;text-align:center;}
+  .hero .kicker{color:var(--teal);font-weight:800;letter-spacing:.2em;text-transform:uppercase;font-size:12.5px;margin-bottom:18px;}
+  .hero h1{font-family:'Archivo Black',sans-serif;font-weight:400;font-size:clamp(30px,6.5vw,52px);line-height:1.08;color:var(--ink);}
+  .hero h1 .rd{color:var(--red);text-shadow:2px 2px 0 rgba(51,41,31,.15);}
+  .hero .sub{font-size:clamp(17px,2.6vw,20px);max-width:640px;margin:20px auto 8px auto;color:var(--ink);}
+  .badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:22px 0 6px 0;}
+  .badge{background:var(--card);border:1.5px solid var(--line);border-radius:999px;padding:7px 16px;font-size:13.5px;font-weight:700;color:var(--muted);}
+
+  /* cta button */
+  .cta{display:inline-block;background:var(--red);color:#fff;font-weight:800;font-size:clamp(16px,2.4vw,19px);padding:18px 38px;border-radius:999px;text-decoration:none;box-shadow:0 6px 0 var(--red-deep);transition:transform .08s ease;margin-top:22px;}
+  .cta:hover{transform:translateY(2px);box-shadow:0 4px 0 var(--red-deep);}
+  .cta.teal{background:var(--teal);box-shadow:0 6px 0 #14655b;}
+  .cta.teal:hover{box-shadow:0 4px 0 #14655b;}
+  .cta-note{display:block;font-size:13px;color:var(--muted);margin-top:12px;}
+
+  /* dores */
+  .dores{background:var(--card);border-top:1.5px solid var(--line);border-bottom:1.5px solid var(--line);}
+  .dor-list{max-width:620px;margin:10px auto 0 auto;}
+  .dor{display:flex;gap:12px;align-items:flex-start;background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:14px 18px;margin-bottom:12px;font-size:16.5px;}
+  .dor .x{flex:0 0 26px;height:26px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;margin-top:2px;}
+
+  .virada{background:var(--ink);color:#f3ecdc;text-align:center;}
+  .virada h2{color:var(--amber);}
+  .virada p{color:#f3ecdc;max-width:640px;margin-left:auto;margin-right:auto;}
+  .virada .hand{color:#f3ecdc;}
+
+  /* método */
+  .princ{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px;}
+  .princ .p-card{background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:22px;text-align:center;}
+  .princ .p-num{width:44px;height:44px;border-radius:50%;background:var(--red);color:#fff;font-family:'Archivo Black',sans-serif;font-size:20px;display:flex;align-items:center;justify-content:center;margin:0 auto 12px auto;}
+  .princ h3{font-size:17px;margin-bottom:8px;color:var(--ink);}
+  .princ p{font-size:14.5px;color:var(--muted);margin:0;}
+
+  /* módulos */
+  .mods .mod{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:16px 20px;margin-bottom:12px;}
+  .mods .m-num{flex:0 0 44px;height:44px;border-radius:12px;background:var(--soft);color:var(--red);font-family:'Archivo Black',sans-serif;font-size:18px;display:flex;align-items:center;justify-content:center;}
+  .mods h3{font-size:17px;margin-bottom:4px;}
+  .mods p{font-size:15px;color:var(--muted);margin:0;}
+
+  /* bônus */
+  .bonus{background:var(--card);border-top:1.5px solid var(--line);border-bottom:1.5px solid var(--line);}
+  .bonus-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px;}
+  .b-card{border-radius:18px;padding:26px;color:#fff;position:relative;overflow:hidden;}
+  .b-card.b1{background:linear-gradient(150deg,var(--red) 0%,var(--red-deep) 100%);}
+  .b-card.b2{background:linear-gradient(150deg,var(--teal) 0%,#14655b 100%);}
+  .b-tag{display:inline-block;background:rgba(255,255,255,.2);border-radius:999px;padding:4px 14px;font-size:12.5px;font-weight:800;letter-spacing:.08em;margin-bottom:12px;}
+  .b-card h3{font-family:'Archivo Black',sans-serif;font-weight:400;font-size:21px;margin-bottom:10px;line-height:1.2;}
+  .b-card p{font-size:15px;margin:0;color:rgba(255,255,255,.94);}
+  .b-card .b-val{margin-top:14px;font-size:14px;font-weight:800;color:var(--amber);}
+
+  /* oferta */
+  .oferta{text-align:center;}
+  .price-box{background:var(--card);border:2.5px solid var(--red);border-radius:24px;max-width:520px;margin:26px auto 0 auto;padding:34px 30px;box-shadow:0 12px 30px rgba(51,41,31,.12);}
+  .price-box .inc{text-align:left;max-width:380px;margin:0 auto 18px auto;}
+  .price-box .inc div{display:flex;gap:10px;align-items:flex-start;margin-bottom:9px;font-size:15.5px;font-weight:700;}
+  .price-box .inc .c{color:var(--teal);font-weight:900;}
+  .anchor{font-size:17px;color:var(--muted);}
+  .anchor s{color:var(--red-deep);}
+  .price{font-family:'Archivo Black',sans-serif;font-size:64px;color:var(--red);line-height:1;margin:6px 0 2px 0;text-shadow:2px 2px 0 rgba(51,41,31,.12);}
+  .price-sub{font-size:14.5px;color:var(--muted);margin-bottom:8px;}
+  .garantia{display:flex;gap:16px;align-items:center;background:var(--card);border:1.5px dashed var(--teal);border-radius:16px;max-width:560px;margin:30px auto 0 auto;padding:18px 22px;text-align:left;}
+  .garantia .g-ico{flex:0 0 54px;height:54px;border-radius:50%;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-size:26px;}
+  .garantia p{margin:0;font-size:15px;}
+
+  /* faq */
+  details{background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:16px 20px;margin-bottom:10px;}
+  summary{font-weight:800;cursor:pointer;font-size:16px;}
+  details p{margin:10px 0 0 0;font-size:15.5px;color:var(--muted);}
+
+  footer{background:var(--ink);color:#b7ab95;padding:34px 0;font-size:13px;text-align:center;}
+  footer p{font-size:13px;margin-bottom:8px;}
+
+  @media(max-width:680px){
+    .princ{grid-template-columns:1fr;}
+    .bonus-grid{grid-template-columns:1fr;}
+    section{padding:44px 0;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">🎁 <span>OFERTA DE LANÇAMENTO:</span> eBook + 2 bônus por menos que uma pizza — enquanto durar</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Para estudantes com TDAH ou dificuldade de foco</div>
+    <h1>Você não precisa de mais disciplina.<br>Precisa de um <span class="rd">sistema que não dependa dela.</span></h1>
+    <p class="sub">O <strong>Método Foco Claro</strong> é um sistema de organização criado para o SEU cérebro: <strong>menos listas, menos decisões, rotina visual e blocos de foco</strong> — para estudar de verdade mesmo nos dias difíceis.</p>
+    <div class="badges">
+      <span class="badge">📘 7 módulos práticos</span>
+      <span class="badge">⚡ Plano de implantação em 7 dias</span>
+      <span class="badge">🖨 Planners e checklists inclusos</span>
+    </div>
+    <a class="cta" href="#oferta">QUERO ORGANIZAR MEUS ESTUDOS →</a>
+    <span class="cta-note">Acesso imediato · Garantia de 7 dias · Apenas R$ 27</span>
+  </div>
+</header>
+
+<!-- DORES -->
+<section class="dores">
+  <div class="wrap">
+    <h2 class="center">Você se reconhece em alguma dessas cenas?</h2>
+    <div class="dor-list">
+      <div class="dor"><div class="x">✕</div><div>Senta pra estudar e <strong>2 minutos depois está no celular</strong> — sem nem perceber como chegou lá.</div></div>
+      <div class="dor"><div class="x">✕</div><div>Faz cronogramas perfeitos no domingo… que <strong>morrem na terça-feira</strong>.</div></div>
+      <div class="dor"><div class="x">✕</div><div>Tem <strong>3 listas de tarefas em 3 lugares</strong> — e mesmo assim esquece prazos importantes.</div></div>
+      <div class="dor"><div class="x">✕</div><div>Sabe O QUE estudar, mas <strong>não consegue COMEÇAR</strong> — e a culpa só cresce.</div></div>
+      <div class="dor"><div class="x">✕</div><div>Já tentou agenda, Notion, Pomodoro… e concluiu que <strong>"o problema sou eu"</strong>.</div></div>
+    </div>
+    <p class="center" style="margin-top:26px"><span class="hand">Se marcou mentalmente 2 ou mais… continua lendo. 👇</span></p>
+  </div>
+</section>
+
+<!-- VIRADA -->
+<section class="virada">
+  <div class="wrap">
+    <h2>O problema nunca foi você.<br>Foi o manual que te deram.</h2>
+    <p>Quase todos os métodos de organização foram criados para cérebros que lembram das tarefas sozinhos, começam só porque "é importante" e mantêm rotinas por pura força de vontade.</p>
+    <p><strong style="color:#fff">O cérebro com TDAH ou dificuldade de foco funciona diferente:</strong> a memória de trabalho sobrecarrega rápido, começar custa mais energia, decisões pequenas cansam — e é o interesse, não a importância, que liga o motor.</p>
+    <p class="hand">Quando o sistema é desenhado para essas características… ele simplesmente funciona.</p>
+  </div>
+</section>
+
+<!-- MÉTODO -->
+<section>
+  <div class="wrap">
+    <h2 class="center">Conheça o <span class="tl">Método Foco Claro</span></h2>
+    <p class="center" style="max-width:620px;margin-left:auto;margin-right:auto">Um sistema completo de organização — <strong>não é tratamento, não é promessa milagrosa</strong> — construído sobre 3 princípios que respeitam o jeito que seu cérebro funciona:</p>
+    <div class="princ">
+      <div class="p-card"><div class="p-num">1</div><h3>Reduza o atrito</h3><p>Cada passo entre você e a tarefa é uma chance de desistir. O sistema corta passos.</p></div>
+      <div class="p-card"><div class="p-num">2</div><h3>Decida antes, execute depois</h3><p>Todas as decisões da semana em um único ritual de 20 minutos. O resto da semana? Só executar.</p></div>
+      <div class="p-card"><div class="p-num">3</div><h3>Da cabeça para a parede</h3><p>Sua memória é preciosa demais para guardar tarefas. Tudo vira suporte visual.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MÓDULOS -->
+<section class="mods" style="padding-top:0">
+  <div class="wrap">
+    <h2 class="center">O que você vai montar, módulo a módulo</h2>
+    <div class="mod"><div class="m-num">01</div><div><h3>Menos listas: a Lista Única</h3><p>Um lugar só para tudo + a Regra das 3 tarefas por dia. Terminou as 3? Dia vencido.</p></div></div>
+    <div class="mod"><div class="m-num">02</div><div><h3>Menos decisões</h3><p>Cardápio de Estudo, Kit Pronto e Regras Se-Então: na hora de estudar, você só executa.</p></div></div>
+    <div class="mod"><div class="m-num">03</div><div><h3>Rotina visual</h3><p>O Painel Visual de 3 zonas que faz a informação vir até você — o dia inteiro, sem esforço.</p></div></div>
+    <div class="mod"><div class="m-num">04</div><div><h3>Blocos de foco</h3><p>Sprints curtos com Ritual de Início, papel de captura de distração e o seu horário de ouro.</p></div></div>
+    <div class="mod"><div class="m-num">05</div><div><h3>Ambiente</h3><p>A regra dos 20 segundos + setup físico e digital: seu quarto passa a estudar com você.</p></div></div>
+    <div class="mod"><div class="m-num">06</div><div><h3>Checklists</h3><p>As 4 checklists fixas (abrir o dia, começar o bloco, fechar o estudo, véspera de prova).</p></div></div>
+    <div class="mod"><div class="m-num">07</div><div><h3>Planejamento semanal</h3><p>O Ritual de 20 minutos que carrega a semana inteira — com versão de emergência de 5 min.</p></div></div>
+    <div class="mod" style="border-color:var(--teal)"><div class="m-num" style="color:var(--teal)">+</div><div><h3>Plano de Implantação em 7 Dias</h3><p>Uma ação pequena por dia. No domingo, o sistema inteiro está rodando sozinho.</p></div></div>
+    <p class="center" style="margin-top:22px"><a class="cta teal" href="#oferta">QUERO COMEÇAR AINDA HOJE →</a></p>
+  </div>
+</section>
+
+<!-- BÔNUS -->
+<section class="bonus">
+  <div class="wrap">
+    <h2 class="center">E você ainda leva <span class="tl">2 bônus</span> que resolvem os dias difíceis</h2>
+    <div class="bonus-grid">
+      <div class="b-card b1">
+        <span class="b-tag">🎁 BÔNUS #1</span>
+        <h3>Kit SOS Anti-Procrastinação</h3>
+        <p>O protocolo de emergência de 5 minutos para o dia em que NADA funciona + o diagnóstico "por que travei?" com 4 destravas + 6 cartões Se-Então para recortar e colar na mesa.</p>
+        <div class="b-val">Valor real: R$ 27 — hoje: grátis</div>
+      </div>
+      <div class="b-card b2">
+        <span class="b-tag">🎁 BÔNUS #2</span>
+        <h3>Planner Semanal Foco Claro</h3>
+        <p>O pack de páginas imprimíveis que coloca o método no papel: Painel da Semana, Página do Dia, Rastreador de Blocos de Foco e Mapa do Horário de Ouro. Imprima quantas quiser, para sempre.</p>
+        <div class="b-val">Valor real: R$ 37 — hoje: grátis</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFERTA -->
+<section class="oferta" id="oferta">
+  <div class="wrap">
+    <h2>Tudo isso custa menos que<br>uma pizza no fim de semana</h2>
+    <div class="price-box" id="checkout">
+      <div class="inc">
+        <div><span class="c">✓</span><span>eBook Método Foco Claro (7 módulos + Plano de 7 Dias + templates)</span></div>
+        <div><span class="c">✓</span><span>Bônus #1 — Kit SOS Anti-Procrastinação</span></div>
+        <div><span class="c">✓</span><span>Bônus #2 — Planner Semanal imprimível</span></div>
+        <div><span class="c">✓</span><span>Acesso imediato e vitalício, direto no seu e-mail</span></div>
+      </div>
+      <div class="anchor">De <s>R$ 91</s> por apenas</div>
+      <div class="price">R$ 27</div>
+      <div class="price-sub">pagamento único · sem mensalidade · acesso vitalício</div>
+      <a class="cta" href="https://pay.kiwify.com.br/sx7L13c">GARANTIR MEU ACESSO AGORA →</a>
+      <span class="cta-note">🔒 Compra 100% segura · Acesso imediato</span>
+    </div>
+    <div class="garantia">
+      <div class="g-ico">🛡</div>
+      <p><strong>Garantia incondicional de 7 dias.</strong> Baixe o material, aplique o Dia 1 do plano. Se sentir que não é para você, peça reembolso com um clique — sem perguntas, sem burocracia. O risco é todo meu.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="padding-top:20px">
+  <div class="wrap">
+    <h2 class="center">Perguntas frequentes</h2>
+    <details><summary>Preciso ter diagnóstico de TDAH para usar?</summary><p>Não. O método funciona para qualquer pessoa com dificuldade de foco — organização não exige diagnóstico. Se você se distrai fácil, procrastina ou vive esquecendo prazos, ele foi feito para você.</p></details>
+    <details><summary>Isso é um tratamento para TDAH?</summary><p>Não — e é importante deixar claro: este material é um sistema de organização de estudos, não é tratamento e não substitui acompanhamento médico ou psicológico. Se você faz acompanhamento, o método complementa (e não substitui) o que você já faz.</p></details>
+    <details><summary>Funciona para concurso? E para faculdade?</summary><p>Sim, para os dois. O método organiza COMO você estuda (rotina, foco, planejamento) e se adapta a qualquer conteúdo — edital de concurso, provas da faculdade, ENEM, OAB, residência.</p></details>
+    <details><summary>Quanto tempo leva para implantar?</summary><p>O Plano de 7 Dias implanta o sistema com uma ação pequena por dia — a primeira leva menos de 15 minutos. Em uma semana, tudo está rodando.</p></details>
+    <details><summary>Como recebo o material?</summary><p>Acesso imediato após a compra: você recebe os 3 PDFs (eBook + 2 bônus) no seu e-mail. Pode ler no celular, computador ou imprimir os templates.</p></details>
+    <details><summary>E se eu não gostar?</summary><p>Você tem 7 dias de garantia incondicional. Pediu reembolso, recebeu — sem perguntas.</p></details>
+    <p class="center" style="margin-top:28px"><a class="cta" href="https://pay.kiwify.com.br/sx7L13c">QUERO O MÉTODO POR R$ 27 →</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><strong style="color:#f3ecdc">Método Foco Claro</strong> · Sistema de organização para estudos</p>
+    <p>Este produto não é um tratamento para TDAH e não substitui acompanhamento médico ou psicológico. Os resultados dependem da aplicação do método por cada estudante.</p>
+    <p>© 2026 · Todos os direitos reservados · <a href="#" style="color:#b7ab95">Termos de uso</a> · <a href="#" style="color:#b7ab95">Política de privacidade</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
