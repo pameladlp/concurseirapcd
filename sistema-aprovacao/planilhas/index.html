@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Escolha sua planilha | Sistema Aprovação</title>
-<meta name="description" content="Todas as planilhas do Sistema Aprovação em um só lugar: a versão adaptável para qualquer concurso e as edições com edital verticalizado de INSS, BACEN, PC-BA, PC-PR, PC-MA e TRF3.">
+<title>Encontre o Sistema Aprovação para o seu concurso</title>
+<meta name="description" content="Seu edital organizado por prioridade, com ciclo de estudos, revisões e questões em um só lugar. Edições INSS, BACEN, PC-BA, PC-PR, PC-MA, TRF3 e a versão Universal para qualquer concurso.">
 <link rel="canonical" href="https://concurseirapcd.com.br/sistema-aprovacao/planilhas/">
-<meta property="og:title" content="Escolha sua planilha | Sistema Aprovação">
-<meta property="og:description" content="A versão para qualquer concurso e as edições com edital verticalizado. Oferta de lançamento: de R$ 67 por R$ 27.">
+<meta property="og:title" content="Encontre o Sistema Aprovação para o seu concurso">
+<meta property="og:description" content="Seu edital organizado. Seu próximo estudo decidido. Preço de lançamento: de R$ 67 por R$ 27.">
 <meta property="og:image" content="https://concurseirapcd.com.br/sistema-aprovacao/img/produto-principal.png">
 <meta property="og:url" content="https://concurseirapcd.com.br/sistema-aprovacao/planilhas/">
 <script>
@@ -30,155 +30,384 @@ src="https://www.facebook.com/tr?id=2640632553021102&ev=PageView&noscript=1"/></
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--txt); line-height: 1.6; }
   .wrap { max-width: 1060px; margin: 0 auto; padding: 0 20px; }
+  section { padding: 46px 0; }
+  h2 { font-size: clamp(22px, 3vw, 30px); line-height: 1.25; text-align: center; margin-bottom: 8px; }
+  .sub-secao { text-align: center; color: var(--muted); max-width: 640px; margin: 0 auto 30px; font-size: 15.5px; }
   .tarja { background: var(--roxo-esc); color: #fff; text-align: center; padding: 10px 16px; font-size: 13.5px; font-weight: 600; }
-  .hero { background: linear-gradient(165deg, #40336F 0%, #6352A3 60%, #8474BE 100%); color: #fff; text-align: center; padding: 52px 20px 56px; }
-  .hero .kicker { font-size: 13px; letter-spacing: 2px; font-weight: 700; text-transform: uppercase; color: #CFC4EC; margin-bottom: 12px; }
-  .hero h1 { font-size: clamp(26px, 4.2vw, 40px); line-height: 1.2; max-width: 720px; margin: 0 auto 14px; }
-  .hero p { max-width: 620px; margin: 0 auto; opacity: .92; font-size: 16.5px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 22px; padding: 44px 0 10px; }
+  .tarja b { color: #EFC77E; }
+  .hero { background: linear-gradient(165deg, #40336F 0%, #6352A3 60%, #8474BE 100%); color: #fff; text-align: center; padding: 54px 20px 58px; }
+  .hero .avanco { font-size: 15px; color: #E8DFC9; font-weight: 600; margin-bottom: 14px; }
+  .hero h1 { font-size: clamp(27px, 4.4vw, 42px); line-height: 1.18; max-width: 760px; margin: 0 auto 14px; }
+  .hero p { max-width: 620px; margin: 0 auto 24px; opacity: .92; font-size: 16.5px; }
+  .btn { display: inline-block; text-align: center; text-decoration: none; font-weight: 800; border-radius: 12px; padding: 14px 26px; font-size: 15.5px; min-height: 44px; }
+  .btn-hero { background: var(--verde); color: #fff; box-shadow: 0 10px 26px rgba(0,0,0,.22); }
+  .btn-hero:hover { filter: brightness(1.06); }
+  /* filtros */
+  .filtros { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 0 0 26px; }
+  .chip { border: 2px solid var(--roxo); background: #fff; color: var(--roxo); font-weight: 700; font-size: 13.5px; border-radius: 30px; padding: 8px 16px; cursor: pointer; min-height: 40px; }
+  .chip[aria-pressed="true"] { background: var(--roxo); color: #fff; }
+  /* cards */
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 22px; }
   .pcard { background: var(--card); border: 1px solid var(--linha); border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 10px 30px rgba(76,62,133,.07); }
   .pcard img { width: 100%; height: auto; display: block; }
   .pcard .body { padding: 20px 22px 24px; display: flex; flex-direction: column; flex: 1; }
-  .badge { align-self: flex-start; background: var(--lavanda); color: var(--roxo-esc); font-size: 11.5px; font-weight: 800; letter-spacing: .5px; text-transform: uppercase; padding: 5px 11px; border-radius: 30px; margin-bottom: 12px; }
-  .badge.destaque { background: #FDF3E0; color: #8A6420; }
-  .pcard h2 { font-size: 20px; margin-bottom: 6px; }
-  .pcard .desc { font-size: 14.5px; color: var(--muted); flex: 1; }
-  .preco-linha { margin: 16px 0 4px; }
+  .pcard h3 { font-size: 19px; margin-bottom: 3px; }
+  .pcard .cargo { font-size: 13px; color: var(--muted); font-weight: 600; margin-bottom: 10px; }
+  .pcard ul { list-style: none; margin: 0 0 6px; flex: 1; }
+  .pcard ul li { font-size: 14px; color: #4a4653; padding-left: 22px; position: relative; margin: 5px 0; }
+  .pcard ul li::before { content: "✓"; position: absolute; left: 0; color: var(--verde); font-weight: 800; }
+  .preco-linha { margin: 10px 0 4px; }
   .preco-linha .de { font-size: 13.5px; color: var(--muted); }
   .preco-linha .por { font-size: 26px; font-weight: 800; color: var(--roxo-esc); }
   .preco-linha .selo { display: inline-block; margin-left: 8px; font-size: 11px; font-weight: 800; color: var(--dourado); letter-spacing: .5px; }
-  .acoes { display: grid; gap: 8px; margin-top: 12px; }
-  .btn { display: block; text-align: center; text-decoration: none; font-weight: 800; border-radius: 12px; padding: 13px 16px; font-size: 15px; min-height: 44px; }
-  .btn-comprar { background: var(--verde); color: #fff; }
+  .acoes { display: grid; gap: 8px; margin-top: 10px; }
+  .btn-comprar { background: var(--verde); color: #fff; padding: 13px 16px; font-size: 14.5px; }
   .btn-comprar:hover { filter: brightness(1.06); }
-  .btn-detalhes { background: #fff; color: var(--roxo); border: 2px solid var(--roxo); }
+  .btn-detalhes { background: #fff; color: var(--roxo); border: 2px solid var(--roxo); padding: 11px 16px; font-size: 14px; }
   .btn-detalhes:hover { background: var(--lavanda); }
-  .nota { text-align: center; color: var(--muted); font-size: 14px; padding: 26px 20px 8px; }
-  footer { background: #25232D; color: #97909F; font-size: 12.5px; text-align: center; padding: 26px 22px; line-height: 1.8; margin-top: 46px; }
+  /* nao encontrou */
+  .nao-achou { background: var(--lavanda); border-radius: 20px; padding: 34px 26px; text-align: center; margin-top: 34px; }
+  .nao-achou h2 { margin-bottom: 6px; }
+  .nao-achou p { color: var(--muted); max-width: 560px; margin: 0 auto 20px; }
+  .nao-achou .acoes-inline { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+  /* demonstracao */
+  .shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 22px; }
+  .shot { background: #fff; border: 1px solid var(--linha); border-radius: 16px; overflow: hidden; box-shadow: 0 10px 26px rgba(76,62,133,.07); }
+  .shot img { width: 100%; height: auto; display: block; border-bottom: 1px solid var(--linha); }
+  .shot .cap { padding: 14px 18px; }
+  .shot .cap b { display: block; font-size: 15px; color: var(--roxo-esc); }
+  .shot .cap span { font-size: 13.5px; color: var(--muted); }
+  /* comparacao */
+  .comparacao { overflow-x: auto; }
+  .comparacao table { width: 100%; max-width: 760px; margin: 0 auto; border-collapse: collapse; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 26px rgba(76,62,133,.07); }
+  .comparacao th { padding: 14px 18px; font-size: 15px; text-align: left; }
+  .comparacao th.sem { background: #F5E8ED; color: #8A4A5E; }
+  .comparacao th.com { background: #E4F3EC; color: #1F6B49; }
+  .comparacao td { padding: 12px 18px; font-size: 14.5px; border-top: 1px solid var(--linha); }
+  .comparacao td.sem { color: #8A4A5E; }
+  .comparacao td.com { color: #1F6B49; font-weight: 600; }
+  /* beneficios */
+  .beneficios { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; max-width: 860px; margin: 0 auto; }
+  .bene { background: #fff; border: 1px solid var(--linha); border-radius: 14px; padding: 16px 18px; font-size: 14.5px; }
+  .bene b { color: var(--roxo-esc); }
+  /* autoridade */
+  .autoridade { background: linear-gradient(165deg, #40336F 0%, #6352A3 100%); color: #fff; }
+  .autoridade .box { display: flex; gap: 26px; align-items: center; max-width: 780px; margin: 0 auto; flex-wrap: wrap; justify-content: center; }
+  .autoridade img { width: 150px; height: 150px; object-fit: cover; border-radius: 50%; border: 4px solid rgba(255,255,255,.35); }
+  .autoridade .texto { flex: 1; min-width: 280px; }
+  .autoridade h2 { text-align: left; }
+  .autoridade p { opacity: .93; font-size: 15.5px; margin-top: 10px; }
+  .credenciais { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .cred { background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.28); border-radius: 30px; padding: 6px 14px; font-size: 12.5px; font-weight: 700; }
+  @media (max-width: 560px) { .autoridade h2 { text-align: center; } .autoridade .texto { text-align: center; } .credenciais { justify-content: center; } }
+  /* combo e garantia */
+  .faixa { background: #fff; border: 1px solid var(--linha); border-radius: 18px; padding: 28px 26px; text-align: center; max-width: 720px; margin: 0 auto; box-shadow: 0 10px 26px rgba(76,62,133,.07); }
+  .faixa h2 { font-size: 22px; }
+  .faixa p { color: var(--muted); margin: 8px 0 0; }
+  /* faq */
+  details { background: #fff; border: 1px solid var(--linha); border-radius: 12px; padding: 15px 20px; margin-bottom: 10px; max-width: 760px; margin-left: auto; margin-right: auto; }
+  summary { font-weight: 700; cursor: pointer; font-size: 15px; }
+  details p { margin: 10px 0 0; font-size: 14.5px; color: #4a4653; }
+  /* cta final */
+  .final { background: linear-gradient(165deg, #40336F 0%, #6352A3 60%, #8474BE 100%); color: #fff; text-align: center; }
+  .final h2 { color: #fff; }
+  .final p { opacity: .92; max-width: 560px; margin: 8px auto 24px; }
+  footer { background: #25232D; color: #97909F; font-size: 12.5px; text-align: center; padding: 26px 22px; line-height: 1.8; }
   footer a { color: #C8BEE0; }
-  a:focus-visible { outline: 3px solid var(--dourado); outline-offset: 2px; }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--dourado); outline-offset: 2px; }
+  [hidden] { display: none !important; }
 </style>
 </head>
 <body>
 
-<div class="tarja">Oferta de lançamento: qualquer planilha de R$ 67 por R$ 27</div>
+<div class="tarja">PREÇO DE LANÇAMENTO: de R$ 67 por <b>R$ 27</b> · condição especial válida durante o período de lançamento</div>
 
 <div class="hero">
-  <div class="kicker">Sistema Aprovação · Concurseira PCD</div>
-  <h1>Qual planilha vai organizar a sua aprovação?</h1>
-  <p>Se o seu concurso está aqui, leve a edição com o edital inteiro verticalizado. Se ainda não está, a versão adaptável serve para qualquer edital. Todas com pagamento único e 7 dias de garantia.</p>
+  <p class="avanco">Você não precisa perder horas montando cronogramas.</p>
+  <h1>Seu edital organizado. Seu próximo estudo decidido.</h1>
+  <p>Escolha seu concurso e comece com matérias, tópicos, prioridades, revisões e questões já organizados. Você senta e estuda: a organização fica por conta do Sistema.</p>
+  <a class="btn btn-hero" href="#concursos">Encontrar meu concurso</a>
 </div>
 
-<div class="wrap">
-  <div class="grid">
+<section id="concursos">
+  <div class="wrap">
+    <h2>Escolha o seu concurso</h2>
+    <p class="sub-secao">Edições com o edital inteiro verticalizado, prontas para abrir e estudar. Todas com pagamento único e 7 dias de garantia.</p>
 
-    <div class="pcard">
-      <img src="../img/produto-principal.png" alt="Sistema Aprovação, planner de estudos para qualquer concurso" width="600" height="500" loading="lazy">
-      <div class="body">
-        <span class="badge">Para qualquer concurso</span>
-        <h2>Sistema Aprovação</h2>
-        <p class="desc">A planilha adaptável: você cadastra as matérias do seu edital e ela organiza sua rotina, com aba HOJE, ciclo, revisões automáticas e controle de questões. Inclui guia de configuração em PDF e template Notion.</p>
-        <div class="preco-linha"><span class="de">de <s>R$ 67</s> por</span> <span class="por">R$ 27</span><span class="selo">LANÇAMENTO</span></div>
-        <div class="acoes">
-          <a class="btn btn-comprar" href="https://pay.kiwify.com.br/fiQ9oOc">Comprar agora</a>
-          <a class="btn btn-detalhes" href="../">Ver detalhes</a>
-        </div>
-      </div>
+    <div class="filtros" role="group" aria-label="Filtrar por área">
+      <button class="chip" aria-pressed="true" data-filtro="todos">Todos</button>
+      <button class="chip" aria-pressed="false" data-filtro="previdenciario">Previdenciário</button>
+      <button class="chip" aria-pressed="false" data-filtro="bancario">Bancário</button>
+      <button class="chip" aria-pressed="false" data-filtro="policial">Policial</button>
+      <button class="chip" aria-pressed="false" data-filtro="tribunais">Tribunais</button>
     </div>
 
-    <div class="pcard">
-      <img src="../img/produto-inss.png" alt="Sistema Aprovação, Edição INSS" width="600" height="500" loading="lazy">
-      <div class="body">
-        <span class="badge destaque">Edital verticalizado</span>
-        <h2>Edição INSS</h2>
-        <p class="desc">Os 73 tópicos do edital de Técnico do Seguro Social já verticalizados e as 7 matérias com os pesos reais da prova. Abra e comece a estudar no minuto um.</p>
-        <div class="preco-linha"><span class="de">de <s>R$ 67</s> por</span> <span class="por">R$ 27</span><span class="selo">LANÇAMENTO</span></div>
-        <div class="acoes">
-          <a class="btn btn-comprar" href="https://pay.kiwify.com.br/ndvkKJ1">Comprar agora</a>
-          <a class="btn btn-detalhes" href="../inss/">Ver detalhes</a>
+    <div class="grid">
+
+      <div class="pcard" data-area="previdenciario">
+        <img src="../img/produto-inss.png" alt="Sistema Aprovação, Edição INSS" width="600" height="500" loading="lazy">
+        <div class="body">
+          <h3>INSS</h3>
+          <p class="cargo">Técnico do Seguro Social</p>
+          <ul>
+            <li>73 tópicos do edital já verticalizados</li>
+            <li>Pesos reais da prova</li>
+            <li>Ciclo automático e revisões programadas</li>
+            <li>Controle de questões por assunto</li>
+          </ul>
+          <div class="preco-linha"><span class="de">de <s>R$ 67</s> por</span> <span class="por">R$ 27</span><span class="selo">LANÇAMENTO</span></div>
+          <div class="acoes">
+            <a class="btn btn-comprar" href="https://pay.kiwify.com.br/ndvkKJ1">QUERO ESTUDAR PARA O INSS</a>
+            <a class="btn btn-detalhes" href="../inss/">Ver detalhes da edição</a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="pcard">
-      <img src="../img/produto-bacen.png" alt="Sistema Aprovação, Edição BACEN" width="600" height="500" loading="lazy">
-      <div class="body">
-        <span class="badge destaque">Edital verticalizado</span>
-        <h2>Edição BACEN</h2>
-        <p class="desc">O edital do Banco Central inteiro organizado, tópico por tópico, com as matérias e os pesos reais da prova, pronto para o ciclo de estudos.</p>
-        <div class="preco-linha"><span class="de">de <s>R$ 67</s> por</span> <span class="por">R$ 27</span><span class="selo">LANÇAMENTO</span></div>
-        <div class="acoes">
-          <a class="btn btn-comprar" href="https://pay.kiwify.com.br/eUJTIUC">Comprar agora</a>
-          <a class="btn btn-detalhes" href="../bacen/">Ver detalhes</a>
+      <div class="pcard" data-area="bancario">
+        <img src="../img/produto-bacen.png" alt="Sistema Aprovação, Edição BACEN" width="600" height="500" loading="lazy">
+        <div class="body">
+          <h3>BACEN</h3>
+          <p class="cargo">Banco Central do Brasil</p>
+          <ul>
+            <li>Edital inteiro verticalizado, tópico por tópico</li>
+            <li>Pesos reais da prova</li>
+            <li>Ciclo automático e revisões programadas</li>
+            <li>Controle de questões por assunto</li>
+          </ul>
+          <div class="preco-linha"><span class="de">de <s>R$ 67</s> por</span> <span class="por">R$ 27</span><span class="selo">LANÇAMENTO</span></div>
+          <div class="acoes">
+            <a class="btn btn-comprar" href="https://pay.kiwify.com.br/eUJTIUC">QUERO ESTUDAR PARA O BACEN</a>
+            <a class="btn btn-detalhes" href="../bacen/">Ver detalhes da edição</a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="pcard">
-      <img src="../img/produto-pc-ba.png" alt="Sistema Aprovação, Edição PC-BA" width="600" height="500" loading="lazy">
-      <div class="body">
-        <span class="badge destaque">Edital verticalizado</span>
-        <h2>Edição PC-BA</h2>
-        <p class="desc">O edital da Polícia Civil da Bahia já verticalizado, com pesos por matéria e revisões automáticas de 24 horas, 7 dias e 30 dias.</p>
-        <div class="preco-linha"><span class="de">de <s>R$ 67</s> por</span> <span class="por">R$ 27</span><span class="selo">LANÇAMENTO</span></div>
-        <div class="acoes">
-          <a class="btn btn-comprar" href="https://pay.kiwify.com.br/pJ6DFeb">Comprar agora</a>
-          <a class="btn btn-detalhes" href="../pc-ba/">Ver detalhes</a>
+      <div class="pcard" data-area="policial">
+        <img src="../img/produto-pc-ba.png" alt="Sistema Aprovação, Edição PC-BA" width="600" height="500" loading="lazy">
+        <div class="body">
+          <h3>PC-BA</h3>
+          <p class="cargo">Polícia Civil da Bahia</p>
+          <ul>
+            <li>Edital inteiro verticalizado, tópico por tópico</li>
+            <li>Pesos reais da prova</li>
+            <li>Ciclo automático e revisões programadas</li>
+            <li>Controle de questões por assunto</li>
+          </ul>
+          <div class="preco-linha"><span class="de">de <s>R$ 67</s> por</span> <span class="por">R$ 27</span><span class="selo">LANÇAMENTO</span></div>
+          <div class="acoes">
+            <a class="btn btn-comprar" href="https://pay.kiwify.com.br/pJ6DFeb">QUERO ESTUDAR PARA A PC-BA</a>
+            <a class="btn btn-detalhes" href="../pc-ba/">Ver detalhes da edição</a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="pcard">
-      <img src="../img/produto-pc-pr.png" alt="Sistema Aprovação, Edição PC-PR" width="600" height="500" loading="lazy">
-      <div class="body">
-        <span class="badge destaque">Edital verticalizado</span>
-        <h2>Edição PC-PR</h2>
-        <p class="desc">O edital da Polícia Civil do Paraná organizado por completo na planilha, com os pesos reais da prova e agenda diária do que estudar.</p>
-        <div class="preco-linha"><span class="de">de <s>R$ 67</s> por</span> <span class="por">R$ 27</span><span class="selo">LANÇAMENTO</span></div>
-        <div class="acoes">
-          <a class="btn btn-comprar" href="https://pay.kiwify.com.br/ZRGFJD5">Comprar agora</a>
-          <a class="btn btn-detalhes" href="../pc-pr/">Ver detalhes</a>
+      <div class="pcard" data-area="policial">
+        <img src="../img/produto-pc-pr.png" alt="Sistema Aprovação, Edição PC-PR" width="600" height="500" loading="lazy">
+        <div class="body">
+          <h3>PC-PR</h3>
+          <p class="cargo">Polícia Civil do Paraná</p>
+          <ul>
+            <li>Edital inteiro verticalizado, tópico por tópico</li>
+            <li>Pesos reais da prova</li>
+            <li>Ciclo automático e revisões programadas</li>
+            <li>Controle de questões por assunto</li>
+          </ul>
+          <div class="preco-linha"><span class="de">de <s>R$ 67</s> por</span> <span class="por">R$ 27</span><span class="selo">LANÇAMENTO</span></div>
+          <div class="acoes">
+            <a class="btn btn-comprar" href="https://pay.kiwify.com.br/ZRGFJD5">QUERO ESTUDAR PARA A PC-PR</a>
+            <a class="btn btn-detalhes" href="../pc-pr/">Ver detalhes da edição</a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="pcard">
-      <img src="../img/produto-pc-ma.png" alt="Sistema Aprovação, Edição PC-MA" width="600" height="500" loading="lazy">
-      <div class="body">
-        <span class="badge destaque">Edital verticalizado</span>
-        <h2>Edição PC-MA</h2>
-        <p class="desc">O edital da Polícia Civil do Maranhão verticalizado tópico por tópico, com pesos por matéria e controle de questões por assunto.</p>
-        <div class="preco-linha"><span class="de">de <s>R$ 67</s> por</span> <span class="por">R$ 27</span><span class="selo">LANÇAMENTO</span></div>
-        <div class="acoes">
-          <a class="btn btn-comprar" href="https://pay.kiwify.com.br/Uzr6EPO">Comprar agora</a>
-          <a class="btn btn-detalhes" href="../pc-ma/">Ver detalhes</a>
+      <div class="pcard" data-area="policial">
+        <img src="../img/produto-pc-ma.png" alt="Sistema Aprovação, Edição PC-MA" width="600" height="500" loading="lazy">
+        <div class="body">
+          <h3>PC-MA</h3>
+          <p class="cargo">Polícia Civil do Maranhão</p>
+          <ul>
+            <li>Edital inteiro verticalizado, tópico por tópico</li>
+            <li>Pesos reais da prova</li>
+            <li>Ciclo automático e revisões programadas</li>
+            <li>Controle de questões por assunto</li>
+          </ul>
+          <div class="preco-linha"><span class="de">de <s>R$ 67</s> por</span> <span class="por">R$ 27</span><span class="selo">LANÇAMENTO</span></div>
+          <div class="acoes">
+            <a class="btn btn-comprar" href="https://pay.kiwify.com.br/Uzr6EPO">QUERO ESTUDAR PARA A PC-MA</a>
+            <a class="btn btn-detalhes" href="../pc-ma/">Ver detalhes da edição</a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="pcard">
-      <img src="../img/produto-trf3.png" alt="Sistema Aprovação, Edição TRF3" width="600" height="500" loading="lazy">
-      <div class="body">
-        <span class="badge destaque">Edital verticalizado</span>
-        <h2>Edição TRF3</h2>
-        <p class="desc">O edital do Tribunal Regional Federal da 3ª Região já organizado na planilha, com pesos reais e revisões calculadas sozinhas.</p>
-        <div class="preco-linha"><span class="de">de <s>R$ 67</s> por</span> <span class="por">R$ 27</span><span class="selo">LANÇAMENTO</span></div>
-        <div class="acoes">
-          <a class="btn btn-comprar" href="https://pay.kiwify.com.br/OtiRXFY">Comprar agora</a>
-          <a class="btn btn-detalhes" href="../trf3/">Ver detalhes</a>
+      <div class="pcard" data-area="tribunais">
+        <img src="../img/produto-trf3.png" alt="Sistema Aprovação, Edição TRF3" width="600" height="500" loading="lazy">
+        <div class="body">
+          <h3>TRF3</h3>
+          <p class="cargo">Tribunal Regional Federal da 3ª Região</p>
+          <ul>
+            <li>Edital inteiro verticalizado, tópico por tópico</li>
+            <li>Pesos reais da prova</li>
+            <li>Ciclo automático e revisões programadas</li>
+            <li>Controle de questões por assunto</li>
+          </ul>
+          <div class="preco-linha"><span class="de">de <s>R$ 67</s> por</span> <span class="por">R$ 27</span><span class="selo">LANÇAMENTO</span></div>
+          <div class="acoes">
+            <a class="btn btn-comprar" href="https://pay.kiwify.com.br/OtiRXFY">QUERO ESTUDAR PARA O TRF3</a>
+            <a class="btn btn-detalhes" href="../trf3/">Ver detalhes da edição</a>
+          </div>
         </div>
       </div>
+
     </div>
 
+    <div class="nao-achou">
+      <h2>Seu concurso não está na lista?</h2>
+      <p>A versão Universal funciona com qualquer edital: você cadastra as matérias do seu concurso e o Sistema organiza todo o resto. E se quiser sua edição pronta, me conta qual é o seu concurso: as próximas edições nascem dos pedidos.</p>
+      <div class="acoes-inline">
+        <a class="btn btn-comprar" href="https://pay.kiwify.com.br/fiQ9oOc">QUERO A VERSÃO UNIVERSAL POR R$ 27</a>
+        <a class="btn btn-detalhes" href="../">Conhecer a versão Universal</a>
+        <a class="btn btn-detalhes" href="mailto:pamelaconcurseirapcd@gmail.com?subject=Quero%20a%20edi%C3%A7%C3%A3o%20do%20meu%20concurso&body=Meu%20concurso%20%C3%A9%3A%20">Quero pedir meu concurso</a>
+      </div>
+    </div>
   </div>
+</section>
 
-  <p class="nota">Vai prestar mais de um desses concursos? No checkout você encontra a opção de levar o combo com as 6 edições. Toda compra tem 7 dias de garantia incondicional: não gostou, devolvemos 100% pela própria Kiwify.</p>
-</div>
+<section style="background:#fff;">
+  <div class="wrap">
+    <h2>Por dentro do Sistema Aprovação</h2>
+    <p class="sub-secao">Telas reais da planilha, sem montagem.</p>
+    <div class="shots">
+      <div class="shot">
+        <img src="../img/shot-hoje.jpg" alt="Aba Hoje do Sistema Aprovação com a agenda do dia montada automaticamente" loading="lazy">
+        <div class="cap"><b>HOJE</b><span>Abra e saiba exatamente o que estudar.</span></div>
+      </div>
+      <div class="shot">
+        <img src="../img/shot-edital.jpg" alt="Edital verticalizado na planilha, com barra de progresso por tópico" loading="lazy">
+        <div class="cap"><b>EDITAL</b><span>Veja o que avançou e o que ainda falta.</span></div>
+      </div>
+      <div class="shot">
+        <img src="../img/shot-desempenho.jpg" alt="Painel de progresso com indicadores e desempenho por matéria" loading="lazy">
+        <div class="cap"><b>DESEMPENHO</b><span>Descubra onde você está perdendo pontos.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Estudar por conta própria ou com o Sistema?</h2>
+    <p class="sub-secao">A diferença não é a planilha. É o que sai da sua cabeça.</p>
+    <div class="comparacao">
+      <table>
+        <thead><tr><th class="sem">Sem o Sistema</th><th class="com">Com o Sistema</th></tr></thead>
+        <tbody>
+          <tr><td class="sem">"O que eu estudo hoje?"</td><td class="com">Abra a aba HOJE</td></tr>
+          <tr><td class="sem">Cronograma manual que quebra na primeira semana</td><td class="com">Ciclo automático que se adapta</td></tr>
+          <tr><td class="sem">Revisões esquecidas</td><td class="com">Revisões programadas: 24h, 7 dias e 30 dias</td></tr>
+          <tr><td class="sem">Não sabe onde está fraco</td><td class="com">Desempenho por matéria e assunto</td></tr>
+          <tr><td class="sem">Edital enorme e confuso</td><td class="com">Tópicos verticalizados com prioridade</td></tr>
+          <tr><td class="sem">Sensação de nunca avançar</td><td class="com">Progresso visível todos os dias</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section style="background:#fff;">
+  <div class="wrap">
+    <h2>Você não recebe apenas uma planilha.</h2>
+    <p class="sub-secao">Recebe um sistema que tira da sua cabeça a tarefa de organizar os estudos, para você poder simplesmente sentar e estudar.</p>
+    <div class="beneficios">
+      <div class="bene"><b>HOJE</b> · decide o seu estudo do dia, automaticamente</div>
+      <div class="bene"><b>Ciclo</b> · distribui suas matérias por peso e dificuldade</div>
+      <div class="bene"><b>Revisões</b> · agendadas em 24h, 7 dias e 30 dias</div>
+      <div class="bene"><b>Questões</b> · acompanha acertos por matéria e assunto</div>
+      <div class="bene"><b>Painel</b> · mostra sua evolução no edital</div>
+      <div class="bene"><b>Notion</b> · o mesmo método em versão de aplicativo</div>
+    </div>
+  </div>
+</section>
+
+<section class="autoridade">
+  <div class="wrap">
+    <div class="box">
+      <img src="../img/foto-pamela.jpg" alt="Pâmela, criadora do Sistema Aprovação" loading="lazy">
+      <div class="texto">
+        <h2>Criado por quem conhece concursos por dentro</h2>
+        <p>O Sistema Aprovação nasceu do método que usei para organizar meus próprios estudos e chegar à aprovação. Sou Pâmela, Analista Judiciária do TRF1, e transformei esse método em um sistema para eliminar a maior dificuldade de quem estuda: decidir, todos os dias, o que estudar, revisar e priorizar.</p>
+        <div class="credenciais">
+          <span class="cred">Analista Judiciária do TRF1</span>
+          <span class="cred">Aprovada na OAB aos 20 anos</span>
+          <span class="cred">@concurseirapcd</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL: quando houver depoimentos reais de compradores, inserir aqui.
+     Formato preferido: prints reais com autorização e dados pessoais ocultados.
+     NUNCA publicar depoimento inventado. -->
+
+<section>
+  <div class="wrap">
+    <div class="faixa">
+      <h2>Vai prestar mais de um concurso?</h2>
+      <p>Existe um combo com as 6 edições juntas. Ao comprar qualquer planilha, ele aparece como oferta no próprio checkout.</p>
+    </div>
+  </div>
+</section>
+
+<section style="background:#fff;">
+  <div class="wrap">
+    <div class="faixa" style="box-shadow:none; border-color:#CBE7D8; background:#F2FAF6;">
+      <h2>Experimente por 7 dias</h2>
+      <p>Se o Sistema Aprovação não fizer sentido para a sua preparação, é só pedir reembolso dentro do prazo da garantia, direto na Kiwify. Sem perguntas, sem burocracia.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Perguntas frequentes</h2>
+    <p class="sub-secao">O que mais perguntam antes de começar.</p>
+    <details><summary>Qual a diferença entre a versão Universal e uma edição específica?</summary><p>A Universal é adaptável: você cadastra as matérias do seu edital e o Sistema se organiza em volta delas. As edições específicas já chegam com o edital daquele concurso inteiro verticalizado e os pesos reais da prova: é abrir e estudar.</p></details>
+    <details><summary>Preciso saber usar Excel?</summary><p>Não. Você só preenche células indicadas (matérias, horas e uma linha por dia no diário). Todo o resto se calcula sozinho, e o guia de configuração acompanha cada passo.</p></details>
+    <details><summary>Funciona no celular?</summary><p>A planilha funciona no Excel do computador (recomendado) e abre no Excel mobile. Para quem estuda 100% pelo celular, o template Notion incluído é a versão ideal.</p></details>
+    <details><summary>Posso editar a planilha?</summary><p>Sim, a estrutura é 100% editável. Você pode ajustar tópicos, matérias, pesos e horas a qualquer momento.</p></details>
+    <details><summary>Recebo imediatamente?</summary><p>Sim. O acesso chega no seu e-mail assim que o pagamento é confirmado (Pix confirma na hora).</p></details>
+    <details><summary>E se o edital do meu concurso mudar?</summary><p>Quando um edital novo é publicado, os compradores da edição recebem a versão atualizada sem custo.</p></details>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Pare de organizar o estudo. Comece a estudar.</h2>
+    <p>Escolha a sua planilha e abra hoje com tudo decidido: o que estudar, o que revisar e o que priorizar.</p>
+    <a class="btn btn-hero" href="#concursos">ENCONTRAR MEU CONCURSO</a>
+  </div>
+</section>
 
 <footer>
   <div>Sistema Aprovação · <a href="https://concurseirapcd.com.br">Concurseira PCD</a> · Pâmela Dayane</div>
   <div><a href="https://instagram.com/concurseirapcd" target="_blank" rel="noopener">@concurseirapcd</a> · <a href="mailto:pamelaconcurseirapcd@gmail.com">pamelaconcurseirapcd@gmail.com</a></div>
 </footer>
 
+<script>
+(function(){
+  var chips = document.querySelectorAll('.chip');
+  var cards = document.querySelectorAll('.pcard[data-area]');
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      chips.forEach(function(c){ c.setAttribute('aria-pressed', 'false'); });
+      chip.setAttribute('aria-pressed', 'true');
+      var filtro = chip.getAttribute('data-filtro');
+      cards.forEach(function(card){
+        card.hidden = (filtro !== 'todos' && card.getAttribute('data-area') !== filtro);
+      });
+    });
+  });
+})();
+</script>
 </body>
 </html>
