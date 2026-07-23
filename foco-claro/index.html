@@ -273,5 +273,13 @@ src="https://www.facebook.com/tr?id=1669474324142544&ev=PageView&noscript=1"
   </div>
 </footer>
 
+<script>
+document.querySelectorAll('a[href*="pay.kiwify.com.br"]').forEach(function(a){
+  a.addEventListener('click',function(){
+    if(window.fbq){fbq('track','InitiateCheckout',{content_name:'Metodo Foco Claro',value:27.00,currency:'BRL'});}
+  });
+});
+</script>
+
 </body>
 </html>
